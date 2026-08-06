@@ -177,5 +177,12 @@
       "title": "Contact Section",
       "area": "uncategorized"
     }
+  ],
+  "customTemplates": [
+    {
+      "name": "projects",
+      "title": "Projects",
+      "postTypes": ["page"]
+    }
   ]
 }

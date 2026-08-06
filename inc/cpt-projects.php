@@ -38,9 +38,9 @@ function uuwg_register_cpt_projects()
 			'public'             => true,
 			'show_ui'            => true,
 			'show_in_rest'       => true,
-			'has_archive'        => true,
+			'has_archive'        => false,
 			'rewrite'            => array(
-				'slug' => 'projects',
+				'slug' => 'project',
 			),
 
 			'menu_icon'          => 'dashicons-portfolio',
