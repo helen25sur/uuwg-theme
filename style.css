@@ -1,0 +1,24 @@
+/*
+Theme Name: UUWG
+Theme URI: https://uuwg.org
+Author: Olena Surilova
+Author URI: https://github.com/helen25sur
+Description: Кастомна блочна тема (Full Site Editing) для Union of Ukrainian Women in Greece.
+Version: 0.1.0
+Requires at least: 6.5
+Tested up to: 6.6
+Requires PHP: 8.1
+Text Domain: uuwg
+Domain Path: /languages
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*
+Усі стилі кольорів, шрифтів, spacing задаються через theme.json.
+Цей файл — лише для точкових CSS-правил, які не можна виразити через theme.json
+(наприклад: специфічна анімація, псевдоелементи, складна сітка конкретного блоку).
+
+Стилі окремих кастомних блоків тримати в assets/css/blocks/ і підключати
+через enqueue в inc/enqueue.php, а не додавати сюди все підряд.
+*/

@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies (якщо будеш використовувати npm для збірки CSS/JS)
+node_modules/
+vendor/
+
+# Build output (якщо є build-крок, наприклад через webpack)
+build/
+dist/
+
+# Логи
+*.log
+npm-debug.log*
+
+# ACF export/json (опціонально — деякі команди навпаки комітять acf-json/, щоб синхронізувати поля між середовищами)
+# acf-json/
+
+# Env-файли, якщо колись з'являться
+.env
+.env.local

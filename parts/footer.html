@@ -1,0 +1,67 @@
+<!-- wp:group {"tagName":"footer","backgroundColor":"navy","textColor":"white","layout":{"type":"constrained"}} -->
+<footer class="wp-block-group has-white-color has-navy-background-color has-text-color has-background">
+
+	<!-- wp:columns -->
+	<div class="wp-block-columns">
+
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:site-logo /-->
+			<!-- wp:navigation {"ref":null,"overlayMenu":"never"} /-->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":4} -->
+			<h4>Stay connected</h4>
+			<!-- /wp:heading -->
+			<!-- MC4WP форма підписки — підключається через шорткод плагіна -->
+			<!-- wp:shortcode -->
+
+			<!-- /wp:shortcode -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":4} -->
+			<h4>Contacts</h4>
+			<!-- /wp:heading -->
+			<!-- Дані з ACF Options Page: uuwg_contact_email, uuwg_contact_phone, uuwg_address -->
+			<!-- wp:paragraph -->
+			<p>[acf field="contact_email"] · [acf field="contact_phone"]</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:heading {"level":4} -->
+			<h4>Legal</h4>
+			<!-- /wp:heading -->
+			<!-- wp:navigation {"ref":null} /-->
+		</div>
+		<!-- /wp:column -->
+
+	</div>
+	<!-- /wp:columns -->
+
+	<!-- wp:buttons -->
+	<div class="wp-block-buttons">
+		<!-- wp:button -->
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Donate</a></div>
+		<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
+
+	<!-- wp:social-links -->
+	<ul class="wp-block-social-links"></ul>
+	<!-- /wp:social-links -->
+
+	<!-- wp:paragraph {"fontSize":"small"} -->
+	<p class="has-small-font-size">© <!-- wp:site-title {"level":0} /--> UUWG. All rights reserved.</p>
+	<!-- /wp:paragraph -->
+
+</footer>
+<!-- /wp:group -->
