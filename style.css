@@ -23,10 +23,27 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 через enqueue в inc/enqueue.php, а не додавати сюди все підряд.
 */
 
+body {
+  overflow-x: hidden;
+}
+
+.wp-block-template-part:has(header) {
+  padding: 46.5px 80px;
+  position: relative;
+  max-width: var(--wp--style--global--wide-size);
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+  margin-bottom: -250px;
+  color: var(--wp--preset--color--white);
+  font-size: var(--wp--preset--font-size--text-medium);
+}
+
 .uuwg-language-switcher {
   position: relative;
   display: inline-block;
-  color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  font-size: var(--wp--preset--font-size--text-medium);
   border: none;
   background-color: transparent;
 }

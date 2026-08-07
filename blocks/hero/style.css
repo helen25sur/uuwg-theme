@@ -1,0 +1,90 @@
+.uuwg-hero {
+  position: relative;
+  padding-top: 250px;
+  background-color: var(--wp--preset--color--navy);
+  border-radius: var(--wp--custom--border-radius--hero);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: center;
+}
+
+.header--transparent .uuwg-site-logo__dark {
+  display: none;
+}
+
+.header--transparent .uuwg-site-logo__light {
+  display: block;
+}
+
+.uuwg-hero__container {
+  padding: 193px 80px 80px 80px;
+  max-width: var(--wp--style--global--wide-size);
+  margin: 0 auto;
+}
+
+.uuwg-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1060px;
+}
+
+.uuwg-hero__title {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--hero);
+  color: var(--wp--preset--color--white);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.uuwg-hero__subtitle {
+  font-family: var(--wp--preset--font-family--body);
+  font-size: var(--wp--preset--font-size--body);
+  color: var(--wp--preset--color--white);
+  opacity: 0.9;
+  margin: 0 0 2rem;
+  max-width: 520px;
+}
+
+.uuwg-hero__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.uuwg-hero__button {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-family: var(--wp--preset--font-family--body);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.uuwg-hero__button--yellow {
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+}
+
+.uuwg-hero__button--secondary {
+  background-color: transparent;
+  color: var(--wp--preset--color--white);
+  border: 1px solid var(--wp--preset--color--white);
+}
+
+/* Тільки в редакторі: візуально позначити кнопку вибору фону,
+   щоб адмін бачив, куди клікати для зміни зображення. */
+.uuwg-hero__bg-button {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.alignfull {
+  width: 100%;
+  max-width: none;
+}

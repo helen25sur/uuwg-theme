@@ -30,5 +30,22 @@ require_once UUWG_THEME_DIR . '/inc/cpt-news.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-documents.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-team.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-partners.php';
+require_once UUWG_THEME_DIR . '/inc/body-classes.php';
 
 require_once UUWG_THEME_DIR . '/inc/blocks.php'; // реєстрація кастомних блоків
+
+add_filter('wp_image_editors', function ($editors) {
+	return array('WP_Image_Editor_GD');
+}); // WordPress на простішу бібліотеку GD
+
+add_action('doing_it_wrong_run', function ($function_name, $message, $version) {
+	if (false !== strpos($function_name, 'WP_Block_Type_Registry')) {
+		error_log('=== ЗНАЙДЕНО ПОМИЛКОВИЙ ВИКЛИК БЛОКУ ===');
+		$trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10);
+		foreach ($trace as $i => $step) {
+			if (isset($step['file'], $step['line'])) {
+				error_log("#{$i} {$step['file']} (рядок {$step['line']}) -> function: " . ($step['function'] ?? ''));
+			}
+		}
+	}
+}, 10, 3);

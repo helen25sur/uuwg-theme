@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/uuwg-logo",
+  "title": "UUWG Site Logo",
+  "category": "uuwg-blocks",
+  "icon": "format-image",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+
+  "attributes": {
+    "darkLogo": {
+      "type": "object",
+      "default": {}
+    },
+    "lightLogo": {
+      "type": "object",
+      "default": {}
+    }
+  },
+
+  "supports": {
+    "html": false
+  }
+}

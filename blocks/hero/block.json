@@ -2,13 +2,64 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "uuwg/hero",
-  "title": "Hero",
-  "description": "Hero section with title, text and image",
-  "category": "design",
+  "title": "UUWG: Hero",
+  "category": "uuwg-blocks",
   "icon": "cover-image",
-  "style": "file:./style.css",
-  "render": "file:./render.php",
+  "description": "Головний банер: заголовок, підзаголовок, фонове зображення, дві кнопки.",
+  "textdomain": "uuwg",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Empowering Women. Strengthening Communities."
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "The Union of Ukrainian Women in Greece (UUWG) is a women-led, community-based organization in Athens supporting Ukrainian and other women, affected by war and migration."
+    },
+    "backgroundImage": {
+      "type": "object"
+    },
+    "backgroundImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundImageUrl": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/uploads/2026/08/background-hero.jpg"
+    },
+    "yellowButtonText": {
+      "type": "string",
+      "default": "Donate"
+    },
+    "yellowButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "default": "Get Help"
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
   "supports": {
-    "align": ["wide", "full"]
-  }
+    "html": false,
+    "anchor": true,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true
+    },
+    "spacing": {
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
 }

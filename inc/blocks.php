@@ -18,19 +18,38 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+// function uuwg_register_blocks()
+// {
+// 	$blocks_dir = UUWG_THEME_DIR . '/blocks';
+
+// 	if (! is_dir($blocks_dir)) {
+// 		return;
+// 	}
+
+
+// 	foreach (glob($blocks_dir . '/*', GLOB_ONLYDIR) as $block_path) {
+// 		if (file_exists($block_path . '/block.json')) {
+// 			$result = register_block_type($block_path);
+
+// 			echo '<!-- BLOCK REGISTERED: ' . basename($block_path) . ' -->';
+
+// 			if ($result) {
+// 				error_log('UUWG BLOCK REGISTERED: ' . $result->name);
+// 			}
+// 		}
+// 	}
+// }
+// add_action('init', 'uuwg_register_blocks');
+
+// function uuwg_register_logo_block()
+// {
+// 	register_block_type(get_template_directory() . '../blocks/uuwg-logo');
+// }
+// add_action('init', 'uuwg_register_logo_block');
+
+add_action('init', 'uuwg_register_blocks');
 function uuwg_register_blocks()
 {
-	$blocks_dir = UUWG_THEME_DIR . '/blocks';
-
-	if (! is_dir($blocks_dir)) {
-		return;
-	}
-
-
-	foreach (glob($blocks_dir . '/*', GLOB_ONLYDIR) as $block_path) {
-		if (file_exists($block_path . '/block.json')) {
-			register_block_type($block_path);
-		}
-	}
+	register_block_type(get_template_directory() . '/blocks/uuwg-logo');
+	register_block_type(get_template_directory() . '/blocks/hero');
 }
-add_action('init', 'uuwg_register_blocks');

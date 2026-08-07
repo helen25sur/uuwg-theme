@@ -1,0 +1,17 @@
+/* За замовчуванням (світлий/кремовий фон сторінки) — синій логотип */
+.uuwg-site-logo__dark {
+  display: block;
+}
+
+.uuwg-site-logo__light {
+  display: none;
+}
+
+/* На сторінках з Hero (темний фон під header) — білий логотип */
+.has-hero .uuwg-site-logo__dark {
+  display: none;
+}
+
+.has-hero .uuwg-site-logo__light {
+  display: block;
+}
