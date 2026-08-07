@@ -22,3 +22,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Стилі окремих кастомних блоків тримати в assets/css/blocks/ і підключати
 через enqueue в inc/enqueue.php, а не додавати сюди все підряд.
 */
+
+.uuwg-language-switcher {
+  position: relative;
+  display: inline-block;
+  color: var(--wp--preset--color--primary);
+  border: none;
+  background-color: transparent;
+}

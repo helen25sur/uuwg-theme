@@ -23,6 +23,8 @@ require_once UUWG_THEME_DIR . '/inc/enqueue.php'; // підключення CSS/
 
 require_once UUWG_THEME_DIR . '/inc/acf-options.php'; // ACF Options Page
 
+require_once UUWG_THEME_DIR . '/inc/language-switcher.php';
+
 require_once UUWG_THEME_DIR . '/inc/cpt-projects.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-news.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-documents.php';
