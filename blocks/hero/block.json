@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/hero",
+  "title": "Hero",
+  "description": "Hero section with title, text and image",
+  "category": "design",
+  "icon": "cover-image",
+  "style": "file:./style.css",
+  "render": "file:./render.php",
+  "supports": {
+    "align": ["wide", "full"]
+  }
+}
