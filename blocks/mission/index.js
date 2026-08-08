@@ -147,7 +147,11 @@
           el(
             'div',
             { className: 'uuwg-mission__photo uuwg-mission__photo--1' },
-            el('img', { src: preview1, alt: '' }),
+            el(
+              'div',
+              { className: 'uuwg-mission__photo-frame' },
+              el('img', { src: preview1, alt: '' })
+            ),
             photo1Badge &&
             el('span', { className: 'uuwg-mission__badge uuwg-mission__badge--top-right' }, photo1Badge)
           ),
@@ -158,7 +162,11 @@
           el(
             'div',
             { className: 'uuwg-mission__photo uuwg-mission__photo--2' },
-            el('img', { src: preview2, alt: '' }),
+            el(
+              'div',
+              { className: 'uuwg-mission__photo-frame' },
+              el('img', { src: preview2, alt: '' })
+            ),
             photo2Badge &&
             el('span', { className: 'uuwg-mission__badge uuwg-mission__badge--top-right' }, photo2Badge)
           ),
@@ -166,7 +174,11 @@
           el(
             'div',
             { className: 'uuwg-mission__photo uuwg-mission__photo--3' },
-            el('img', { src: preview3, alt: '' })
+            el(
+              'div',
+              { className: 'uuwg-mission__photo-frame' },
+              el('img', { src: preview3, alt: '' })
+            )
           )
         )
       );

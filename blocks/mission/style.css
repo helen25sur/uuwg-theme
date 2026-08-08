@@ -37,7 +37,7 @@
 /* --- Колаж --- */
 
 .uuwg-mission__collage {
-  max-width: 630px;
+  max-width: 100%;
   position: relative;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -50,7 +50,14 @@
 .uuwg-mission__photo {
   position: relative;
   border-radius: var(--wp--custom--border-radius--card, 12px);
+}
+
+.uuwg-mission__photo-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--wp--custom--border-radius--card, 12px);
   overflow: hidden;
+  /* округлення кутів і обрізка фото залишаються тут */
 }
 
 .uuwg-mission__photo img {
@@ -61,20 +68,14 @@
 }
 
 .uuwg-mission__photo--1 img {
-  /* width: 222.36px;
-  height: 199.08px; */
   aspect-ratio: 222.36 / 199.08;
 }
 
 .uuwg-mission__photo--2 img {
-  /* width: 300.15px;
-  height: 199.08px; */
   aspect-ratio: 300.15 / 199.08;
 }
 
 .uuwg-mission__photo--3 img {
-  /* width: 232.36px;
-  height: 276.26px; */
   aspect-ratio: 232.36 / 276.26;
 }
 
@@ -82,7 +83,6 @@
 .uuwg-mission__photo--1 {
   grid-column: 1;
   grid-row: 1;
-  /* aspect-ratio: 4 / 3; */
   margin-left: auto;
 }
 
@@ -90,7 +90,6 @@
 .uuwg-mission__photo--2 {
   grid-column: 1;
   grid-row: 2;
-  /* aspect-ratio: 4 / 3; */
   margin-left: auto;
 }
 
@@ -105,8 +104,8 @@
 
 .uuwg-mission__badge {
   position: absolute;
-  background-color: var(--wp--preset--color--secondary, var(--wp--preset--color--yellow));
-  color: var(--wp--preset--color--primary, var(--wp--preset--color--navy));
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--small, 0.875rem);
   font-weight: 600;
   padding: 0.4rem 1rem;
@@ -117,37 +116,66 @@
 
 .uuwg-mission__badge--top-right {
   top: 1.5rem;
-  right: 50%;
-  transform: translateX(90px);
+  right: -0.75rem;
+  /* прив'язка до краю фото, не до фіксованого px від центру */
 }
 
-/* Плаваючий бейдж "Connecting" — на стику фото 1 і фото 3 */
+.uuwg-mission__badge-1 {
+  top: 1.5rem;
+  right: -2.75rem;
+}
+
 .uuwg-mission__badge--floating {
-  left: 4.5rem;
-  top: calc(50% - 5rem);
+  left: 2.25rem;
+  top: calc(50% - 4rem);
   z-index: 3;
-}
-
-.uuwg-mission__badge--bottom-right {
-  bottom: 9.5rem;
-  right: 50%;
-  transform: translateX(76px);
 }
 
 /* Декоративні пелюстки з макету (світло-блакитні листя) —
    плейсхолдер, замінити на реальний SVG-асет із Figma */
-.uuwg-mission::after {
-  content: '';
+
+.uuwg-mission__photo--3::before,
+.uuwg-mission__photo--3::after {
   position: absolute;
-  width: 220px;
-  height: 220px;
-  right: -60px;
-  bottom: -60px;
-  background: var(--wp--preset--color--light-blue, var(--wp--preset--color--light-grey));
-  opacity: 0.5;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 154px;
+  height: 154px;
   pointer-events: none;
+  top: -90px;
+  right: -49px;
+  transform: rotate(-104deg);
+}
+
+.uuwg-mission__photo--3::before {
+  content: url('../../assets/images/decorative/flower-back.svg');
   z-index: -1;
+}
+
+.uuwg-mission__photo--3::after {
+  content: url('../../assets/images/decorative/flower-front.svg');
+  filter: blur(1px);
+  z-index: 0;
+}
+
+.uuwg-mission__photo--2::before,
+.uuwg-mission__photo--2::after {
+  position: absolute;
+  width: 154px;
+  height: 154px;
+  pointer-events: none;
+  bottom: -90px;
+  left: -30px;
+  transform: rotate(80deg);
+}
+
+.uuwg-mission__photo--2::before {
+  content: url('../../assets/images/decorative/flower-back.svg');
+  z-index: -1;
+}
+
+.uuwg-mission__photo--2::after {
+  content: url('../../assets/images/decorative/flower-front.svg');
+  filter: blur(1px);
+  z-index: 0;
 }
 
 /* --- Адаптив --- */
