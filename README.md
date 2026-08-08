@@ -43,6 +43,32 @@ uuwg-theme/
 і каркас 4–7 (CPT зареєстровані, шаблони-заглушки готові, блоки треба наповнити реальною
 розміткою й ACF-полями один за одним, від простих до складних).
 
+<!-- wp:uuwg/what-we-do /-->
+
+    <!-- wp:uuwg/focus-areas /-->
+
+    <!-- wp:uuwg/impact-glance /-->
+
+    <!-- wp:uuwg/donate-cta /-->
+
+    <!-- wp:uuwg/projects-slider /-->
+
+    <!-- wp:group {"anchor":"partners"} -->
+    <div id="partners" class="wp-block-group">
+    	<!-- wp:uuwg/partners-logos /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:uuwg/news-grid {"postsToShow":3} /-->
+
+    <!-- wp:group {"anchor":"get-involved"} -->
+    <div id="get-involved" class="wp-block-group">
+    	<!-- wp:uuwg/get-involved /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:template-part {"slug":"contact-section"} /-->
+
 ## Кольори в theme.json
 
 Значення HEX у палітрі — **плейсхолдери**. Заміни на точні через Figma dev mode

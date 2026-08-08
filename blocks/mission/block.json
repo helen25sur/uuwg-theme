@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/mission",
+  "title": "UUWG: Our Mission",
+  "category": "uuwg-blocks",
+  "icon": "groups",
+  "description": "Секція 'Our mission' — текст, кнопка, колаж з 3 фото і бейджами.",
+  "textdomain": "uuwg",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Our mission"
+    },
+    "paragraph1": {
+      "type": "string",
+      "default": "We are a non-profit dedicated to preserving Ukrainian culture and supporting Ukrainians in need — in Greece and Ukraine — with a focus on empowering women. We provide humanitarian aid to refugees, orphans, and vulnerable individuals, while building bridges between the Greek and Ukrainian communities through solidarity and cultural exchange."
+    },
+    "paragraph2": {
+      "type": "string",
+      "default": "We help Ukrainians integrate into Greek society by offering legal, social, and humanitarian guidance, and through cultural and educational initiatives in partnership with international organizations, we raise awareness about Ukraine and promote democratic values."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Read more"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "photo1Id": { "type": "number", "default": 0 },
+    "photo1Url": { "type": "string", "default": "" },
+    "photo1Badge": { "type": "string", "default": "Uplifting" },
+
+    "photo2Id": { "type": "number", "default": 0 },
+    "photo2Url": { "type": "string", "default": "" },
+    "photo2Badge": { "type": "string", "default": "Empowering" },
+
+    "photo3Id": { "type": "number", "default": 0 },
+    "photo3Url": { "type": "string", "default": "" },
+
+    "connectingBadgeText": {
+      "type": "string",
+      "default": "Connecting"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}
