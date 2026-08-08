@@ -60,3 +60,8 @@ body {
   border: none;
   background-color: transparent;
 }
+
+.uuwg-language-switcher option {
+  color: var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--white);
+}
