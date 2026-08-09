@@ -34,9 +34,7 @@ body {
 }
 
 .container {
-  width: var(--wp--style--global--wide-size);
-  padding-right: var(--wp--custom--spacing--container-gutter);
-  padding-left: var(--wp--custom--spacing--container-gutter);
+  width: var(--wp--style--global--content-size);
   margin: 0 auto;
 }
 
