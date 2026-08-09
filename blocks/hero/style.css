@@ -1,7 +1,6 @@
 .uuwg-hero {
   position: relative;
-  padding-top: 250px;
-  background-color: var(--wp--preset--color--navy);
+  background-color: var(--wp--preset--color--primary);
   border-radius: var(--wp--custom--border-radius--hero);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -21,7 +20,7 @@
 }
 
 .uuwg-hero__container {
-  padding: 193px 80px 80px 80px;
+  padding: 309px var(--wp--custom--spacing--container-gutter) var(--wp--custom--spacing--container-gutter) var(--wp--custom--spacing--container-gutter);
   max-width: var(--wp--style--global--wide-size);
   margin: 0 auto;
 }
@@ -42,7 +41,7 @@
 
 .uuwg-hero__subtitle {
   font-family: var(--wp--preset--font-family--body);
-  font-size: var(--wp--preset--font-size--body);
+  font-size: var(--wp--preset--font-size--text-body);
   color: var(--wp--preset--color--white);
   opacity: 0.9;
   margin: 0 0 2rem;
@@ -57,8 +56,8 @@
 
 .uuwg-hero__button {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
+  padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
+  border-radius: var(--wp--custom--border-radius--button, 999px);
   font-family: var(--wp--preset--font-family--body);
   font-weight: 600;
   text-decoration: none;
@@ -84,7 +83,7 @@
   margin-bottom: 1rem;
 }
 
-.alignfull {
+.uuwg-hero.alignfull {
   width: 100%;
   max-width: none;
 }

@@ -132,6 +132,14 @@
         "hero": "16px",
         "card": "12px",
         "button": "999px"
+      },
+      "spacing": {
+        "containerGutter": "80px",
+        "blockGap": "140px"
+      },
+      "pill": {
+        "paddingY": "8px",
+        "paddingX": "16px"
       }
     }
   },
@@ -154,7 +162,7 @@
       },
       "button": {
         "color": {
-          "background": "var(--wp--preset--color--yellow)",
+          "background": "var(--wp--preset--color--secondary)",
           "text": "var(--wp--preset--color--primary)"
         },
         "border": {
