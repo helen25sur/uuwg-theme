@@ -130,7 +130,7 @@
     "custom": {
       "borderRadius": {
         "hero": "16px",
-        "card": "12px",
+        "card": "16px",
         "button": "999px"
       },
       "spacing": {
@@ -140,6 +140,10 @@
       "pill": {
         "paddingY": "8px",
         "paddingX": "16px"
+      },
+      "button": {
+        "paddingY": "16px",
+        "paddingX": "32px"
       }
     }
   },

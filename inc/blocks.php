@@ -53,4 +53,5 @@ function uuwg_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/uuwg-logo');
 	register_block_type(get_template_directory() . '/blocks/hero');
 	register_block_type(get_template_directory() . '/blocks/mission');
+	register_block_type(get_template_directory() . '/blocks/what-we-do');
 }

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/what-we-do",
+  "title": "UUWG: What We Do",
+  "category": "uuwg-blocks",
+  "icon": "list-view",
+  "description": "Секція 'What we do' — 5 карток-акордеон з напрямками діяльності.",
+  "textdomain": "uuwg",
+  "attributes": {
+    "heading": { "type": "string", "default": "What we do" },
+    "buttonText": { "type": "string", "default": "Get Help" },
+    "buttonUrl": { "type": "string", "default": "#" },
+
+    "item1Title": { "type": "string", "default": "Humanitarian Aid" },
+    "item1Text": {
+      "type": "string",
+      "default": "We provide essential humanitarian assistance to Ukrainian families in Greece and to communities in Ukraine. Through our Humanitarian Aid Center, we collect, organize, and distribute food, clothing, hygiene products, medical supplies, and emergency tems.\nOur aid efforts are needs based, coordinated with partners, and carried out with transparency and care."
+    },
+
+    "item2Title": { "type": "string", "default": "Housing & Basic Support" },
+    "item2Text": { "type": "string", "default": "" },
+
+    "item3Title": { "type": "string", "default": "Education & Development" },
+    "item3Text": { "type": "string", "default": "" },
+
+    "item4Title": {
+      "type": "string",
+      "default": "Psychological & Social Support"
+    },
+    "item4Text": { "type": "string", "default": "" },
+
+    "item5Title": { "type": "string", "default": "Culture & Community" },
+    "item5Text": { "type": "string", "default": "" }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

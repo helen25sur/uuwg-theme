@@ -1,0 +1,109 @@
+.uuwg-what-we-do__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.uuwg-what-we-do__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+}
+
+.uuwg-what-we-do__cta {
+  display: inline-block;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  font-size: 22px;
+  font-weight: 600;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+  text-decoration: none;
+}
+
+.uuwg-what-we-do__cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.uuwg-what-we-do__card {
+  position: relative;
+  background-color: var(--wp--preset--color--light-blue);
+  border-radius: var(--wp--custom--border-radius--card);
+  padding: 26px 16px;
+  min-height: 524px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.uuwg-what-we-do__card.is-active {
+  width: 356px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.uuwg-what-we-do__card-title {
+  font-family: var(--wp--preset--font-family--heading);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--heading-sm);
+  margin: 0;
+}
+
+.uuwg-what-we-do__card-text {
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+
+  /* Ключове місце для акордеону: текст неактивних карток
+	   схований через grid-трюк, а не display:none — це дозволяє
+	   плавно анімувати відкриття/закриття через max-height/opacity */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+.uuwg-what-we-do__card.is-active .uuwg-what-we-do__card-text {
+  max-height: 400px;
+  /* достатньо з запасом під найдовший текст */
+  opacity: 1;
+}
+
+.uuwg-what-we-do__card-toggle {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.uuwg-what-we-do__card.is-active .uuwg-what-we-do__card-toggle {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .uuwg-what-we-do__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .uuwg-what-we-do__card {
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+}
