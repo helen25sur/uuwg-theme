@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/donate-fundraise",
+  "title": "UUWG: Donate & Fundraise",
+  "category": "uuwg-blocks",
+  "attributes": {
+    "heading": { "type": "string", "default": "Donate & Fundraise" },
+    "buttonText": { "type": "string", "default": "Donate" },
+    "buttonUrl": { "type": "string", "default": "#" },
+    "headerText": {
+      "type": "string",
+      "default": "<p>Every contribution — big or small — helps us respond quickly to urgent needs and invest in long-term empowerment.</p> <p>What your donation supports:</p>"
+    },
+    "item1Text": {
+      "type": "string",
+      "default": "Emergency humanitarian aid and logistics"
+    },
+    "item2Text": {
+      "type": "string",
+      "default": "Women-led community and cultural projects"
+    },
+    "item3Text": {
+      "type": "string",
+      "default": "Education, skills, and language programs"
+    },
+    "item4Text": {
+      "type": "string",
+      "default": "Psychological and social support services"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

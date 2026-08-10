@@ -1,0 +1,79 @@
+.uuwg-donate-fundraise {
+  width: 100%;
+  padding: 78px 0 103px 0;
+  background-color: var(--wp--preset--color--primary);
+  border-radius: 32px;
+  background-image: url('../../assets/images/decorative/pattern-2-right.svg'), url('../../assets/images/decorative/pattern-2-left.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right bottom, left bottom;
+  background-size: contain, contain;
+}
+
+.uuwg-donate-fundraise__content {
+  width: var(--wp--style--global--content-size);
+  padding-top: 97px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.uuwg-donate-fundraise__header {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  max-width: 570px;
+}
+
+.uuwg-donate-fundraise__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  color: var(--wp--preset--color--background);
+  margin: 0;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.uuwg-donate-fundraise__header__text {
+  color: var(--wp--preset--color--light-blue);
+  font-size: var(--wp--preset--font-size--text-body);
+  text-align: center;
+  line-height: 120%;
+}
+
+.uuwg-donate-fundraise__header__text p {
+  margin: 0;
+  padding: 0;
+}
+
+.uuwg-donate-fundraise__cta {
+  display: inline-block;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  font-size: 22px;
+  font-weight: 600;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+  text-decoration: none;
+  text-align: center;
+}
+
+.uuwg-donate-fundraise__grids {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.uuwg-donate-fundraise__card {
+  padding: 16px 26.5px;
+  background-color: var(--wp--preset--color--light-blue);
+  color: var(--wp--preset--color--blue-500);
+  line-height: 120%;
+  font-weight: 600;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.uuwg-donate-fundraise__card p {
+  margin: 0;
+  padding: 0;
+}
