@@ -72,3 +72,20 @@ main.wp-block-group {
   color: var(--wp--preset--color--primary);
   background-color: var(--wp--preset--color--white);
 }
+
+.chat_button__link a {
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  padding-right: 60px;
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+  position: relative;
+}
+
+.chat_button__link a::after {
+  content: url('./assets/images/telegram-fill.svg');
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  top: 16px;
+}

@@ -56,7 +56,7 @@
 
 .uuwg-hero__button {
   display: inline-block;
-  padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
   border-radius: var(--wp--custom--border-radius--button, 999px);
   font-family: var(--wp--preset--font-family--body);
   font-weight: 600;

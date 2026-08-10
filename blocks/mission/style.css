@@ -28,7 +28,7 @@
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
   font-weight: 600;
-  padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
   border-radius: var(--wp--custom--border-radius--button, 999px);
   text-decoration: none;
   cursor: pointer;
