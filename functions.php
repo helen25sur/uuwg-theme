@@ -20,6 +20,7 @@ define('UUWG_THEME_URI', get_template_directory_uri());
  */
 require_once UUWG_THEME_DIR . '/inc/setup.php'; // add_theme_support, meta, register_block_pattern_category
 require_once UUWG_THEME_DIR . '/inc/enqueue.php'; // підключення CSS/JS
+require_once UUWG_THEME_DIR . '/inc/head.php'; // підключення fonts preconnect
 
 require_once UUWG_THEME_DIR . '/inc/acf-options.php'; // ACF Options Page
 
@@ -49,3 +50,6 @@ add_action('doing_it_wrong_run', function ($function_name, $message, $version) {
 		}
 	}
 }, 10, 3);
+
+
+add_action('wp_enqueue_scripts', 'uuwg_enqueue');

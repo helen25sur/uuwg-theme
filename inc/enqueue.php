@@ -10,6 +10,12 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+function uuwg_enqueue()
+{
+	wp_register_style('rg_style_fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+	wp_enqueue_style('rg_style_fonts');
+}
+
 function uuwg_enqueue_assets()
 {
 	$style_path = UUWG_THEME_DIR . '/style.css';
