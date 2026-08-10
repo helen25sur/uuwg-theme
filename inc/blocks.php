@@ -55,4 +55,5 @@ function uuwg_register_blocks()
 	register_block_type(get_template_directory() . '/blocks/mission');
 	register_block_type(get_template_directory() . '/blocks/what-we-do');
 	register_block_type(get_template_directory() . '/blocks/focus-area');
+	register_block_type(get_template_directory() . '/blocks/impact-glance');
 }

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/impact-glance",
+  "title": "UUWG: Impact at a glance",
+  "category": "uuwg-blocks",
+  "attributes": {
+    "heading": { "type": "string", "default": "Impact at a glance" },
+    "headerText": {
+      "type": "string",
+      "default": "Behind every project are real people. Through personal stories and testimonials, we share how our work impacts lives and communities."
+    },
+    "buttonText": { "type": "string", "default": "Join us" },
+    "buttonUrl": { "type": "string", "default": "#" },
+    "item1Title": { "type": "string", "default": "6000+" },
+    "item1Text": {
+      "type": "string",
+      "default": "women and children supported (2022-2026)"
+    },
+    "item2Title": { "type": "string", "default": "1,800+" },
+    "item2Text": {
+      "type": "string",
+      "default": "people assisted through our Humanitarian Aid Center in Vari"
+    },
+    "item3Title": { "type": "string", "default": "200+" },
+    "item3Text": {
+      "type": "string",
+      "default": "programs and initiatives delivered (2022-2026)"
+    },
+    "item4Title": { "type": "string", "default": "1000+" },
+    "item4Text": {
+      "type": "string",
+      "default": "war-affected children attended our free summer camps "
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}
