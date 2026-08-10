@@ -12,11 +12,15 @@
   "attributes": {
     "darkLogo": {
       "type": "object",
-      "default": {}
+      "default": {
+        "url": "http://uuwg.local/wp-content/uploads/2026/08/Logo.svg"
+      }
     },
     "lightLogo": {
       "type": "object",
-      "default": {}
+      "default": {
+        "url": "http://uuwg.local/wp-content/uploads/2026/08/Logo-white.svg"
+      }
     }
   },
 

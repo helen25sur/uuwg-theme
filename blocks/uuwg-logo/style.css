@@ -15,3 +15,12 @@
 .has-hero .uuwg-site-logo__light {
   display: block;
 }
+
+/* В футері має бути синій логотип */
+footer.site-footer .uuwg-site-logo__dark {
+  display: block;
+}
+
+footer.site-footer .uuwg-site-logo__light {
+  display: none;
+}
