@@ -1,8 +1,8 @@
 (function (blocks, element, blockEditor, components) {
 
   const { registerBlockType } = blocks;
-  const { useBlockProps, InspectorControls, RichText, TextControl } = blockEditor;
-  const { PanelBody, TextareaControl } = components;
+  const { useBlockProps, InspectorControls, RichText } = blockEditor;
+  const { PanelBody, TextareaControl, TextControl } = components;
   const el = element.createElement;
 
   registerBlockType('uuwg/what-we-do', {
@@ -16,7 +16,7 @@
       const itemPanels = [1, 2, 3, 4, 5].map(function (n) {
         const titleKey = `item${n}Title`;
         const textKey = `item${n}Text`;
-        const linkKey = `item${n}LinkUrl`;
+        // const linkKey = `item${n}LinkUrl`;
 
         return el(
           PanelBody,
@@ -31,11 +31,11 @@
             value: attributes[textKey],
             onChange: (v) => setAttributes({ [textKey]: v }),
           }),
-          el(TextControl, {
-            label: 'URL кнопки-стрілки',
-            value: attributes[linkKey],
-            onChange: (v) => setAttributes({ [linkKey]: v }),
-          })
+          // el(TextControl, {
+          //   label: 'URL кнопки-стрілки',
+          //   value: attributes[linkKey],
+          //   onChange: (v) => setAttributes({ [linkKey]: v }),
+          // })
         );
       });
 

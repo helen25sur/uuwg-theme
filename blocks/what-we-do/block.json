@@ -19,19 +19,31 @@
     },
 
     "item2Title": { "type": "string", "default": "Housing & Basic Support" },
-    "item2Text": { "type": "string", "default": "" },
+    "item2Text": {
+      "type": "string",
+      "default": "We support families in finding safe housing and navigating the relocation and integration process. This includes guidance, referrals, and coordination with local services to ensure stability during critical transition periods."
+    },
 
     "item3Title": { "type": "string", "default": "Education & Development" },
-    "item3Text": { "type": "string", "default": "" },
+    "item3Text": {
+      "type": "string",
+      "default": "<p>Education is key to empowerment.</p><p>We organize:</p><ul><li>Greek and English language courses</li><li>Digital and creative skills workshops</li><li>Professional development and employability training</li></ul><p>These programs help women build independent and access new opportunities.</p>"
+    },
 
     "item4Title": {
       "type": "string",
       "default": "Psychological & Social Support"
     },
-    "item4Text": { "type": "string", "default": "" },
+    "item4Text": {
+      "type": "string",
+      "default": "Displacement and war leave deep emotional impact. We offer individual and group psychological support, peer support circles, and well being workshops in safe and trusted environments."
+    },
 
     "item5Title": { "type": "string", "default": "Culture & Community" },
-    "item5Text": { "type": "string", "default": "" }
+    "item5Text": {
+      "type": "string",
+      "default": "Cultural activities strengthen identity, connection, and healing. Through art workshops, community events, and cultural projects, we create spaces where women and children can express themselves and build belonging."
+    }
   },
   "supports": {
     "html": false,
