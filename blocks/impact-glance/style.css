@@ -16,18 +16,23 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: start;
+  max-width: 462px;
 }
 
 .uuwg-impact-glance__heading {
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--heading-xl);
   margin: 0;
+  margin-bottom: 24px;
 }
 
 .uuwg-impact-glance__header-text {
   font-size: var(--wp--preset--font-size--text-body);
   font-weight: 600;
   line-height: 120%;
+  color: var(--wp--preset--color--blue-200);
+  margin: 0;
+  margin-bottom: 44px;
 }
 
 .uuwg-impact-glance__cta {
@@ -56,6 +61,7 @@
 
   line-height: 115%;
   border-radius: var(--wp--custom--border-radius--card);
+  background-color: var(--wp--preset--color--light-blue);
 }
 
 .uuwg-impact-glance__card .uuwg-impact-glance__card__title {
@@ -64,7 +70,7 @@
   margin: 0;
 }
 
-.uuwg-impact-glance__card__number {
-  font-size: var(--wp--preset--font-size--heading-md);
-
+.uuwg-impact-glance__card__text {
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--text-body);
 }
