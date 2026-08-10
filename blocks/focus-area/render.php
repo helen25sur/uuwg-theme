@@ -1,0 +1,25 @@
+<?php
+// Ensure $attributes is defined to avoid PHP notices when this template is rendered directly.
+$attributes = isset($attributes) && is_array($attributes) ? $attributes : (array) ($attributes ?? []);
+?>
+
+<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-focus-area alignfull']); ?>>
+  <div class="uuwg-focus-area__content">
+    <div class="uuwg-focus-area__header">
+      <h2 class="uuwg-focus-area__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
+      <a class="uuwg-focus-area__cta" href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
+        <?php echo esc_html($attributes['buttonText']); ?>
+      </a>
+    </div>
+
+    <div class="uuwg-focus-area__grids">
+      <?php for ($i = 1; $i <= 4; $i++) : ?>
+        <div class="uuwg-focus-area__card">
+          <span class="uuwg-focus-area__card__number"><?php echo $i; ?>/</span>
+          <h3 class="uuwg-focus-area__card__title"><?php echo esc_html($attributes["item{$i}Title"] ?? ''); ?></h3>
+        </div>
+      <?php endfor; ?>
+    </div>
+  </div>
+
+</section>

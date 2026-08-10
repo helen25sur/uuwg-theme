@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/focus-area",
+  "title": "UUWG: Focus Areas",
+  "category": "uuwg-blocks",
+  "attributes": {
+    "heading": { "type": "string", "default": "Focus areas" },
+    "buttonText": { "type": "string", "default": "Get Help" },
+    "buttonUrl": { "type": "string", "default": "#" },
+    "item1Title": { "type": "string", "default": "Migration & Integration" },
+    "item2Title": { "type": "string", "default": "Gender Violence Prevention" },
+    "item3Title": { "type": "string", "default": "Economic Justice" },
+    "item4Title": { "type": "string", "default": "Culture & Community" }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

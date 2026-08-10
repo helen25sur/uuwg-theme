@@ -1,19 +1,3 @@
-<!-- 
-/**
- * Server-side render for uuwg/hero block.
- * Доступні змінні: $attributes, $content, $block.
- *
- * @package UUWG
- *
-
-/**
- * Title: Hero Section
- * Slug: uuwg/hero
- * Categories: featured
- * Description: Hero банер для головної сторінки
- */
-/ -->
-
 <?php
 
 if (! defined('ABSPATH')) {
