@@ -1,0 +1,87 @@
+.uuwg-our-projects {
+  width: 100%;
+  padding: 78px 0 103px 0;
+  color: var(--wp--preset--color--primary);
+}
+
+.uuwg-our-projects__content {
+  width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.uuwg-our-projects__header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: start;
+  max-width: 462px;
+}
+
+.uuwg-our-projects__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.uuwg-our-projects__header-text {
+  font-size: var(--wp--preset--font-size--text-body);
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--wp--preset--color--blue-200);
+  margin: 0;
+  margin-bottom: 44px;
+}
+
+.uuwg-our-projects__cta {
+  display: inline-block;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  font-size: 22px;
+  font-weight: 600;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+  text-decoration: none;
+}
+
+.uuwg-our-projects__grids {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.uuwg-our-projects__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 32px;
+  /* height: min-content; */
+  max-height: 530px;
+  line-height: 115%;
+  border-radius: var(--wp--custom--border-radius--card);
+  background-color: var(--wp--preset--color--white);
+}
+
+.uuwg-our-projects__card .uuwg-our-project__permalink {
+  display: flex;
+  flex-direction: column;
+}
+
+.uuwg-our-projects__card .uuwg-our-projects__card__title {
+  font-size: var(--wp--preset--font-size--heading-md);
+  padding: 0;
+  margin: 0;
+}
+
+.uuwg-our-projects__card__text {
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--text-body);
+}
+
+.uuwg-our-projects__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

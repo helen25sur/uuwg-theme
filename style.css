@@ -54,18 +54,25 @@ main.wp-block-group {
   margin-left: auto;
   margin-right: auto;
   z-index: 10;
-  margin-bottom: -250px;
-  color: var(--wp--preset--color--white);
   font-size: var(--wp--preset--font-size--text-medium);
+}
+
+.has-hero .wp-block-template-part:has(header) {
+  color: var(--wp--preset--color--white);
+  margin-bottom: -250px;
 }
 
 .uuwg-language-switcher {
   position: relative;
   display: inline-block;
-  color: var(--wp--preset--color--white);
   font-size: var(--wp--preset--font-size--text-medium);
   border: none;
   background-color: transparent;
+  color: var(--wp--preset--color--primary);
+}
+
+.has-hero .uuwg-language-switcher {
+  color: var(--wp--preset--color--white);
 }
 
 .uuwg-language-switcher option {
@@ -76,13 +83,24 @@ main.wp-block-group {
 .chat_button__link a {
   padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
   padding-right: 60px;
-  background-color: var(--wp--preset--color--white);
-  color: var(--wp--preset--color--primary);
   position: relative;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
 }
 
+.has-hero .chat_button__link a {
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+
+
+
 .chat_button__link a::after {
-  content: url('./assets/images/telegram-fill.svg');
+  /* content: url('./assets/images/telegram-fill.svg'); */
+  content: '';
+  background-color: currentColor;
+  mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
   width: 20px;
   height: 20px;
   position: absolute;

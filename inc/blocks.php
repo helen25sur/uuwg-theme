@@ -50,11 +50,49 @@ if (! defined('ABSPATH')) {
 add_action('init', 'uuwg_register_blocks');
 function uuwg_register_blocks()
 {
-	register_block_type(get_template_directory() . '/blocks/uuwg-logo');
-	register_block_type(get_template_directory() . '/blocks/hero');
-	register_block_type(get_template_directory() . '/blocks/mission');
-	register_block_type(get_template_directory() . '/blocks/what-we-do');
-	register_block_type(get_template_directory() . '/blocks/focus-area');
-	register_block_type(get_template_directory() . '/blocks/impact-glance');
-	register_block_type(get_template_directory() . '/blocks/donate-fundraise');
+	$blocks = array(
+		'uuwg-logo',
+		'hero',
+		'mission',
+		'what-we-do',
+		'focus-area',
+		'impact-glance',
+		'donate-fundraise',
+		'our-projects',
+	);
+
+	$registry = WP_Block_Type_Registry::get_instance();
+
+	foreach ($blocks as $block) {
+		$block_path = get_template_directory() . '/blocks/' . $block;
+
+		if (! file_exists($block_path . '/block.json')) {
+			continue;
+		}
+
+		// Читаємо block.json, щоб дізнатися точне ім'я блоку
+		$block_data = json_decode(file_get_contents($block_path . '/block.json'), true);
+		$block_name = $block_data['name'] ?? '';
+
+		// Якщо блок вже зареєстрований — пропускаємо його і виводимо попередження в лог
+		if ($block_name && $registry->is_registered($block_name)) {
+			error_log("UUWG WARNING: Block '{$block_name}' in folder '{$block}' is already registered!");
+			continue;
+		}
+
+		register_block_type($block_path);
+	}
 }
+
+// add_action('init', 'uuwg_register_blocks');
+// function uuwg_register_blocks()
+// {
+// 	register_block_type(get_template_directory() . '/blocks/uuwg-logo');
+// 	register_block_type(get_template_directory() . '/blocks/hero');
+// 	register_block_type(get_template_directory() . '/blocks/mission');
+// 	register_block_type(get_template_directory() . '/blocks/what-we-do');
+// 	register_block_type(get_template_directory() . '/blocks/focus-area');
+// 	register_block_type(get_template_directory() . '/blocks/impact-glance');
+// 	register_block_type(get_template_directory() . '/blocks/donate-fundraise');
+// 	register_block_type(get_template_directory() . '/blocks/our-projects');
+// }

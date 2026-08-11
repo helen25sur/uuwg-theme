@@ -63,7 +63,8 @@ $wrapper_attributes = get_block_wrapper_attributes(
           <img src="<?php echo esc_url($photo1_url); ?>" alt="">
           <?php if ($photo1_badge) : ?>
         </div>
-        <span class="uuwg-mission__badge uuwg-mission__badge-1 uuwg-mission__badge--top-right"><?php echo esc_html($photo1_badge); ?></span>
+        <span
+          class="uuwg-mission__badge uuwg-mission__badge-1 uuwg-mission__badge--top-right"><?php echo esc_html($photo1_badge); ?></span>
       <?php endif; ?>
       </div>
 

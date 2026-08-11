@@ -1,14 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "uuwg/uuwg-logo",
-  "title": "UUWG Site Logo",
+  "name": "uuwg/our-projects",
+  "title": "UUWG Our Projects",
   "category": "uuwg-blocks",
   "icon": "format-image",
   "style": "file:./style.css",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
-
   "attributes": {
     "heading": { "type": "string", "default": "Our projects" },
     "buttonText": { "type": "string", "default": "View all projects" },
@@ -18,7 +17,6 @@
       "default": 3
     }
   },
-
   "supports": {
     "html": false
   }

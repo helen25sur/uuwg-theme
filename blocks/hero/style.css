@@ -19,7 +19,7 @@
   display: block;
 }
 
-.uuwg-hero__container {
+.has-hero .uuwg-hero__container {
   padding: 309px 0 var(--wp--custom--spacing--container-gutter) 0;
   max-width: var(--wp--style--global--content-size);
   margin: 0 auto;
