@@ -8,13 +8,19 @@
   "style": "file:./style.css",
   "editorScript": "file:./index.js",
   "render": "file:./render.php",
+  "viewScript": "file:./view.js",
   "attributes": {
     "heading": { "type": "string", "default": "Our projects" },
     "buttonText": { "type": "string", "default": "View all projects" },
     "buttonUrl": { "type": "string", "default": "/projects" },
+    "smallButtonText": { "type": "string", "default": "Read more" },
     "countOfProjects": {
       "type": "number",
       "default": 3
+    },
+    "showPagination": {
+      "type": "boolean",
+      "default": true
     }
   },
   "supports": {
