@@ -38,34 +38,36 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
       ?>
           <div class="uuwg-our-projects__card">
             <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)) ?>">
-              <h2> <?php echo esc_html(get_the_title()) ?> </h2>
-
-              <?php
-              $terms = get_the_terms($ID, 'project_category');
-
-              if ($terms && ! is_wp_error($terms)) {
-                foreach ($terms as $term) {
-                  $name = $term->name;
-              ?>
-
-                  <span><?php echo esc_html($name) ?> </span>
-
-              <?php
-                }
-              }
-              $short_description = '';
-              if (function_exists('get_field')) {
-                $short_description = get_field('project_short_description', $ID);
-              }
-              ?>
-
-              <p> <?php echo esc_html($short_description) ?> </p>
               <?php
               $thumbnail = get_the_post_thumbnail();
               if ($thumbnail) {
                 echo $thumbnail;
               }
               ?>
+              <div class="uuwg-our-projects__card__content">
+                <h3 class="uuwg-our-projects__card__title"> <?php echo esc_html(get_the_title()) ?> </h3>
+
+                <?php  /* 
+                $terms = get_the_terms($ID, 'project_category');
+
+                    if ($terms && ! is_wp_error($terms)) {
+                      foreach ($terms as $term) {
+                        $name = $term->name;
+                    ?>
+
+            <span><?php echo esc_html($name) ?> </span>
+
+            }
+            } */
+                $short_description = '';
+                if (function_exists('get_field')) {
+                  $short_description = get_field('project_short_description', $ID);
+                }
+                ?>
+
+                <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
+                <span class="uwg-our-projects__card__button">Read more</span>
+              </div>
             </a>
           </div>
         <?php endwhile;

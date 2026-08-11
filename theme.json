@@ -104,6 +104,7 @@
         { "slug": "small", "size": "16px", "name": "Text Small" },
         { "slug": "text-medium", "size": "18px", "name": "Text Medium" },
         { "slug": "text-body", "size": "20px", "name": "Body Text" },
+        { "slug": "body-lg", "size": "22px", "name": "Body Large" },
         { "slug": "heading-sm", "size": "24px", "name": "Heading Small" },
         { "slug": "heading-md", "size": "28px", "name": "Heading Medium" },
         { "slug": "heading-lg", "size": "32px", "name": "Heading Large" },

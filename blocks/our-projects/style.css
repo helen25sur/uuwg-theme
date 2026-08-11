@@ -13,33 +13,22 @@
 
 .uuwg-our-projects__header {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: start;
-  max-width: 462px;
+  margin-bottom: 80px;
 }
 
 .uuwg-our-projects__heading {
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--heading-xl);
   margin: 0;
-  margin-bottom: 24px;
-}
-
-.uuwg-our-projects__header-text {
-  font-size: var(--wp--preset--font-size--text-body);
-  font-weight: 600;
-  line-height: 120%;
-  color: var(--wp--preset--color--blue-200);
-  margin: 0;
-  margin-bottom: 44px;
 }
 
 .uuwg-our-projects__cta {
   display: inline-block;
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
-  font-size: 22px;
+  font-size: var(--wp--preset--font-size--body-lg);
   font-weight: 600;
   padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
   border-radius: var(--wp--custom--border-radius--button);
@@ -50,38 +39,61 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
 
 .uuwg-our-projects__card {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 32px;
-  /* height: min-content; */
-  max-height: 530px;
+  min-height: 530px;
   line-height: 115%;
   border-radius: var(--wp--custom--border-radius--card);
   background-color: var(--wp--preset--color--white);
+  overflow: hidden;
 }
 
 .uuwg-our-projects__card .uuwg-our-project__permalink {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .uuwg-our-projects__card .uuwg-our-projects__card__title {
-  font-size: var(--wp--preset--font-size--heading-md);
+  font-size: var(--wp--preset--font-size--body-lg);
   padding: 0;
   margin: 0;
 }
 
-.uuwg-our-projects__card__text {
+.uuwg-our-projects__card__short-description {
   color: var(--wp--preset--color--blue-200);
-  font-size: var(--wp--preset--font-size--text-body);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
 }
 
 .uuwg-our-projects__card img {
+  flex: 313px;
+  flex-shrink: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.uuwg-our-projects__card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.uwg-our-projects__card__button {
+  display: inline-block;
+  margin-left: auto;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+  padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
 }
