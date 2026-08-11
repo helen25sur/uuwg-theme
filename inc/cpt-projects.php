@@ -156,3 +156,42 @@ function uuwg_project_category_sortable_column($columns)
 	return $columns;
 }
 add_filter('manage_edit-project_sortable_columns', 'uuwg_project_category_sortable_column');
+
+/**
+ * ACF-поле "Короткий опис" для картки проєкту.
+ */
+function uuwg_register_project_acf_fields()
+{
+	if (! function_exists('acf_add_local_field_group')) {
+		return;
+	}
+
+	acf_add_local_field_group(array(
+		'key'    => 'group_project_short_description',
+		'title'  => __('Project card content', 'uuwg'),
+		'style'  => 'default',
+		'position' => 'side',
+		'fields' => array(
+			array(
+				'key'          => 'field_project_short_description',
+				'label'        => __('Short description', 'uuwg'),
+				'name'         => 'project_short_description',
+				'type'         => 'textarea',
+				'instructions' => __('Використовується на картках проєкту (Home, архів Projects). Рекомендовано 1-2 речення.', 'uuwg'),
+				'required'     => 1,
+				'maxlength'    => 200,
+				'rows'         => 3,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'project',
+				),
+			),
+		),
+	));
+}
+add_action('acf/init', 'uuwg_register_project_acf_fields');
