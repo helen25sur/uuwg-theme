@@ -18,7 +18,6 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
   <div class="uuwg-our-projects__content">
     <div class="uuwg-our-projects__header">
       <h2 class="uuwg-our-projects__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
-      <p class="uuwg-our-projects__header-text"><?php echo esc_html($attributes['headerText'] ?? ''); ?></p>
       <a class="uuwg-our-projects__cta" href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
         <?php echo esc_html($attributes['buttonText']); ?>
       </a>
