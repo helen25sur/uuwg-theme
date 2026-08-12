@@ -59,6 +59,7 @@ function uuwg_register_blocks()
 		'impact-glance',
 		'donate-fundraise',
 		'our-projects',
+		'partners-collaborations'
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();

@@ -1,0 +1,142 @@
+.uuwg-our-projects {
+  width: 100%;
+  padding: 78px 0 103px 0;
+  color: var(--wp--preset--color--primary);
+}
+
+.uuwg-our-projects__content {
+  width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.uuwg-our-projects__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.uuwg-our-projects__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+}
+
+.uuwg-our-projects__cta {
+  display: inline-block;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--body-lg);
+  font-weight: 600;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+  text-decoration: none;
+}
+
+.uuwg-our-projects__grids {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.uuwg-our-projects__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 530px;
+  line-height: 115%;
+  border-radius: var(--wp--custom--border-radius--card);
+  background-color: var(--wp--preset--color--white);
+  overflow: hidden;
+}
+
+.uuwg-our-projects__card .uuwg-our-project__permalink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.uuwg-our-projects__card .uuwg-our-projects__card__title {
+  font-size: var(--wp--preset--font-size--body-lg);
+  padding: 0;
+  margin: 0;
+}
+
+.uuwg-our-projects__card__short-description {
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+.uuwg-our-projects__card img {
+  flex: 313px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uuwg-our-projects__card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.uwg-our-projects__card__button {
+  display: inline-block;
+  margin-left: auto;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+  padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+}
+
+/* Контейнер пагінації */
+.uuwg-our-projects__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+/* Кнопки-індикатори */
+.uuwg-pagination-btn {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--wp--preset--color--blue-100);
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ховер для неактивних точок */
+.uuwg-pagination-btn:hover:not(.is-active) {
+  background-color: var(--wp--preset--color--primary);
+}
+
+/* Активний стан (довша овальна плашка) */
+.uuwg-pagination-btn.is-active {
+  width: 36px;
+  border-radius: 100px;
+  background-color: var(--wp--preset--color--primary);
+  cursor: default;
+}
+
+/* Фокус з клавіатури для доступності (A11y) */
+.uuwg-pagination-btn:focus-visible {
+  outline: 2px solid var(--wp--preset--color--primary);
+  outline-offset: 3px;
+}

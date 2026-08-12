@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/partners-collaborations",
+  "title": "UUWG Partners & Collaborations",
+  "category": "uuwg-blocks",
+  "icon": "format-image",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "heading": { "type": "string", "default": "Partners & Collaborations" },
+    "headerText": {
+      "type": "string",
+      "default": "We work with local authorities, international organizations, NGOs, cultural institutions, and private partners"
+    },
+    "buttonText": { "type": "string", "default": "Collaborate" },
+    "buttonUrl": { "type": "string", "default": "#" }
+  },
+  "supports": {
+    "html": false
+  }
+}
