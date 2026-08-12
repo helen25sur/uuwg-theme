@@ -18,7 +18,8 @@
     "buttonText": { "type": "string", "default": "Collaborate" },
     "buttonUrl": { "type": "string", "default": "#" },
     "cardWidth": { "type": "integer", "default": 196 },
-    "gap": { "type": "integer", "default": 24 }
+    "gap": { "type": "integer", "default": 24 },
+    "speedOfAnimation": { "type": "integer", "default": 30 }
   },
   "supports": {
     "html": false

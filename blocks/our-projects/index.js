@@ -32,7 +32,7 @@
         {},
         el(
           PanelBody,
-          { title: __('Налаштування блоку', 'uuwg'), initialOpen: true },
+          { title: __('Block Settings', 'uuwg'), initialOpen: true },
           el(TextControl, {
             label: __('Кількість проєктів', 'uuwg'),
             type: 'number',

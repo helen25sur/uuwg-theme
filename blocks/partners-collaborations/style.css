@@ -52,7 +52,7 @@
   gap: 24px;
   align-items: center;
   justify-self: start;
-  animation: infinity_scroll 35s linear infinite;
+  animation: infinity_scroll var(--speed) linear infinite;
 }
 
 /* Зупинка анімації при наведенні курсора (для зручності кліку) */
