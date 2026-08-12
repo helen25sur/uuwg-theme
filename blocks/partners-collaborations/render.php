@@ -42,14 +42,14 @@ $query = new WP_Query(array(
     ?>
 
       <div class="uuwg-partners-collaborations__row"
-        style="--repeats: <?php echo $min_repeats; ?>; --speed: <?php echo $attributes['speedOfAnimation'] . 's' ?>">
+        style="--repeats: <?php echo $min_repeats; ?>; --speed: <?php echo $attributes['speedOfAnimation'] . 's' ?>; gap: <?php echo $gap; ?>px">
         <?php for ($i = 0; $i < $min_repeats; $i++) :
           while ($query->have_posts()) : $query->the_post();
             $ID = get_the_ID();
             $partner_url = function_exists('get_field') ? get_field('partner_url', $ID) : '';
         ?>
 
-            <div class="uuwg-partners-collaborations__card">
+            <div class="uuwg-partners-collaborations__card" style="width: <?php echo $card_width; ?>px;">
               <?php if ($partner_url) : ?>
                 <a href="<?php echo esc_url($partner_url); ?>" target="_blank" rel="noopener noreferrer">
                   <div class="uuwg-partners-collaborations__logo">
