@@ -34,8 +34,47 @@ function uuwg_register_cpt_news()
 			'has_archive'  => true,
 			'rewrite'      => array('slug' => 'news'),
 			'menu_icon'    => 'dashicons-megaphone',
-			'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
+			'supports'     => array('title', 'editor', 'thumbnail'),
 		)
 	);
 }
 add_action('init', 'uuwg_register_cpt_news');
+
+/**
+ * ACF-поле "Короткий опис" для картки новин.
+ */
+function uuwg_register_news_acf_fields()
+{
+	if (! function_exists('acf_add_local_field_group')) {
+		return;
+	}
+
+	acf_add_local_field_group(array(
+		'key'    => 'news_short_description',
+		'title'  => __('News card content', 'uuwg'),
+		'style'  => 'default',
+		'position' => 'side',
+		'fields' => array(
+			array(
+				'key'          => 'field_news_short_description',
+				'label'        => __('Short description', 'uuwg'),
+				'name'         => 'news_short_description',
+				'type'         => 'textarea',
+				'instructions' => __('Використовується на картках новин (Home, архів news). Рекомендовано 1-2 речення.', 'uuwg'),
+				'required'     => 1,
+				'maxlength'    => 120,
+				'rows'         => 3,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'news_event',
+				),
+			),
+		),
+	));
+}
+add_action('acf/init', 'uuwg_register_news_acf_fields');

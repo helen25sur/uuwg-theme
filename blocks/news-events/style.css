@@ -53,10 +53,11 @@
   overflow: hidden;
 }
 
-.uuwg-news-events__card .uuwg-our-project__permalink {
+.uuwg-news-events__card .uuwg-news-events__permalink {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  height: 100%;
 }
 
 .uuwg-news-events__card .uuwg-news-events__card__title {
@@ -75,6 +76,7 @@
 .uuwg-news-events__card img {
   flex: 313px;
   flex-shrink: 0;
+  flex-grow: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -82,8 +84,11 @@
 
 .uuwg-news-events__card__content {
   display: flex;
+  flex: 212px;
+  flex-grow: 0;
   flex-direction: column;
   padding: 24px;
+  justify-content: space-between;
 }
 
 .uwg-news-events__card__button {

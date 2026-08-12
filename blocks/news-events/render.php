@@ -43,10 +43,10 @@ $query = new WP_Query([
       <?php if ($query->have_posts()) : ?>
         <?php while ($query->have_posts()) : $query->the_post();
           $ID = get_the_ID();
-          $short_description = function_exists('get_field') ? get_field('project_short_description', $ID) : '';
+          $short_description = function_exists('get_field') ? get_field('news_short_description', $ID) : '';
         ?>
           <div class="uuwg-news-events__card">
-            <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+            <a class="uuwg-news-events__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('medium'); ?>
               <?php endif; ?>

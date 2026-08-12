@@ -12,7 +12,7 @@
     edit: function (props) {
       const { attributes, setAttributes } = props;
       // ДОДАНО: showPagination
-      const { heading, buttonText, buttonUrl, countOfNews, showPagination } = attributes;
+      const { heading, buttonText, buttonUrl, countOfNews, showPagination, shortDescription } = attributes;
 
       const blockProps = useBlockProps({ className: 'uuwg-news-events' });
 
@@ -40,6 +40,11 @@
             min: 1,
             max: 12,
             onChange: (v) => setAttributes({ countOfNews: parseInt(v, 10) || 1 }),
+          }),
+          el(TextControl, {
+            label: __('Short Description', 'uuwg'),
+            value: attributes.shortDescription,
+            onChange: (v) => setAttributes({ shortDescription: v }),
           }),
           // ДОДАНО: Перемикач пагінації
           el(ToggleControl, {
