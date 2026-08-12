@@ -16,7 +16,9 @@
       "default": "We work with local authorities, international organizations, NGOs, cultural institutions, and private partners"
     },
     "buttonText": { "type": "string", "default": "Collaborate" },
-    "buttonUrl": { "type": "string", "default": "#" }
+    "buttonUrl": { "type": "string", "default": "#" },
+    "cardWidth": { "type": "integer", "default": 196 },
+    "gap": { "type": "integer", "default": 24 }
   },
   "supports": {
     "html": false

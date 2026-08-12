@@ -10,7 +10,6 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-// Ensure $attributes is defined to avoid PHP notices.
 $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array) ($attributes ?? []);
 
 $query = new WP_Query(array(
@@ -32,42 +31,52 @@ $query = new WP_Query(array(
       <?php endif; ?>
     </div>
 
-    <div class="uuwg-partners-collaborations__row">
-      <?php
-      if ($query->have_posts()) :
-        // Запускаємо цикл двічі для безперервної анімації
-        for ($i = 0; $i < 2; $i++) :
+    <?php if ($query->have_posts()) : 
+      $partner_count = $query->post_count;
+      $card_width = (int)($attributes['cardWidth'] ?? 180);
+      $gap = (int)($attributes['gap'] ?? 32);
+      $single_set_width = max(1, $partner_count * ($card_width + $gap));
+
+      // Рахуємо мінімальну кількість повторів (мінімум 2)
+      $min_repeats = max(2, (int)ceil(1920 / $single_set_width) + 1);
+    ?>
+
+    <div class="uuwg-partners-collaborations__row" style="--repeats: <?php echo $min_repeats; ?>;">
+      <?php for ($i = 0; $i < $min_repeats; $i++) :
           while ($query->have_posts()) : $query->the_post();
             $ID = get_the_ID();
             $partner_url = function_exists('get_field') ? get_field('partner_url', $ID) : '';
-            ?>
+        ?>
 
       <div class="uuwg-partners-collaborations__card">
         <?php if ($partner_url) : ?>
         <a href="<?php echo esc_url($partner_url); ?>" target="_blank" rel="noopener noreferrer">
           <div class="uuwg-partners-collaborations__logo">
-            <?php the_post_thumbnail('medium'); ?>
+            <?php the_post_thumbnail('medium', array(
+                      'loading' => 'eager',
+                      'decoding' => 'async'
+                    )); ?>
           </div>
         </a>
         <?php else : ?>
         <div class="uuwg-partners-collaborations__logo">
-          <?php the_post_thumbnail('medium'); ?>
+          <?php the_post_thumbnail('medium', array(
+                    'loading' => 'eager',
+                    'decoding' => 'async'
+                  )); ?>
         </div>
         <?php endif; ?>
       </div>
 
-      <?php
+      <?php 
           endwhile;
-
-          // Скидаємо внутрішній покажчик запиту на початок для другого прогону
           $query->rewind_posts();
         endfor;
-
-        // Обов'язково скидаємо глобальний $post
         wp_reset_postdata();
-      endif;
-      ?>
+        ?>
     </div>
+
+    <?php endif; ?>
 
     <?php if (! empty($attributes['buttonText'])) : ?>
     <a href="<?php echo esc_url($attributes['buttonUrl'] ?? '#'); ?>"
