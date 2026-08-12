@@ -108,7 +108,7 @@
 }
 
 /* Кнопки-індикатори */
-.uuwg-pagination-btn {
+.uuwg-pagination-news-btn {
   width: 10px;
   height: 10px;
   padding: 0;
@@ -123,12 +123,12 @@
 }
 
 /* Ховер для неактивних точок */
-.uuwg-pagination-btn:hover:not(.is-active) {
+.uuwg-pagination-news-btn:hover:not(.is-active) {
   background-color: var(--wp--preset--color--primary);
 }
 
 /* Активний стан (довша овальна плашка) */
-.uuwg-pagination-btn.is-active {
+.uuwg-pagination-news-btn.is-active {
   width: 36px;
   border-radius: 100px;
   background-color: var(--wp--preset--color--primary);
@@ -136,7 +136,7 @@
 }
 
 /* Фокус з клавіатури для доступності (A11y) */
-.uuwg-pagination-btn:focus-visible {
+.uuwg-pagination-news-btn:focus-visible {
   outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 3px;
 }

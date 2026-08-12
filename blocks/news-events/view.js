@@ -1,44 +1,65 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const blockContainers = document.querySelectorAll('.uuwg-news-events');
+(function () {
+  function initNewsPagination() {
+    const blockContainers = document.querySelectorAll('.uuwg-news-events');
 
-  blockContainers.forEach((block) => {
-    const grid = block.querySelector('.js-news-grid');
-    console.log(grid);
-    const pagination = block.querySelector('.js-news-pagination');
-    const count = block.dataset.count;
-    const ajaxUrl = block.dataset.ajaxUrl;
+    if (blockContainers.length === 0) return;
 
-    if (!pagination) return;
+    blockContainers.forEach((block, index) => {
+      // Захист від повторного навешування слухача
+      if (block.dataset.initialized) return;
+      block.dataset.initialized = 'true';
 
-    pagination.addEventListener('click', (e) => {
-      const btn = e.target.closest('.uuwg-pagination-btn');
-      if (!btn || btn.classList.contains('is-active')) return;
+      block.addEventListener('click', (e) => {
+        const btn = e.target.closest('.uuwg-pagination-news-btn, .uuwg-pagination-btn');
 
-      const targetPage = btn.dataset.page;
+        if (!btn) return;
+        e.preventDefault();
 
-      // Індикація завантаження
-      grid.style.opacity = '0.5';
+        if (btn.classList.contains('is-active')) return;
 
-      const formData = new FormData();
-      formData.append('action', 'uuwg_get_news');
-      formData.append('page', targetPage);
-      formData.append('count', count);
+        const grid = block.querySelector('.js-news-grid');
+        const pagination = block.querySelector('.js-news-pagination');
+        const targetPage = btn.dataset.page;
+        const count = block.dataset.count || 3;
+        const ajaxUrl = block.dataset.ajaxUrl || (window.location.origin + '/wp-admin/admin-ajax.php');
 
-      fetch(ajaxUrl, {
-        method: 'POST',
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((response) => {
-          if (response.success) {
-            grid.innerHTML = response.data.cards;
-            pagination.innerHTML = response.data.pagination;
-          }
+        if (!grid) return;
+
+        grid.style.opacity = '0.4';
+
+        const formData = new FormData();
+        formData.append('action', 'uuwg_get_news');
+        formData.append('page', targetPage);
+        formData.append('count', count);
+
+        fetch(ajaxUrl, {
+          method: 'POST',
+          body: formData,
         })
-        .catch((err) => console.error('Projects AJAX Error:', err))
-        .finally(() => {
-          grid.style.opacity = '1';
-        });
+          .then((res) => {
+            if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+            return res.json();
+          })
+          .then((response) => {
+            if (response.success) {
+              if (response.data.cards && grid) grid.innerHTML = response.data.cards;
+              if (response.data.pagination && pagination) pagination.innerHTML = response.data.pagination;
+            } else {
+              console.error('News AJAX error:', response);
+            }
+          })
+          .catch((err) => console.error('News AJAX Fetch Error:', err))
+          .finally(() => {
+            grid.style.opacity = '1';
+          });
+      });
     });
-  });
-});
+  }
+
+  // Якщо DOM вже завантажений — запускаємо одразу, інакше чекаємо події
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNewsPagination);
+  } else {
+    initNewsPagination();
+  }
+})();

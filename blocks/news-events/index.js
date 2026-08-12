@@ -8,23 +8,23 @@
   const { useSelect } = data;
   const el = element.createElement;
 
-  registerBlockType('uuwg/our-projects', {
+  registerBlockType('uuwg/news-events', {
     edit: function (props) {
       const { attributes, setAttributes } = props;
       // ДОДАНО: showPagination
-      const { heading, buttonText, buttonUrl, countOfProjects, showPagination } = attributes;
+      const { heading, buttonText, buttonUrl, countOfNews, showPagination } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-our-projects' });
+      const blockProps = useBlockProps({ className: 'uuwg-news-events' });
 
-      const { projects, totalPages } = useSelect(
+      const { news, totalPages } = useSelect(
         function (select) {
-          const query = { per_page: countOfProjects, _embed: true };
+          const query = { per_page: countOfNews, _embed: true };
           return {
-            projects: select('core').getEntityRecords('postType', 'project', query),
-            totalPages: select('core').getEntityRecordsTotalPages('postType', 'project', query) || 1,
+            news: select('core').getEntityRecords('postType', 'news_event', query),
+            totalPages: select('core').getEntityRecordsTotalPages('postType', 'news_event', query) || 1,
           };
         },
-        [countOfProjects]
+        [countOfNews]
       );
 
       const inspector = el(
@@ -34,21 +34,21 @@
           PanelBody,
           { title: __('Block Settings', 'uuwg'), initialOpen: true },
           el(TextControl, {
-            label: __('Кількість проєктів', 'uuwg'),
+            label: __('Count of News', 'uuwg'),
             type: 'number',
-            value: countOfProjects,
+            value: countOfNews,
             min: 1,
             max: 12,
-            onChange: (v) => setAttributes({ countOfProjects: parseInt(v, 10) || 1 }),
+            onChange: (v) => setAttributes({ countOfNews: parseInt(v, 10) || 1 }),
           }),
           // ДОДАНО: Перемикач пагінації
           el(ToggleControl, {
-            label: __('Показувати пагінацію', 'uuwg'),
+            label: __('Show pagination', 'uuwg'),
             checked: showPagination,
             onChange: (v) => setAttributes({ showPagination: v }),
           }),
           el(TextControl, {
-            label: __('URL кнопки', 'uuwg'),
+            label: __('Button URL', 'uuwg'),
             value: buttonUrl,
             onChange: (v) => setAttributes({ buttonUrl: v }),
           })
@@ -56,26 +56,25 @@
       );
 
       // Формування сітки проєктів (залишається без змін)
-      let projectsGrid;
-      if (projects === null) {
-        projectsGrid = el('div', { className: 'uuwg-our-projects__loading' }, el(Spinner), ' ', __('Завантаження...', 'uuwg'));
-      } else if (projects.length === 0) {
-        projectsGrid = el('p', { className: 'uuwg-our-projects__empty' }, __('Не знайдено.', 'uuwg'));
+      let newsGrid;
+      if (!news) {
+        newsGrid = el('div', { className: 'uuwg-news-events__loading' }, el(Spinner), ' ', __('Loading...', 'uuwg'));
+      } else if (news.length === 0) {
+        newsGrid = el('p', { className: 'uuwg-news-events__empty' }, __('Not found.', 'uuwg'));
       } else {
-        projectsGrid = projects.map(function (project) {
-          const media = project._embedded && project._embedded['wp:featuredmedia'] && project._embedded['wp:featuredmedia'][0];
+        newsGrid = news.map(function (item) {
+          const media = item._embedded && item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0];
           const imageUrl = media ? (media.media_details?.sizes?.medium?.source_url || media.source_url) : null;
           return el(
-            'div', { className: 'uuwg-our-projects__card', key: project.id },
-            imageUrl && el('img', { src: imageUrl, alt: project.title.rendered, className: 'uuwg-our-projects__card-img' }),
-            el('div', { className: 'uuwg-our-projects__card__content' },
-              el('h3', { className: 'uuwg-our-projects__card__title', dangerouslySetInnerHTML: { __html: project.title.rendered } }),
-              el('span', { className: 'uwg-our-projects__card__button' }, __('Read more', 'uuwg'))
+            'div', { className: 'uuwg-news-events__card', key: item.id },
+            imageUrl && el('img', { src: imageUrl, alt: item.title.rendered, className: 'uuwg-news-events__card-img' }),
+            el('div', { className: 'uuwg-news-events__card__content' },
+              el('h3', { className: 'uuwg-news-events__card__title', dangerouslySetInnerHTML: { __html: item.title.rendered } }),
+              el('span', { className: 'uuwg-news-events__card__button' }, __('Read more', 'uuwg'))
             )
           );
         });
       }
-
       // ЗМІНЕНО: Додана перевірка на showPagination
       const paginationButtons = [];
       if (showPagination && totalPages > 1) {
@@ -84,27 +83,26 @@
             el('button', {
               key: i,
               type: 'button',
-              className: 'uuwg-pagination-btn' + (i === 1 ? ' is-active' : ''),
-              'aria-label': sprintf(__('Сторінка %d', 'uuwg'), i),
+              className: 'uuwg-pagination-news-btn' + (i === 1 ? ' is-active' : ''),
+              'aria-label': sprintf(__('Page %d', 'uuwg'), i),
               'data-page': i,
             }, i)
           );
         }
       }
-
       return el(
         'div',
         blockProps,
         inspector,
         el(
-          'div', { className: 'uuwg-our-projects__content' },
-          el('div', { className: 'uuwg-our-projects__header' },
-            el(RichText, { tagName: 'h2', className: 'uuwg-our-projects__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Заголовок...', 'uuwg') }),
-            el(RichText, { tagName: 'span', className: 'uuwg-our-projects__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Текст кнопки...', 'uuwg') })
+          'div', { className: 'uuwg-news-events__content' },
+          el('div', { className: 'uuwg-news-events__header' },
+            el(RichText, { tagName: 'h2', className: 'uuwg-news-events__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Heading...', 'uuwg') }),
+            el(RichText, { tagName: 'span', className: 'uuwg-news-events__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Button text...', 'uuwg') })
           ),
-          el('div', { className: 'uuwg-our-projects__grids js-projects-grid' }, projectsGrid),
-          // ЗМІНЕНО: Контейнер пагінації рендериться лише якщо вона увімкнена
-          showPagination && el('div', { className: 'uuwg-our-projects__pagination js-projects-pagination' }, paginationButtons)
+          // ВИПРАВЛЕНО: замінено projectsGrid на newsGrid
+          el('div', { className: 'uuwg-news-events__grids js-news-grid' }, newsGrid),
+          showPagination && el('div', { className: 'uuwg-news-events__pagination js-news-pagination' }, paginationButtons)
         )
       );
     },

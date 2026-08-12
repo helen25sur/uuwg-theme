@@ -35,6 +35,8 @@ require_once UUWG_THEME_DIR . '/inc/body-classes.php';
 
 require_once UUWG_THEME_DIR . '/inc/blocks.php'; // реєстрація кастомних блоків
 
+require_once get_template_directory() . '/inc/ajax-handlers.php';
+
 add_filter('wp_image_editors', function ($editors) {
 	return array('WP_Image_Editor_GD');
 }); // WordPress на простішу бібліотеку GD
