@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Server-side render for uuwg/our-projects block.
+ * Server-side render for uuwg/partners-collaborations block.
  *
  * @package UUWG
  */
@@ -10,78 +10,71 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-// Ensure $attributes is defined to avoid PHP notices when this template is rendered directly.
+// Ensure $attributes is defined to avoid PHP notices.
 $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array) ($attributes ?? []);
-$count = $attributes['countOfProjects'] ?? 3;
 
-$query = new WP_Query([
-  'post_type'      => 'project',
-  'posts_per_page' => $count,
-  'paged'          => 1,
-]);
+$query = new WP_Query(array(
+  'post_type'      => 'partner',
+  'posts_per_page' => -1,
+));
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-our-projects']); ?>
-  data-count="<?php echo esc_attr($count); ?>" data-ajax-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-  <div class="uuwg-our-projects__content">
-    <div class="uuwg-our-projects__header">
-      <h2 class="uuwg-our-projects__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
-      <a class="uuwg-our-projects__cta" href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
-        <?php echo esc_html($attributes['buttonText']); ?>
-      </a>
+<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-partners-collaborations']); ?>>
+  <div class="uuwg-partners-collaborations__content">
+
+    <div class="uuwg-partners-collaborations__header">
+      <?php if (! empty($attributes['heading'])) : ?>
+      <h2 class="uuwg-partners-collaborations__heading"><?php echo esc_html($attributes['heading']); ?></h2>
+      <?php endif; ?>
+
+      <?php if (! empty($attributes['headerText'])) : ?>
+      <p class="uuwg-partners-collaborations__header-text"><?php echo esc_html($attributes['headerText']); ?></p>
+      <?php endif; ?>
     </div>
-    <div class="uuwg-our-projects__grids js-projects-grid">
+
+    <div class="uuwg-partners-collaborations__row">
       <?php
-
-      $query = new WP_Query(array(
-        'post_type'      => 'project',
-        'posts_per_page' => $attributes['countOfProjects'],
-      ));
-
       if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post();
-          $ID = get_the_ID();
+        // Запускаємо цикл двічі для безперервної анімації
+        for ($i = 0; $i < 2; $i++) :
+          while ($query->have_posts()) : $query->the_post();
+            $ID = get_the_ID();
+            $partner_url = function_exists('get_field') ? get_field('partner_url', $ID) : '';
+            ?>
 
-      ?>
-      <div class="uuwg-our-projects__card">
-        <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)) ?>">
-          <?php
-              $thumbnail = get_the_post_thumbnail();
-              if ($thumbnail) {
-                echo $thumbnail;
-              }
-              ?>
-          <div class="uuwg-our-projects__card__content">
-            <h3 class="uuwg-our-projects__card__title"> <?php echo esc_html(get_the_title()) ?> </h3>
-
-            <?php
-                $short_description = '';
-                if (function_exists('get_field')) {
-                  $short_description = get_field('project_short_description', $ID);
-                }
-                ?>
-
-            <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
-            <span class="uwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
+      <div class="uuwg-partners-collaborations__card">
+        <?php if ($partner_url) : ?>
+        <a href="<?php echo esc_url($partner_url); ?>" target="_blank" rel="noopener noreferrer">
+          <div class="uuwg-partners-collaborations__logo">
+            <?php the_post_thumbnail('medium'); ?>
           </div>
         </a>
+        <?php else : ?>
+        <div class="uuwg-partners-collaborations__logo">
+          <?php the_post_thumbnail('medium'); ?>
+        </div>
+        <?php endif; ?>
       </div>
-      <?php endwhile;
-        ?>
-    </div>
-    <!-- Контейнер для пагінації -->
-    <?php if (isset($attributes['showPagination']) && $attributes['showPagination'] && $query->max_num_pages > 1) : ?>
-    <div class="uuwg-our-projects__pagination js-projects-pagination">
-      <?php for ($i = 1; $i <= $query->max_num_pages; $i++) : ?>
-      <button class="uuwg-pagination-btn <?php echo $i === 1 ? 'is-active' : ''; ?>" data-page="<?php echo $i; ?>">
-        <?php echo $i; ?>
-      </button>
-      <?php endfor; ?>
-    </div>
-    <?php endif; ?>
-  </div>
-  </div>
-</section>
-<?php
+
+      <?php
+          endwhile;
+
+          // Скидаємо внутрішній покажчик запиту на початок для другого прогону
+          $query->rewind_posts();
+        endfor;
+
+        // Обов'язково скидаємо глобальний $post
         wp_reset_postdata();
       endif;
+      ?>
+    </div>
+
+    <?php if (! empty($attributes['buttonText'])) : ?>
+    <a href="<?php echo esc_url($attributes['buttonUrl'] ?? '#'); ?>"
+      class="uuwg-partners-collaborations__cta uuwg-btn">
+      <?php echo esc_html($attributes['buttonText']); ?>
+    </a>
+    <?php endif; ?>
+
+  </div>
+</section>

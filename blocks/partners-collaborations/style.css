@@ -1,30 +1,38 @@
-.uuwg-our-projects {
+.uuwg-partners-collaborations {
   width: 100%;
   padding: 78px 0 103px 0;
   color: var(--wp--preset--color--primary);
 }
 
-.uuwg-our-projects__content {
-  width: var(--wp--style--global--content-size);
+.uuwg-partners-collaborations__content {
+  width: var(--wp--style--global--content-wide);
   margin: 0 auto;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 50px;
 }
 
-.uuwg-our-projects__header {
+.uuwg-partners-collaborations__header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
-  margin-bottom: 80px;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.uuwg-our-projects__heading {
+.uuwg-partners-collaborations__heading {
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--heading-xl);
   margin: 0;
+  margin-bottom: 24px;
 }
 
-.uuwg-our-projects__cta {
+.uuwg-partners-collaborations__cta {
   display: inline-block;
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
@@ -35,44 +43,44 @@
   text-decoration: none;
 }
 
-.uuwg-our-projects__grids {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: stretch;
+.uuwg-partners-collaborations__row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
 }
 
-.uuwg-our-projects__card {
+.uuwg-partners-collaborations__card {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  min-height: 530px;
   line-height: 115%;
+  width: 196px;
   border-radius: var(--wp--custom--border-radius--card);
   background-color: var(--wp--preset--color--white);
   overflow: hidden;
 }
 
-.uuwg-our-projects__card .uuwg-our-project__permalink {
+.uuwg-partners-collaborations__card .uuwg-our-project__permalink {
   display: flex;
   flex-direction: column;
   text-decoration: none;
 }
 
-.uuwg-our-projects__card .uuwg-our-projects__card__title {
+.uuwg-partners-collaborations__card .uuwg-partners-collaborations__card__title {
   font-size: var(--wp--preset--font-size--body-lg);
   padding: 0;
   margin: 0;
 }
 
-.uuwg-our-projects__card__short-description {
+.uuwg-partners-collaborations__card__short-description {
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--small);
   font-weight: 600;
   line-height: 115%;
 }
 
-.uuwg-our-projects__card img {
+.uuwg-partners-collaborations__card img {
   flex: 313px;
   flex-shrink: 0;
   width: 100%;
@@ -80,13 +88,13 @@
   object-fit: cover;
 }
 
-.uuwg-our-projects__card__content {
+.uuwg-partners-collaborations__card__content {
   display: flex;
   flex-direction: column;
   padding: 24px;
 }
 
-.uwg-our-projects__card__button {
+.uwg-partners-collaborations__card__button {
   display: inline-block;
   margin-left: auto;
   background-color: var(--wp--preset--color--background);
@@ -99,7 +107,7 @@
 }
 
 /* Контейнер пагінації */
-.uuwg-our-projects__pagination {
+.uuwg-partners-collaborations__pagination {
   display: flex;
   align-items: center;
   justify-content: center;

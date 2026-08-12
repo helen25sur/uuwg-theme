@@ -8,13 +8,13 @@
   const { useSelect } = data;
   const el = element.createElement;
 
-  registerBlockType('uuwg/our-projects', {
+  registerBlockType('uuwg/partners-collaborations', {
     edit: function (props) {
       const { attributes, setAttributes } = props;
       // ДОДАНО: showPagination
       const { heading, buttonText, buttonUrl, countOfProjects, showPagination } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-our-projects' });
+      const blockProps = useBlockProps({ className: 'uuwg-partners-collaborations' });
 
       const { projects, totalPages } = useSelect(
         function (select) {
@@ -34,43 +34,32 @@
           PanelBody,
           { title: __('Налаштування блоку', 'uuwg'), initialOpen: true },
           el(TextControl, {
-            label: __('Кількість проєктів', 'uuwg'),
+            label: __('Кількість партнерів', 'uuwg'),
             type: 'number',
             value: countOfProjects,
             min: 1,
             max: 12,
             onChange: (v) => setAttributes({ countOfProjects: parseInt(v, 10) || 1 }),
           }),
-          // ДОДАНО: Перемикач пагінації
-          el(ToggleControl, {
-            label: __('Показувати пагінацію', 'uuwg'),
-            checked: showPagination,
-            onChange: (v) => setAttributes({ showPagination: v }),
-          }),
-          el(TextControl, {
-            label: __('URL кнопки', 'uuwg'),
-            value: buttonUrl,
-            onChange: (v) => setAttributes({ buttonUrl: v }),
-          })
         )
       );
 
       // Формування сітки проєктів (залишається без змін)
       let projectsGrid;
       if (projects === null) {
-        projectsGrid = el('div', { className: 'uuwg-our-projects__loading' }, el(Spinner), ' ', __('Завантаження...', 'uuwg'));
+        projectsGrid = el('div', { className: 'uuwg-partners-collaborations__loading' }, el(Spinner), ' ', __('Завантаження...', 'uuwg'));
       } else if (projects.length === 0) {
-        projectsGrid = el('p', { className: 'uuwg-our-projects__empty' }, __('Не знайдено.', 'uuwg'));
+        projectsGrid = el('p', { className: 'uuwg-partners-collaborations__empty' }, __('Не знайдено.', 'uuwg'));
       } else {
         projectsGrid = projects.map(function (project) {
           const media = project._embedded && project._embedded['wp:featuredmedia'] && project._embedded['wp:featuredmedia'][0];
           const imageUrl = media ? (media.media_details?.sizes?.medium?.source_url || media.source_url) : null;
           return el(
-            'div', { className: 'uuwg-our-projects__card', key: project.id },
-            imageUrl && el('img', { src: imageUrl, alt: project.title.rendered, className: 'uuwg-our-projects__card-img' }),
-            el('div', { className: 'uuwg-our-projects__card__content' },
-              el('h3', { className: 'uuwg-our-projects__card__title', dangerouslySetInnerHTML: { __html: project.title.rendered } }),
-              el('span', { className: 'uwg-our-projects__card__button' }, __('Read more', 'uuwg'))
+            'div', { className: 'uuwg-partners-collaborations__card', key: project.id },
+            imageUrl && el('img', { src: imageUrl, alt: project.title.rendered, className: 'uuwg-partners-collaborations__card-img' }),
+            el('div', { className: 'uuwg-partners-collaborations__card__content' },
+              el('h3', { className: 'uuwg-partners-collaborations__card__title', dangerouslySetInnerHTML: { __html: project.title.rendered } }),
+              el('span', { className: 'uwg-partners-collaborations__card__button' }, __('Read more', 'uuwg'))
             )
           );
         });
@@ -97,14 +86,14 @@
         blockProps,
         inspector,
         el(
-          'div', { className: 'uuwg-our-projects__content' },
-          el('div', { className: 'uuwg-our-projects__header' },
-            el(RichText, { tagName: 'h2', className: 'uuwg-our-projects__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Заголовок...', 'uuwg') }),
-            el(RichText, { tagName: 'span', className: 'uuwg-our-projects__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Текст кнопки...', 'uuwg') })
+          'div', { className: 'uuwg-partners-collaborations__content' },
+          el('div', { className: 'uuwg-partners-collaborations__header' },
+            el(RichText, { tagName: 'h2', className: 'uuwg-partners-collaborations__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Заголовок...', 'uuwg') }),
+            el(RichText, { tagName: 'span', className: 'uuwg-partners-collaborations__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Текст кнопки...', 'uuwg') })
           ),
-          el('div', { className: 'uuwg-our-projects__grids js-projects-grid' }, projectsGrid),
+          el('div', { className: 'uuwg-partners-collaborations__grids js-projects-grid' }, projectsGrid),
           // ЗМІНЕНО: Контейнер пагінації рендериться лише якщо вона увімкнена
-          showPagination && el('div', { className: 'uuwg-our-projects__pagination js-projects-pagination' }, paginationButtons)
+          showPagination && el('div', { className: 'uuwg-partners-collaborations__pagination js-projects-pagination' }, paginationButtons)
         )
       );
     },
