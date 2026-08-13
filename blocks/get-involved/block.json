@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/get-involved",
+  "title": "UUWG: Get Involved",
+  "category": "uuwg-blocks",
+  "attributes": {
+    "heading": { "type": "string", "default": "Get Involved" },
+    "item1Title": { "type": "string", "default": "Volunteer With Us" },
+    "item1Text": {
+      "type": "string",
+      "default": "Volunteers are essential to our work. Whether you have professional expertise, creative skills, or time to offer, there is a place for you at UUWG."
+    },
+    "item1ButtonText": {
+      "type": "string",
+      "default": "Become a volunteer"
+    },
+    "item1ButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "item2Title": { "type": "string", "default": "Partner or Fundraise" },
+    "item2Text": {
+      "type": "string",
+      "default": "Organizations, companies, and groups can support UUWG through partnerships, sponsorships, and joint initiatives — or by launching their own fundraising campaigns in support of our mission."
+    },
+    "item2ButtonText": {
+      "type": "string",
+      "default": "Collaborate"
+    },
+    "item2ButtonUrl": {
+      "type": "string",
+      "default": "#"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

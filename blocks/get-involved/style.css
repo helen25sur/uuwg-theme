@@ -1,0 +1,75 @@
+.uuwg-get-involved {
+  width: 100%;
+  padding: 78px 0 103px 0;
+  background-color: var(--wp--preset--color--primary);
+  border-radius: 32px;
+  background-image: url('../../assets/images/decorative/pattern-right.svg'), url('../../assets/images/decorative/pattern-left.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right bottom, left bottom;
+  background-size: auto, auto;
+}
+
+.uuwg-get-involved__content {
+  width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.uuwg-get-involved__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  color: var(--wp--preset--color--background);
+  margin: 0;
+  min-width: 279px;
+}
+
+.uuwg-get-involved__card__cta {
+  display: inline-block;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  font-size: 22px;
+  font-weight: 600;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button);
+  text-decoration: none;
+  text-align: center;
+  margin-top: auto;
+}
+
+.uuwg-get-involved__grids {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-left: auto;
+}
+
+.uuwg-get-involved__card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  max-width: 413.5px;
+  min-height: 325px;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+
+  line-height: 115%;
+  border-radius: var(--wp--custom--border-radius--card);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.uuwg-get-involved__card .uuwg-get-involved__card__title {
+  font-size: var(--wp--preset--font-size--heading-md);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.uuwg-get-involved__card__text {
+  font-size: var(--wp--preset--font-size--small);
+  padding: 0;
+  margin: 0;
+  line-height: 115%;
+  font-weight: 600;
+}

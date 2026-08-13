@@ -60,7 +60,8 @@ function uuwg_register_blocks()
 		'donate-fundraise',
 		'our-projects',
 		'partners-collaborations',
-		'news-events'
+		'news-events',
+		'get-involved'
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();
