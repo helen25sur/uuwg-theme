@@ -13,25 +13,17 @@
 
       const blockProps = useBlockProps({ className: 'uuwg-impact-glance' });
 
-      const itemPanels = [1, 2, 3, 4].map(function (n) {
-        const titleKey = `item${n}Title`;
-
-        return el(
-          PanelBody,
-          { title: `Картка ${n}`, initialOpen: n === 1, key: n },
-          el(TextControl, {
-            label: 'Заголовок',
-            value: attributes[titleKey],
-            onChange: (v) => setAttributes({ [titleKey]: v }),
-          })
-        );
-      });
-
       return el(
         'div',
         blockProps,
 
-        el(InspectorControls, {}, ...itemPanels),
+        el(InspectorControls, {},
+          el(TextControl, {
+            label: 'URL кнопки',
+            value: buttonUrl,
+            onChange: (v) => setAttributes({ buttonUrl: v }),
+          })
+        ),
 
         el(
           'div',
@@ -70,8 +62,22 @@
                 className: 'uuwg-impact-glance__card',
                 key: n,
               },
-              el('h3', { className: 'uuwg-impact-glance__card__title' }, attributes[`item${n}Title`]),
-              el('p', { className: 'uuwg-impact-glance__card__text' }, attributes[`item${n}Text`]),
+              el(RichText, {
+                tagName: 'h3',
+                className: 'uuwg-impact-glance__card__title',
+                value: attributes[`item${n}Title`],
+                onChange: (v) => setAttributes({ [`item${n}Title`]: v }),
+                placeholder: `Заголовок ${n}...`,
+                allowedFormats: [],
+              }),
+              el(RichText, {
+                tagName: 'p',
+                className: 'uuwg-impact-glance__card__text',
+                value: attributes[`item${n}Text`],
+                onChange: (v) => setAttributes({ [`item${n}Text`]: v }),
+                placeholder: `Опис картки ${n}...`,
+                allowedFormats: [],
+              })
             );
           })
         )

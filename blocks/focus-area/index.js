@@ -63,31 +63,36 @@
             return el(
               'div',
               {
-                className: 'uuwg-focus-area__card',
-                key: n,
+                className: 'uuwg-focus-area__two-cards'
               },
-              el('span', { className: 'uuwg-focus-area__card__number' }, `${n}/`),
+              el(
+                'div',
+                {
+                  className: 'uuwg-focus-area__card',
+                  key: n,
+                },
+                el('span', { className: 'uuwg-focus-area__card__number' }, `${n}/`),
 
-              // Заголовок картки
-              el(RichText, {
-                tagName: 'h3',
-                className: 'uuwg-focus-area__card__title',
-                value: attributes[titleKey],
-                onChange: (v) => setAttributes({ [titleKey]: v }),
-                placeholder: `Заголовок ${n}...`,
-                allowedFormats: [],
-              }),
+                // Заголовок картки
+                el(RichText, {
+                  tagName: 'h3',
+                  className: 'uuwg-focus-area__card__title',
+                  value: attributes[titleKey],
+                  onChange: (v) => setAttributes({ [titleKey]: v }),
+                  placeholder: `Заголовок ${n}...`,
+                  allowedFormats: [],
+                }),
 
-              // Опис картки
-              el(RichText, {
-                tagName: 'div',
-                className: 'uuwg-focus-area__card__text',
-                value: attributes[textKey],
-                onChange: (v) => setAttributes({ [textKey]: v }),
-                placeholder: `Опис картки ${n}...`,
-                allowedFormats: ['core/bold', 'core/italic'],
-              })
-            );
+                // Опис картки
+                el(RichText, {
+                  tagName: 'div',
+                  className: 'uuwg-focus-area__card__text',
+                  value: attributes[textKey],
+                  onChange: (v) => setAttributes({ [textKey]: v }),
+                  placeholder: `Опис картки ${n}...`,
+                  allowedFormats: ['core/bold', 'core/italic'],
+                })
+              ))
           })
         )
       );
