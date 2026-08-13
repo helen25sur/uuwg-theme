@@ -12,7 +12,7 @@
     edit: function (props) {
       const { attributes, setAttributes } = props;
       // ДОДАНО: showPagination
-      const { heading, buttonText, buttonUrl, countOfProjects, showPagination } = attributes;
+      const { heading, buttonText, buttonUrl, countOfProjects, showPagination, showHeaderButton } = attributes;
 
       const blockProps = useBlockProps({ className: 'uuwg-our-projects' });
 
@@ -47,8 +47,15 @@
             checked: showPagination,
             onChange: (v) => setAttributes({ showPagination: v }),
           }),
-          el(TextControl, {
-            label: __('URL кнопки', 'uuwg'),
+          // ТОГЛЕР КНОПКИ
+          el(ToggleControl, {
+            label: __('Show header button', 'uuwg'),
+            checked: showHeaderButton,
+            onChange: (v) => setAttributes({ showHeaderButton: v }),
+          }),
+          // ПІДКАЗКА: Ховаємо Button URL, якщо кнопка вимкнена
+          showHeaderButton && el(TextControl, {
+            label: __('Button URL', 'uuwg'),
             value: buttonUrl,
             onChange: (v) => setAttributes({ buttonUrl: v }),
           })
@@ -100,7 +107,7 @@
           'div', { className: 'uuwg-our-projects__content' },
           el('div', { className: 'uuwg-our-projects__header' },
             el(RichText, { tagName: 'h2', className: 'uuwg-our-projects__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Заголовок...', 'uuwg') }),
-            el(RichText, { tagName: 'span', className: 'uuwg-our-projects__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Текст кнопки...', 'uuwg') })
+            showHeaderButton && el(RichText, { tagName: 'span', className: 'uuwg-our-projects__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Текст кнопки...', 'uuwg') })
           ),
           el('div', { className: 'uuwg-our-projects__grids js-projects-grid' }, projectsGrid),
           // ЗМІНЕНО: Контейнер пагінації рендериться лише якщо вона увімкнена
