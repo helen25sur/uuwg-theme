@@ -9,7 +9,7 @@
 
     edit: function (props) {
       const { attributes, setAttributes } = props;
-      const { heading, buttonText, buttonUrl } = attributes;
+      const { heading, buttonText, buttonUrl, headerText } = attributes;
 
       const blockProps = useBlockProps({ className: 'uuwg-donate-fundraise alignfull' });
 
@@ -31,7 +31,17 @@
         'div',
         blockProps,
 
-        el(InspectorControls, {}, ...itemPanels),
+        el(InspectorControls, {},
+          el(
+            PanelBody,
+            { title: 'Налаштування блоку', initialOpen: true },
+            el(TextControl, {
+              label: 'URL для кнопки',
+              value: buttonUrl,
+              onChange: (v) => setAttributes({ buttonUrl: v }),
+            })
+          )
+        ),
 
         el(
           'div',
@@ -43,7 +53,12 @@
             onChange: (v) => setAttributes({ heading: v }),
             allowedFormats: [],
           }),
-          el('div', { className: 'uuwg-donate-fundraise__header__text' }, attributes[`headerText`])
+          el(RichText, {
+            tagName: 'div',
+            className: 'uuwg-donate-fundraise__header__text',
+            value: headerText,
+            onChange: (v) => setAttributes({ headerText: v }),
+          })
         ),
 
         el(
@@ -57,7 +72,14 @@
                 className: 'uuwg-donate-fundraise__card',
                 key: n,
               },
-              el('p', { className: 'uuwg-donate-fundraise__card__text' }, attributes[`item${n}Text`])
+              el(
+                RichText, {
+                tagName: 'p',
+                className: 'uuwg-donate-fundraise__card__text',
+                value: attributes[`item${n}Text`],
+                onChange: (v) => setAttributes({ [`item${n}Text`]: v }),
+              }
+              )
             );
           })
         ),
