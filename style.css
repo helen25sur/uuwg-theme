@@ -107,3 +107,144 @@ main.wp-block-group {
   right: 30px;
   top: 16px;
 }
+
+/* ========================= Contact Us ============================== */
+/*
+.uuwg-contact-section {
+  max-width: var(--wp--style--global--content-size);
+  margin: 140px auto;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 22px;
+}
+
+.uuwg-contact-section__form {
+  width: 100%;
+  margin: 0;
+  padding: 40px;
+  background-color: var(--wp--preset--color--white);
+  border-radius: var(--wp--custom--border-radius--card, 16px);
+}
+
+.uuwg-contact-section__form_header {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.uuwg-contact-section__form_header h3 {
+  max-width: 203px;
+  font-size: var(--wp--preset--font-size--heading-sm);
+  font-weight: 700;
+  line-height: 115%;
+}
+
+.uuwg-contact-section__form_header p {
+  padding: 0;
+  margin: 0;
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+#fluentform_1 {
+  margin: 0;
+  padding: 0;
+}
+
+#fluentform_1 label {
+  font-size: var(--wp--preset--font-size--small);
+  color: var(--wp--preset--color--blue-500);
+  line-height: 115%;
+  font-weight: 600;
+}
+
+#fluentform_1 input,
+#fluentform_1 textarea {
+  font-size: var(--wp--preset--font-size--text-medium);
+  color: var(--wp--preset--color--primary);
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--wp--preset--color--background);
+}
+
+#fluentform_1 input::placeholder,
+#fluentform_1 textarea::placeholder {
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+  color: #899EAC;
+}
+
+#fluentform_1 p {
+  margin: 0;
+  padding: 0;
+}
+
+#fluentform_1 fieldset {
+  display: grid;
+  column-gap: 32px;
+  grid-template-areas:
+    'legend legend'
+    'hidden hidden'
+    'name email'
+    'message message'
+    'button button';
+}
+
+#fluentform_1 .ff_screen_reader_title {
+  margin: 0;
+  padding: 0;
+  grid-area: legend;
+}
+
+#fluentform_1 p:has(input[hidden]) {
+  margin: 0;
+  padding: 0;
+  grid-area: hidden;
+}
+
+#fluentform_1 .ff-name-field-wrapper {
+  margin: 0;
+  padding: 0;
+  grid-area: name;
+}
+
+#fluentform_1 .ff-el-form-top {
+  margin: 0;
+  padding: 0;
+  grid-area: email;
+}
+
+#fluentform_1 .ff-el-group:has(textarea) {
+  margin: 0;
+  padding: 0;
+  margin-top: 32px;
+  grid-area: message;
+}
+
+#fluentform_1 .ff_submit_btn_wrapper {
+  margin: 0;
+  padding: 0;
+  margin-top: 32px;
+  grid-area: button;
+  display: flex;
+}
+
+#fluentform_1 .ff_submit_btn_wrapper button[type="submit"] {
+  display: block;
+  padding: 14.5px;
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  border: none;
+  border-radius: var(--wp--custom--border-radius--button, 999px);
+  font-family: var(--wp--preset--font-family--body-lg);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  align-self: stretch;
+  flex-grow: 1;
+}
+  */

@@ -1,18 +1,38 @@
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"}} -->
-<section class="wp-block-group">
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"}, "className": "uuwg-contact-section"} -->
+<section class="wp-block-group uuwg-contact-section">
+	<!-- wp:group {"className": "uuwg-contact-section__header"} -->
+	<div class="wp-block-group uuwg-contact-section__header">
+		<!-- wp:heading -->
+		<h2>Contact us</h2>
+		<!-- /wp:heading -->
 
-	<!-- wp:heading -->
-	<h2>Contact us</h2>
-	<!-- /wp:heading -->
+		<!-- wp:paragraph -->
+		<p>Whether you are seeking support, interested in volunteering, or exploring partnership opportunities — please get
+			in
+			touch. We respond to every message.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
 
-	<!-- wp:paragraph -->
-	<p>Whether you are seeking support, interested in volunteering, or exploring partnership opportunities — please get in touch. We respond to every message.</p>
-	<!-- /wp:paragraph -->
+	<!-- wp:group {"className": "uuwg-contact-section__form"} -->
+	<div class="wp-block-group uuwg-contact-section__form">
 
-	<!-- Fluent Forms — замінити REPLACE_WITH_FORM_ID на реальний ID форми з Contact us -->
-	<!-- wp:shortcode -->
-	[fluentform id="REPLACE_WITH_FORM_ID"]
-	<!-- /wp:shortcode -->
+		<!-- wp:group {"className": "uuwg-contact-section__form"} -->
+		<div class="wp-block-group uuwg-contact-section__form_header">
+			<!-- wp:heading -->
+			<h3>Contact us using the form below:</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Response: 1-3 business day</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:shortcode -->
+		[fluentform id="1"]
+		<!-- /wp:shortcode -->
+	</div>
+	<!-- /wp:group -->
 
 </section>
 <!-- /wp:group -->
