@@ -109,7 +109,29 @@ main.wp-block-group {
 }
 
 /* ========================= Contact Us ============================== */
-/*
+
+.uuwg-contact-section__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-social-links {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.wp-block-social-links .wp-block-social-link-anchor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  border-radius: 50%;
+}
+
 .uuwg-contact-section {
   max-width: var(--wp--style--global--content-size);
   margin: 140px auto;
@@ -132,7 +154,7 @@ main.wp-block-group {
 
 }
 
-.uuwg-contact-section__form_header h3 {
+.uuwg-contact-section__form_header h3.wp-block-heading {
   max-width: 203px;
   font-size: var(--wp--preset--font-size--heading-sm);
   font-weight: 700;
@@ -247,4 +269,3 @@ main.wp-block-group {
   align-self: stretch;
   flex-grow: 1;
 }
-  */
