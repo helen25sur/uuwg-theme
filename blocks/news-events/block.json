@@ -21,6 +21,10 @@
     "showPagination": {
       "type": "boolean",
       "default": true
+    },
+    "showHeaderButton": {
+      "type": "boolean",
+      "default": true
     }
   },
   "supports": {

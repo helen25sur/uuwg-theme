@@ -17,6 +17,7 @@ $button_text = $attributes['buttonText'] ?? 'View more';
 $small_button_text = $attributes['smallButtonText'] ?? 'Read more';
 $heading = $attributes['heading'] ?? '';
 $show_pagination = $attributes['showPagination'] ?? true;
+$show_header_button = isset($attributes['showHeaderButton']) ? (bool) $attributes['showHeaderButton'] : true;
 
 $query = new WP_Query([
   'post_type'      => 'news_event',
@@ -34,9 +35,11 @@ $query = new WP_Query([
         <h2 class="uuwg-news-events__heading"><?php echo esc_html($heading); ?></h2>
       <?php endif; ?>
 
-      <a class="uuwg-news-events__cta uuwg-btn" href="<?php echo esc_url($button_url); ?>">
-        <?php echo esc_html($button_text); ?>
-      </a>
+      <?php if ($show_header_button && ! empty($button_text)) : ?>
+        <a href="<?php echo esc_url($button_url ?: '#'); ?>" class="uuwg-news-events__cta uuwg-btn">
+          <?php echo esc_html($button_text); ?>
+        </a>
+      <?php endif; ?>
     </div>
 
     <div class="uuwg-news-events__grids js-news-grid">

@@ -2,7 +2,6 @@
 
   const { registerBlockType } = blocks;
   const { useBlockProps, InspectorControls, RichText } = blockEditor;
-  // ДОДАНО: ToggleControl
   const { PanelBody, TextControl, ToggleControl, Spinner } = components;
   const { __, sprintf } = i18n;
   const { useSelect } = data;
@@ -11,8 +10,7 @@
   registerBlockType('uuwg/news-events', {
     edit: function (props) {
       const { attributes, setAttributes } = props;
-      // ДОДАНО: showPagination
-      const { heading, buttonText, buttonUrl, countOfNews, showPagination, shortDescription } = attributes;
+      const { heading, buttonText, buttonUrl, countOfNews, showPagination, showHeaderButton } = attributes;
 
       const blockProps = useBlockProps({ className: 'uuwg-news-events' });
 
@@ -41,18 +39,19 @@
             max: 12,
             onChange: (v) => setAttributes({ countOfNews: parseInt(v, 10) || 1 }),
           }),
-          el(TextControl, {
-            label: __('Short Description', 'uuwg'),
-            value: attributes.shortDescription,
-            onChange: (v) => setAttributes({ shortDescription: v }),
-          }),
-          // ДОДАНО: Перемикач пагінації
           el(ToggleControl, {
             label: __('Show pagination', 'uuwg'),
             checked: showPagination,
             onChange: (v) => setAttributes({ showPagination: v }),
           }),
-          el(TextControl, {
+          // ТОГЛЕР КНОПКИ
+          el(ToggleControl, {
+            label: __('Show header button', 'uuwg'),
+            checked: showHeaderButton,
+            onChange: (v) => setAttributes({ showHeaderButton: v }),
+          }),
+          // ПІДКАЗКА: Ховаємо Button URL, якщо кнопка вимкнена
+          showHeaderButton && el(TextControl, {
             label: __('Button URL', 'uuwg'),
             value: buttonUrl,
             onChange: (v) => setAttributes({ buttonUrl: v }),
@@ -60,7 +59,6 @@
         )
       );
 
-      // Формування сітки проєктів (залишається без змін)
       let newsGrid;
       if (!news) {
         newsGrid = el('div', { className: 'uuwg-news-events__loading' }, el(Spinner), ' ', __('Loading...', 'uuwg'));
@@ -80,7 +78,7 @@
           );
         });
       }
-      // ЗМІНЕНО: Додана перевірка на showPagination
+
       const paginationButtons = [];
       if (showPagination && totalPages > 1) {
         for (let i = 1; i <= totalPages; i++) {
@@ -102,10 +100,22 @@
         el(
           'div', { className: 'uuwg-news-events__content' },
           el('div', { className: 'uuwg-news-events__header' },
-            el(RichText, { tagName: 'h2', className: 'uuwg-news-events__heading', value: heading, onChange: (v) => setAttributes({ heading: v }), placeholder: __('Heading...', 'uuwg') }),
-            el(RichText, { tagName: 'span', className: 'uuwg-news-events__cta uuwg-btn', value: buttonText, onChange: (v) => setAttributes({ buttonText: v }), placeholder: __('Button text...', 'uuwg') })
+            el(RichText, {
+              tagName: 'h2',
+              className: 'uuwg-news-events__heading',
+              value: heading,
+              onChange: (v) => setAttributes({ heading: v }),
+              placeholder: __('Heading...', 'uuwg')
+            }),
+            // ЗМІНЕНО: кнопка відображається тільки якщо showHeaderButton === true
+            showHeaderButton && el(RichText, {
+              tagName: 'span',
+              className: 'uuwg-news-events__cta uuwg-btn',
+              value: buttonText,
+              onChange: (v) => setAttributes({ buttonText: v }),
+              placeholder: __('Button text...', 'uuwg')
+            })
           ),
-          // ВИПРАВЛЕНО: замінено projectsGrid на newsGrid
           el('div', { className: 'uuwg-news-events__grids js-news-grid' }, newsGrid),
           showPagination && el('div', { className: 'uuwg-news-events__pagination js-news-pagination' }, paginationButtons)
         )
