@@ -9,9 +9,25 @@
     "buttonText": { "type": "string", "default": "Get Help" },
     "buttonUrl": { "type": "string", "default": "#" },
     "item1Title": { "type": "string", "default": "Migration & Integration" },
+    "item1Text": {
+      "type": "string",
+      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+    },
     "item2Title": { "type": "string", "default": "Gender Violence Prevention" },
+    "item2Text": {
+      "type": "string",
+      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+    },
     "item3Title": { "type": "string", "default": "Economic Justice" },
-    "item4Title": { "type": "string", "default": "Culture & Community" }
+    "item3Text": {
+      "type": "string",
+      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+    },
+    "item4Title": { "type": "string", "default": "Culture & Community" },
+    "item4Text": {
+      "type": "string",
+      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+    }
   },
   "supports": {
     "html": false,

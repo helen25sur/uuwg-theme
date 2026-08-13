@@ -2,7 +2,7 @@
 
   const { registerBlockType } = blocks;
   const { useBlockProps, InspectorControls, RichText } = blockEditor;
-  const { PanelBody, TextareaControl, TextControl } = components;
+  const { PanelBody, TextControl } = components;
   const el = element.createElement;
 
   registerBlockType('uuwg/focus-area', {
@@ -13,26 +13,25 @@
 
       const blockProps = useBlockProps({ className: 'uuwg-focus-area alignfull' });
 
-      const itemPanels = [1, 2, 3, 4].map(function (n) {
-        const titleKey = `item${n}Title`;
-
-        return el(
-          PanelBody,
-          { title: `Картка ${n}`, initialOpen: n === 1, key: n },
-          el(TextControl, {
-            label: 'Заголовок',
-            value: attributes[titleKey],
-            onChange: (v) => setAttributes({ [titleKey]: v }),
-          })
-        );
-      });
-
       return el(
         'div',
         blockProps,
 
-        el(InspectorControls, {}, ...itemPanels),
+        el(
+          InspectorControls,
+          {},
+          el(
+            PanelBody,
+            { title: 'Налаштування блоку', initialOpen: true },
+            el(TextControl, {
+              label: 'URL для кнопки/картки',
+              value: buttonUrl,
+              onChange: (v) => setAttributes({ buttonUrl: v }),
+            })
+          )
+        ),
 
+        // Шапка блоку (Заголовок та Кнопка)
         el(
           'div',
           { className: 'uuwg-focus-area__header' },
@@ -41,6 +40,7 @@
             className: 'uuwg-focus-area__heading',
             value: heading,
             onChange: (v) => setAttributes({ heading: v }),
+            placeholder: 'Введіть заголовок...',
             allowedFormats: [],
           }),
           el(RichText, {
@@ -48,6 +48,7 @@
             className: 'uuwg-focus-area__cta',
             value: buttonText,
             onChange: (v) => setAttributes({ buttonText: v }),
+            placeholder: 'Текст кнопки...',
             allowedFormats: [],
           })
         ),
@@ -56,7 +57,9 @@
           'div',
           { className: 'uuwg-focus-area__grids' },
           [1, 2, 3, 4].map(function (n) {
-            const isActive = n === 1;
+            const titleKey = `item${n}Title`;
+            const textKey = `item${n}Text`;
+
             return el(
               'div',
               {
@@ -64,7 +67,26 @@
                 key: n,
               },
               el('span', { className: 'uuwg-focus-area__card__number' }, `${n}/`),
-              el('h3', { className: 'uuwg-focus-area__card__title' }, attributes[`item${n}Title`])
+
+              // Заголовок картки
+              el(RichText, {
+                tagName: 'h3',
+                className: 'uuwg-focus-area__card__title',
+                value: attributes[titleKey],
+                onChange: (v) => setAttributes({ [titleKey]: v }),
+                placeholder: `Заголовок ${n}...`,
+                allowedFormats: [],
+              }),
+
+              // Опис картки
+              el(RichText, {
+                tagName: 'div',
+                className: 'uuwg-focus-area__card__text',
+                value: attributes[textKey],
+                onChange: (v) => setAttributes({ [textKey]: v }),
+                placeholder: `Опис картки ${n}...`,
+                allowedFormats: ['core/bold', 'core/italic'],
+              })
             );
           })
         )

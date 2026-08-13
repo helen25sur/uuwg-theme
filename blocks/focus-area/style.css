@@ -44,6 +44,16 @@
   gap: 20px;
 }
 
+.uuwg-focus-area__two-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* 1. Ховаємо другу картку за межами контейнера */
+  overflow: hidden;
+  /* 2. Заокруглюємо кути батьківського контейнера, щоб overflow обрізав їх */
+  border-radius: var(--wp--custom--border-radius--card);
+}
+
 .uuwg-focus-area__card {
   display: flex;
   flex-direction: column;
@@ -55,6 +65,35 @@
 
   line-height: 115%;
   border-radius: var(--wp--custom--border-radius--card);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.uuwg-focus-area__card:nth-of-type(2) {
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
+  line-height: 120%;
+  font-weight: 600;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Початковий стан */
+  transform: translateY(100%);
+  opacity: 0;
+
+  /* 3. Плавна анімація в ОБОХ напрямках замість @keyframes */
+  transition: transform 550ms cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 500ms ease-in-out;
+}
+
+/* 4. ГОЛОВНЕ: Відслідковуємо :hover на БАТЬКІВСЬКОМУ обгортці */
+.uuwg-focus-area__two-card:hover .uuwg-focus-area__card:nth-of-type(2) {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .uuwg-focus-area__card .uuwg-focus-area__card__title {
