@@ -3,11 +3,6 @@
 /**
  * Custom Post Type: Projects.
  *
- * Project content is managed through:
- * - WordPress title
- * - Featured image
- * - ACF fields (short description, additional content)
- *
  * @package UUWG
  */
 
@@ -17,7 +12,6 @@ if (! defined('ABSPATH')) {
 
 function uuwg_register_cpt_projects()
 {
-
 	register_post_type(
 		'project',
 		array(
@@ -38,9 +32,9 @@ function uuwg_register_cpt_projects()
 			'public'             => true,
 			'show_ui'            => true,
 			'show_in_rest'       => true,
-			'has_archive'        => false,
+			'has_archive'        => true, // Дозволяє архів /projects/
 			'rewrite'            => array(
-				'slug' => 'project',
+				'slug' => 'projects',
 			),
 
 			'menu_icon'          => 'dashicons-portfolio',
@@ -60,7 +54,6 @@ function uuwg_register_cpt_projects()
 		)
 	);
 
-
 	register_taxonomy(
 		'project_category',
 		'project',
@@ -75,8 +68,7 @@ function uuwg_register_cpt_projects()
 			),
 
 			'public'             => true,
-			'show_in_rest'       => true, // обов'язково для Gutenberg
-
+			'show_in_rest'       => true,
 			'hierarchical'       => true,
 
 			'rewrite'            => array(
@@ -85,16 +77,14 @@ function uuwg_register_cpt_projects()
 		)
 	);
 }
-
 add_action('init', 'uuwg_register_cpt_projects');
 
-// inc/cpt-projects.php — примусово одна категорія на проєкт
+// Примусово одна категорія на проєкт
 function uuwg_force_single_project_category($post_id, $terms, $tt_ids, $taxonomy)
 {
 	if ('project_category' !== $taxonomy || count($terms) <= 1) {
 		return;
 	}
-	// Лишаємо тільки останній щойно доданий термін
 	$latest_term = end($terms);
 	wp_set_object_terms($post_id, $latest_term, $taxonomy);
 }
@@ -105,7 +95,6 @@ add_action('set_object_terms', 'uuwg_force_single_project_category', 10, 4);
  */
 function uuwg_add_project_category_column($columns)
 {
-	// Вставляємо нову колонку одразу після Title, а не в кінець списку
 	$new_columns = array();
 	foreach ($columns as $key => $label) {
 		$new_columns[$key] = $label;
@@ -148,7 +137,7 @@ function uuwg_render_project_category_column($column, $post_id)
 add_action('manage_project_posts_custom_column', 'uuwg_render_project_category_column', 10, 2);
 
 /**
- * Робить нову колонку сортовуваною (клік на заголовок "Category").
+ * Сортування колонки Категорія.
  */
 function uuwg_project_category_sortable_column($columns)
 {
@@ -167,11 +156,11 @@ function uuwg_register_project_acf_fields()
 	}
 
 	acf_add_local_field_group(array(
-		'key'    => 'group_project_short_description',
-		'title'  => __('Project card content', 'uuwg'),
-		'style'  => 'default',
+		'key'      => 'group_project_short_description',
+		'title'    => __('Project card content', 'uuwg'),
+		'style'    => 'default',
 		'position' => 'side',
-		'fields' => array(
+		'fields'   => array(
 			array(
 				'key'          => 'field_project_short_description',
 				'label'        => __('Short description', 'uuwg'),
