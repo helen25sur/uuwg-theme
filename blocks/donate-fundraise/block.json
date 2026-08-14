@@ -7,7 +7,10 @@
   "attributes": {
     "heading": { "type": "string", "default": "Donate & Fundraise" },
     "buttonText": { "type": "string", "default": "Donate" },
-    "buttonUrl": { "type": "string", "default": "#" },
+    "buttonUrl": {
+      "type": "string",
+      "default": "https://whydonate.com/donate/support-ukrainian-women-in-greece-create-a-space-of-empowerment-and-hope?utm_source=ig\u0026utm_medium=social\u0026utm_content=link_in_bio\u0026fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnHwF0GLrPeExsW0piuib2u1lJM14juo7eefAoKE5shPGNn4PU63UPQTkMh-0_aem_SEm1uF3R-24Y38r-yTwNiw"
+    },
     "headerText": {
       "type": "string",
       "default": "<p>Every contribution — big or small — helps us respond quickly to urgent needs and invest in long-term empowerment.</p> <p>What your donation supports:</p>"

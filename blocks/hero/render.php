@@ -38,7 +38,8 @@ $wrapper_attributes = get_block_wrapper_attributes(
       <h1 class="uuwg-hero__title"><?php echo wp_kses_post($title); ?></h1>
       <p class="uuwg-hero__subtitle"><?php echo wp_kses_post($subtitle); ?></p>
       <div class="uuwg-hero__buttons">
-        <a class="uuwg-hero__button uuwg-hero__button--yellow" href="<?php echo esc_url($yellow_button_url); ?>">
+        <a class="uuwg-hero__button uuwg-hero__button--yellow" target="_blank" rel="noreferrer noopener"
+          href="<?php echo esc_url($yellow_button_url); ?>">
           <?php echo esc_html($yellow_button_text); ?>
         </a>
         <a class="uuwg-hero__button uuwg-hero__button--secondary" href="<?php echo esc_url($secondary_button_url); ?>">

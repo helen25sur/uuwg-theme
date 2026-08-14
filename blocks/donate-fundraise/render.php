@@ -18,7 +18,8 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
         </div>
       <?php endfor; ?>
     </div>
-    <a class="uuwg-donate-fundraise__cta" href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
+    <a class="uuwg-donate-fundraise__cta" target="_blank" rel="noreferrer noopener"
+      href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
       <?php echo esc_html($attributes['buttonText']); ?>
     </a>
   </div>
