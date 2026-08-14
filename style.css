@@ -320,3 +320,9 @@ main.wp-block-group {
 .footer__part2 nav {
   margin: 0;
 }
+
+.uuwg-contact-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-200);
+}
