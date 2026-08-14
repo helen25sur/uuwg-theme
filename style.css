@@ -383,3 +383,141 @@ main.wp-block-group {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* ============================ Contact Form Message Popup ======================== */
+
+.uuwg-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 11, 22, .8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99999;
+}
+
+.uuwg-popup-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.uuwg-popup {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px 20px 40px 20px;
+  max-width: 597px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.uuwg-popup-overlay.is-open .uuwg-popup {
+  transform: scale(1);
+}
+
+.uuwg-popup__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+#uuwg-popup-close {
+  width: 45px;
+}
+
+#uuwg-popup-close .wp-block-button__link {
+  position: relative;
+  font-size: 0;
+}
+
+#uuwg-popup-close .wp-block-button__link::before {
+  content: '';
+  background-color: currentColor;
+  mask: url('./assets/images/close.svg') no-repeat center / contain;
+  -webkit-mask: url('./assets/images/close.svg') no-repeat center / contain;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  right: 6px;
+}
+
+.uuwg-popup__close:hover {
+  background-color: #f1f5f9;
+}
+
+.uuwg-popup__title {
+  color: var(--wp--preset--color--blue-500);
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.uuwg-popup__text {
+  max-width: 65%;
+  padding: 0;
+  color: var(--wp--preset--color--blue-200);
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.uuwg-popup__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.uuwg-popup__btn .wp-block-button__link {
+  padding: 17px 60px 17px 32px;
+  position: relative;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 700;
+  line-height: 115%;
+  background: var(--wp--preset--color--background);
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.uuwg-popup__btn .wp-block-button__link:hover {
+  background-color: #eee9da;
+}
+
+.uuwg-popup__btn .wp-block-button__link::after {
+  content: '';
+  background-color: currentColor;
+  mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  top: 16px;
+}

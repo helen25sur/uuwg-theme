@@ -28,16 +28,15 @@ function uuwg_enqueue_assets()
 
 	// Приклад підключення JS для інтерактивних блоків (слайдер, AJAX-фільтри).
 	// Розкоментувати, коли з'явиться assets/js/frontend.js
-	/*
-	$script_path = UUWG_THEME_DIR . '/assets/js/frontend.js';
+
+	$script_path = UUWG_THEME_DIR . '/assets/js/message-popup.js';
 	wp_enqueue_script(
-		'uuwg-frontend',
-		UUWG_THEME_URI . '/assets/js/frontend.js',
+		'uuwg-message-popup',
+		UUWG_THEME_URI . '/assets/js/message-popup.js',
 		array(),
-		file_exists( $script_path ) ? filemtime( $script_path ) : UUWG_THEME_VERSION,
+		file_exists($script_path) ? filemtime($script_path) : UUWG_THEME_VERSION,
 		true
 	);
-	*/
 }
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
 
