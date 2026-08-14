@@ -12,15 +12,14 @@
 /* --- Текстова колонка --- */
 
 .uuwg-mission__heading {
-  font-family: var(--wp--preset--font-family--heading);
-  color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--heading-xl);
+  margin-bottom: 32px;
 }
 
 .uuwg-mission__paragraph {
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-body);
   line-height: 120%;
+  margin-bottom: 16px;
 }
 
 .uuwg-mission__button {

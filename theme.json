@@ -135,8 +135,8 @@
         "button": "999px"
       },
       "spacing": {
-        "containerGutter": "80px",
-        "blockGap": "140px"
+        "containerGutter": "clamp(24px, 5vw, 80px)",
+        "blockGap": "clamp(60px, 8vw, 140px)"
       },
       "pill": {
         "paddingY": "8px",
