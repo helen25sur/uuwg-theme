@@ -326,3 +326,60 @@ main.wp-block-group {
   font-weight: 600;
   color: var(--wp--preset--color--blue-200);
 }
+
+/* Subscribe form */
+
+#mc4wp-form-1 {
+  margin: 0;
+  width: 100%;
+}
+
+#mc4wp-form-1 .uuwg_subscribe {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border: none;
+  position: relative;
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"] {
+  padding: 17px 44px 17px 16px;
+  width: 100%;
+  max-width: 413px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--wp--preset--color--background);
+  font-size: var(--wp--preset--font-size--text-medium);
+  color: var(--wp--preset--color--primary);
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
+  color: #899EAC;
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"] {
+  padding: 13.2px;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8.8px;
+  font-size: 0;
+  border: none;
+  background-color: var(--wp--preset--color--secondary);
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"]::before {
+  content: url('./assets/images/glyphs_arrow-bold.svg');
+  position: absolute;
+  width: 17.6px;
+  height: 17.6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
