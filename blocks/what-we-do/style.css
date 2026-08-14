@@ -14,13 +14,6 @@
 
 .uuwg-what-we-do__cta {
   display: inline-block;
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--primary);
-  font-size: 22px;
-  font-weight: 600;
-  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
-  border-radius: var(--wp--custom--border-radius--button);
-  text-decoration: none;
 }
 
 .uuwg-what-we-do__cards {
@@ -57,7 +50,7 @@
 
 .uuwg-what-we-do__card-text {
   color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: bold;
   line-height: 1.5;
   margin-top: 1.5rem;

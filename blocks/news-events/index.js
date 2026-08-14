@@ -73,7 +73,7 @@
             imageUrl && el('img', { src: imageUrl, alt: item.title.rendered, className: 'uuwg-news-events__card-img' }),
             el('div', { className: 'uuwg-news-events__card__content' },
               el('h3', { className: 'uuwg-news-events__card__title', dangerouslySetInnerHTML: { __html: item.title.rendered } }),
-              el('span', { className: 'uuwg-news-events__card__button' }, __('Read more', 'uuwg'))
+              el('span', { className: 'uuwg-news-events__card__button wp-element-button' }, __('Read more', 'uuwg'))
             )
           );
         });

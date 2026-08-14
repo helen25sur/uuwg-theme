@@ -26,13 +26,6 @@
 
 .uuwg-news-events__cta {
   display: inline-block;
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--body-lg);
-  font-weight: 600;
-  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
-  border-radius: var(--wp--custom--border-radius--button);
-  text-decoration: none;
 }
 
 .uuwg-news-events__grids {
@@ -68,7 +61,7 @@
 
 .uuwg-news-events__card__short-description {
   color: var(--wp--preset--color--blue-200);
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
 }
@@ -96,7 +89,7 @@
   margin-left: auto;
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
   padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);

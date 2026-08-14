@@ -85,7 +85,7 @@
         ),
         el(RichText, {
           tagName: 'span',
-          className: 'uuwg-donate-fundraise__cta',
+          className: 'uuwg-donate-fundraise__cta wp-element-button',
           value: buttonText,
           onChange: (v) => setAttributes({ buttonText: v }),
           allowedFormats: [],

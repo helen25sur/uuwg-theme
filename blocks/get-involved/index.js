@@ -88,7 +88,7 @@
                 }),
                 el(RichText, {
                   tagName: 'span',
-                  className: 'uuwg-get-involved__card__cta',
+                  className: 'uuwg-get-involved__card__cta wp-element-button',
                   value: attributes[buttonKey],
                   onChange: (v) => setAttributes({ [buttonKey]: v }),
                   placeholder: `Button text ${n}...`,

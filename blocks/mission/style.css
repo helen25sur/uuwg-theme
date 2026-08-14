@@ -24,13 +24,8 @@
 }
 
 .uuwg-mission__button {
+  margin-top: 60px;
   display: inline-block;
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--primary);
-  font-weight: 600;
-  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
-  border-radius: var(--wp--custom--border-radius--button, 999px);
-  text-decoration: none;
   cursor: pointer;
 }
 
@@ -106,7 +101,7 @@
   position: absolute;
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--small, 0.875rem);
+  font-size: var(--wp--preset--font-size--text-sm, 0.875rem);
   font-weight: 600;
   padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
   border-radius: var(--wp--custom--border-radius--button, 999px);

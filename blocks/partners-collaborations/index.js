@@ -113,7 +113,7 @@
           el(
             'a',
             {
-              className: 'uuwg-partners-collaborations__cta uuwg-btn',
+              className: 'uuwg-partners-collaborations__cta uuwg-btn wp-element-button',
               href: buttonUrl || '#',
               onClick: (e) => e.preventDefault()
             },

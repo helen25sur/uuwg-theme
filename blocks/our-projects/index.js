@@ -77,7 +77,7 @@
             imageUrl && el('img', { src: imageUrl, alt: project.title.rendered, className: 'uuwg-our-projects__card-img' }),
             el('div', { className: 'uuwg-our-projects__card__content' },
               el('h3', { className: 'uuwg-our-projects__card__title', dangerouslySetInnerHTML: { __html: project.title.rendered } }),
-              el('span', { className: 'uwg-our-projects__card__button' }, __('Read more', 'uuwg'))
+              el('span', { className: 'uwg-our-projects__card__button wp-element-button' }, __('Read more', 'uuwg'))
             )
           );
         });

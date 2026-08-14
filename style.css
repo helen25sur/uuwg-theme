@@ -33,6 +33,27 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  font-size: var(--wp--preset--font-size--hero);
+}
+
+h2 {
+  font-size: var(--wp--preset--font-size--heading-xl);
+}
+
+h3 {
+  font-size: var(--wp--preset--font-size--heading-md);
+}
+
+h4 {
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   width: var(--wp--style--global--content-size);
   margin: 0 auto;
@@ -93,10 +114,7 @@ main.wp-block-group {
   color: var(--wp--preset--color--primary);
 }
 
-
-
 .chat_button__link a::after {
-  /* content: url('./assets/images/telegram-fill.svg'); */
   content: '';
   background-color: currentColor;
   mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
@@ -105,7 +123,7 @@ main.wp-block-group {
   height: 20px;
   position: absolute;
   right: 30px;
-  top: 16px;
+  top: 20px;
 }
 
 /* ========================= Contact Us ============================== */
@@ -165,7 +183,7 @@ main.wp-block-group {
   padding: 0;
   margin: 0;
   color: var(--wp--preset--color--blue-200);
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
 }
@@ -176,7 +194,7 @@ main.wp-block-group {
 }
 
 #fluentform_1 label {
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-500);
   line-height: 115%;
   font-weight: 600;
@@ -194,7 +212,7 @@ main.wp-block-group {
 
 #fluentform_1 input::placeholder,
 #fluentform_1 textarea::placeholder {
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
   color: #899EAC;
@@ -285,7 +303,7 @@ main.wp-block-group {
 
 .footer__part2 {
   margin-bottom: 96px;
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
   color: var(--wp--preset--color--blue-200);
@@ -359,7 +377,7 @@ footer .is-style-wide {
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
   color: #899EAC;
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
 }
@@ -503,7 +521,7 @@ footer .is-style-wide {
   position: relative;
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
-  font-size: var(--wp--preset--font-size--small);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 700;
   line-height: 115%;
   background: var(--wp--preset--color--background);

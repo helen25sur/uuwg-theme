@@ -50,7 +50,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
       <h2 class="uuwg-mission__heading"><?php echo wp_kses_post($heading); ?></h2>
       <p class="uuwg-mission__paragraph"><?php echo wp_kses_post($paragraph1); ?></p>
       <p class="uuwg-mission__paragraph"><?php echo wp_kses_post($paragraph2); ?></p>
-      <a class="uuwg-mission__button" href="<?php echo esc_url($button_url); ?>">
+      <a class="uuwg-mission__button wp-element-button" href="<?php echo esc_url($button_url); ?>">
         <?php echo esc_html($button_text); ?>
       </a>
     </div>

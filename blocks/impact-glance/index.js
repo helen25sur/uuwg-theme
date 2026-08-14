@@ -44,7 +44,7 @@
           }),
           el(RichText, {
             tagName: 'span',
-            className: 'uuwg-impact-glance__cta',
+            className: 'uuwg-impact-glance__cta wp-element-button',
             value: buttonText,
             onChange: (v) => setAttributes({ buttonText: v }),
             allowedFormats: [],

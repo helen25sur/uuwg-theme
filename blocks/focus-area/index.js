@@ -45,7 +45,7 @@
           }),
           el(RichText, {
             tagName: 'span',
-            className: 'uuwg-focus-area__cta',
+            className: 'uuwg-focus-area__cta wp-element-button',
             value: buttonText,
             onChange: (v) => setAttributes({ buttonText: v }),
             placeholder: 'Текст кнопки...',

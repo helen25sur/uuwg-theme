@@ -13,12 +13,12 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
 
     <div class="uuwg-donate-fundraise__grids">
       <?php for ($i = 1; $i <= 4; $i++) : ?>
-        <div class="uuwg-donate-fundraise__card">
-          <p class="uuwg-donate-fundraise__card__text"><?php echo esc_html($attributes["item{$i}Text"] ?? ''); ?></p>
-        </div>
+      <div class="uuwg-donate-fundraise__card">
+        <p class="uuwg-donate-fundraise__card__text"><?php echo esc_html($attributes["item{$i}Text"] ?? ''); ?></p>
+      </div>
       <?php endfor; ?>
     </div>
-    <a class="uuwg-donate-fundraise__cta" target="_blank" rel="noreferrer noopener"
+    <a class="uuwg-donate-fundraise__cta wp-element-button" target="_blank" rel="noreferrer noopener"
       href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
       <?php echo esc_html($attributes['buttonText']); ?>
     </a>

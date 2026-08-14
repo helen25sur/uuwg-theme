@@ -7,7 +7,8 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
   <div class="uuwg-focus-area__content">
     <div class="uuwg-focus-area__header">
       <h2 class="uuwg-focus-area__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
-      <a class="uuwg-focus-area__cta" href="<?php echo esc_url($attributes['buttonUrl']); ?>" class="uuwg-btn">
+      <a class="uuwg-focus-area__cta wp-element-button" href="<?php echo esc_url($attributes['buttonUrl']); ?>"
+        class="uuwg-btn">
         <?php echo esc_html($attributes['buttonText']); ?>
       </a>
     </div>

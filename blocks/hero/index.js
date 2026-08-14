@@ -124,7 +124,7 @@
           { className: 'uuwg-hero__buttons' },
           el(RichText, {
             tagName: 'span',
-            className: 'uuwg-hero__button uuwg-hero__button--primary',
+            className: 'uuwg-hero__button uuwg-hero__button--primary wp-element-button',
             value: primaryButtonText,
             onChange: function (value) {
               setAttributes({ primaryButtonText: value });

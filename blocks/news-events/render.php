@@ -36,7 +36,7 @@ $query = new WP_Query([
       <?php endif; ?>
 
       <?php if ($show_header_button && ! empty($button_text)) : ?>
-        <a href="<?php echo esc_url($button_url ?: '#'); ?>" class="uuwg-news-events__cta uuwg-btn">
+        <a href="<?php echo esc_url($button_url ?: '#'); ?>" class="uuwg-news-events__cta uuwg-btn wp-element-button">
           <?php echo esc_html($button_text); ?>
         </a>
       <?php endif; ?>

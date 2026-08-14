@@ -57,7 +57,7 @@
           }),
           el(RichText, {
             tagName: 'span',
-            className: 'uuwg-what-we-do__cta',
+            className: 'uuwg-what-we-do__cta wp-element-button',
             value: buttonText,
             onChange: (v) => setAttributes({ buttonText: v }),
             allowedFormats: [],

@@ -37,13 +37,6 @@
 
 .uuwg-impact-glance__cta {
   display: inline-block;
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--primary);
-  font-size: 22px;
-  font-weight: 600;
-  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
-  border-radius: var(--wp--custom--border-radius--button);
-  text-decoration: none;
 }
 
 .uuwg-impact-glance__grids {

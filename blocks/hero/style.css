@@ -64,11 +64,6 @@
   cursor: pointer;
 }
 
-.uuwg-hero__button--yellow {
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--primary);
-}
-
 .uuwg-hero__button--secondary {
   background-color: transparent;
   color: var(--wp--preset--color--white);

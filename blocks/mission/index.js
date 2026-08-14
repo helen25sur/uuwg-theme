@@ -133,7 +133,7 @@
           }),
           el(RichText, {
             tagName: 'span',
-            className: 'uuwg-mission__button',
+            className: 'uuwg-mission__button wp-element-button',
             value: buttonText,
             onChange: (v) => setAttributes({ buttonText: v }),
             allowedFormats: [],
