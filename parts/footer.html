@@ -30,6 +30,9 @@
 			<!-- wp:heading {"level":4} -->
 			<h4 class="wp-block-heading">Stay connected</h4>
 			<!-- /wp:heading -->
+			<!-- wp:paragraph -->
+			<p>Subscribe our newsletter to get more free design course and resource</p>
+			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
@@ -39,9 +42,15 @@
 			<h4 class="wp-block-heading">Contacts</h4>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph -->
-			<p>[acf field="contact_email"] · [acf field="contact_phone"]</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:shortcode -->
+			[uuwg_contact field="contact_email_1"]
+			<!-- /wp:shortcode -->
+			<!-- wp:shortcode -->
+			[uuwg_contact field="contact_email_2"]
+			<!-- /wp:shortcode -->
+			<!-- wp:shortcode -->
+			[uuwg_contact field="contact_telephone"]
+			<!-- /wp:shortcode -->
 		</div>
 		<!-- /wp:column -->
 
@@ -61,9 +70,9 @@
 			<h4 class="wp-block-heading">Location</h4>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph -->
-			<p>Athens, Greece, 11374</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:shortcode -->
+			[uuwg_contact field="contact_address"]
+			<!-- /wp:shortcode -->
 		</div>
 		<!-- /wp:column -->
 	</div>
