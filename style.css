@@ -269,3 +269,54 @@ main.wp-block-group {
   align-self: stretch;
   flex-grow: 1;
 }
+
+/* ======================= Footer ==================== */
+.site-footer {
+  padding: 80px 0 40px 0;
+}
+
+.footer__part1 {
+  margin-bottom: 96px;
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-weight: 600;
+  line-height: 115%;
+  color: var(--wp--preset--color--blue-500);
+}
+
+.footer__part2 {
+  margin-bottom: 96px;
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 600;
+  line-height: 115%;
+  color: var(--wp--preset--color--blue-200);
+  column-gap: 122.5px;
+}
+
+.footer__part2 h4 {
+  font-weight: 700;
+  color: var(--wp--preset--color--blue-500);
+}
+
+.footer__part2 .wp-block-column,
+.footer__part2 .wp-block-navigation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-basis: min-content;
+  gap: 12px;
+}
+
+.footer__part2 .wp-block-column:first-of-type {
+  flex-basis: 413px;
+  flex-grow: 0;
+}
+
+.footer__part2 p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__part2 nav {
+  margin: 0;
+}
