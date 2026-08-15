@@ -5,7 +5,9 @@
 }
 
 .uuwg-news-events__content {
-  width: var(--wp--style--global--content-size);
+  width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr;

@@ -16,17 +16,6 @@
       "type": "string",
       "default": "The Union of Ukrainian Women in Greece (UUWG) is a women-led, community-based organization in Athens supporting Ukrainian and other women, affected by war and migration."
     },
-    "backgroundImage": {
-      "type": "object"
-    },
-    "backgroundImageId": {
-      "type": "number",
-      "default": 0
-    },
-    "backgroundImageUrl": {
-      "type": "string",
-      "default": "http://uuwg.local/wp-content/uploads/2026/08/background-hero.jpg"
-    },
     "yellowButtonText": {
       "type": "string",
       "default": "Donate"

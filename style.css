@@ -54,6 +54,11 @@ p {
   margin: 0;
 }
 
+main {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   width: var(--wp--style--global--content-size);
   margin: 0 auto;
@@ -66,21 +71,36 @@ main.wp-block-group {
 }
 
 .wp-block-template-part:has(header) {
-  padding-top: 46.5px;
-  padding-bottom: 46.5px;
-  padding-right: var(--wp--custom--spacing--container-gutter);
-  padding-left: var(--wp--custom--spacing--container-gutter);
-  position: relative;
-  max-width: var(--wp--style--global--wide-size);
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 10;
+
   font-size: var(--wp--preset--font-size--text-medium);
 }
 
-.has-hero .wp-block-template-part:has(header) {
+.wp-block-template-part:has(header) .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.has-hero .wp-block-template-part:has(header) header {
   color: var(--wp--preset--color--white);
-  margin-bottom: -250px;
+  position: relative;
+  /* background-color: var(--wp--preset--color--primary); */
+  z-index: 100;
+}
+
+.wp-block-template-part:has(header) .container nav,
+.wp-block-template-part:has(header) .container p,
+.wp-block-template-part:has(header) .container div {
+  margin: 0;
 }
 
 .uuwg-language-switcher {
@@ -151,7 +171,9 @@ main.wp-block-group {
 }
 
 .uuwg-contact-section {
-  max-width: var(--wp--style--global--content-size);
+  width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 140px auto;
   display: grid;
   grid-template-columns: 520px 1fr;
@@ -543,4 +565,18 @@ footer .is-style-wide {
   position: absolute;
   right: 30px;
   top: 16px;
+}
+
+/* ============================== Media Queries ========================== */
+
+@media screen and (max-width: 897px) {
+  .has-hero .wp-block-template-part:has(header) {
+    margin-bottom: -292px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .has-hero .wp-block-template-part:has(header) {
+    margin-bottom: -292px;
+  }
 }

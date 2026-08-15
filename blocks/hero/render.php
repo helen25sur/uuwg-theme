@@ -13,22 +13,9 @@ $yellow_button_url = $attributes['yellowButtonUrl'] ?? '#';
 $secondary_button_text = $attributes['secondaryButtonText'] ?? '';
 $secondary_button_url = $attributes['secondaryButtonUrl'] ?? '#';
 
-$background_image_url = $attributes['backgroundImageUrl'] ?? '';
-
-$background = '';
-$background_image_url = $attributes['backgroundImageUrl'] ?? '';
-
-if ($background_image_url) {
-  $background = sprintf(
-    'background-image:url(%s);',
-    esc_url($background_image_url)
-  );
-}
-
 $wrapper_attributes = get_block_wrapper_attributes(
   array(
-    'class' => 'uuwg-hero',
-    'style' => $background,
+    'class' => 'uuwg-hero'
   )
 );
 ?>

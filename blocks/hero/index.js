@@ -1,7 +1,7 @@
 (function (blocks, blockEditor, components, element, i18n) {
   const { registerBlockType } = blocks;
-  const { useBlockProps, RichText, InspectorControls, MediaUpload, MediaUploadCheck } = blockEditor;
-  const { PanelBody, TextControl, Button } = components;
+  const { useBlockProps, RichText, InspectorControls } = blockEditor;
+  const { PanelBody, TextControl } = components;
   const el = element.createElement;
   const __ = i18n.__;
 
@@ -12,18 +12,14 @@
       const {
         title,
         subtitle,
-        backgroundImageId,
-        backgroundImageUrl,
-        primaryButtonText,
-        primaryButtonUrl,
+        yellowButtonText,
+        yellowButtonUrl,
         secondaryButtonText,
         secondaryButtonUrl,
       } = attributes;
 
       const blockProps = useBlockProps({
-        style: backgroundImageUrl
-          ? { backgroundImage: 'url(' + backgroundImageUrl + ')' }
-          : {},
+        className: 'uuwg-hero',
       });
 
       // Інспектор: усе, що НЕ прямий текст на банері (URL кнопок),
@@ -36,16 +32,16 @@
           { title: __('Кнопки', 'uuwg'), initialOpen: true },
           el(TextControl, {
             label: __('Текст першої кнопки', 'uuwg'),
-            value: primaryButtonText,
+            value: yellowButtonText,
             onChange: function (value) {
-              setAttributes({ primaryButtonText: value });
+              setAttributes({ yellowButtonText: value });
             },
           }),
           el(TextControl, {
             label: __('URL першої кнопки', 'uuwg'),
-            value: primaryButtonUrl,
+            value: yellowButtonUrl,
             onChange: function (value) {
-              setAttributes({ primaryButtonUrl: value });
+              setAttributes({ yellowButtonUrl: value });
             },
           }),
           el(TextControl, {
@@ -65,41 +61,10 @@
         )
       );
 
-      // Кнопка вибору фонового зображення — доступна тільки через
-      // медіатеку, не можна "перетягнути" довільний елемент замість неї.
-      const mediaControl = el(
-        MediaUploadCheck,
-        {},
-        el(MediaUpload, {
-          onSelect: function (media) {
-            setAttributes({
-              backgroundImageId: media.id,
-              backgroundImageUrl: media.url,
-            });
-          },
-          allowedTypes: ['image'],
-          value: backgroundImageId,
-          render: function (obj) {
-            return el(
-              Button,
-              {
-                onClick: obj.open,
-                variant: 'secondary',
-                className: 'uuwg-hero__bg-button',
-              },
-              backgroundImageUrl
-                ? __('Змінити фонове зображення', 'uuwg')
-                : __('Обрати фонове зображення', 'uuwg')
-            );
-          },
-        })
-      );
-
       return el(
-        'div',
+        'section',
         blockProps,
         inspector,
-        mediaControl,
         el(RichText, {
           tagName: 'h1',
           className: 'uuwg-hero__title',
@@ -108,7 +73,7 @@
             setAttributes({ title: value });
           },
           placeholder: __('Заголовок банера…', 'uuwg'),
-          allowedFormats: [], // без inline-форматування — тільки текст, щоб не ламати типографіку
+          allowedFormats: [],
         }),
         el(RichText, {
           tagName: 'p',
@@ -125,9 +90,9 @@
           el(RichText, {
             tagName: 'span',
             className: 'uuwg-hero__button uuwg-hero__button--primary wp-element-button',
-            value: primaryButtonText,
+            value: yellowButtonText,
             onChange: function (value) {
-              setAttributes({ primaryButtonText: value });
+              setAttributes({ yellowButtonText: value });
             },
             allowedFormats: [],
           }),
@@ -145,20 +110,17 @@
     },
 
     save: function () {
-
       return null;
-
     },
-    // === ДОДАЄМО МАСИВ ЗАСПАРЕНИХ ВЕРСІЙ ===
+
     deprecated: [
       {
-        // Описуємо стару версію save(), яка згенерувала HTML, що зараз лежить у БД
         save: function (props) {
           const { attributes } = props;
           const {
             title,
             subtitle,
-            primaryButtonText,
+            yellowButtonText,
             secondaryButtonText,
           } = attributes;
 
@@ -166,7 +128,6 @@
             className: 'uuwg-hero',
           });
 
-          // Відтворюємо структуру елементів, яка зберігалася в post_content раніше
           return el(
             'div',
             blockProps,
@@ -183,7 +144,7 @@
             el(
               'div',
               { className: 'uuwg-hero__buttons' },
-              el('span', { className: 'uuwg-hero__button' }, primaryButtonText),
+              el('span', { className: 'uuwg-hero__button' }, yellowButtonText),
               el('span', { className: 'uuwg-hero__button' }, secondaryButtonText)
             )
           );

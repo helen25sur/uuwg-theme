@@ -1,14 +1,19 @@
+.has-hero main {
+  margin-top: -128px;
+
+}
+
 .uuwg-hero {
   position: relative;
   background-color: var(--wp--preset--color--primary);
   border-radius: var(--wp--custom--border-radius--hero);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  overflow: hidden;
-  background-size: cover;
+  background-image: url('../../assets/images/decorative/pattern-hero.svg');
+  background-size: 622px;
   background-repeat: no-repeat;
-  background-position-y: top;
-  background-position-x: center;
+  background-position-y: 0px;
+  background-position-x: right;
 }
 
 .header--transparent .uuwg-site-logo__dark {
@@ -21,7 +26,9 @@
 
 .has-hero .uuwg-hero__container {
   padding: 309px 0 var(--wp--custom--spacing--container-gutter) 0;
-  max-width: var(--wp--style--global--content-size);
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 0 auto;
 }
 
@@ -96,4 +103,16 @@
 .components-button.uuwg-hero__bg-button.is-secondary:hover {
   color: var(--wp--preset--color--white);
   box-shadow: inset 0 0 0 1px var(--wp--preset--color--white);
+}
+
+@media screen and (max-width: 897px) {
+  .has-hero .uuwg-hero__container {
+    padding-top: 340px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .has-hero .uuwg-hero__container {
+    padding-top: 340px;
+  }
 }
