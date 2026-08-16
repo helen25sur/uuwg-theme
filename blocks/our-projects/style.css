@@ -1,11 +1,13 @@
-.uuwg-our-projects {
+.uuwg-our-projects.alignfull {
   width: 100%;
-  padding: 78px 0 103px 0;
   color: var(--wp--preset--color--primary);
+  margin-block-start: 0;
 }
 
 .uuwg-our-projects__content {
-  width: var(--wp--style--global--content-size);
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -28,9 +30,9 @@
   display: inline-block;
 }
 
-.uuwg-our-projects__grids {
+.uuwg-our-projects__grids .uuwg-carousel__track {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(365px, 1fr));
   gap: 20px;
   align-items: stretch;
 }
@@ -47,6 +49,7 @@
 }
 
 .uuwg-our-projects__card .uuwg-our-project__permalink {
+  height: 100%;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -66,7 +69,7 @@
 }
 
 .uuwg-our-projects__card img {
-  flex: 313px;
+  flex: 0 0 313px;
   flex-shrink: 0;
   width: 100%;
   height: 100%;
@@ -75,12 +78,14 @@
 
 .uuwg-our-projects__card__content {
   display: flex;
+  flex: 242px;
   flex-direction: column;
   padding: 24px;
 }
 
-.uwg-our-projects__card__button {
+.uuwg-our-projects__card__button {
   display: inline-block;
+  margin-top: auto;
   margin-left: auto;
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
@@ -132,4 +137,32 @@
 .uuwg-pagination-btn:focus-visible {
   outline: 2px solid var(--wp--preset--color--primary);
   outline-offset: 3px;
+}
+
+.uuwg-carousel__dot.is-active {
+  background-color: var(--wp--preset--color--primary);
+}
+
+@media screen and (max-width: 1225px) {
+  .uuwg-our-projects.alignfull {
+    overflow: hidden;
+  }
+
+  .uuwg-our-projects__header {
+    max-width: 92vw;
+    margin-bottom: 40px;
+  }
+
+  .uuwg-our-projects__grids .uuwg-carousel__track {
+    display: flex;
+    gap: 6px;
+  }
+
+  .uuwg-our-projects__card.uuwg-carousel__item {
+    flex: 0 0 365px;
+  }
+
+  .uuwg-our-projects__pagination {
+    width: 100vw;
+  }
 }

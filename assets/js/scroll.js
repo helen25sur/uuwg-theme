@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     items.forEach(function (item) {
+      console.log(item);
       observer.observe(item);
     });
   }

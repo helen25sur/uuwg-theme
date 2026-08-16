@@ -14,7 +14,7 @@
       // ДОДАНО: showPagination
       const { heading, buttonText, buttonUrl, countOfProjects, showPagination, showHeaderButton } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-our-projects' });
+      const blockProps = useBlockProps({ className: 'uuwg-our-projects alignfull' });
 
       const { projects, totalPages } = useSelect(
         function (select) {
