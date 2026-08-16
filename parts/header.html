@@ -1,29 +1,40 @@
-<!-- wp:group {"tagName":"header","layout":{"type":"flex","justifyContent":"space-between"}} -->
-<header class="wp-block-group">
+<!-- wp:group {"tagName":"header","className":"uuwg-header","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<header class="wp-block-group uuwg-header">
 
 	<!-- wp:group {"className": "container"} -->
 	<div class="wp-block-group container">
 
 		<!-- wp:uuwg/uuwg-logo {"slug":"uuwg/uuwg-logo"} /-->
 
-		<!-- wp:navigation {"ref":44} /-->
+		<!-- Десктопний блок меню (ховатиметься на <= 768px) -->
+		<div class="uuwg-desktop-menu">
+			<!-- wp:navigation {"ref":44, "overlayMenu":"never"} /-->
 
-		<!-- wp:shortcode -->
-		[uuwg_language_switcher]
-		<!-- /wp:shortcode -->
+			<!-- wp:shortcode -->
+			[uuwg_language_switcher]
+			<!-- /wp:shortcode -->
 
-		<!-- wp:buttons -->
-		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"is-style-outline chat_button__link"} -->
-			<div class="wp-block-button is-style-outline chat_button__link"><a
-					class="wp-block-button__link wp-element-button">Join
-					our chat</a>
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
+				<!-- wp:button {"className":"is-style-outline chat_button__link"} -->
+				<div class="wp-block-button is-style-outline chat_button__link">
+					<a class="wp-block-button__link wp-element-button">Join our chat</a>
+				</div>
+				<!-- /wp:button -->
 			</div>
-			<!-- /wp:button -->
+			<!-- /wp:buttons -->
 		</div>
-		<!-- /wp:buttons -->
+
+		<!-- Кнопка Гамбургера (показуватиметься на <= 768px) -->
+		<button class="uuwg-burger-btn" aria-label="Open menu">
+			<span></span><span></span><span></span>
+		</button>
 
 	</div>
 	<!-- /wp:group -->
+
+	<!-- Підключаємо кастомний оверлей -->
+	<!-- wp:template-part {"slug":"overlay-menu", "className": "overlay-menu-header"} /-->
+
 </header>
 <!-- /wp:group -->

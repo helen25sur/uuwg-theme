@@ -209,6 +209,11 @@
       "area": "header"
     },
     {
+      "name": "overlay-menu",
+      "title": "Navigation Overlay",
+      "area": "header"
+    },
+    {
       "name": "footer",
       "title": "Footer",
       "area": "footer"
@@ -216,6 +221,11 @@
     {
       "name": "contact-section",
       "title": "Contact Section",
+      "area": "uncategorized"
+    },
+    {
+      "name": "contact-message-popup",
+      "title": "Contact Message Popup",
       "area": "uncategorized"
     }
   ],

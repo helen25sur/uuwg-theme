@@ -1,0 +1,38 @@
+<!-- wp:group {"metadata":{"name":"Navigation Overlay"},"className":"uuwg-overlay","style":{"spacing":{"padding":{"right":"20px","left":"20px","top":"40px","bottom":"40px"}},"dimensions":{"height":"64.5vh"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"backgroundColor":"background","textColor":"primary","layout":{"type":"default"}} -->
+<div
+  class="wp-block-group uuwg-overlay has-primary-color has-background-background-color has-text-color has-background has-link-color"
+  style="height:64.5vh;padding:40px 20px">
+
+  <!-- Кнопка закриття -->
+  <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+  <div class="wp-block-group alignwide">
+    <button class="uuwg-overlay-close" aria-label="Close menu">✕</button>
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:uuwg/uuwg-logo /-->
+
+  <!-- wp:navigation {"ref":44,"textColor":"primary","showSubmenuIcon":false,"submenuVisibility":"always","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} /-->
+
+  <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+  <div class="wp-block-group">
+
+    <!-- wp:buttons -->
+    <div class="wp-block-buttons">
+      <!-- wp:button {"className":"is-style-outline"} -->
+      <div class="wp-block-button is-style-outline">
+        <a class="wp-block-button__link wp-element-button">Join our
+          chat</a>
+      </div>
+      <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+
+    <!-- wp:shortcode -->
+    [uuwg_language_switcher]
+    <!-- /wp:shortcode -->
+  </div>
+  <!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->

@@ -37,6 +37,15 @@ function uuwg_enqueue_assets()
 		file_exists($script_path) ? filemtime($script_path) : UUWG_THEME_VERSION,
 		true
 	);
+
+	$script_nav_path = UUWG_THEME_DIR . '/assets/js/navigation.js';
+	wp_enqueue_script(
+		'uuwg-navigation',
+		UUWG_THEME_URI . '/assets/js/navigation.js',
+		array(),
+		file_exists($script_nav_path) ? filemtime($script_nav_path) : UUWG_THEME_VERSION,
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
 

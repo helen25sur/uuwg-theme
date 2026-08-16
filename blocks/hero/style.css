@@ -105,7 +105,7 @@
   box-shadow: inset 0 0 0 1px var(--wp--preset--color--white);
 }
 
-@media screen and (max-width: 897px) {
+@media screen and (max-width: 1200px) {
   .has-hero .uuwg-hero__container {
     padding-top: 340px;
   }
