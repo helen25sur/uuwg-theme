@@ -717,7 +717,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
 
 }
 
-@media (max-width: 1252px) {
+@media screen and (max-width: 1252px) {
   .has-hero main {
     --header-height: 130px;
   }
@@ -735,7 +735,37 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   }
 }
 
+@media screen and (max-width: 768px) {
+  main {
+    --wp--preset--font-size--hero: 46px;
+    --wp--preset--font-size--heading-xl: 28px;
+    --wp--preset--font-size--heading-md: 26px;
+    --wp--preset--font-size--heading-sm: 24px;
+    --wp--preset--font-size--body-lg: 16px;
+    --wp--preset--font-size--text-body: 16px;
+  }
+
+  .uuwg-site-logo {
+    width: 104px;
+    height: 38px;
+  }
+
+  .uuwg-site-logo img {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 375px) {
+  main {
+    --wp--preset--font-size--hero: 32px;
+    --wp--preset--font-size--heading-xl: 28px;
+    --wp--preset--font-size--heading-md: 26px;
+    --wp--preset--font-size--heading-sm: 24px;
+    --wp--preset--font-size--body-lg: 18px;
+    --wp--preset--font-size--text-body: 16px;
+  }
+
   .uuwg-overlay .wp-block-navigation-item__label {
     font-size: var(--wp--preset--font-size--text-medium);
   }
