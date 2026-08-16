@@ -1,11 +1,14 @@
+.uuwg-mission {
+  margin-block-start: 0;
+}
+
 .uuwg-mission .container {
-  max-width: 100%;
   height: fit-content;
   display: grid;
   grid-template-columns: minmax(0, 593fr) minmax(0, 630fr);
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
   gap: 57px;
-  align-items: center;
+  align-items: start;
   overflow: hidden;
 }
 
@@ -174,12 +177,106 @@
 
 /* --- Адаптив --- */
 
-@media (max-width: 782px) {
-  .uuwg-mission {
+@media (max-width: 900px) {
+  .uuwg-mission .container {
     grid-template-columns: 1fr;
   }
 
   .uuwg-mission__collage {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .uuwg-mission__collage {
+    padding-top: 10.68px;
+    padding-right: 33.31px;
+    padding-bottom: 82.52px;
+    padding-left: 64.29px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .uuwg-mission .container {
+    gap: 50px;
+  }
+
+  .uuwg-mission__heading {
+    margin-bottom: 24px;
+  }
+
+  .uuwg-mission__paragraph {
+    margin-bottom: 12px;
+  }
+
+  .uuwg-mission__button.wp-element-button {
+    margin-top: 32px;
+  }
+
+  .uuwg-mission__photo--2::before,
+  .uuwg-mission__photo--2::after,
+  .uuwg-mission__photo--3::before,
+  .uuwg-mission__photo--3::after {
+    width: 93.68px;
+    height: 94.02px;
+  }
+
+  .uuwg-mission__photo--2::before,
+  .uuwg-mission__photo--2::after {
+    bottom: -56px;
+    left: -16px;
+  }
+
+  .uuwg-mission__photo--3::before,
+  .uuwg-mission__photo--3::after {
+    top: -59px;
+    right: -19px;
+  }
+
+  .uuwg-mission__badge--top-right {
+    right: -4.75rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .uuwg-mission__collage {
+    padding-top: 0;
+    padding-right: 2.31px;
+    padding-bottom: 52.52px;
+    padding-left: 0;
+  }
+
+  .uuwg-mission__button.wp-element-button {
+    display: flex;
+    align-items: center;
+    margin: 32px auto 0 auto;
+    justify-content: center;
+  }
+
+  .uuwg-mission__badge--floating {
+    left: -1.75rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+
+  .uuwg-mission__photo--2::before,
+  .uuwg-mission__photo--2::after,
+  .uuwg-mission__photo--3::before,
+  .uuwg-mission__photo--3::after {
+    width: 72.6px;
+    height: 72.94px;
+  }
+
+  .uuwg-mission__photo--2::before,
+  .uuwg-mission__photo--2::after {
+    bottom: -56px;
+    left: -16px;
+  }
+
+  .uuwg-mission__photo--3::before,
+  .uuwg-mission__photo--3::after {
+    top: -59px;
+    right: -19px;
   }
 }

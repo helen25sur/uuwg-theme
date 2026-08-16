@@ -138,13 +138,16 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .uuwg-hero__inner {
+    margin-bottom: 238px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .has-hero main {
     --header-height: 94px;
     --margin-between-header-hero: 75px;
   }
 
-  .uuwg-hero__inner {
-    margin-bottom: 238px;
-  }
 }

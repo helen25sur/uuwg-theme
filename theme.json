@@ -136,7 +136,7 @@
       },
       "spacing": {
         "containerGutter": "clamp(16px, 5vw, 80px)",
-        "blockGap": "clamp(60px, 8vw, 140px)"
+        "blockGap": "140px"
       },
       "pill": {
         "paddingY": "8px",

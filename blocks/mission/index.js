@@ -39,7 +39,7 @@
         connectingBadgeText,
       } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-mission' });
+      const blockProps = useBlockProps({ className: 'uuwg-mission alignfull' });
 
       const preview1 = photo1Url || defaultsBase + 'photo-1.jpg';
       const preview2 = photo2Url || defaultsBase + 'photo-2.jpg';
