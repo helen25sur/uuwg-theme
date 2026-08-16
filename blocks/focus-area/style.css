@@ -38,7 +38,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .uuwg-focus-area__two-card {

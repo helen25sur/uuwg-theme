@@ -1,6 +1,7 @@
 .uuwg-carousel__track {
   display: flex;
   overflow-x: auto;
+  scrollbar-width: none;
   scroll-snap-type: x mandatory;
   /* вмикає "прилипання" при скролі */
   gap: 6px;
