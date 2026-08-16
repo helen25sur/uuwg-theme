@@ -109,7 +109,7 @@
   }
 
   .uuwg-focus-area__grids .uuwg-carousel__track {
-    grid-template-columns: repeat(4, 256px);
+    grid-template-columns: repeat(4, minmax(256px, 1fr));
     gap: 6px;
   }
 

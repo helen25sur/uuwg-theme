@@ -3,7 +3,7 @@
 $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array) ($attributes ?? []);
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-impact-glance']); ?>>
+<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-impact-glance alignfull']); ?>>
   <div class="uuwg-impact-glance__content">
     <div class="uuwg-impact-glance__header">
       <h2 class="uuwg-impact-glance__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>

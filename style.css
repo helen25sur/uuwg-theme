@@ -773,6 +773,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
     --wp--preset--font-size--heading-sm: 24px;
     --wp--preset--font-size--body-lg: 18px;
     --wp--preset--font-size--text-body: 16px;
+    --wp--preset--font-size--text-sm: 14px;
   }
 
   .uuwg-overlay .wp-block-navigation-item__label {

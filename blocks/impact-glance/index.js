@@ -11,7 +11,7 @@
       const { attributes, setAttributes } = props;
       const { heading, buttonText, buttonUrl, headerText } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-impact-glance' });
+      const blockProps = useBlockProps({ className: 'uuwg-impact-glance alignfull' });
 
       return el(
         'div',
