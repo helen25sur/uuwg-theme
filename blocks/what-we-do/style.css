@@ -101,6 +101,7 @@
   }
 
   .uuwg-what-we-do__cards {
+    padding: 0 16px;
     grid-template-columns: 1fr;
   }
 

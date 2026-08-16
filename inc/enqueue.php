@@ -26,6 +26,14 @@ function uuwg_enqueue_assets()
 		file_exists($style_path) ? filemtime($style_path) : UUWG_THEME_VERSION
 	);
 
+	$style_scroll_path = UUWG_THEME_DIR . '/assets/css/scroll.css';
+	wp_enqueue_style(
+		'uuwg-scroll-style',
+		UUWG_THEME_URI . '/assets/css/scroll.css',
+		array(),
+		file_exists($style_scroll_path) ? filemtime($style_scroll_path) : UUWG_THEME_VERSION
+	);
+
 	// Приклад підключення JS для інтерактивних блоків (слайдер, AJAX-фільтри).
 	// Розкоментувати, коли з'явиться assets/js/frontend.js
 
@@ -44,6 +52,15 @@ function uuwg_enqueue_assets()
 		UUWG_THEME_URI . '/assets/js/navigation.js',
 		array(),
 		file_exists($script_nav_path) ? filemtime($script_nav_path) : UUWG_THEME_VERSION,
+		true
+	);
+
+	$script_scroll_path = UUWG_THEME_DIR . '/assets/js/scroll.js';
+	wp_enqueue_script(
+		'uuwg-scroll-js',
+		UUWG_THEME_URI . '/assets/js/scroll.js',
+		array(),
+		file_exists($script_scroll_path) ? filemtime($script_scroll_path) : UUWG_THEME_VERSION,
 		true
 	);
 }

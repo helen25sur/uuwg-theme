@@ -1,0 +1,48 @@
+.uuwg-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* вмикає "прилипання" при скролі */
+  gap: 6px;
+}
+
+.uuwg-carousel__item {
+  scroll-snap-align: start;
+  /* кожна картка "зупиняє" скрол на своєму початку */
+  flex: 0 0 auto;
+  width: 256px;
+}
+
+.uuwg-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.uuwg-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--wp--preset--color--blue-100);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+.uuwg-carousel__dot.is-active {
+  background-color: var(--wp--preset--color--white);
+  width: 36px;
+  border-radius: 16px;
+}
+
+.uuwg-carousel__dots {
+  display: none;
+}
+
+@media screen and (max-width: 1185px) {
+  .uuwg-carousel__dots {
+    display: flex;
+  }
+}
