@@ -23,6 +23,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 через enqueue в inc/enqueue.php, а не додавати сюди все підряд.
 */
 
+:root {
+  --header-height: 120px;
+  --margin-between-header-hero: 193px;
+}
+
 *,
 *::after,
 *::before {
@@ -128,6 +133,9 @@ header.block-editor-block-list__block .container {
   position: relative;
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--white);
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 700;
+  line-height: 115%;
 }
 
 .has-hero .chat_button__link a {
@@ -143,8 +151,13 @@ header.block-editor-block-list__block .container {
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 30px;
-  top: 20px;
+  right: 27px;
+  top: 15px;
+}
+
+.uuwg-site-logo {
+  width: 109.6px;
+  height: 40px;
 }
 
 /* ========================= Contact Us ============================== */
@@ -586,12 +599,14 @@ footer .is-style-wide {
 
 /* Стандартний стан елементів */
 .uuwg-burger-btn {
+  padding: 1rem;
+  margin-block-start: 0;
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
 }
 
 .uuwg-burger-btn span {
@@ -635,11 +650,13 @@ footer .is-style-wide {
 .uuwg-overlay-close {
   position: absolute;
   color: var(--wp--preset--color--primary);
-  top: 14%;
+  top: 12%;
   right: 24px;
   border: none;
   background: transparent;
   font-size: var(--wp--preset--font-size--heading-md);
+  cursor: pointer;
+  padding: 1rem;
 }
 
 .uuwg-overlay .uuwg-language-switcher {
@@ -655,6 +672,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
 }
 
 .overlay-menu-header .wp-block-button__link {
@@ -680,8 +698,34 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   top: 17px;
 }
 
-/* Брейкпоінт 768px */
-@media (max-width: 768px) {
+.uuwg-overlay .wp-block-navigation-item__label {
+  font-size: var(--wp--preset--font-size--heading-md);
+}
+
+@media screen and (max-width: 1482px) and (min-width: 1253px) {
+  .has-hero main {
+    --header-height: 142.4px;
+  }
+
+  .uuwg-header.is-layout-flex {
+    flex-wrap: nowrap;
+  }
+
+  .uuwg-site-logo {
+    margin-right: 40px;
+  }
+
+}
+
+@media (max-width: 1252px) {
+  .has-hero main {
+    --header-height: 130px;
+  }
+
+  .uuwg-header.is-layout-flex {
+    flex-wrap: nowrap;
+  }
+
   .uuwg-desktop-menu {
     display: none !important;
   }
@@ -691,16 +735,9 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   }
 }
 
-/* ============================== Media Queries ========================== */
-
-@media screen and (max-width: 897px) {
-  .has-hero .wp-block-template-part:has(header) {
-    margin-bottom: -292px;
+@media screen and (max-width: 375px) {
+  .uuwg-overlay .wp-block-navigation-item__label {
+    font-size: var(--wp--preset--font-size--text-medium);
   }
-}
 
-@media screen and (max-width: 750px) {
-  .has-hero .wp-block-template-part:has(header) {
-    margin-bottom: -292px;
-  }
 }

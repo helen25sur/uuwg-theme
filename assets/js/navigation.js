@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const openMenu = () => {
     overlay.classList.add('is-active');
     document.body.style.overflow = 'hidden';
+
+    const overlayHeader = document.querySelector('.overlay-menu-header:has(.uuwg-overlay.is-active)');
+    overlayHeader.addEventListener('click', (evt) => {
+      if (evt.target.contains(overlay)) {
+        overlay.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+    });
+
   };
 
   const closeMenu = () => {
