@@ -95,7 +95,11 @@
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1220px) {
+  .uuwg-what-we-do__header {
+    margin-bottom: 32px;
+  }
+
   .uuwg-what-we-do__cards {
     grid-template-columns: 1fr;
   }
@@ -104,4 +108,26 @@
     min-height: auto;
     padding-bottom: 4rem;
   }
+
+  .uuwg-what-we-do__card.is-active {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .uuwg-what-we-do .container {
+    position: relative;
+    padding-bottom: 83px;
+  }
+
+  .uuwg-what-we-do__cta.wp-element-button {
+    position: absolute;
+    bottom: 0;
+    max-width: 89%;
+    width: stretch;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
 }

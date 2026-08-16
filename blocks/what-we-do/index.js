@@ -11,7 +11,7 @@
       const { attributes, setAttributes } = props;
       const { heading, buttonText, buttonUrl } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-what-we-do' });
+      const blockProps = useBlockProps({ className: 'uuwg-what-we-do alignfull' });
 
       const itemPanels = [1, 2, 3, 4, 5].map(function (n) {
         const titleKey = `item${n}Title`;
@@ -30,12 +30,7 @@
             label: 'Текст (тільки для картки, що відкрита за замовчуванням)',
             value: attributes[textKey],
             onChange: (v) => setAttributes({ [textKey]: v }),
-          }),
-          // el(TextControl, {
-          //   label: 'URL кнопки-стрілки',
-          //   value: attributes[linkKey],
-          //   onChange: (v) => setAttributes({ [linkKey]: v }),
-          // })
+          })
         );
       });
 
@@ -44,44 +39,48 @@
         blockProps,
 
         el(InspectorControls, {}, ...itemPanels),
-
         el(
           'div',
-          { className: 'uuwg-what-we-do__header' },
-          el(RichText, {
-            tagName: 'h2',
-            className: 'uuwg-what-we-do__heading',
-            value: heading,
-            onChange: (v) => setAttributes({ heading: v }),
-            allowedFormats: [],
-          }),
-          el(RichText, {
-            tagName: 'span',
-            className: 'uuwg-what-we-do__cta wp-element-button',
-            value: buttonText,
-            onChange: (v) => setAttributes({ buttonText: v }),
-            allowedFormats: [],
-          })
-        ),
+          { className: 'container' },
+          el(
+            'div',
+            { className: 'uuwg-what-we-do__header' },
+            el(RichText, {
+              tagName: 'h2',
+              className: 'uuwg-what-we-do__heading',
+              value: heading,
+              onChange: (v) => setAttributes({ heading: v }),
+              allowedFormats: [],
+            }),
+            el(RichText, {
+              tagName: 'span',
+              className: 'uuwg-what-we-do__cta wp-element-button',
+              value: buttonText,
+              onChange: (v) => setAttributes({ buttonText: v }),
+              allowedFormats: [],
+            })
+          ),
 
-        el(
-          'div',
-          { className: 'uuwg-what-we-do__cards' },
-          [1, 2, 3, 4, 5].map(function (n) {
-            const isActive = n === 1;
-            return el(
-              'div',
-              {
-                className: 'uuwg-what-we-do__card' + (isActive ? ' is-active' : ''),
-                key: n,
-              },
-              el('h3', { className: 'uuwg-what-we-do__card-title' }, attributes[`item${n}Title`]),
-              isActive &&
-              el('div', { className: 'uuwg-what-we-do__card-text' }, attributes[`item${n}Text`]),
-              el('span', { className: 'uuwg-what-we-do__card-toggle' }, '→')
-            );
-          })
+          el(
+            'div',
+            { className: 'uuwg-what-we-do__cards' },
+            [1, 2, 3, 4, 5].map(function (n) {
+              const isActive = n === 1;
+              return el(
+                'div',
+                {
+                  className: 'uuwg-what-we-do__card' + (isActive ? ' is-active' : ''),
+                  key: n,
+                },
+                el('h3', { className: 'uuwg-what-we-do__card-title' }, attributes[`item${n}Title`]),
+                isActive &&
+                el('div', { className: 'uuwg-what-we-do__card-text' }, attributes[`item${n}Text`]),
+                el('span', { className: 'uuwg-what-we-do__card-toggle' }, '→')
+              );
+            })
+          )
         )
+
       );
     },
 

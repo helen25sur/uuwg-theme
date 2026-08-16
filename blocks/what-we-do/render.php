@@ -24,21 +24,21 @@ for ($i = 1; $i <= 5; $i++) {
 }
 
 $wrapper_attributes = get_block_wrapper_attributes(
-  array('class' => 'uuwg-what-we-do')
+  array('class' => 'uuwg-what-we-do alignfull')
 );
 ?>
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput 
       ?>>
+  <div class="container">
+    <div class="uuwg-what-we-do__header">
+      <h2 class="uuwg-what-we-do__heading"><?php echo wp_kses_post($heading); ?></h2>
+      <a class="uuwg-what-we-do__cta wp-element-button" href="<?php echo esc_url($button_url); ?>">
+        <?php echo esc_html($button_text); ?>
+      </a>
+    </div>
 
-  <div class="uuwg-what-we-do__header">
-    <h2 class="uuwg-what-we-do__heading"><?php echo wp_kses_post($heading); ?></h2>
-    <a class="uuwg-what-we-do__cta wp-element-button" href="<?php echo esc_url($button_url); ?>">
-      <?php echo esc_html($button_text); ?>
-    </a>
-  </div>
-
-  <div class="uuwg-what-we-do__cards" data-uuwg-accordion>
-    <?php foreach ($items as $index => $item) : ?>
+    <div class="uuwg-what-we-do__cards" data-uuwg-accordion>
+      <?php foreach ($items as $index => $item) : ?>
       <?php $is_active = (0 === $index); // перша картка відкрита за замовчуванням 
       ?>
       <div class="uuwg-what-we-do__card<?php echo $is_active ? ' is-active' : ''; ?>"
@@ -46,7 +46,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
         <h3 class="uuwg-what-we-do__card-title"><?php echo esc_html($item['title']); ?></h3>
 
         <?php if ($item['text']) : ?>
-          <div class="uuwg-what-we-do__card-text"><?php echo wp_kses_post($item['text']); ?></div>
+        <div class="uuwg-what-we-do__card-text"><?php echo wp_kses_post($item['text']); ?></div>
         <?php endif; ?>
 
         <button type="button" class="uuwg-what-we-do__card-toggle"
@@ -57,7 +57,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
           </svg>
         </button>
       </div>
-    <?php endforeach; ?>
+      <?php endforeach; ?>
+    </div>
   </div>
-
 </div>
