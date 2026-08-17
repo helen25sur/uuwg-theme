@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       dot.addEventListener('click', function () {
         const item = items[index];
-
         track.scrollTo({
           left: item.offsetLeft - track.offsetLeft,
           behavior: 'smooth',
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     items.forEach(function (item) {
-      console.log(item);
       observer.observe(item);
     });
   }

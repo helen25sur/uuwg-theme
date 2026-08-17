@@ -1,4 +1,5 @@
   .uuwg-carousel__track {
+    max-width: 100vw;
     display: flex;
     overflow-x: auto;
     scrollbar-width: none;
@@ -18,7 +19,8 @@
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 32px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
   .uuwg-carousel__dot {
@@ -41,7 +43,18 @@
     display: none;
   }
 
+  /* Фокус з клавіатури для доступності (A11y) */
+  .uuwg-carousel__dot:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary);
+    outline-offset: 3px;
+  }
+
   @media screen and (max-width: 1185px) {
+    .uuwg-carousel__track {
+      padding-right: var(--wp--custom--spacing--container-gutter);
+      /* під питанням, треба тестувати */
+    }
+
     .uuwg-carousel__dots {
       display: flex;
       width: 93vw;

@@ -133,15 +133,11 @@
   cursor: default;
 }
 
-/* Фокус з клавіатури для доступності (A11y) */
-.uuwg-pagination-btn:focus-visible {
-  outline: 2px solid var(--wp--preset--color--primary);
-  outline-offset: 3px;
-}
-
 .uuwg-carousel__dot.is-active {
   background-color: var(--wp--preset--color--primary);
 }
+
+
 
 @media screen and (max-width: 1225px) {
   .uuwg-our-projects.alignfull {
@@ -164,5 +160,46 @@
 
   .uuwg-our-projects__pagination {
     width: 100vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uuwg-our-projects__cta.wp-element-button {
+    font-size: 0;
+    position: relative;
+    width: 91px;
+    height: 31px;
+  }
+
+  .uuwg-our-projects__cta.wp-element-button::before {
+    content: 'View all';
+    position: absolute;
+    font-size: var(--wp--preset--font-size--text-sm);
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .uuwg-our-projects__cta.wp-element-button::after {
+    content: url('./../../assets/images/grth.svg');
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .uuwg-our-projects__cta.wp-element-button {
+    padding: 16px;
+    white-space: nowrap;
+  }
+
+  .uuwg-our-projects__card.uuwg-carousel__item {
+    flex: 0 0 332px;
   }
 }

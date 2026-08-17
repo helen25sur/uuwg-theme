@@ -68,7 +68,7 @@ $query = new WP_Query([
                   ?>
 
                   <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
-                  <span class="uwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
+                  <span class="uuwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
                 </div>
               </a>
             </div>
