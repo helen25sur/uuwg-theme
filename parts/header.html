@@ -1,14 +1,12 @@
 <!-- wp:group {"tagName":"header","className":"uuwg-header","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <header class="wp-block-group uuwg-header">
-
-	<!-- wp:group {"className": "container"} -->
+	<!-- wp:group {"className":"container"} -->
 	<div class="wp-block-group container">
+		<!-- wp:uuwg/uuwg-logo /-->
 
-		<!-- wp:uuwg/uuwg-logo {"slug":"uuwg/uuwg-logo"} /-->
-
-		<!-- Десктопний блок меню (ховатиметься на <= 768px) -->
-		<div class="uuwg-desktop-menu">
-			<!-- wp:navigation {"ref":44, "overlayMenu":"never"} /-->
+		<!-- wp:group {"className":"uuwg-desktop-menu"} -->
+		<div class="wp-block-group uuwg-desktop-menu">
+			<!-- wp:navigation {"ref":44,"overlayMenu":"never"} /-->
 
 			<!-- wp:shortcode -->
 			[uuwg_language_switcher]
@@ -24,17 +22,20 @@
 			</div>
 			<!-- /wp:buttons -->
 		</div>
+		<!-- /wp:group -->
 
-		<!-- Кнопка Гамбургера (показуватиметься на <= 768px) -->
-		<button class="uuwg-burger-btn" aria-label="Open menu">
-			<span></span><span></span><span></span>
-		</button>
-
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"uuwg-burger-menu-btn is-style-outline"} -->
+			<div class="uuwg-burger-menu-btn wp-block-button is-style-outline">
+				<a class="wp-block-button__link wp-element-button">Menu</a>
+			</div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
 	</div>
 	<!-- /wp:group -->
 
-	<!-- Підключаємо кастомний оверлей -->
-	<!-- wp:template-part {"slug":"overlay-menu", "className": "overlay-menu-header"} /-->
-
+	<!-- wp:template-part {"slug":"overlay-menu","theme":"uuwg-theme","className":"overlay-menu-header"} /-->
 </header>
 <!-- /wp:group -->

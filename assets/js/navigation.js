@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const burgerBtn = document.querySelector('.uuwg-burger-btn');
+  const burgerBtn = document.querySelector('.uuwg-burger-menu-btn');
   const closeBtn = document.querySelector('.uuwg-overlay-close');
   const overlay = document.querySelector('.uuwg-overlay');
 

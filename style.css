@@ -599,27 +599,34 @@ footer .is-style-wide {
   justify-content: space-between;
 }
 
+.wp-block-buttons:has(.uuwg-burger-menu-btn) {
+  display: none;
+}
+
 /* Стандартний стан елементів */
-.uuwg-burger-btn {
+.uuwg-burger-menu-btn .wp-block-button__link {
   padding: 1rem;
   margin-block-start: 0;
-  display: none;
+  display: flex;
   background: none;
   border: none;
   cursor: pointer;
   flex-direction: column;
   gap: 7px;
+  color: var(--wp--preset--color--white);
+  position: relative;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
 }
 
-.uuwg-burger-btn span {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: var(--wp--preset--color--primary);
-}
-
-.has-hero .uuwg-burger-btn span {
-  background-color: var(--wp--preset--color--white);
+.uuwg-burger-menu-btn .wp-block-button__link::before {
+  content: url('./assets/images/burger-menu.svg');
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 /* Оверлей за замовчуванням прихований */
@@ -732,7 +739,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
     display: none !important;
   }
 
-  .uuwg-burger-btn {
+  .wp-block-buttons:has(.uuwg-burger-menu-btn) {
     display: flex;
   }
 }
@@ -744,7 +751,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
 }
 
 @media screen and (max-width: 768px) {
-  main {
+  body {
     --wp--preset--font-size--hero: 46px;
     --wp--preset--font-size--heading-xl: 28px;
     --wp--preset--font-size--heading-md: 26px;
@@ -766,7 +773,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
 }
 
 @media screen and (max-width: 375px) {
-  main {
+  body {
     --wp--preset--font-size--hero: 32px;
     --wp--preset--font-size--heading-xl: 28px;
     --wp--preset--font-size--heading-md: 26px;
