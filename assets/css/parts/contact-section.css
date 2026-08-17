@@ -5,13 +5,13 @@
   flex-direction: column;
 }
 
-.wp-block-social-links {
+.uuwg-contact-section .wp-block-social-links {
   margin-top: auto;
   display: flex;
   gap: 8px;
 }
 
-.wp-block-social-links .wp-block-social-link-anchor {
+.uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,7 +326,7 @@
     gap: 32px;
   }
 
-  ul.wp-block-social-links {
+  .uuwg-contact-section ul.wp-block-social-links {
     display: none;
   }
 }
