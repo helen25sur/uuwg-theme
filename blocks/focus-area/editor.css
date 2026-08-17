@@ -1,0 +1,7 @@
+.uuwg-focus-area__grids {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
