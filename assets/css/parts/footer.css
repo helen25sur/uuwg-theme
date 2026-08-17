@@ -108,7 +108,7 @@ footer .is-style-wide {
 }
 
 #mc4wp-form-1 .uuwg_subscribe button[type="submit"]::before {
-  content: url('./assets/images/glyphs_arrow-bold.svg');
+  content: url('../../images/glyphs_arrow-bold.svg');
   position: absolute;
   width: 17.6px;
   height: 17.6px;
