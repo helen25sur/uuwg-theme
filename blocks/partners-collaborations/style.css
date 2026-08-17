@@ -1,6 +1,6 @@
-.uuwg-partners-collaborations {
+.uuwg-partners-collaborations.wp-block-uuwg-partners-collaborations {
   width: 100%;
-  padding: 78px 0 103px 0;
+  margin-block-start: 0;
   color: var(--wp--preset--color--primary);
 }
 
@@ -79,5 +79,29 @@
   100% {
     /* Автоматично розраховує зсув на рівно 1 комплект карток незалежно від їх кількості */
     transform: translateX(calc(-100% / var(--repeats, 2)));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uuwg-partners-collaborations__content {
+    gap: 40px;
+  }
+
+  .uuwg-partners-collaborations__row {
+    gap: 8px !important;
+  }
+
+  .uuwg-partners-collaborations__card {
+    width: 112.5px !important;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .uuwg-partners-collaborations__cta {
+    max-width: 90%;
+    width: stretch;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }
