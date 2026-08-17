@@ -12,7 +12,7 @@
       const { attributes, setAttributes } = props;
       const { heading, buttonText, buttonUrl, countOfNews, showPagination, showHeaderButton } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-news-events' });
+      const blockProps = useBlockProps({ className: 'uuwg-news-events alignfull' });
 
       const { news, totalPages } = useSelect(
         function (select) {

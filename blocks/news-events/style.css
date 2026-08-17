@@ -1,11 +1,10 @@
 .uuwg-news-events {
   width: 100%;
-  padding: 78px 0 103px 0;
   color: var(--wp--preset--color--primary);
 }
 
 .uuwg-news-events__content {
-  width: var(--wp--style--global--wide-size);
+  max-width: var(--wp--style--global--wide-size);
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 0 auto;
@@ -30,7 +29,7 @@
   display: inline-block;
 }
 
-.uuwg-news-events__grids {
+.uuwg-news-events__grids .uuwg-carousel__track {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -69,7 +68,7 @@
 }
 
 .uuwg-news-events__card img {
-  flex: 313px;
+  flex: 0 0 313px;
   flex-shrink: 0;
   flex-grow: 0;
   width: 100%;
@@ -98,45 +97,67 @@
   border-radius: var(--wp--custom--border-radius--button);
 }
 
-/* Контейнер пагінації */
-.uuwg-news-events__pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 32px;
+@media screen and (max-width: 1225px) {
+  .uuwg-news-events.alignfull {
+    overflow: hidden;
+  }
+
+  .uuwg-news-events__header {
+    max-width: 92vw;
+    margin-bottom: 40px;
+  }
+
+  .uuwg-news-events__grids .uuwg-carousel__track {
+    display: flex;
+    gap: 6px;
+  }
+
+  .uuwg-news-events__card.uuwg-carousel__item {
+    flex: 0 0 365px;
+  }
+
+  .uuwg-news-events__pagination {
+    width: 100vw;
+  }
 }
 
-/* Кнопки-індикатори */
-.uuwg-pagination-news-btn {
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: var(--wp--preset--color--blue-100);
-  cursor: pointer;
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@media screen and (max-width: 768px) {
+  .uuwg-news-events__cta.wp-element-button {
+    font-size: 0;
+    position: relative;
+    width: 91px;
+    height: 31px;
+  }
+
+  .uuwg-news-events__cta.wp-element-button::before {
+    content: 'View all';
+    position: absolute;
+    font-size: var(--wp--preset--font-size--text-sm);
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .uuwg-news-events__cta.wp-element-button::after {
+    content: url('./../../assets/images/grth.svg');
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
 }
 
-/* Ховер для неактивних точок */
-.uuwg-pagination-news-btn:hover:not(.is-active) {
-  background-color: var(--wp--preset--color--primary);
-}
 
-/* Активний стан (довша овальна плашка) */
-.uuwg-pagination-news-btn.is-active {
-  width: 36px;
-  border-radius: 100px;
-  background-color: var(--wp--preset--color--primary);
-  cursor: default;
-}
+@media screen and (max-width: 500px) {
+  .uuwg-news-events__cta.wp-element-button {
+    padding: 16px;
+    white-space: nowrap;
+  }
 
-/* Фокус з клавіатури для доступності (A11y) */
-.uuwg-pagination-news-btn:focus-visible {
-  outline: 2px solid var(--wp--preset--color--primary);
-  outline-offset: 3px;
+  .uuwg-news-events__card.uuwg-carousel__item {
+    flex: 0 0 343px;
+  }
 }

@@ -12,7 +12,7 @@
       const { attributes, setAttributes } = props;
       const { heading, headerText, buttonText, buttonUrl, cardWidth, gap } = attributes;
 
-      const blockProps = useBlockProps({ className: 'uuwg-partners-collaborations' });
+      const blockProps = useBlockProps({ className: 'uuwg-partners-collaborations alignfull' });
 
       const { partners } = useSelect(
         function (select) {
