@@ -1,38 +1,113 @@
 /* ======================= Footer ==================== */
 .site-footer {
-  padding: 80px 0 40px 0;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.footer__part1 {
-  margin-bottom: 96px;
-  font-size: var(--wp--preset--font-size--text-medium);
-  font-weight: 600;
-  line-height: 115%;
-  color: var(--wp--preset--color--blue-500);
+.uuwg-site-footer__content {
+  width: var(--wp--style--global--wide-size);
+  margin: 0 auto;
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  padding-top: 80px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "logo       nav       nav       nav       donate"
+    "subscribe  subscribe contacts  legal     location"
+    "copyright  copyright socials   socials   socials";
+  align-items: start;
+  column-gap: 100px;
+  row-gap: 96px;
+  justify-items: center;
+  justify-content: space-between;
 }
 
-.footer__part2 {
-  margin-bottom: 96px;
-  font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
-  line-height: 115%;
-  color: var(--wp--preset--color--blue-200);
-  column-gap: 122.5px;
+.uuwg-site-footer__content .uuwg-site-logo {
+  grid-area: logo;
+  align-self: center;
 }
 
-.footer__part2 h4 {
-  font-weight: 700;
-  color: var(--wp--preset--color--blue-500);
+.uuwg-site-footer__content nav.wp-block-navigation:first-of-type {
+  grid-area: nav;
+  flex-wrap: nowrap;
+  margin-block-start: 0;
+  padding: 18.5px 0;
 }
 
-.footer__part2 .wp-block-column,
-.footer__part2 .wp-block-navigation__container {
+.uuwg-site-footer__content .wp-block-buttons:first-of-type {
+  grid-area: donate;
+  margin-block-start: 0;
+}
+
+.uuwg-site-footer__content .wp-block-buttons:first-of-type .wp-block-button__link {
+  white-space: nowrap;
+}
+
+.uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) {
+  grid-area: subscribe;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-basis: min-content;
-  gap: 12px;
+  gap: 16px;
+  width: 413px;
+}
+
+.uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) h4 {
+  font-size: var(--wp--preset--font-size--text-body);
+  margin-right: auto;
+}
+
+.uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) .wp-block-paragraph:first-of-type {
+  margin-block-start: 0;
+  margin-bottom: 8px;
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
+.uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) p {
+  margin-block-start: 0;
+}
+
+.uuwg-site-footer__content .contacts {
+  grid-area: contacts;
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
+.uuwg-site-footer__content .legal {
+  grid-area: legal;
+  font-size: var(--wp--preset--font-size--text-sm);
+  color: var(--wp--preset--color--blue-200);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+.uuwg-site-footer__content .legal .wp-block-navigation__container {
+  flex-direction: column;
+  white-space: nowrap;
+  align-items: self-start;
+}
+
+.uuwg-site-footer__content .location {
+  grid-area: location;
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
+.uuwg-site-footer__content .copyright {
+  grid-area: copyright;
+  justify-self: self-start;
+}
+
+.uuwg-site-footer__content .wp-block-social-links {
+  grid-area: socials;
+  justify-self: self-end;
+}
+
+.uuwg-site-footer__content h4 {
+  font-weight: 700;
+  color: var(--wp--preset--color--blue-500);
+  font-size: var(--wp--preset--font-size--text-sm);
 }
 
 .footer__part2 .wp-block-column:first-of-type {
@@ -55,8 +130,12 @@
   color: var(--wp--preset--color--blue-200);
 }
 
-footer .is-style-wide {
+.site-footer .is-style-wide {
   border-color: var(--wp--preset--color--background);
+  position: absolute;
+  width: 100%;
+  bottom: 132px;
+  margin-block-start: 0;
 }
 
 /* Subscribe form */
@@ -97,7 +176,7 @@ footer .is-style-wide {
   width: 44px;
   height: 44px;
   position: absolute;
-  right: 4px;
+  right: 6px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 8.8px;
