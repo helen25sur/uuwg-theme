@@ -26,12 +26,12 @@ function uuwg_enqueue_assets()
 		file_exists($style_path) ? filemtime($style_path) : UUWG_THEME_VERSION
 	);
 
-	$style_scroll_path = UUWG_THEME_DIR . '/assets/css/scroll.css';
+	$style_main_path = UUWG_THEME_DIR . '/assets/css/main.css';
 	wp_enqueue_style(
-		'uuwg-scroll-style',
-		UUWG_THEME_URI . '/assets/css/scroll.css',
+		'uuwg-main-style',
+		UUWG_THEME_URI . '/assets/css/main.css',
 		array(),
-		file_exists($style_scroll_path) ? filemtime($style_scroll_path) : UUWG_THEME_VERSION
+		file_exists($style_main_path) ? filemtime($style_main_path) : UUWG_THEME_VERSION
 	);
 
 	// Приклад підключення JS для інтерактивних блоків (слайдер, AJAX-фільтри).

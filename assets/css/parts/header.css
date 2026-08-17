@@ -1,0 +1,267 @@
+.wp-block-template-part:has(header) {
+  font-size: var(--wp--preset--font-size--text-medium);
+}
+
+.wp-block-template-part:has(header) .container,
+header.block-editor-block-list__block .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.has-hero .wp-block-template-part:has(header) header {
+  color: var(--wp--preset--color--white);
+  position: relative;
+  /* background-color: var(--wp--preset--color--primary); */
+  z-index: 100;
+}
+
+.wp-block-template-part:has(header) .container nav,
+.wp-block-template-part:has(header) .container p,
+.wp-block-template-part:has(header) .container div {
+  margin: 0;
+}
+
+.uuwg-language-switcher {
+  position: relative;
+  display: inline-block;
+  font-size: var(--wp--preset--font-size--text-medium);
+  border: none;
+  background-color: transparent;
+  color: var(--wp--preset--color--primary);
+}
+
+.has-hero .uuwg-language-switcher {
+  color: var(--wp--preset--color--white);
+}
+
+.uuwg-language-switcher option {
+  color: var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--white);
+}
+
+.chat_button__link a {
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  padding-right: 60px;
+  position: relative;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 700;
+  line-height: 115%;
+}
+
+.has-hero .chat_button__link a {
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+
+.chat_button__link a::after {
+  content: '';
+  background-color: currentColor;
+  mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 27px;
+  top: 15px;
+}
+
+.uuwg-site-logo {
+  width: 109.6px;
+  height: 40px;
+}
+
+/* ==================== Menu Overlay ====================== */
+.uuwg-header .container {
+  justify-content: space-between;
+}
+
+.uuwg-site-logo {
+  margin-right: 84.2px;
+}
+
+.uuwg-desktop-menu {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.wp-block-buttons:has(.uuwg-burger-menu-btn) {
+  display: none;
+}
+
+/* Стандартний стан елементів */
+.uuwg-burger-menu-btn .wp-block-button__link {
+  padding: 1rem;
+  margin-block-start: 0;
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--wp--preset--color--white);
+  position: relative;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+}
+
+.uuwg-burger-menu-btn .wp-block-button__link::before {
+  content: url('../../images/burger-menu.svg');
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+/* Оверлей за замовчуванням прихований */
+.uuwg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  overflow-y: auto;
+  padding: 20px 40px;
+}
+
+.uuwg-overlay.is-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.uuwg-overlay .uuwg-site-logo .uuwg-site-logo__dark {
+  display: block;
+}
+
+.uuwg-overlay .uuwg-site-logo .uuwg-site-logo__light {
+  display: none;
+}
+
+.uuwg-overlay-close {
+  position: absolute;
+  color: var(--wp--preset--color--primary);
+  top: 12%;
+  right: 24px;
+  border: none;
+  background: transparent;
+  font-size: var(--wp--preset--font-size--heading-md);
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.uuwg-overlay .uuwg-language-switcher {
+  color: var(--wp--preset--color--primary);
+}
+
+header.overlay-menu-header:has(.uuwg-overlay.is-active) {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.overlay-menu-header .wp-block-button__link {
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  padding-right: 56px;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 700;
+  line-height: 115%;
+  position: relative;
+}
+
+.overlay-menu-header .wp-block-button__link::after {
+  content: '';
+  background-color: currentColor;
+  mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 26px;
+  top: 15px;
+}
+
+.uuwg-overlay .wp-block-navigation-item__label {
+  font-size: var(--wp--preset--font-size--heading-md);
+}
+
+@media screen and (max-width: 1482px) and (min-width: 1253px) {
+  .has-hero main {
+    --header-height: 142.4px;
+  }
+
+  .uuwg-header.is-layout-flex {
+    flex-wrap: nowrap;
+  }
+
+  .uuwg-site-logo {
+    margin-right: 40px;
+  }
+
+}
+
+@media screen and (max-width: 1252px) {
+  .has-hero main {
+    --header-height: 130px;
+  }
+
+  .uuwg-header.is-layout-flex {
+    flex-wrap: nowrap;
+  }
+
+  .uuwg-desktop-menu {
+    display: none !important;
+  }
+
+  .wp-block-buttons:has(.uuwg-burger-menu-btn) {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .uuwg-site-logo {
+    width: 104px;
+    height: 38px;
+  }
+
+  .uuwg-site-logo img {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+
+
+@media screen and (max-width: 375px) {
+
+  .uuwg-overlay .wp-block-navigation-item__label {
+    font-size: var(--wp--preset--font-size--text-medium);
+  }
+
+}

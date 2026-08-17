@@ -1,0 +1,10 @@
+/* Base */
+@import "./base.css";
+
+/* Template Parts */
+@import "./parts/header.css";
+@import "./parts/footer.css";
+@import "./parts/contact-us.css";
+
+/* Components */
+@import "./components/scroll.css";

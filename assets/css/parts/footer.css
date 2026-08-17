@@ -1,0 +1,118 @@
+/* ======================= Footer ==================== */
+.site-footer {
+  padding: 80px 0 40px 0;
+}
+
+.footer__part1 {
+  margin-bottom: 96px;
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-weight: 600;
+  line-height: 115%;
+  color: var(--wp--preset--color--blue-500);
+}
+
+.footer__part2 {
+  margin-bottom: 96px;
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  line-height: 115%;
+  color: var(--wp--preset--color--blue-200);
+  column-gap: 122.5px;
+}
+
+.footer__part2 h4 {
+  font-weight: 700;
+  color: var(--wp--preset--color--blue-500);
+}
+
+.footer__part2 .wp-block-column,
+.footer__part2 .wp-block-navigation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-basis: min-content;
+  gap: 12px;
+}
+
+.footer__part2 .wp-block-column:first-of-type {
+  flex-basis: 413px;
+  flex-grow: 0;
+}
+
+.footer__part2 p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__part2 nav {
+  margin: 0;
+}
+
+.uuwg-contact-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-200);
+}
+
+footer .is-style-wide {
+  border-color: var(--wp--preset--color--background);
+}
+
+/* Subscribe form */
+
+#mc4wp-form-1 {
+  margin: 0;
+  width: 100%;
+}
+
+#mc4wp-form-1 .uuwg_subscribe {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border: none;
+  position: relative;
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"] {
+  padding: 17px 44px 17px 16px;
+  width: 100%;
+  max-width: 413px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--wp--preset--color--background);
+  font-size: var(--wp--preset--font-size--text-medium);
+  color: var(--wp--preset--color--primary);
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
+  color: #899EAC;
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"] {
+  padding: 13.2px;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8.8px;
+  font-size: 0;
+  border: none;
+  background-color: var(--wp--preset--color--secondary);
+  cursor: pointer;
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"]::before {
+  content: url('./assets/images/glyphs_arrow-bold.svg');
+  position: absolute;
+  width: 17.6px;
+  height: 17.6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
