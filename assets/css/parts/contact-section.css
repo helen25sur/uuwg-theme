@@ -231,8 +231,8 @@
 #uuwg-popup-close .wp-block-button__link::before {
   content: '';
   background-color: currentColor;
-  mask: url('./assets/images/close.svg') no-repeat center / contain;
-  -webkit-mask: url('./assets/images/close.svg') no-repeat center / contain;
+  mask: url('../../images/close.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/close.svg') no-repeat center / contain;
   width: 12px;
   height: 12px;
   position: absolute;
@@ -242,6 +242,10 @@
 
 .uuwg-popup__close:hover {
   background-color: #f1f5f9;
+}
+
+.wp-block-buttons:has(#uuwg-popup-close) {
+  margin-bottom: 50px;
 }
 
 .uuwg-popup__title {
@@ -254,6 +258,7 @@
 
 .uuwg-popup__text {
   max-width: 65%;
+  margin-block-start: 0;
   padding: 0;
   color: var(--wp--preset--color--blue-200);
   font-size: 16px;
@@ -292,11 +297,72 @@
 .uuwg-popup__btn .wp-block-button__link::after {
   content: '';
   background-color: currentColor;
-  mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
-  -webkit-mask: url('./assets/images/telegram-fill.svg') no-repeat center / contain;
+  mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
   width: 20px;
   height: 20px;
   position: absolute;
   right: 30px;
   top: 16px;
 }
+
+@media screen and (max-width: 1225px) {
+  .uuwg-contact-section__form {
+    padding: 24px 18px;
+  }
+
+  .uuwg-contact-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #fluentform_1 fieldset {
+    column-gap: 16px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .uuwg-contact-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  ul.wp-block-social-links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uuwg-contact-section__form_header {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .uuwg-contact-section__form_header h3.wp-block-heading {
+    max-width: 100%;
+  }
+
+  .fluentform_wrapper_1.ff-default {
+    margin-block-start: 0;
+    margin-top: 32px;
+  }
+
+  #fluentform_1 fieldset {
+    grid-template-areas:
+      'legend legend'
+      'hidden hidden'
+      'name name'
+      'email email'
+      'message message'
+      'button button';
+  }
+
+  #fluentform_1 .ff-field_container[data-name="full_name"] {
+    margin-bottom: 24px;
+  }
+
+  #fluentform_1 .ff-el-group:has(textarea) {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {}

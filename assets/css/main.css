@@ -4,7 +4,7 @@
 /* Template Parts */
 @import "./parts/header.css";
 @import "./parts/footer.css";
-@import "./parts/contact-us.css";
+@import "./parts/contact-section.css";
 
 /* Components */
 @import "./components/scroll.css";
