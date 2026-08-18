@@ -53,6 +53,46 @@ main.block-editor-block-list__block.block-editor-block-list__layout {
   gap: var(--wp--custom--spacing--block-gap, 140px);
 }
 
+.wp-element-button,
+.wp-block-button__link {
+  transition: all 200ms ease-in;
+}
+
+.wp-element-button:hover,
+.wp-block-button__link:hover {
+  background-color: var(--wp--preset--color--yellow-100);
+}
+
+.wp-element-button:active,
+.wp-block-button__link:active {
+  background-color: var(--wp--preset--color--yellow-200);
+}
+
+.wp-element-button:disabled,
+.wp-block-button__link:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
+}
+
+.uuwg-hero__button--secondary {
+  background-color: var(--wp--preset--color--primary);
+}
+
+.uuwg-hero__button--secondary:hover {
+  background-color: var(--wp--preset--color--blue-500);
+}
+
+.uuwg-hero__button--secondary:active {
+  background-color: var(--wp--preset--color--dark-blue);
+}
+
+.uuwg-hero__button--secondary:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
+}
+
 @media screen and (max-width: 900px) {
   main.wp-block-group {
     --wp--custom--spacing--block-gap: 80px;

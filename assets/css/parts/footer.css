@@ -187,6 +187,21 @@
   border: none;
   background-color: var(--wp--preset--color--secondary);
   cursor: pointer;
+  transition: all 300ms ease-in;
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"]:hover {
+  background-color: var(--wp--preset--color--yellow-100);
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"]:active {
+  background-color: var(--wp--preset--color--yellow-200);
+}
+
+#mc4wp-form-1 .uuwg_subscribe button[type="submit"]:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
 }
 
 #mc4wp-form-1 .uuwg_subscribe button[type="submit"]::before {
@@ -197,6 +212,26 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+.site-footer .wp-block-social-links .wp-block-social-link-anchor {
+  transition: all 200ms ease-in;
+  border-radius: var(--wp--custom--border-radius--button, 999px);
+}
+
+.site-footer .wp-block-social-links .wp-block-social-link-anchor:hover {
+  background-color: var(--wp--preset--color--blue-500);
+}
+
+.site-footer .wp-block-social-links .wp-block-social-link-anchor:active {
+  background-color: var(--wp--preset--color--dark-blue);
+}
+
+.site-footer .wp-block-social-links .wp-block-social-link-anchor:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 1260px) {

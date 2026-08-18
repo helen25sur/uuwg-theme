@@ -161,6 +161,39 @@
   cursor: pointer;
   align-self: stretch;
   flex-grow: 1;
+  transition: all 200ms ease-in;
+}
+
+#fluentform_1 .ff_submit_btn_wrapper button[type="submit"]:hover {
+  background-color: var(--wp--preset--color--yellow-100);
+}
+
+#fluentform_1 .ff_submit_btn_wrapper button[type="submit"]:active {
+  background-color: var(--wp--preset--color--yellow-200);
+}
+
+#fluentform_1 .ff_submit_btn_wrapper button[type="submit"]:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
+}
+
+.uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor {
+  transition: all 200ms ease-in;
+}
+
+.uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor:hover {
+  background-color: var(--wp--preset--color--blue-500);
+}
+
+.uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor:active {
+  background-color: var(--wp--preset--color--dark-blue);
+}
+
+.uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
 }
 
 /* ============================ Contact Form Message Popup ======================== */

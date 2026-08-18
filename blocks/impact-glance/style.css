@@ -57,6 +57,11 @@
   line-height: 115%;
   border-radius: var(--wp--custom--border-radius--card);
   background-color: var(--wp--preset--color--light-blue);
+  transition: all 200ms ease-in;
+}
+
+.uuwg-impact-glance__card:hover {
+  background-color: var(--wp--preset--color--blue-100);
 }
 
 .uuwg-impact-glance__card .uuwg-impact-glance__card__title {
