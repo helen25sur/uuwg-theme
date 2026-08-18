@@ -184,3 +184,15 @@ function uuwg_register_project_acf_fields()
 	));
 }
 add_action('acf/init', 'uuwg_register_project_acf_fields');
+
+add_action('rest_api_init', function () {
+	register_rest_field('project', 'short_description', array(
+		'get_callback' => function ($post) {
+			if (function_exists('get_field')) {
+				return get_field('project_short_description', $post['id']);
+			}
+			return '';
+		},
+		'schema' => null,
+	));
+});

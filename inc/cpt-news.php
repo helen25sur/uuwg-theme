@@ -78,3 +78,15 @@ function uuwg_register_news_acf_fields()
 	));
 }
 add_action('acf/init', 'uuwg_register_news_acf_fields');
+
+add_action('rest_api_init', function () {
+	register_rest_field('news_event', 'short_description', array(
+		'get_callback' => function ($post) {
+			if (function_exists('get_field')) {
+				return get_field('news_short_description', $post['id']);
+			}
+			return '';
+		},
+		'schema' => null,
+	));
+});

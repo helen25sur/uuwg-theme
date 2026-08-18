@@ -68,11 +68,14 @@
         newsGrid = news.map(function (item) {
           const media = item._embedded && item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0];
           const imageUrl = media ? (media.media_details?.sizes?.medium?.source_url || media.source_url) : null;
+          const shortDescription = item.short_description || (item.acf && item.acf.short_description) || '';
+
           return el(
             'div', { className: 'uuwg-news-events__card', key: item.id },
             imageUrl && el('img', { src: imageUrl, alt: item.title.rendered, className: 'uuwg-news-events__card-img' }),
             el('div', { className: 'uuwg-news-events__card__content' },
               el('h3', { className: 'uuwg-news-events__card__title', dangerouslySetInnerHTML: { __html: item.title.rendered } }),
+              el('p', { className: 'uuwg-news-events__card__short-description', dangerouslySetInnerHTML: { __html: shortDescription } }),
               el('span', { className: 'uuwg-news-events__card__button wp-element-button' }, __('Read more', 'uuwg'))
             )
           );
