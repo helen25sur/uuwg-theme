@@ -99,6 +99,7 @@
 .uuwg-site-footer__content .copyright {
   grid-area: copyright;
   justify-self: self-start;
+  margin-block-start: 0;
 }
 
 .uuwg-site-footer__content .wp-block-social-links {
@@ -335,6 +336,7 @@
 
 @media screen and (max-width: 768px) {
   .uuwg-site-footer__content {
+    padding: 32px 20px;
     grid-template-columns: 2fr 1fr 1fr;
 
   }
@@ -342,5 +344,59 @@
   .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
     height: 105px;
   }
+}
 
+@media screen and (max-width: 710px) {
+  .uuwg-site-footer__content {
+    column-gap: 24px;
+  }
+
+  .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
+    column-gap: 32px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .uuwg-site-footer__content {
+    grid-template-areas:
+      "logo donate"
+      "nav nav"
+      "legal location"
+      "contacts contacts"
+      "subscribe subscribe"
+      "socials socials"
+      "copyright copyright";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 112px 82px 112px 152px 44px 17px;
+    row-gap: 48px;
+  }
+
+  .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
+    column-gap: 40vw;
+  }
+
+  .uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) {
+    justify-self: self-start;
+    width: 100%;
+  }
+
+  #mc4wp-form-1 .uuwg_subscribe input[type="email"] {
+    max-width: 100%;
+  }
+
+  .uuwg-site-footer__content .copyright {
+    justify-self: self-start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
+    column-gap: 35vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
+    height: 100px;
+  }
 }

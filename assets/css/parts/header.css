@@ -155,16 +155,25 @@ header.block-editor-block-list__block .container {
   display: none;
 }
 
-.uuwg-overlay-close {
-  position: absolute;
+.uuwg-overlay-close .wp-block-button__link {
+  position: relative;
   color: var(--wp--preset--color--primary);
   top: 12%;
   right: 24px;
   border: none;
   background: transparent;
-  font-size: var(--wp--preset--font-size--heading-md);
   cursor: pointer;
   padding: 1rem;
+  font-size: 0 !important;
+}
+
+.uuwg-overlay-close::after {
+  content: url('../../images/close.svg');
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 18%;
+  right: 5%;
 }
 
 .uuwg-overlay .uuwg-language-switcher {
@@ -183,7 +192,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   z-index: 100;
 }
 
-.overlay-menu-header .wp-block-button__link {
+.overlay-menu-header .chat-button .wp-block-button__link {
   padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
   padding-right: 56px;
   background-color: var(--wp--preset--color--primary);
@@ -194,7 +203,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   position: relative;
 }
 
-.overlay-menu-header .wp-block-button__link::after {
+.overlay-menu-header .chat-button .wp-block-button__link::after {
   content: '';
   background-color: currentColor;
   mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
