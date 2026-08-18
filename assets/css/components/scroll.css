@@ -15,7 +15,7 @@
     flex: 0 0 auto;
   }
 
-  .uuwg-carousel__dots {
+  .uuwg-carousel__pagination {
     display: flex;
     justify-content: center;
     gap: 8px;

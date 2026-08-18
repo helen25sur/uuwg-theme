@@ -29,13 +29,15 @@ $query = new WP_Query([
     <div class="uuwg-our-projects__header">
       <h2 class="uuwg-our-projects__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
       <?php if ($show_header_button && ! empty($button_text)) : ?>
-      <a class="uuwg-our-projects__cta wp-element-button" href="<?php echo esc_url($attributes['buttonUrl']); ?>"
-        class="uuwg-btn">
-        <?php echo esc_html($attributes['buttonText']); ?>
-      </a>
+        <a class="uuwg-our-projects__cta wp-element-button" href="<?php echo esc_url($attributes['buttonUrl']); ?>"
+          class="uuwg-btn">
+          <?php echo esc_html($attributes['buttonText']); ?>
+        </a>
       <?php endif; ?>
     </div>
-    <div class="uuwg-our-projects__grids uuwg-carousel js-projects-grid" data-uuwg-carousel>
+    <div class="uuwg-our-projects__grids uuwg-carousel js-projects-grid" data-uuwg-carousel data-carousel-desktop="3"
+      data-carousel-tablet="2" data-carousel-mobile="1"
+      data-show-pagination="<?php echo !empty($attributes['showPagination']) ? 'true' : 'false'; ?>">
       <div class="uuwg-carousel__track">
         <?php
 
@@ -44,37 +46,37 @@ $query = new WP_Query([
             $ID = get_the_ID();
 
         ?>
-        <div class="uuwg-our-projects__card uuwg-carousel__item">
-          <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)) ?>">
-            <?php
+            <div class="uuwg-our-projects__card uuwg-carousel__item">
+              <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)) ?>">
+                <?php
                 $thumbnail = get_the_post_thumbnail();
                 if ($thumbnail) {
                   echo $thumbnail;
                 }
                 ?>
-            <div class="uuwg-our-projects__card__content">
-              <h3 class="uuwg-our-projects__card__title"> <?php echo esc_html(get_the_title()) ?> </h3>
+                <div class="uuwg-our-projects__card__content">
+                  <h3 class="uuwg-our-projects__card__title"> <?php echo esc_html(get_the_title()) ?> </h3>
 
-              <?php
+                  <?php
                   $short_description = '';
                   if (function_exists('get_field')) {
                     $short_description = get_field('project_short_description', $ID);
                   }
                   ?>
 
-              <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
-              <span class="uuwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
+                  <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
+                  <span class="uuwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-        <?php endwhile;
+          <?php endwhile;
           ?>
       </div>
-      <div class="uuwg-carousel__dots"></div>
+      <div class="uuwg-carousel__pagination"></div>
     </div>
     <?php wp_reset_postdata(); ?>
   </div>
-  <?php else : ?>
+<?php else : ?>
   <p class="uuwg-our-projects__empty"><?php esc_html_e('No projects found.', 'uuwg'); ?></p>
-  <?php endif; ?>
+<?php endif; ?>
 </section>
