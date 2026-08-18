@@ -18,7 +18,8 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-partners-collaborations alignfull']); ?>>
+<section id="partners"
+  <?php echo get_block_wrapper_attributes(['class' => 'uuwg-partners-collaborations alignfull']); ?>>
   <div class="uuwg-partners-collaborations__content">
 
     <div class="uuwg-partners-collaborations__header">

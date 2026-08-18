@@ -27,3 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerBtn.addEventListener('click', openMenu);
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 });
+
+// Закриває перемикач мов при кліку за його межами
+document.addEventListener('click', (e) => {
+  const switcher = document.querySelector('.uuwg-language-switcher');
+  if (switcher && !switcher.contains(e.target)) {
+    switcher.removeAttribute('open');
+  }
+});

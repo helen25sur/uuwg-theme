@@ -29,6 +29,7 @@
     }
   },
   "supports": {
-    "html": false
+    "html": false,
+    "anchor": true
   }
 }

@@ -35,7 +35,8 @@
   },
   "supports": {
     "html": false,
-    "align": ["wide", "full"]
+    "align": ["wide", "full"],
+    "anchor": true
   },
   "editorScript": "file:./index.js",
   "style": "file:./style.css",

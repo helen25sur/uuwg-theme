@@ -154,6 +154,7 @@
   display: flex;
   border: none;
   position: relative;
+  margin-right: 20px;
 }
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"] {
@@ -262,6 +263,7 @@
 
   .uuwg-site-footer__content .wp-block-buttons:first-of-type {
     justify-self: self-end;
+    margin-right: 20px;
   }
 
   .uuwg-site-footer__content nav[aria-label^="Main Nav"] {

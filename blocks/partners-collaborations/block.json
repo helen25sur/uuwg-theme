@@ -22,6 +22,7 @@
     "speedOfAnimation": { "type": "integer", "default": 30 }
   },
   "supports": {
-    "html": false
+    "html": false,
+    "anchor": true
   }
 }
