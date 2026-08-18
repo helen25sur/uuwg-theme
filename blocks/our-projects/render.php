@@ -20,7 +20,7 @@ $attributes = isset($attributes) && is_array($attributes)
  * at one time.
  */
 $per_page = 3;
-
+$initial_load = 6;
 
 /*
  * Block settings.
@@ -45,7 +45,7 @@ $button_text = $attributes['buttonText'] ?? 'View all projects';
 $query = new WP_Query([
   'post_type'      => 'project',
   'post_status'    => 'publish',
-  'posts_per_page' => $per_page,
+  'posts_per_page' => $initial_load,
   'paged'          => 1,
 ]);
 

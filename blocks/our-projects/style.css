@@ -88,9 +88,10 @@
 
 .uuwg-our-projects__card__content {
   display: flex;
-  flex: 242px;
+  flex: 0 0 242px;
   flex-direction: column;
   padding: 24px;
+  justify-content: space-between;
 }
 
 .uuwg-our-projects__card__button {
@@ -118,43 +119,6 @@
 .uuwg-our-projects__card__button:disabled {
   background-color: var(--wp--preset--color--grey-200);
   color: var(--wp--preset--color--grey-100);
-}
-
-/* Контейнер пагінації */
-.uuwg-our-projects__pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 32px;
-}
-
-/* Кнопки-індикатори */
-.uuwg-pagination-btn {
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: var(--wp--preset--color--blue-100);
-  cursor: pointer;
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Ховер для неактивних точок */
-.uuwg-pagination-btn:hover:not(.is-active) {
-  background-color: var(--wp--preset--color--primary);
-}
-
-/* Активний стан (довша овальна плашка) */
-.uuwg-pagination-btn.is-active {
-  width: 36px;
-  border-radius: 100px;
-  background-color: var(--wp--preset--color--primary);
-  cursor: default;
 }
 
 .uuwg-carousel__dot.is-active {

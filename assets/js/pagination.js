@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   const carousels = document.querySelectorAll(
     '[data-uuwg-pagination]'
   );
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function initPagination(carousel) {
+
     const track = carousel.querySelector(
       '.uuwg-carousel__track'
     );
@@ -15,52 +17,157 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+
     const postType =
       carousel.dataset.postType;
 
-    const perPage =
-      Number(carousel.dataset.perPage) || 3;
 
-    let loadedPage = 1;
+    /*
+     * Number of items loaded by one AJAX request.
+     */
+    const perPage =
+      Number(carousel.dataset.perPage) || 6;
+
+
+    /*
+     * Number of posts already loaded.
+     *
+     * Initially these are rendered by PHP.
+     */
+    let loadedItems =
+      carousel.querySelectorAll(
+        '.uuwg-carousel__item'
+      ).length;
+
+
+    let loadedDataPage = 1;
+
     let isLoading = false;
 
 
+    /*
+     * How many cards are visible
+     * at the current breakpoint.
+     */
+    function getItemsPerPage() {
+
+      const width =
+        window.innerWidth;
+
+
+      if (width <= 767) {
+
+        return (
+          Number(
+            carousel.dataset.carouselMobile
+          ) || 1
+        );
+
+      }
+
+
+      if (width <= 1125) {
+
+        return (
+          Number(
+            carousel.dataset.carouselTablet
+          ) || 2
+        );
+
+      }
+
+
+      return (
+        Number(
+          carousel.dataset.carouselDesktop
+        ) || 3
+      );
+    }
+
+
+    /*
+     * User clicked a carousel pagination dot.
+     */
     carousel.addEventListener(
       'uuwg:carousel-page-request',
       async (event) => {
 
-        const page =
-          event.detail.page + 1;
+        const carouselPage =
+          event.detail.page;
+
+
+        const itemsPerPage =
+          getItemsPerPage();
 
 
         /*
-         * First page is already rendered
-         * by PHP.
+         * Which card does this carousel page start with?
          */
-        if (page <= loadedPage) {
-          requestScroll(page - 1);
+        const targetIndex =
+          carouselPage * itemsPerPage;
+
+
+        /*
+         * Refresh number of loaded cards.
+         */
+        loadedItems =
+          carousel.querySelectorAll(
+            '.uuwg-carousel__item'
+          ).length;
+
+
+        /*
+         * IMPORTANT:
+         *
+         * If the required card is already in DOM,
+         * we do NOT make an AJAX request.
+         */
+        if (
+          targetIndex < loadedItems
+        ) {
+
+          requestScroll(
+            carouselPage
+          );
+
           return;
         }
 
 
+        /*
+         * Required card isn't loaded yet.
+         *
+         * Load the next data batch.
+         */
         if (isLoading) {
           return;
         }
 
 
-        await loadPage(page);
+        await loadNextDataPage(
+          carouselPage
+        );
+
       }
     );
 
 
-    async function loadPage(page) {
+    async function loadNextDataPage(
+      carouselPage
+    ) {
+
       isLoading = true;
+
 
       try {
 
+        const nextDataPage =
+          loadedDataPage + 1;
+
+
         const url =
           `/wp-json/uuwg/v1/${postType}` +
-          `?page=${page}` +
+          `?page=${nextDataPage}` +
           `&per_page=${perPage}`;
 
 
@@ -69,9 +176,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (!response.ok) {
+
           throw new Error(
             `HTTP error: ${response.status}`
           );
+
         }
 
 
@@ -80,21 +189,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         /*
-         * Add new cards to the track.
+         * Add new cards.
          */
         if (data.html) {
+
           track.insertAdjacentHTML(
             'beforeend',
             data.html
           );
+
         }
 
-        loadedPage = page;
+
+        loadedDataPage =
+          nextDataPage;
+
+
+        loadedItems =
+          carousel.querySelectorAll(
+            '.uuwg-carousel__item'
+          ).length;
 
 
         /*
-         * Tell carousel.js to refresh
-         * its items array.
+         * Tell carousel.js that new cards
+         * have appeared.
          */
         carousel.dispatchEvent(
           new CustomEvent(
@@ -104,42 +223,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         /*
-         * Now tell carousel.js to scroll
-         * to the requested carousel page.
+         * Now go to the requested carousel page.
          */
-        requestScroll(page - 1);
-        // requestAnimationFrame(() => {
-        //   requestAnimationFrame(() => {
-        //   });
-        // });
+        requestScroll(
+          carouselPage
+        );
 
 
       } catch (error) {
 
         console.error(
-          'Failed to load projects:',
+          'Failed to load posts:',
           error
         );
 
       } finally {
 
         isLoading = false;
+
       }
+
     }
 
 
-    function requestScroll(page) {
+    function requestScroll(
+      page
+    ) {
 
       carousel.dispatchEvent(
         new CustomEvent(
           'uuwg:carousel-go-to-page',
           {
             detail: {
-              page: page,
-            },
+              page: page
+            }
           }
         )
       );
+
     }
+
   }
+
 });
