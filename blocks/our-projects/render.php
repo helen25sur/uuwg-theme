@@ -10,73 +10,167 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-// Ensure $attributes is defined to avoid PHP notices when this template is rendered directly.
-$attributes = isset($attributes) && is_array($attributes) ? $attributes : (array) ($attributes ?? []);
-$count = $attributes['countOfProjects'] ?? 3;
-$show_header_button = isset($attributes['showHeaderButton']) ? (bool) $attributes['showHeaderButton'] : true;
+$attributes = isset($attributes) && is_array($attributes)
+  ? $attributes
+  : (array) ($attributes ?? []);
+
+
+/*
+ * How many projects are loaded from the server
+ * at one time.
+ */
+$per_page = 3;
+
+
+/*
+ * Block settings.
+ */
+$show_header_button = isset($attributes['showHeaderButton'])
+  ? (bool) $attributes['showHeaderButton']
+  : true;
+
+$show_pagination = isset($attributes['showPagination'])
+  ? (bool) $attributes['showPagination']
+  : true;
+
 $button_text = $attributes['buttonText'] ?? 'View all projects';
 
+
+/*
+ * Initial query.
+ *
+ * We load the first 6 projects.
+ * The rest will be loaded via REST API.
+ */
 $query = new WP_Query([
   'post_type'      => 'project',
-  'posts_per_page' => $count,
+  'post_status'    => 'publish',
+  'posts_per_page' => $per_page,
   'paged'          => 1,
 ]);
+
+/*
+ * Total number of projects in the database.
+ *
+ * This is needed by carousel.js to know
+ * how many pagination dots there should be,
+ * even before all projects are loaded.
+ */
+$total_projects = (int) $query->found_posts;
+
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-our-projects alignfull']); ?>
-  data-count="<?php echo esc_attr($count); ?>" data-ajax-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
+<section <?php
+          echo get_block_wrapper_attributes([
+            'class' => 'uuwg-our-projects alignfull',
+          ]);
+          ?>>
+
   <div class="uuwg-our-projects__content">
+
     <div class="uuwg-our-projects__header">
-      <h2 class="uuwg-our-projects__heading"><?php echo esc_html($attributes['heading'] ?? ''); ?></h2>
+
+      <h2 class="uuwg-our-projects__heading">
+        <?php echo esc_html($attributes['heading'] ?? ''); ?>
+      </h2>
+
       <?php if ($show_header_button && ! empty($button_text)) : ?>
-        <a class="uuwg-our-projects__cta wp-element-button" href="<?php echo esc_url($attributes['buttonUrl']); ?>"
-          class="uuwg-btn">
-          <?php echo esc_html($attributes['buttonText']); ?>
+
+        <a class="uuwg-our-projects__cta wp-element-button uuwg-btn"
+          href="<?php echo esc_url($attributes['buttonUrl'] ?? '#'); ?>">
+          <?php echo esc_html($button_text); ?>
         </a>
+
       <?php endif; ?>
+
     </div>
+
+
     <div class="uuwg-our-projects__grids uuwg-carousel js-projects-grid" data-uuwg-carousel data-carousel-desktop="3"
       data-carousel-tablet="2" data-carousel-mobile="1"
-      data-show-pagination="<?php echo !empty($attributes['showPagination']) ? 'true' : 'false'; ?>">
-      <div class="uuwg-carousel__track">
-        <?php
+      data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>" data-uuwg-pagination
+      data-post-type="project" data-per-page="<?php echo esc_attr($per_page); ?>"
+      data-small-button-text="<?php echo esc_attr($attributes['smallButtonText'] ?? ''); ?>"
+      data-total-items="<?php echo esc_attr($total_projects); ?>">
 
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post();
+      <div class="uuwg-carousel__track">
+
+        <?php if ($query->have_posts()) : ?>
+
+          <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+            <?php
             $ID = get_the_ID();
 
-        ?>
+            $short_description = '';
+
+            if (function_exists('get_field')) {
+              $short_description = get_field(
+                'project_short_description',
+                $ID
+              );
+            }
+            ?>
+
             <div class="uuwg-our-projects__card uuwg-carousel__item">
-              <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)) ?>">
+
+              <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+
                 <?php
                 $thumbnail = get_the_post_thumbnail();
+
                 if ($thumbnail) {
                   echo $thumbnail;
                 }
                 ?>
+
                 <div class="uuwg-our-projects__card__content">
-                  <h3 class="uuwg-our-projects__card__title"> <?php echo esc_html(get_the_title()) ?> </h3>
 
-                  <?php
-                  $short_description = '';
-                  if (function_exists('get_field')) {
-                    $short_description = get_field('project_short_description', $ID);
-                  }
-                  ?>
+                  <h3 class="uuwg-our-projects__card__title">
+                    <?php echo esc_html(get_the_title()); ?>
+                  </h3>
 
-                  <p class="uuwg-our-projects__card__short-description"> <?php echo esc_html($short_description) ?> </p>
-                  <span class="uuwg-our-projects__card__button"><?php echo $attributes['smallButtonText'] ?></span>
+                  <p class="uuwg-our-projects__card__short-description">
+                    <?php echo esc_html($short_description); ?>
+                  </p>
+
+                  <span class="uuwg-our-projects__card__button">
+                    <?php
+                    echo esc_html(
+                      $attributes['smallButtonText'] ?? ''
+                    );
+                    ?>
+                  </span>
+
                 </div>
+
               </a>
+
             </div>
-          <?php endwhile;
-          ?>
+
+          <?php endwhile; ?>
+
+        <?php else : ?>
+
+          <p class="uuwg-our-projects__empty">
+            <?php esc_html_e('No projects found.', 'uuwg'); ?>
+          </p>
+
+        <?php endif; ?>
+
       </div>
-      <div class="uuwg-carousel__pagination"></div>
+
+
+      <?php if ($show_pagination) : ?>
+
+        <div class="uuwg-carousel__pagination"></div>
+
+      <?php endif; ?>
+
     </div>
+
     <?php wp_reset_postdata(); ?>
+
   </div>
-<?php else : ?>
-  <p class="uuwg-our-projects__empty"><?php esc_html_e('No projects found.', 'uuwg'); ?></p>
-<?php endif; ?>
+
 </section>

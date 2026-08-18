@@ -33,6 +33,7 @@ require_once UUWG_THEME_DIR . '/inc/cpt-team.php';
 require_once UUWG_THEME_DIR . '/inc/cpt-partners.php';
 require_once UUWG_THEME_DIR . '/inc/body-classes.php';
 require_once UUWG_THEME_DIR . '/inc/shortcodes.php';
+require_once UUWG_THEME_DIR . '/inc/pagination.php';
 
 require_once UUWG_THEME_DIR . '/inc/blocks.php'; // реєстрація кастомних блоків
 

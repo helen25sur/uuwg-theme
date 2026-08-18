@@ -44,7 +44,8 @@ $query = new WP_Query([
 
     <div class="uuwg-news-events__grids js-news-grid uuwg-carousel" data-uuwg-carousel data-carousel-desktop="3"
       data-carousel-tablet="2" data-carousel-mobile="1"
-      data-show-pagination="<?php echo !empty($attributes['showPagination']) ? 'true' : 'false'; ?>">
+      data-show-pagination="<?php echo !empty($attributes['showPagination']) ? 'true' : 'false'; ?>"
+      data-uuwg-pagination data-post-type="post" data-per-page="6">
       <div class="uuwg-carousel__track">
         <?php if ($query->have_posts()) : ?>
         <?php while ($query->have_posts()) : $query->the_post();
