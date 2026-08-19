@@ -27,6 +27,10 @@
     "item4Text": {
       "type": "string",
       "default": "Legal guidance, education, community support that help women navigate life in Greece"
+    },
+    "showPagination": {
+      "type": "boolean",
+      "default": true
     }
   },
   "supports": {

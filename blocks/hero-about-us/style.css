@@ -1,0 +1,95 @@
+.has-hero main {
+  margin-top: calc(var(--header-height) * -1);
+}
+
+.uuwg-hero-about-us {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  color: var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--background);
+  border-radius: var(--wp--custom--border-radius--hero);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.header--transparent .uuwg-site-logo__dark {
+  display: none;
+}
+
+.header--transparent .uuwg-site-logo__light {
+  display: block;
+}
+
+.uuwg-hero-about-us__container {
+  padding: 59px var(--wp--custom--spacing--container-gutter) 349px;
+  max-width: var(--wp--style--global--wide-size);
+  margin: 0 auto;
+}
+
+.uuwg-hero-about-us__inner {
+  width: 100%;
+  text-align: center;
+}
+
+.uuwg-hero-about-us__title {
+  max-width: 658px;
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--hero);
+  line-height: 1.1;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  letter-spacing: -2%;
+}
+
+.uuwg-hero-about-us__subtitle {
+  font-family: var(--wp--preset--font-family--body);
+  font-size: var(--wp--preset--font-size--text-body);
+  opacity: 0.9;
+  margin: 0 auto;
+  margin-bottom: 44px;
+  max-width: 630px;
+}
+
+.uuwg-hero-about-us__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.uuwg-hero-about-us__button {
+  display: inline-block;
+  padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
+  border-radius: var(--wp--custom--border-radius--button, 999px);
+  font-family: var(--wp--preset--font-family--body);
+  font-size: var(--wp--preset--font-size--body-lg);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.uuwg-hero-about-us__button--secondary {
+  background-color: transparent;
+  color: var(--wp--preset--color--primary);
+  border: 1px solid var(--wp--preset--color--primary);
+}
+
+.uuwg-hero-about-us__photos {
+  position: relative;
+}
+
+.uuwg-hero-about-us__photos .uuwg-hero-about-us__photo {
+  max-width: 270px;
+}
+
+.uuwg-hero-about-us__photos .uuwg-hero-about-us__photo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 500px) {}
+
+@media screen and (max-width: 375px) {}

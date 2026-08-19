@@ -61,7 +61,8 @@ function uuwg_register_blocks()
 		'our-projects',
 		'partners-collaborations',
 		'news-events',
-		'get-involved'
+		'get-involved',
+		'hero-about-us'
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();

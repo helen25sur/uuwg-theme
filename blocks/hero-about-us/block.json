@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/hero-about-us",
+  "title": "UUWG: Hero About Us",
+  "category": "uuwg-blocks",
+  "icon": "cover-image",
+  "description": "Головний банер сторінки Про нас: заголовок, підзаголовок, дві кнопки, фотокартки.",
+  "textdomain": "uuwg",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Union of Ukrainian Women in Greece"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "A women-led community organization in Athens that supports Ukrainian and other women impacted by war and migration"
+    },
+    "yellowButtonText": {
+      "type": "string",
+      "default": "Donate"
+    },
+    "yellowButtonUrl": {
+      "type": "string",
+      "default": "https://whydonate.com/donate/support-ukrainian-women-in-greece-create-a-space-of-empowerment-and-hope?utm_source=ig\u0026utm_medium=social\u0026utm_content=link_in_bio\u0026fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnHwF0GLrPeExsW0piuib2u1lJM14juo7eefAoKE5shPGNn4PU63UPQTkMh-0_aem_SEm1uF3R-24Y38r-yTwNiw"
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "default": "Get Help"
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "photo1Id": { "type": "number", "default": 0 },
+    "photo1Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-01.png"
+    },
+    "photo2Id": { "type": "number", "default": 0 },
+    "photo2Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-02.png"
+    },
+    "photo3Id": { "type": "number", "default": 0 },
+    "photo3Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-03.png"
+    },
+    "photo4Id": { "type": "number", "default": 0 },
+    "photo4Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-04.png"
+    },
+    "photo5Id": { "type": "number", "default": 0 },
+    "photo5Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-05.png"
+    },
+    "photo6Id": { "type": "number", "default": 0 },
+    "photo6Url": {
+      "type": "string",
+      "default": "http://uuwg.local/wp-content/themes/uuwg-theme/assets/images/about-us/about-us-06.jpg"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": ["wide", "full"],
+    "color": {
+      "background": true
+    },
+    "spacing": {
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}
