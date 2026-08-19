@@ -32,10 +32,6 @@
       "type": "string",
       "default": "#"
     },
-    "align": {
-      "type": "string",
-      "default": "full"
-    },
     "photo1Id": { "type": "number", "default": 0 },
     "photo1Url": {
       "type": "string",

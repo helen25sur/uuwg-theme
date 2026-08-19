@@ -77,10 +77,21 @@ add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
 
 function uuwg_enqueue_editor_assets()
 {
-	$style_path = UUWG_THEME_DIR . '/style.css';
+	$style_path = UUWG_THEME_DIR . '/assets/css/style.css';
 	add_editor_style('style.css');
 }
 add_action('admin_init', 'uuwg_enqueue_editor_assets');
+
+function uuwg_add_editor_styles()
+{
+	// 1. Вмикаємо підтримку кастомних стилів редактора
+	add_theme_support('editor-styles');
+
+	// 2. Вказуємо шлях відносно КОРЕНЯ теми (без get_template_directory_uri())
+	// Наприклад, якщо файл у: wp-content/themes/uuwg-theme/assets/css/editor.css
+	add_editor_style('assets/css/editor.css');
+}
+add_action('after_setup_theme', 'uuwg_add_editor_styles');
 
 // Дані для JS кастомних блоків (наприклад дефолтні логотипи для превʼю в редакторі)
 function uuwg_localize_block_editor_assets()

@@ -1,11 +1,7 @@
-.has-hero main {
-  margin-top: calc(var(--header-height) * -1);
-}
-
 .uuwg-hero-about-us {
-  max-width: 100%;
   margin: 0 auto;
-  position: relative;
+  padding-top: 59px;
+  padding-bottom: 349px;
   color: var(--wp--preset--color--primary);
   background-color: var(--wp--preset--color--background);
   border-radius: var(--wp--custom--border-radius--hero);
@@ -22,9 +18,11 @@
 }
 
 .uuwg-hero-about-us__container {
-  padding: 59px var(--wp--custom--spacing--container-gutter) 349px;
+  max-width: var(--wp--style--global--wide-size);
+  padding: 0 var(--wp--custom--spacing--container-gutter) 0;
   max-width: var(--wp--style--global--wide-size);
   margin: 0 auto;
+  position: relative;
 }
 
 .uuwg-hero-about-us__inner {
@@ -75,17 +73,83 @@
   border: 1px solid var(--wp--preset--color--primary);
 }
 
-.uuwg-hero-about-us__photos {
-  position: relative;
-}
-
 .uuwg-hero-about-us__photos .uuwg-hero-about-us__photo {
   max-width: 270px;
+  position: absolute;
 }
 
-.uuwg-hero-about-us__photos .uuwg-hero-about-us__photo img {
+.uuwg-hero-about-us__photo img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+/* 177 px this is padding-top of the container and height of header */
+
+.uuwg-hero-about-us__photo--1 {
+  top: calc(391px - 177px);
+  left: 48px;
+}
+
+.uuwg-hero-about-us__photo--1 img {
+  width: 265px;
+  height: 164px;
+  object-view-box: inset(13%);
+  border-radius: 10.75px;
+}
+
+.uuwg-hero-about-us__photo--2 {
+  top: calc(356px - 177px);
+  left: 1130px;
+}
+
+.uuwg-hero-about-us__photo--2 img {
+  width: 269.7px;
+  height: 167px;
+  border-radius: 10.95px;
+}
+
+.uuwg-hero-about-us__photo--3 {
+  top: calc(677px - 177px);
+  left: -93px;
+}
+
+.uuwg-hero-about-us__photo--3 img {
+  width: 265px;
+  height: 164px;
+  border-radius: 10.75px;
+}
+
+.uuwg-hero-about-us__photo--4 {
+  top: calc(635px - 177px);
+  left: 391px;
+}
+
+.uuwg-hero-about-us__photo--4 img {
+  width: 249px;
+  height: 163px;
+  border-radius: 8px;
+}
+
+.uuwg-hero-about-us__photo--5 {
+  top: calc(678px - 177px);
+  left: 832px;
+}
+
+.uuwg-hero-about-us__photo--5 img {
+  width: 249px;
+  height: 163px;
+  border-radius: 8px;
+}
+
+.uuwg-hero-about-us__photo--6 {
+  top: calc(620px - 177px);
+  left: 1263px;
+}
+
+.uuwg-hero-about-us__photo--6 img {
+  width: 265px;
+  height: 164px;
+  border-radius: 10.75px;
 }
 
 @media screen and (max-width: 768px) {}

@@ -44,7 +44,7 @@
       } = attributes;
 
       const blockProps = useBlockProps({
-        className: 'uuwg-hero-about-us',
+        className: 'uuwg-hero-about-us alignfull',
       });
 
       const preview1 = photo1Url || defaultsBase + 'about-us-01.png';
@@ -132,81 +132,86 @@
         'section',
         blockProps,
         inspector,
-        el(RichText, {
-          tagName: 'h1',
-          className: 'uuwg-hero-about-us__title',
-          value: title,
-          onChange: function (value) {
-            setAttributes({ title: value });
-          },
-          placeholder: __('Заголовок банера…', 'uuwg'),
-          allowedFormats: [],
-        }),
-        el(RichText, {
-          tagName: 'p',
-          className: 'uuwg-hero-about-us__subtitle',
-          value: subtitle,
-          onChange: function (value) {
-            setAttributes({ subtitle: value });
-          },
-          placeholder: __('Підзаголовок…', 'uuwg'),
-        }),
         el(
           'div',
-          { className: 'uuwg-hero-about-us__buttons' },
+          { className: 'uuwg-hero-about-us__container' },
           el(RichText, {
-            tagName: 'span',
-            className: 'uuwg-hero-about-us__button uuwg-hero-about-us__button--primary wp-element-button',
-            value: yellowButtonText,
+            tagName: 'h1',
+            className: 'uuwg-hero-about-us__title',
+            value: title,
             onChange: function (value) {
-              setAttributes({ yellowButtonText: value });
+              setAttributes({ title: value });
             },
+            placeholder: __('Заголовок банера…', 'uuwg'),
             allowedFormats: [],
           }),
           el(RichText, {
-            tagName: 'span',
-            className: 'uuwg-hero-about-us__button uuwg-hero-about-us__button--secondary',
-            value: secondaryButtonText,
+            tagName: 'p',
+            className: 'uuwg-hero-about-us__subtitle',
+            value: subtitle,
             onChange: function (value) {
-              setAttributes({ secondaryButtonText: value });
+              setAttributes({ subtitle: value });
             },
-            allowedFormats: [],
-          })
-        ),
+            placeholder: __('Підзаголовок…', 'uuwg'),
+          }),
+          el(
+            'div',
+            { className: 'uuwg-hero-about-us__buttons' },
+            el(RichText, {
+              tagName: 'span',
+              className: 'uuwg-hero-about-us__button uuwg-hero-about-us__button--primary wp-element-button',
+              value: yellowButtonText,
+              onChange: function (value) {
+                setAttributes({ yellowButtonText: value });
+              },
+              allowedFormats: [],
+            }),
+            el(RichText, {
+              tagName: 'span',
+              className: 'uuwg-hero-about-us__button uuwg-hero-about-us__button--secondary',
+              value: secondaryButtonText,
+              onChange: function (value) {
+                setAttributes({ secondaryButtonText: value });
+              },
+              allowedFormats: [],
+            })
+          ),
 
-        el(
-          'div',
-          { className: 'uuwg-hero-about-us__photos' },
           el(
             'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--1' },
-            el('img', { src: preview1, alt: '' })
-          ),
-          el(
-            'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--2' },
-            el('img', { src: preview2, alt: '' })
-          ),
-          el(
-            'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--3' },
-            el('img', { src: preview3, alt: '' })
-          ),
-          el(
-            'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--4' },
-            el('img', { src: preview4, alt: '' })
-          ),
-          el(
-            'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--5' },
-            el('img', { src: preview5, alt: '' })
-          ),
-          el(
-            'div',
-            { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--6' },
-            el('img', { src: preview6, alt: '' })
+            { className: 'uuwg-hero-about-us__photos' },
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--1' },
+              el('img', { src: preview1, alt: '' })
+            ),
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--2' },
+              el('img', { src: preview2, alt: '' })
+            ),
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--3' },
+              el('img', { src: preview3, alt: '' })
+            ),
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--4' },
+              el('img', { src: preview4, alt: '' })
+            ),
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--5' },
+              el('img', { src: preview5, alt: '' })
+            ),
+            el(
+              'div',
+              { className: 'uuwg-hero-about-us__photo uuwg-hero-about-us__photo--6' },
+              el('img', { src: preview6, alt: '' })
+            )
           )
+
         )
       );
     },

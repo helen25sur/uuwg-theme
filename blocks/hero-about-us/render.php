@@ -21,7 +21,7 @@ $photo6_url   = $attributes['photo6Url'] ?? '';
 
 $wrapper_attributes = get_block_wrapper_attributes(
   array(
-    'class' => 'uuwg-hero-about-us'
+    'class' => 'uuwg-hero-about-us alignfull'
   )
 );
 ?>
