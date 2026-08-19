@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uuwg/values-circles",
+  "title": "UUWG: Our Values",
+  "category": "uuwg-blocks",
+  "attributes": {
+    "heading": { "type": "string", "default": "Our values" },
+    "buttonText": { "type": "string", "default": "Donate" },
+    "buttonUrl": {
+      "type": "string",
+      "default": "https://whydonate.com/donate/support-ukrainian-women-in-greece-create-a-space-of-empowerment-and-hope?utm_source=ig\u0026utm_medium=social\u0026utm_content=link_in_bio\u0026fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnHwF0GLrPeExsW0piuib2u1lJM14juo7eefAoKE5shPGNn4PU63UPQTkMh-0_aem_SEm1uF3R-24Y38r-yTwNiw"
+    },
+    "item1Title": { "type": "string", "default": "Solidarity" },
+    "item1Text": {
+      "type": "string",
+      "default": "We act together and support one another"
+    },
+    "item2Title": { "type": "string", "default": "Dignity" },
+    "item2Text": {
+      "type": "string",
+      "default": "Every person deserves respect, safety, and opportunity"
+    },
+    "item3Title": { "type": "string", "default": "Empowerment" },
+    "item3Text": {
+      "type": "string",
+      "default": "Sustainable change comes from skills, confidence, and participation"
+    },
+    "item4Title": { "type": "string", "default": "Transparency" },
+    "item4Text": {
+      "type": "string",
+      "default": "We are accountable in our actions and partnerships"
+    },
+    "item5Title": { "type": "string", "default": "Collaboration" },
+    "item5Text": {
+      "type": "string",
+      "default": "Impact grows through cooperation"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}

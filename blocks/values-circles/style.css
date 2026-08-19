@@ -1,0 +1,94 @@
+.uuwg-values-circles.wp-block-uuwg-values-circles {
+  width: 100%;
+  margin-block-start: 0;
+  color: var(--wp--preset--color--primary);
+}
+
+.uuwg-values-circles__content {
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.uuwg-values-circles__header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uuwg-values-circles__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+}
+
+.uuwg-values-circles__cta {
+  display: inline-block;
+}
+
+.uuwg-values-circles__grids {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.uuwg-values-circles__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 44px;
+  flex-shrink: 0;
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  background-color: var(--wp--preset--color--light-blue);
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+
+.uuwg-values-circles__card+.uuwg-values-circles__card {
+  margin-left: -35px;
+}
+
+.uuwg-values-circles__card:hover {
+  background-color: var(--wp--preset--color--blue-100);
+}
+
+.uuwg-values-circles__card .uuwg-values-circles__card__title {
+  font-size: var(--wp--preset--font-size--heading-sm);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25.78px;
+}
+
+.uuwg-values-circles__card__text {
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
+.uuwg-values-circles__card:nth-of-type(odd) {
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--background);
+}
+
+.uuwg-values-circles__card:nth-of-type(odd):hover {
+  background-color: var(--wp--preset--color--dark-blue);
+}
+
+.uuwg-values-circles__card:nth-of-type(odd) .uuwg-values-circles__card__text {
+  color: var(--wp--preset--color--light-blue);
+}
+
+@media screen and (max-width: 1000px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 375px) {}
