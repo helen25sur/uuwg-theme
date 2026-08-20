@@ -30,7 +30,7 @@
     },
     "secondaryButtonUrl": {
       "type": "string",
-      "default": "#"
+      "default": "#contact-us"
     },
     "photo1Id": { "type": "number", "default": 0 },
     "photo1Url": {

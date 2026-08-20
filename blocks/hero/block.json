@@ -30,7 +30,7 @@
     },
     "secondaryButtonUrl": {
       "type": "string",
-      "default": "#"
+      "default": "#contact-us"
     },
     "align": {
       "type": "string",

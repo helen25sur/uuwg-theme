@@ -17,7 +17,7 @@
     },
     "item1ButtonUrl": {
       "type": "string",
-      "default": "#"
+      "default": "#contact-us"
     },
     "item2Title": { "type": "string", "default": "Partner or Fundraise" },
     "item2Text": {
@@ -30,7 +30,7 @@
     },
     "item2ButtonUrl": {
       "type": "string",
-      "default": "#"
+      "default": "#contact-us"
     }
   },
   "supports": {

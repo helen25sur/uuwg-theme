@@ -7,7 +7,7 @@
   "attributes": {
     "heading": { "type": "string", "default": "Focus areas" },
     "buttonText": { "type": "string", "default": "Get Help" },
-    "buttonUrl": { "type": "string", "default": "#" },
+    "buttonUrl": { "type": "string", "default": "#contact-us" },
     "item1Title": { "type": "string", "default": "Migration & Integration" },
     "item1Text": {
       "type": "string",

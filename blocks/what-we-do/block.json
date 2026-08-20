@@ -10,7 +10,7 @@
   "attributes": {
     "heading": { "type": "string", "default": "What we do" },
     "buttonText": { "type": "string", "default": "Get Help" },
-    "buttonUrl": { "type": "string", "default": "#" },
+    "buttonUrl": { "type": "string", "default": "#contact-us" },
 
     "item1Title": { "type": "string", "default": "Humanitarian Aid" },
     "item1Text": {

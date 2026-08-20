@@ -11,7 +11,7 @@
   "attributes": {
     "heading": { "type": "string", "default": "Our team" },
     "buttonText": { "type": "string", "default": "Join us" },
-    "buttonUrl": { "type": "string", "default": "#" }
+    "buttonUrl": { "type": "string", "default": "#contact-us" }
   },
   "supports": {
     "html": false,
