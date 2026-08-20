@@ -105,3 +105,37 @@ function uuwg_localize_block_editor_assets()
 	);
 }
 add_action('enqueue_block_editor_assets', 'uuwg_localize_block_editor_assets');
+
+function uuwg_enqueue_values_animation()
+{
+
+	if (! is_page('about')) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'gsap',
+		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js',
+		array(),
+		'3.15.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'gsap-scrolltrigger',
+		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js',
+		array('gsap'),
+		'3.15.0',
+		true
+	);
+
+	wp_enqueue_script(
+		'uuwg-values-animation',
+		get_template_directory_uri() . '/assets/js/values-animation.js',
+		['gsap', 'gsap-scrolltrigger'],
+		filemtime(get_theme_file_path('/assets/js/values-animation.js')),
+		true
+	);
+}
+
+add_action('wp_enqueue_scripts', 'uuwg_enqueue_values_animation');
