@@ -68,92 +68,239 @@
 }
 
 .uuwg-hero-about-us__button--secondary {
-  background-color: transparent;
-  color: var(--wp--preset--color--primary);
-  border: 1px solid var(--wp--preset--color--primary);
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--background);
 }
 
 .uuwg-hero-about-us__photos .uuwg-hero-about-us__photo {
   max-width: 270px;
+  width: clamp(150px, 18vw, 270px);
+  aspect-ratio: 16 / 10;
   position: absolute;
 }
 
 .uuwg-hero-about-us__photo img {
   width: 100%;
+  max-height: 170px;
   object-fit: cover;
 }
 
-/* 177 px this is padding-top of the container and height of header */
-
 .uuwg-hero-about-us__photo--1 {
-  top: calc(391px - 177px);
-  left: 48px;
+  top: 56%;
+  left: 3%;
 }
 
 .uuwg-hero-about-us__photo--1 img {
-  width: 265px;
-  height: 164px;
+  /* width: 265px;
+  height: 164px; */
   object-view-box: inset(13%);
   border-radius: 10.75px;
 }
 
 .uuwg-hero-about-us__photo--2 {
-  top: calc(356px - 177px);
-  left: 1130px;
+  top: 51%;
+  right: 3%;
 }
 
 .uuwg-hero-about-us__photo--2 img {
-  width: 269.7px;
-  height: 167px;
+  /* width: 269.7px;
+  height: 167px; */
   border-radius: 10.95px;
 }
 
 .uuwg-hero-about-us__photo--3 {
-  top: calc(677px - 177px);
-  left: -93px;
+  top: 154%;
+  left: -5%;
 }
 
 .uuwg-hero-about-us__photo--3 img {
-  width: 265px;
-  height: 164px;
+  /* width: 265px;
+  height: 164px; */
   border-radius: 10.75px;
 }
 
 .uuwg-hero-about-us__photo--4 {
-  top: calc(635px - 177px);
-  left: 391px;
+  top: 128%;
+  left: 29%;
 }
 
 .uuwg-hero-about-us__photo--4 img {
-  width: 249px;
-  height: 163px;
+  /* width: 249px;
+  height: 163px; */
   border-radius: 8px;
 }
 
 .uuwg-hero-about-us__photo--5 {
-  top: calc(678px - 177px);
-  left: 832px;
+  top: 147%;
+  right: 23%;
 }
 
 .uuwg-hero-about-us__photo--5 img {
-  width: 249px;
-  height: 163px;
+  /* width: 249px;
+  height: 163px; */
   border-radius: 8px;
 }
 
 .uuwg-hero-about-us__photo--6 {
-  top: calc(620px - 177px);
-  left: 1263px;
+  top: 125%;
+  right: -7%;
 }
 
 .uuwg-hero-about-us__photo--6 img {
-  width: 265px;
-  height: 164px;
+  /* width: 265px;
+  height: 164px; */
   border-radius: 10.75px;
 }
 
-@media screen and (max-width: 768px) {}
 
-@media screen and (max-width: 500px) {}
 
-@media screen and (max-width: 375px) {}
+@media screen and (max-width: 1025px) {
+  .uuwg-hero-about-us__photo--1 {
+    top: 80%;
+  }
+
+  .uuwg-hero-about-us__photo--2 {
+    top: 76%;
+  }
+
+  .uuwg-hero-about-us__photo--3 {
+    display: none;
+  }
+
+  .uuwg-hero-about-us__photo--4 {
+    top: 153%;
+    left: 17%;
+  }
+
+  .uuwg-hero-about-us__photo--5 {
+    top: 123%;
+    right: 41%;
+  }
+
+  .uuwg-hero-about-us__photo--6 {
+    top: 158%;
+    right: 17%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uuwg-hero-about-us {
+    padding-top: 65px;
+    padding-bottom: 363px;
+  }
+
+  .uuwg-hero-about-us__inner {
+    max-width: 403px;
+    margin: 0 auto;
+  }
+
+  .uuwg-hero-about-us__title {
+    margin-bottom: 16px;
+  }
+
+  .uuwg-hero-about-us__subtitle {
+    margin-bottom: 32px;
+  }
+
+  .uuwg-hero-about-us__button {
+    padding: 16px 55.25px;
+  }
+
+  .uuwg-hero-about-us__photos .uuwg-hero-about-us__photo {
+    max-width: 157px;
+  }
+
+  .uuwg-hero-about-us__photo img {
+    border-radius: 4px;
+    max-width: 157px;
+    max-height: 99px;
+  }
+
+  .uuwg-hero-about-us__photo--1 {
+    top: 124%;
+    left: 9%;
+  }
+
+  .uuwg-hero-about-us__photo--1 img {
+    object-view-box: inset(13%);
+  }
+
+  .uuwg-hero-about-us__photo--2 {
+    top: 123%;
+    right: 10%;
+  }
+
+  .uuwg-hero-about-us__photo--4 {
+    top: 202%;
+    left: 17%;
+  }
+
+  .uuwg-hero-about-us__photo--5 {
+    top: 154%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .uuwg-hero-about-us__photo--6 {
+    top: 202%;
+    right: 17%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .uuwg-hero-about-us__photo--1 {
+    left: 0%;
+  }
+
+  .uuwg-hero-about-us__photo--2 {
+    right: 0%;
+  }
+
+  .uuwg-hero-about-us__photo--4 {
+    left: 6%;
+  }
+
+  .uuwg-hero-about-us__photo--6 {
+    right: 6%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .uuwg-hero-about-us__photo--1 {
+    left: -10%;
+  }
+
+  .uuwg-hero-about-us__photo--2 {
+    right: -8%;
+  }
+
+  .uuwg-hero-about-us__photo--4 {
+    left: 0%;
+  }
+
+  .uuwg-hero-about-us__photo--6 {
+    right: 0%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .uuwg-hero-about-us__button {
+    white-space: nowrap;
+  }
+
+  .uuwg-hero-about-us__photo--1 {
+    left: -22%;
+  }
+
+  .uuwg-hero-about-us__photo--2 {
+    right: -22%;
+  }
+
+  .uuwg-hero-about-us__photo--4 {
+    left: -10%;
+  }
+
+  .uuwg-hero-about-us__photo--6 {
+    right: -10%;
+  }
+}
