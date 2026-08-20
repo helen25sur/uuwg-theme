@@ -55,9 +55,16 @@
   box-shadow: 0px 1px 6px rgba(1, 53, 121, 0.12);
 }
 
+.uuwg-team-grid__card__image {
+  width: 100%;
+  min-height: 444px;
+  border-radius: var(--wp--custom--border-radius--card);
+}
+
 .uuwg-team-grid__card img {
-  width: 305px;
-  height: 444px;
+  width: 100%;
+  max-width: 305px;
+  min-height: 444px;
   object-fit: cover;
   border-radius: var(--wp--custom--border-radius--card);
 }
@@ -90,9 +97,9 @@
 
 .uuwg-team-grid__card__content {
   display: flex;
-  width: 297px;
+  width: 97%;
   flex-direction: column;
-  padding: 16px;
+  padding: 14px;
   justify-content: space-between;
   background-color: var(--wp--preset--color--light-blue);
   border-radius: 12px;
@@ -126,10 +133,15 @@
 .uuwg-team-grid__card__period {
   padding: 5px 12px;
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 700px;
+  font-weight: 700;
   line-height: 115%;
   background-color: var(--wp--preset--color--blue-100);
   border-radius: 31px;
+  white-space: nowrap;
+}
+
+.uuwg-team-grid__card__socials {
+  display: flex;
 }
 
 .uuwg-team-grid__card__socials a {
@@ -143,68 +155,67 @@
   background-color: var(--wp--preset--color--primary);
 }
 
-
-@media screen and (max-width: 1225px) {
-  .uuwg-team-grid.alignfull {
-    overflow: hidden;
+@media screen and (max-width: 1100px) {
+  .uuwg-team-grid__grids {
+    grid-template-columns: repeat(3, 1fr);
   }
 
+  .uuwg-team-grid__card img {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .uuwg-team-grid__cta {
+    display: none;
+  }
+
+  .uuwg-team-grid__grids {
+    gap: 4px;
+  }
+
+  .uuwg-team-grid__card {
+    max-width: 243px;
+    min-height: 288px;
+  }
+
+  .uuwg-team-grid__card__image {
+    min-height: 288px;
+  }
+
+  .uuwg-team-grid__card img {
+    max-width: 243px;
+    min-height: 288px;
+  }
+
+  .uuwg-team-grid__card__content {
+    padding: 6px;
+  }
+
+  .uuwg-team-grid__card .uuwg-team-grid__card__title {
+    font-size: 12px;
+  }
+
+  .uuwg-team-grid__card__position {
+    font-size: 12px;
+  }
+
+  .uuwg-team-grid__card__period {
+    font-size: 12px;
+  }
+
+  .uuwg-team-grid__card__socials {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
   .uuwg-team-grid__header {
-    max-width: 92vw;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
-  .uuwg-team-grid__grids .uuwg-carousel__track {
-    display: flex;
-    gap: 6px;
-  }
-
-  .uuwg-team-grid__card.uuwg-carousel__item {
-    flex: 0 0 365px;
-  }
-
-  .uuwg-team-grid__pagination {
-    width: 100vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .uuwg-team-grid__cta.wp-element-button {
-    font-size: 0;
-    position: relative;
-    width: 91px;
-    height: 31px;
-  }
-
-  .uuwg-team-grid__cta.wp-element-button::before {
-    content: 'View all';
-    position: absolute;
-    font-size: var(--wp--preset--font-size--text-sm);
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .uuwg-team-grid__cta.wp-element-button::after {
-    content: url('./../../assets/images/grth.svg');
-    position: absolute;
-    width: 6px;
-    height: 12px;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-}
-
-
-@media screen and (max-width: 500px) {
-  .uuwg-team-grid__cta.wp-element-button {
-    padding: 16px;
-    white-space: nowrap;
-  }
-
-  .uuwg-team-grid__card.uuwg-carousel__item {
-    flex: 0 0 343px;
+  .uuwg-team-grid__grids {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

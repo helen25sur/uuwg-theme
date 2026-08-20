@@ -99,11 +99,15 @@ main.wp-block-group {
 /* ================= Our Story ===================== */
 
 .uuwg-our-story__header {
-  display: grid;
-
   justify-content: space-between;
   height: 100%;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 780px) {
+  .uuwg-our-story__col .uuwg-our-story__header {
+    flex-direction: row;
+  }
 }
 
 @media screen and (max-width: 900px) {
