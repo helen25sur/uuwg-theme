@@ -1,0 +1,210 @@
+.uuwg-team-grid.alignfull {
+  width: 100%;
+  color: var(--wp--preset--color--primary);
+  margin-block-start: 0;
+}
+
+.uuwg-team-grid__content {
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.uuwg-team-grid__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.uuwg-team-grid__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+}
+
+.uuwg-team-grid__cta {
+  display: inline-block;
+}
+
+.uuwg-team-grid__grids {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  padding-bottom: 8px;
+}
+
+.uuwg-team-grid__card {
+  max-width: 305px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 444px;
+  line-height: 115%;
+  border-radius: var(--wp--custom--border-radius--card);
+  position: relative;
+  transition: all 200ms ease-in;
+}
+
+.uuwg-team-grid__card:hover {
+  box-shadow: 0px 1px 6px rgba(1, 53, 121, 0.12);
+}
+
+.uuwg-team-grid__card img {
+  width: 305px;
+  height: 444px;
+  object-fit: cover;
+  border-radius: var(--wp--custom--border-radius--card);
+}
+
+/* These values are for specific photos. If photo will change, it should be change these values */
+.uuwg-team-grid__card:first-of-type img {
+  /* inset(top right bottom left) */
+  object-view-box: inset(34% 10% 23% 14%);
+}
+
+.uuwg-team-grid__card:nth-of-type(2) img {
+  object-view-box: inset(15% -12% 19% 14%);
+}
+
+.uuwg-team-grid__card:nth-of-type(3) img {
+  object-view-box: inset(15% 14% 19% -2%);
+}
+
+.uuwg-team-grid__card:nth-of-type(4) img {
+  object-view-box: inset(23% -12% 30% 5%);
+}
+
+.uuwg-team-grid__card:nth-of-type(5) img {
+  object-view-box: inset(29% 0% 30% 5%);
+}
+
+.uuwg-team-grid__card:nth-of-type(7) img {
+  object-view-box: inset(29% 1% 25% 65%);
+}
+
+.uuwg-team-grid__card__content {
+  display: flex;
+  width: 297px;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: space-between;
+  background-color: var(--wp--preset--color--light-blue);
+  border-radius: 12px;
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+}
+
+.uuwg-team-grid__card .uuwg-team-grid__card__title {
+  font-size: var(--wp--preset--font-size--text-body);
+  font-weight: 800;
+  line-height: 117%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.uuwg-team-grid__card__position {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 115%;
+  margin-bottom: 14px;
+}
+
+.uuwg-team-grid__card__footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.uuwg-team-grid__card__period {
+  padding: 5px 12px;
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 700px;
+  line-height: 115%;
+  background-color: var(--wp--preset--color--blue-100);
+  border-radius: 31px;
+}
+
+.uuwg-team-grid__card__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: var(--wp--preset--color--primary);
+}
+
+
+@media screen and (max-width: 1225px) {
+  .uuwg-team-grid.alignfull {
+    overflow: hidden;
+  }
+
+  .uuwg-team-grid__header {
+    max-width: 92vw;
+    margin-bottom: 40px;
+  }
+
+  .uuwg-team-grid__grids .uuwg-carousel__track {
+    display: flex;
+    gap: 6px;
+  }
+
+  .uuwg-team-grid__card.uuwg-carousel__item {
+    flex: 0 0 365px;
+  }
+
+  .uuwg-team-grid__pagination {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uuwg-team-grid__cta.wp-element-button {
+    font-size: 0;
+    position: relative;
+    width: 91px;
+    height: 31px;
+  }
+
+  .uuwg-team-grid__cta.wp-element-button::before {
+    content: 'View all';
+    position: absolute;
+    font-size: var(--wp--preset--font-size--text-sm);
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .uuwg-team-grid__cta.wp-element-button::after {
+    content: url('./../../assets/images/grth.svg');
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .uuwg-team-grid__cta.wp-element-button {
+    padding: 16px;
+    white-space: nowrap;
+  }
+
+  .uuwg-team-grid__card.uuwg-carousel__item {
+    flex: 0 0 343px;
+  }
+}
