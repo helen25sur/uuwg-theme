@@ -71,7 +71,7 @@
           const shortDescription = item.short_description || (item.acf && item.acf.short_description) || '';
 
           return el(
-            'div', { className: 'uuwg-news-events__card', key: item.id },
+            'div', { className: 'uuwg-news-events__card uuwg-carousel__item', key: item.id },
             imageUrl && el('img', { src: imageUrl, alt: item.title.rendered, className: 'uuwg-news-events__card-img' }),
             el('div', { className: 'uuwg-news-events__card__content' },
               el('h3', { className: 'uuwg-news-events__card__title', dangerouslySetInnerHTML: { __html: item.title.rendered } }),
@@ -89,7 +89,7 @@
             el('button', {
               key: i,
               type: 'button',
-              className: 'uuwg-pagination-news-btn' + (i === 1 ? ' is-active' : ''),
+              className: 'uuwg-carousel__dot' + (i === 1 ? ' is-active' : ''),
               'aria-label': sprintf(__('Page %d', 'uuwg'), i),
               'data-page': i,
             }, i)
@@ -120,7 +120,7 @@
             })
           ),
           el('div', { className: 'uuwg-news-events__grids js-news-grid' }, newsGrid),
-          showPagination && el('div', { className: 'uuwg-news-events__pagination js-news-pagination' }, paginationButtons)
+          showPagination && el('div', { className: 'uuwg-news-events__pagination uuwg-carousel__pagination' }, paginationButtons)
         )
       );
     },

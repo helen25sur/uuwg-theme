@@ -75,7 +75,7 @@
           const shortDescription = project.short_description || (project.acf && project.acf.short_description) || '';
 
           return el(
-            'div', { className: 'uuwg-our-projects__card', key: project.id },
+            'div', { className: 'uuwg-our-projects__card uuwg-carousel__item', key: project.id },
             imageUrl && el('img', { src: imageUrl, alt: project.title.rendered, className: 'uuwg-our-projects__card-img' }),
             el('div', { className: 'uuwg-our-projects__card__content' },
               el('h3', { className: 'uuwg-our-projects__card__title', dangerouslySetInnerHTML: { __html: project.title.rendered } }),
@@ -94,7 +94,7 @@
             el('button', {
               key: i,
               type: 'button',
-              className: 'uuwg-pagination-btn' + (i === 1 ? ' is-active' : ''),
+              className: 'uuwg-carousel__dot' + (i === 1 ? ' is-active' : ''),
               'aria-label': sprintf(__('Сторінка %d', 'uuwg'), i),
               'data-page': i,
             }, i)
@@ -114,7 +114,7 @@
           ),
           el('div', { className: 'uuwg-our-projects__grids js-projects-grid' }, projectsGrid),
           // ЗМІНЕНО: Контейнер пагінації рендериться лише якщо вона увімкнена
-          showPagination && el('div', { className: 'uuwg-our-projects__pagination js-projects-pagination' }, paginationButtons)
+          showPagination && el('div', { className: 'uuwg-carousel__pagination' }, paginationButtons)
         )
       );
     },
