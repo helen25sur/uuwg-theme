@@ -241,6 +241,10 @@
     gap: 6px;
   }
 
+  .post-type-archive-project .uuwg-our-projects__grids {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .uuwg-our-projects__card.uuwg-carousel__item {
     flex: 0 0 365px;
   }
@@ -277,6 +281,13 @@
     transform: translateY(-50%);
   }
 
+}
+
+@media screen and (max-width: 750px) {
+  .post-type-archive-project .uuwg-our-projects__grids {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 
