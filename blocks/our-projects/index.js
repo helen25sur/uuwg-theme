@@ -34,7 +34,7 @@
           PanelBody,
           { title: __('Block Settings', 'uuwg'), initialOpen: true },
           el(TextControl, {
-            label: __('Кількість проєктів', 'uuwg'),
+            label: __('Кількість проєктів, значення -1 для всіх проєктів', 'uuwg'),
             type: 'number',
             value: countOfProjects,
             min: -1, // all projects

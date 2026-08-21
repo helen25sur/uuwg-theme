@@ -59,54 +59,59 @@ $render_project_items = function () use ($query, $small_button_text) {
         </h2>
 
         <?php if ($show_header_button && ! empty($button_text)) : ?>
-          <a class="uuwg-our-projects__cta wp-element-button uuwg-btn" href="<?php echo esc_url($button_url); ?>">
-            <?php echo esc_html($button_text); ?>
-          </a>
+        <a class="uuwg-our-projects__cta wp-element-button uuwg-btn" href="<?php echo esc_url($button_url); ?>">
+          <?php echo esc_html($button_text); ?>
+        </a>
         <?php endif; ?>
       </div>
 
       <!-- Перемикач фільтрів рендериться лише якщо завантажуються всі проєкти ($per_page === -1) -->
       <?php if ($is_all_projects) : ?>
-        <select id="uuwg-project-filter" name="uuwg-project-filter"
-          class="uuwg-our-projects__filters js-projects-filters">
-          <option value="all" class="uuwg-projects-filter__option" data-filter="all">
+      <details id="uuwg-project-filter" class="uuwg-our-projects__filters js-projects-filters">
+        <summary value="all" class="uuwg-projects-filter__current" data-filter="featured" aria-label="Projects filter">
+          <?php esc_html_e('Featured projects', 'uuwg'); ?>
+        </summary>
+        <ul class="uuwg-projects-filter__list">
+          <li value="all" class="uuwg-projects-filter__item" data-filter="all">
             <?php esc_html_e('All projects', 'uuwg'); ?>
-          </option>
-          <option value="featured" class="uuwg-projects-filter__option" selected data-filter="featured">
+          </li>
+          <li value="featured" class="uuwg-projects-filter__item is-active" selected data-filter="featured">
             <?php esc_html_e('Featured projects', 'uuwg'); ?>
-          </option>
-          <option value="passed" class="uuwg-projects-filter__option" data-filter="passed">
+          </li>
+          <li value="passed" class="uuwg-projects-filter__item" data-filter="passed">
             <?php esc_html_e('Past projects', 'uuwg'); ?>
-          </option>
-        </select>
+          </li>
+        </ul>
+
+      </details>
       <?php endif; ?>
     </div>
 
     <!-- Контентна сітка або Карусель -->
     <?php if ($is_all_projects) : ?>
 
-      <div class="uuwg-our-projects__grids js-projects-grid-all">
-        <?php $render_project_items(); ?>
-      </div>
+    <div class="uuwg-our-projects__grids js-projects-grid-all">
+      <?php $render_project_items(); ?>
+    </div>
 
     <?php else : ?>
 
-      <div class="uuwg-our-projects__grids uuwg-carousel js-projects-grid" data-uuwg-carousel data-carousel-desktop="3"
-        data-carousel-tablet="2" data-carousel-mobile="1"
-        data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>" data-uuwg-pagination
-        data-post-type="project" data-per-page="<?php echo esc_attr($per_page); ?>"
-        data-small-button-text="<?php echo esc_attr($small_button_text); ?>"
-        data-total-items="<?php echo esc_attr($total_projects); ?>">
+    <div class="uuwg-our-projects__grids uuwg-carousel js-projects-grid" data-uuwg-carousel data-carousel-desktop="3"
+      data-carousel-tablet="2" data-carousel-mobile="1"
+      data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>" data-uuwg-pagination
+      data-post-type="project" data-per-page="<?php echo esc_attr($per_page); ?>"
+      data-small-button-text="<?php echo esc_attr($small_button_text); ?>"
+      data-total-items="<?php echo esc_attr($total_projects); ?>">
 
-        <div class="uuwg-carousel__track">
-          <?php $render_project_items(); ?>
-        </div>
-
-        <?php if ($show_pagination) : ?>
-          <div class="uuwg-carousel__pagination"></div>
-        <?php endif; ?>
-
+      <div class="uuwg-carousel__track">
+        <?php $render_project_items(); ?>
       </div>
+
+      <?php if ($show_pagination) : ?>
+      <div class="uuwg-carousel__pagination"></div>
+      <?php endif; ?>
+
+    </div>
 
     <?php endif; ?>
 

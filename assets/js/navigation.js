@@ -35,3 +35,11 @@ document.addEventListener('click', (e) => {
     switcher.removeAttribute('open');
   }
 });
+
+// Закриває фільтр проєктів при кліку за його межами
+document.addEventListener('click', (e) => {
+  const projectFilter = document.querySelector('.uuwg-our-projects__filters');
+  if (projectFilter && !projectFilter.contains(e.target)) {
+    projectFilter.removeAttribute('open');
+  }
+});
