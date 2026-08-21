@@ -39,6 +39,12 @@
   padding-bottom: 8px;
 }
 
+
+.post-type-archive-project .uuwg-our-projects__grids .uuwg-carousel__track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .uuwg-our-projects__card.uuwg-carousel__item {
   flex: 0 0 413.33px;
   display: flex;

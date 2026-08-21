@@ -10,6 +10,8 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
+require_once get_template_directory() . '/inc/template-parts.php';
+
 $attributes = isset($attributes) && is_array($attributes)
   ? $attributes
   : (array) ($attributes ?? []);
@@ -19,7 +21,7 @@ $attributes = isset($attributes) && is_array($attributes)
  * How many projects are loaded from the server
  * at one time.
  */
-$per_page = 3;
+$per_page = $attributes['countOfProjects'];
 $initial_load = 6;
 
 /*
@@ -99,7 +101,7 @@ $total_projects = (int) $query->found_posts;
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            <?php
+          <?php
             $ID = get_the_ID();
 
             $short_description = '';
@@ -110,45 +112,11 @@ $total_projects = (int) $query->found_posts;
                 $ID
               );
             }
-            ?>
 
-            <div class="uuwg-our-projects__card uuwg-carousel__item">
 
-              <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+            echo uuwg_render_project_card($ID, $attributes['smallButtonText']);
 
-                <?php
-                $thumbnail = get_the_post_thumbnail();
-
-                if ($thumbnail) {
-                  echo $thumbnail;
-                }
-                ?>
-
-                <div class="uuwg-our-projects__card__content">
-
-                  <h3 class="uuwg-our-projects__card__title">
-                    <?php echo esc_html(get_the_title()); ?>
-                  </h3>
-
-                  <p class="uuwg-our-projects__card__short-description">
-                    <?php echo esc_html($short_description); ?>
-                  </p>
-
-                  <span class="uuwg-our-projects__card__button">
-                    <?php
-                    echo esc_html(
-                      $attributes['smallButtonText'] ?? ''
-                    );
-                    ?>
-                  </span>
-
-                </div>
-
-              </a>
-
-            </div>
-
-          <?php endwhile; ?>
+          endwhile; ?>
 
         <?php else : ?>
 

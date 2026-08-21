@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ).length;
 
 
-    let loadedDataPage = 1;
-
     let isLoading = false;
 
 
@@ -152,97 +150,49 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
 
-    async function loadNextDataPage(
-      carouselPage
-    ) {
+    async function loadNextDataPage(carouselPage) {
 
       isLoading = true;
 
-
       try {
-
-        const nextDataPage =
-          loadedDataPage + 1;
-
+        // Джерело правди — фактична кількість карток У DOM ЗАРАЗ,
+        // а не розрахунок "сторінка × perPage".
+        loadedItems = carousel.querySelectorAll(
+          '.uuwg-carousel__item'
+        ).length;
 
         const url =
           `/wp-json/uuwg/v1/${postType}` +
-          `?page=${nextDataPage}` +
+          `?offset=${loadedItems}` +
           `&per_page=${perPage}`;
 
-
-        const response =
-          await fetch(url);
-
+        const response = await fetch(url);
 
         if (!response.ok) {
-
-          throw new Error(
-            `HTTP error: ${response.status}`
-          );
-
+          throw new Error(`HTTP error: ${response.status}`);
         }
 
+        const data = await response.json();
 
-        const data =
-          await response.json();
-
-
-        /*
-         * Add new cards.
-         */
         if (data.html) {
-
-          track.insertAdjacentHTML(
-            'beforeend',
-            data.html
-          );
-
+          track.insertAdjacentHTML('beforeend', data.html);
         }
 
+        loadedItems = carousel.querySelectorAll(
+          '.uuwg-carousel__item'
+        ).length;
 
-        loadedDataPage =
-          nextDataPage;
-
-
-        loadedItems =
-          carousel.querySelectorAll(
-            '.uuwg-carousel__item'
-          ).length;
-
-
-        /*
-         * Tell carousel.js that new cards
-         * have appeared.
-         */
         carousel.dispatchEvent(
-          new CustomEvent(
-            'uuwg:carousel-items-loaded'
-          )
+          new CustomEvent('uuwg:carousel-items-loaded')
         );
 
-
-        /*
-         * Now go to the requested carousel page.
-         */
-        requestScroll(
-          carouselPage
-        );
-
+        requestScroll(carouselPage);
 
       } catch (error) {
-
-        console.error(
-          'Failed to load posts:',
-          error
-        );
-
+        console.error('Failed to load posts:', error);
       } finally {
-
         isLoading = false;
-
       }
-
     }
 
 

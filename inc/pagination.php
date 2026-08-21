@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory() . '/inc/template-parts.php';
+
 add_action('rest_api_init', function () {
 
   register_rest_route('uuwg/v1', '/project', [
@@ -21,13 +23,13 @@ function uuwg_get_projects(WP_REST_Request $request)
     1,
     (int) $request->get_param('per_page')
   );
-
+  $offset = max(0, (int) $request->get_param('offset'));
 
   $query = new WP_Query([
     'post_type'      => 'project',
     'post_status'    => 'publish',
     'posts_per_page' => $per_page,
-    'offset'         => ($page - 1) * $per_page,
+    'offset'         => $offset,
   ]);
 
 
@@ -49,45 +51,10 @@ function uuwg_get_projects(WP_REST_Request $request)
           $ID
         );
       }
-?>
 
-      <div class="uuwg-our-projects__card uuwg-carousel__item">
 
-        <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+      echo uuwg_render_project_card($ID, 'Read more');
 
-          <?php
-          $thumbnail = get_the_post_thumbnail();
-
-          if ($thumbnail) {
-            echo $thumbnail;
-          }
-          ?>
-
-          <div class="uuwg-our-projects__card__content">
-
-            <h3 class="uuwg-our-projects__card__title">
-              <?php echo esc_html(get_the_title()); ?>
-            </h3>
-
-            <p class="uuwg-our-projects__card__short-description">
-              <?php echo esc_html($short_description); ?>
-            </p>
-
-            <span class="uuwg-our-projects__card__button">
-              <?php
-              echo esc_html(
-                'Read more'
-              );
-              ?>
-            </span>
-
-          </div>
-
-        </a>
-
-      </div>
-
-    <?php
     endwhile;
 
   endif;
@@ -97,15 +64,10 @@ function uuwg_get_projects(WP_REST_Request $request)
 
 
   return new WP_REST_Response([
-    'html' => ob_get_clean(),
-
-    'currentPage' => $page,
-
-    'totalPages' =>
-    (int) $query->max_num_pages,
-
-    'totalItems' =>
-    (int) $query->found_posts,
+    'html'       => ob_get_clean(),
+    'offset'     => $offset,
+    'totalPages' => (int) $query->max_num_pages,
+    'totalItems' => (int) $query->found_posts,
   ]);
 }
 
@@ -131,13 +93,13 @@ function uuwg_get_news_events(WP_REST_Request $request)
     1,
     (int) $request->get_param('per_page')
   );
-
+  $offset = max(0, (int) $request->get_param('offset'));
 
   $query = new WP_Query([
     'post_type'      => 'news_event',
     'post_status'    => 'publish',
     'posts_per_page' => $per_page,
-    'offset'         => ($page - 1) * $per_page,
+    'offset'         => $offset,
   ]);
 
 
@@ -159,7 +121,7 @@ function uuwg_get_news_events(WP_REST_Request $request)
           $ID
         );
       }
-    ?>
+?>
 
       <div class="uuwg-news-events__card uuwg-carousel__item">
 
@@ -208,15 +170,9 @@ function uuwg_get_news_events(WP_REST_Request $request)
 
 
   return new WP_REST_Response([
-    'html' => ob_get_clean(),
-
-    'currentPage' =>
-    $page,
-
-    'totalPages' =>
-    (int) $query->max_num_pages,
-
-    'totalItems' =>
-    (int) $query->found_posts,
+    'html'       => ob_get_clean(),
+    'offset'     => $offset,
+    'totalPages' => (int) $query->max_num_pages,
+    'totalItems' => (int) $query->found_posts,
   ]);
 }
