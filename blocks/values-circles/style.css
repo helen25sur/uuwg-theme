@@ -108,29 +108,37 @@
   color: var(--wp--preset--color--light-blue);
 }
 
-/* Мобільні та планшетні стилі */
-@media screen and (max-width: 1000px) {
-  .uuwg-values-circles__content {
-    min-height: 100vh;
-    position: sticky;
-    top: 0;
+@media screen and (max-width: 1420px) {
+  .uuwg-values-circles__card {
+    width: 252px;
+    height: 252px;
   }
+}
 
+@media screen and (max-width: 1215px) {
+  .uuwg-values-circles__card {
+    width: 236px;
+    height: 236px;
+    padding: 28px;
+  }
+}
+
+/* Мобільні та планшетні стилі */
+@media screen and (max-width: 1125px) {
   .uuwg-values-circles__grids {
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    /* Забезпечуємо висоту екрана під час заліпання */
+    align-items: start;
   }
 
   .uuwg-values-circles__list {
     position: relative;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* додай це */
-    min-height: 100vh;
-    /* і це, якщо grids не тягне висоту сюди */
+    align-items: start;
+    justify-content: start;
+  }
+
+  .uuwg-values-circles__card {
+    padding: 44px;
   }
 
   .uuwg-values-circles__card+.uuwg-values-circles__card {
