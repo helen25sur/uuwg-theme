@@ -8,3 +8,6 @@
 
 /* Components */
 @import "./components/scroll.css";
+
+/* Pages */
+@import "./pages/single-project.css";

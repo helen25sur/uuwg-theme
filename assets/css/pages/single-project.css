@@ -1,0 +1,27 @@
+.project-template-default .wp-block-breadcrumbs {
+  margin-bottom: 60px;
+}
+
+.project-template-default .wp-block-breadcrumbs li:nth-of-type(3) {
+  display: none;
+}
+
+.project-template-default .post-container {
+  width: 100%;
+  max-width: var(--wp--style--global--wide-size);
+  padding: 0 var(--wp--custom--spacing--container-gutter);
+}
+
+
+.project-template-default .post-container__content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.project-template-default .post-container__content .wp-block-post-content {
+  margin-bottom: 32px;
+}
+
+.project-template-default .is-content-justification-right {
+  margin-top: 0;
+}

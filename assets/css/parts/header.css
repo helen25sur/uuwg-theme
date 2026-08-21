@@ -281,6 +281,8 @@ header.block-editor-block-list__block .container {
   width: 22px;
   height: 22px;
   font-size: 0;
+  top: -9px;
+  right: 10px;
 }
 
 .has-hero .uuwg-burger-menu-btn .wp-block-button__link {
