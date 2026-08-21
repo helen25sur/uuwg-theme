@@ -18,6 +18,21 @@
   margin: 0 auto;
 }
 
+.project-template-default .wp-block-post-date {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: var(--wp--preset--color--light-blue);
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--text-sm);
+  line-height: 115%;
+  font-weight: 600;
+}
+
+.project-template-default .wp-block-post-featured-image img {
+  border-radius: 8px;
+}
+
 .project-template-default .post-container__content .wp-block-post-content {
   margin-bottom: 32px;
 }

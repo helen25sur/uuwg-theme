@@ -31,7 +31,6 @@
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
   margin: 0 auto;
-  margin-bottom: 140px;
   display: grid;
   grid-template-columns: 520px 1fr;
   gap: 22px;

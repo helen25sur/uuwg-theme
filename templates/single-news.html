@@ -2,10 +2,33 @@
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group">
-	<!-- wp:post-featured-image /-->
-	<!-- wp:post-title /-->
-	<!-- wp:post-content /-->
-	<!-- wp:template-part {"slug":"contact-section"} /-->
+	<!-- wp:group {"className":"post-container"} -->
+	<div class="wp-block-group post-container">
+		<!-- wp:breadcrumbs {"separator":"\u003e"} /-->
+		<!-- wp:group {"className":"post-container__content"} -->
+		<div class="wp-block-group post-container__content">
+			<!-- wp:post-title /-->
+			<!-- wp:post-date {"format":"j F Y","metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}}} /-->
+			<!-- wp:post-featured-image /-->
+			<!-- wp:post-content /-->
+			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+			<div class="wp-block-group">
+				<!-- wp:buttons -->
+				<div class="wp-block-buttons">
+					<!-- wp:button -->
+					<div class="wp-block-button">
+						<a class="wp-block-button__link wp-element-button" href="/#contact-us">Join
+							us</a>
+					</div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
