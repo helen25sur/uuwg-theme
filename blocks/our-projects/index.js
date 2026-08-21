@@ -37,7 +37,7 @@
             label: __('Кількість проєктів', 'uuwg'),
             type: 'number',
             value: countOfProjects,
-            min: 1,
+            min: -1, // all projects
             max: 12,
             onChange: (v) => setAttributes({ countOfProjects: parseInt(v, 10) || 1 }),
           }),

@@ -15,10 +15,14 @@
 }
 
 .uuwg-our-projects__header {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.uuwg-our-projects__header .uuwg-our-projects__header-top {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  margin-bottom: 80px;
 }
 
 .uuwg-our-projects__heading {
@@ -31,6 +35,17 @@
   display: inline-block;
 }
 
+.uuwg-our-projects__filters {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  padding: 16px;
+  border: none;
+  color: var(--wp--preset--color--blue-500);
+  font-size: var(--wp--preset--font-size--text-sm);
+}
+
 .uuwg-our-projects__grids .uuwg-carousel__track {
   display: flex;
   flex-direction: row;
@@ -40,9 +55,12 @@
 }
 
 
-.post-type-archive-project .uuwg-our-projects__grids .uuwg-carousel__track {
+.post-type-archive-project .uuwg-our-projects__grids {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  padding-bottom: 8px;
 }
 
 .uuwg-our-projects__card.uuwg-carousel__item {
