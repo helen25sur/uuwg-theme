@@ -17,3 +17,7 @@
   padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
   border-radius: var(--wp--custom--border-radius--button);
 }
+
+.uuwg-our-projects__card img {
+  max-height: 313px;
+}
