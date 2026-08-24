@@ -64,7 +64,8 @@ function uuwg_register_blocks()
 		'get-involved',
 		'hero-about-us',
 		'values-circles',
-		'team-grid'
+		'team-grid',
+		'socials-share'
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();
