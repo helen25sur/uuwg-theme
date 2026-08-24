@@ -1,9 +1,9 @@
-.uuwg-socials-share {}
-
 .uuwg-socials-share__list {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
+  padding: 0;
+  list-style: none;
 }
 
 .uuwg-socials-share__button {
@@ -28,4 +28,26 @@
 
 .uuwg-socials-share__button:disabled {
   background-color: var(--wp--preset--color--dark-grey);
+}
+
+.uuwg-socials-share__button__icon {
+  width: 24px;
+  height: 24px;
+
+  background-color: var(--wp--preset--color--primary);
+
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.uuwg-socials-share__button:active .uuwg-socials-share__button__icon,
+.uuwg-socials-share__button:disabled .uuwg-socials-share__button__icon {
+  background-color: var(--wp--preset--color--blue-100);
 }
