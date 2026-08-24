@@ -26,12 +26,33 @@ $button_url         = $attributes['buttonUrl'] ?? '#';
 $is_all_projects = ($per_page === -1);
 $posts_per_page  = $is_all_projects ? -1 : 6;
 
-$query = new WP_Query([
+$allowed_filters = ['featured-projects', 'past-projects'];
+
+$filter = $_GET['project_filter'] ?? 'all';
+
+if (! in_array($filter, $allowed_filters, true)) {
+  $filter = 'all';
+}
+
+$query_args = [
   'post_type'      => 'project',
   'post_status'    => 'publish',
   'posts_per_page' => $posts_per_page,
   'paged'          => 1,
-]);
+];
+
+if ($filter !== 'all') {
+  $query_args['tax_query'] = [
+    [
+      'taxonomy' => 'project_category',
+      'field'    => 'slug',
+      'terms'    => $filter,
+    ],
+  ];
+}
+
+$query = new WP_Query($query_args);
+
 
 $total_projects = (int) $query->found_posts;
 
@@ -68,18 +89,22 @@ $render_project_items = function () use ($query, $small_button_text) {
       <!-- Перемикач фільтрів рендериться лише якщо завантажуються всі проєкти ($per_page === -1) -->
       <?php if ($is_all_projects) : ?>
       <details id="uuwg-project-filter" class="uuwg-our-projects__filters js-projects-filters">
-        <summary value="all" class="uuwg-projects-filter__current" data-filter="featured" aria-label="Projects filter">
+        <summary class="uuwg-projects-filter__current" aria-label="Projects filter">
           <?php esc_html_e('Featured projects', 'uuwg'); ?>
         </summary>
         <ul class="uuwg-projects-filter__list">
-          <li value="all" class="uuwg-projects-filter__item" data-filter="all">
+          <li class="uuwg-projects-filter__item" data-filter="all">
             <?php esc_html_e('All projects', 'uuwg'); ?>
           </li>
-          <li value="featured" class="uuwg-projects-filter__item is-active" selected data-filter="featured">
-            <?php esc_html_e('Featured projects', 'uuwg'); ?>
+          <li class="uuwg-projects-filter__item" data-filter="featured">
+            <a href="/projects/?project_filter=featured-projects">
+              <?php esc_html_e('Featured projects', 'uuwg'); ?>
+            </a>
           </li>
-          <li value="passed" class="uuwg-projects-filter__item" data-filter="passed">
-            <?php esc_html_e('Past projects', 'uuwg'); ?>
+          <li class="uuwg-projects-filter__item" data-filter="passed">
+            <a href="/projects/?project_filter=past-projects">
+              <?php esc_html_e('Past projects', 'uuwg'); ?>
+            </a>
           </li>
         </ul>
 
