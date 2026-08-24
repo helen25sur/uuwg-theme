@@ -32,10 +32,10 @@
           PanelBody,
           { title: __('Block Settings', 'uuwg'), initialOpen: true },
           el(TextControl, {
-            label: __('Count of News', 'uuwg'),
+            label: __('Count of News, value -1 is for displaying all news & events', 'uuwg'),
             type: 'number',
             value: countOfNews,
-            min: 1,
+            min: -1,
             max: 12,
             onChange: (v) => setAttributes({ countOfNews: parseInt(v, 10) || 1 }),
           }),

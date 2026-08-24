@@ -10,12 +10,13 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
+require_once get_template_directory() . '/inc/template-parts.php';
+
 $attributes = isset($attributes) && is_array($attributes) ? $attributes : [];
 
 $count = isset($attributes['countOfNews'])
-  ? intval($attributes['countOfNews'])
+  ? (int) $attributes['countOfNews']
   : 3;
-$initial_load = 6;
 
 $button_url = $attributes['buttonUrl'] ?? '#';
 $button_text = $attributes['buttonText'] ?? 'View more';
@@ -31,138 +32,121 @@ $show_header_button = isset($attributes['showHeaderButton'])
   : true;
 
 
-/*
- * Get total number of news/events.
- *
- * This is used by carousel.js to calculate
- * the total number of pagination pages.
- */
-$total_news_query = new WP_Query([
-  'post_type'      => 'news_event',
-  'posts_per_page' => 1,
-  'post_status'    => 'publish',
-  'fields'         => 'ids',
-]);
+// Визначення режиму та параметрів запиту.
 
-$total_items = $total_news_query->found_posts;
+$is_all_news = ($count === -1);
+$posts_per_page = $is_all_news ? -1 : $count;
 
 
-/*
- * Initial page.
- *
- * Only $count news/events are rendered by PHP.
- * Additional items are loaded by pagination.js.
- */
+// Основний запит.
+
 $query = new WP_Query([
   'post_type'      => 'news_event',
-  'posts_per_page' => $initial_load,
-  'paged'          => 1,
   'post_status'    => 'publish',
+  'posts_per_page' => $posts_per_page,
+  'paged'          => 1,
 ]);
+
+$total_items = (int) $query->found_posts;
+
+
+// Хелпер для виводу карток.
+
+$render_news_items = function () use ($query, $small_button_text) {
+
+  if ($query->have_posts()) {
+
+    while ($query->have_posts()) {
+      $query->the_post();
+
+      echo uuwg_render_news_card(
+        get_the_ID(),
+        $small_button_text
+      );
+    }
+  } else {
+
+    echo '<p class="uuwg-news-events__empty">'
+      . esc_html__('No news & events found.', 'uuwg')
+      . '</p>';
+  }
+};
+
 ?>
 
-<section <?php echo get_block_wrapper_attributes([
-            'class' => 'uuwg-news-events alignfull'
-          ]); ?> data-count="<?php echo esc_attr($count); ?>"
+<section
+  <?php
+  echo get_block_wrapper_attributes([
+    'class' => 'uuwg-news-events alignfull',
+  ]);
+  ?>
+  data-count="<?php echo esc_attr($count); ?>"
   data-ajax-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
-
   <div class="uuwg-news-events__content">
+
+    <!-- Шапка блоку -->
 
     <div class="uuwg-news-events__header">
 
       <?php if (! empty($heading)) : ?>
 
-      <h2 class="uuwg-news-events__heading">
-        <?php echo esc_html($heading); ?>
-      </h2>
+        <h2 class="uuwg-news-events__heading">
+          <?php echo esc_html($heading); ?>
+        </h2>
 
       <?php endif; ?>
 
 
       <?php if ($show_header_button && ! empty($button_text)) : ?>
 
-      <a href="<?php echo esc_url($button_url ?: '#'); ?>" class="uuwg-news-events__cta uuwg-btn wp-element-button">
-        <?php echo esc_html($button_text); ?>
-      </a>
+        <a
+          href="<?php echo esc_url($button_url ?: '#'); ?>"
+          class="uuwg-news-events__cta uuwg-btn wp-element-button">
+          <?php echo esc_html($button_text); ?>
+        </a>
 
       <?php endif; ?>
 
     </div>
 
 
-    <div class="uuwg-news-events__grids js-news-grid uuwg-carousel" data-uuwg-carousel data-carousel-desktop="3"
-      data-carousel-tablet="2" data-carousel-mobile="1"
-      data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>" data-uuwg-pagination
-      data-post-type="news_event" data-per-page="6" data-total-items="<?php echo esc_attr($total_items); ?>">
+    <!-- Контентна сітка або карусель -->
 
-      <div class="uuwg-carousel__track">
+    <?php if ($is_all_news) : ?>
 
-        <?php if ($query->have_posts()) : ?>
+      <div class="uuwg-news-events__grids js-news-grid-all">
+        <?php $render_news_items(); ?>
+      </div>
 
-        <?php while ($query->have_posts()) : $query->the_post();
+    <?php else : ?>
 
-            $ID = get_the_ID();
+      <div
+        class="uuwg-news-events__grids js-news-grid uuwg-carousel"
+        data-uuwg-carousel
+        data-carousel-desktop="3"
+        data-carousel-tablet="2"
+        data-carousel-mobile="1"
+        data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>"
+        data-uuwg-pagination
+        data-post-type="news_event"
+        data-per-page="<?php echo esc_attr($count); ?>"
+        data-total-items="<?php echo esc_attr($total_items); ?>">
 
-            $short_description = function_exists('get_field')
-              ? get_field('news_short_description', $ID)
-              : '';
-
-          ?>
-
-        <div class="uuwg-news-events__card uuwg-carousel__item">
-
-          <a class="uuwg-news-events__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
-
-            <?php if (has_post_thumbnail()) : ?>
-
-            <?php the_post_thumbnail('medium'); ?>
-
-            <?php endif; ?>
-
-
-            <div class="uuwg-news-events__card__content">
-
-              <h3 class="uuwg-news-events__card__title">
-                <?php echo esc_html(get_the_title()); ?>
-              </h3>
-
-
-              <?php if ($short_description) : ?>
-
-              <p class="uuwg-news-events__card__short-description">
-                <?php echo esc_html($short_description); ?>
-              </p>
-
-              <?php endif; ?>
-
-
-              <span class="uuwg-news-events__card__button">
-                <?php echo esc_html($small_button_text); ?>
-              </span>
-
-            </div>
-
-          </a>
-
+        <div class="uuwg-carousel__track">
+          <?php $render_news_items(); ?>
         </div>
 
-        <?php endwhile; ?>
+        <?php if ($show_pagination) : ?>
+
+          <div class="uuwg-carousel__pagination"></div>
 
         <?php endif; ?>
 
       </div>
 
-
-      <?php if ($show_pagination) : ?>
-
-      <div class="uuwg-carousel__pagination"></div>
-
-      <?php endif; ?>
-
-    </div>
+    <?php endif; ?>
 
   </div>
-
 </section>
 
 <?php wp_reset_postdata(); ?>
