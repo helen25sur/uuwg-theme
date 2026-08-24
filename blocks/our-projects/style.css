@@ -255,6 +255,16 @@
 }
 
 @media screen and (max-width: 768px) {
+  .uuwg-our-projects__header {
+    margin-bottom: 90px;
+  }
+
+  .uuwg-our-projects__filters {
+    left: 0;
+    top: 100%;
+    transform: translateY(20px);
+  }
+
   .uuwg-our-projects__cta.wp-element-button {
     font-size: 0;
     position: relative;
@@ -292,6 +302,10 @@
 
 
 @media screen and (max-width: 500px) {
+  .uuwg-our-projects__filters {
+    width: 100%;
+  }
+
   .uuwg-our-projects__cta.wp-element-button {
     padding: 16px;
     white-space: nowrap;
