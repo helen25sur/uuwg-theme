@@ -3,6 +3,7 @@
   flex-wrap: nowrap;
   gap: 8px;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -14,6 +15,7 @@
   background-color: var(--wp--preset--color--light-blue);
   border: none;
   border-radius: 50%;
+  cursor: pointer;
   transition: all 300ms ease-in;
 }
 

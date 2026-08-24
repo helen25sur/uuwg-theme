@@ -40,3 +40,12 @@
 .project-template-default .is-content-justification-right {
   margin-top: 0;
 }
+
+@media screen and (max-width: 530px) {
+  .wp-block-post-title+.wp-block-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+}
