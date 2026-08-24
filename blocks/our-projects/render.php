@@ -56,6 +56,8 @@ $query = new WP_Query($query_args);
 
 $total_projects = (int) $query->found_posts;
 
+$projects_archive_url = get_post_type_archive_link('project');
+
 // 3. Хелпер для виводу карток
 $render_project_items = function () use ($query, $small_button_text) {
   if ($query->have_posts()) {
@@ -89,20 +91,32 @@ $render_project_items = function () use ($query, $small_button_text) {
       <!-- Перемикач фільтрів рендериться лише якщо завантажуються всі проєкти ($per_page === -1) -->
       <?php if ($is_all_projects) : ?>
       <details id="uuwg-project-filter" class="uuwg-our-projects__filters js-projects-filters">
+        <?php
+          $filter_labels = [
+            'all'              => 'All projects',
+            'featured-projects' => 'Featured projects',
+            'past-projects'     => 'Past projects',
+          ];
+          ?>
         <summary class="uuwg-projects-filter__current" aria-label="Projects filter">
-          <?php esc_html_e('Featured projects', 'uuwg'); ?>
+          <?php echo esc_html__($filter_labels[$filter], 'uuwg'); ?>
         </summary>
         <ul class="uuwg-projects-filter__list">
-          <li class="uuwg-projects-filter__item" data-filter="all">
-            <?php esc_html_e('All projects', 'uuwg'); ?>
+          <li class="uuwg-projects-filter__item <?php echo $filter === 'all' ? 'is-active' : ''; ?>" data-filter="all">
+            <a href="<?php echo esc_url($projects_archive_url); ?>">
+              <?php esc_html_e('All projects', 'uuwg'); ?>
+            </a>
           </li>
-          <li class="uuwg-projects-filter__item" data-filter="featured">
-            <a href="/projects/?project_filter=featured-projects">
+          <li class="uuwg-projects-filter__item <?php echo $filter === 'featured-projects' ? "is-active" : '' ?>"
+            data-filter="featured-projects">
+            <a
+              href="<?php echo esc_url(add_query_arg('project_filter', 'featured-projects', $projects_archive_url)); ?>">
               <?php esc_html_e('Featured projects', 'uuwg'); ?>
             </a>
           </li>
-          <li class="uuwg-projects-filter__item" data-filter="passed">
-            <a href="/projects/?project_filter=past-projects">
+          <li class="uuwg-projects-filter__item <?php echo $filter === 'past-projects' ? "is-active" : '' ?>"
+            data-filter="past-projects">
+            <a href="<?php echo esc_url(add_query_arg('project_filter', 'past-projects', $projects_archive_url)); ?>">
               <?php esc_html_e('Past projects', 'uuwg'); ?>
             </a>
           </li>
