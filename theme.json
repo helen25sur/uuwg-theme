@@ -234,6 +234,16 @@
       "name": "projects",
       "title": "Projects",
       "postTypes": ["page"]
+    },
+    {
+      "name": "single-news_event",
+      "title": "News & Events",
+      "postTypes": ["news_event"]
+    },
+    {
+      "name": "single-project",
+      "title": "Project",
+      "postTypes": ["project"]
     }
   ]
 }
