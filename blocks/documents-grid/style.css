@@ -84,7 +84,11 @@
 
 .uuwg-documents-grid__card__button {
   grid-area: button;
-  padding: 8px 40px 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 16px;
   position: relative;
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--background);
@@ -94,13 +98,58 @@
   line-height: 115%;
 }
 
-.uuwg-documents-grid__card__button::after {
-  content: url('../../assets/images/download.svg');
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
+@media screen and (max-width: 1400px) {
+  .uuwg-documents-grid__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+@media screen and (max-width: 1065px) {
+  .uuwg-documents-grid__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .uuwg-documents-grid__card {
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr;
+
+  }
+
+  .uuwg-documents-grid__card__img {
+    padding-top: 39px;
+    padding-right: 18px;
+    padding-bottom: 41px;
+    padding-left: 20px;
+  }
+
+  .uuwg-documents-grid__card__img img {
+    width: 73px;
+    height: 70px;
+  }
+
+  .uuwg-documents-grid__card__content {
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas:
+      "title title"
+      "type type"
+      "button button";
+  }
+
+  .uuwg-documents-grid__card__title {
+    margin-bottom: 8px;
+  }
+
+  .uuwg-documents-grid__card__type {
+    margin-bottom: 41px;
+  }
+
+  .uuwg-documents-grid__card__button {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .uuwg-documents-grid__grid {
+    grid-template-columns: 1fr;
+  }
 }
