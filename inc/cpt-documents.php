@@ -62,7 +62,7 @@ function uuwg_register_cpt_documents()
 			),
 			'public'       => true,
 			'show_in_rest' => true,
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'rewrite'      => array('slug' => 'document-type'),
 		)
 	);
