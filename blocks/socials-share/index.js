@@ -14,6 +14,7 @@
   ];
 
   registerBlockType('uuwg/socials-share', {
+    apiVersion: 3,
     edit: function (props) {
       const { attributes, setAttributes } = props;
 

@@ -110,18 +110,18 @@ function uuwg_ajax_get_projects()
 			$ID = get_the_ID();
 			$short_description = function_exists('get_field') ? get_field('project_short_description', $ID) : '';
 ?>
-			<div class="uuwg-our-projects__card">
-				<a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
-					<?php if (has_post_thumbnail()) {
+<div class="uuwg-our-projects__card">
+  <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+    <?php if (has_post_thumbnail()) {
 						the_post_thumbnail();
 					} ?>
-					<div class="uuwg-our-projects__card__content">
-						<h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
-						<p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
-						<span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
-					</div>
-				</a>
-			</div>
+    <div class="uuwg-our-projects__card__content">
+      <h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
+      <p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
+      <span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
+    </div>
+  </a>
+</div>
 <?php
 		endwhile;
 		wp_reset_postdata();
@@ -150,11 +150,11 @@ add_action('wp_ajax_nopriv_uuwg_get_projects', 'uuwg_ajax_get_projects');
 
 // For icon url into socials-share block
 wp_enqueue_script(
-	'uuwg-socials-share-editor',
-	get_theme_file_uri('assets/js/blocks/socials-share/index.js'),
-	['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
-	null,
-	true
+    'uuwg-socials-share-editor',
+    get_theme_file_uri('blocks/socials-share/index.js'),
+    ['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
+    null,
+    true
 );
 
 wp_localize_script(
