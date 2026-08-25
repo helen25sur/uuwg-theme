@@ -65,7 +65,8 @@ function uuwg_register_blocks()
 		'hero-about-us',
 		'values-circles',
 		'team-grid',
-		'socials-share'
+		'socials-share',
+		'documents-grid'
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();
