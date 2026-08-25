@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Post Type: Documents.
  * Поля "Тип документа" і "Файл" (PDF) — через ACF. "Рік" реалізовано як
@@ -8,26 +9,27 @@
  * @package UUWG
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
-function uuwg_register_cpt_documents() {
+function uuwg_register_cpt_documents()
+{
 	register_post_type(
 		'document',
 		array(
 			'labels'       => array(
-				'name'          => __( 'Документи', 'uuwg' ),
-				'singular_name' => __( 'Документ', 'uuwg' ),
-				'add_new_item'  => __( 'Додати документ', 'uuwg' ),
-				'edit_item'     => __( 'Редагувати документ', 'uuwg' ),
+				'name'          => __('Документи', 'uuwg'),
+				'singular_name' => __('Документ', 'uuwg'),
+				'add_new_item'  => __('Додати документ', 'uuwg'),
+				'edit_item'     => __('Редагувати документ', 'uuwg'),
 			),
 			'public'       => true,
 			'show_in_rest' => true,
 			'has_archive'  => true,
-			'rewrite'      => array( 'slug' => 'documents' ),
+			'rewrite'      => array('slug' => 'documents'),
 			'menu_icon'    => 'dashicons-media-document',
-			'supports'     => array( 'title', 'thumbnail' ),
+			'supports'     => array('title', 'thumbnail'),
 		)
 	);
 
@@ -37,14 +39,32 @@ function uuwg_register_cpt_documents() {
 		'document',
 		array(
 			'labels'       => array(
-				'name'          => __( 'Рік', 'uuwg' ),
-				'singular_name' => __( 'Рік', 'uuwg' ),
+				'name'          => __('Рік', 'uuwg'),
+				'singular_name' => __('Рік', 'uuwg'),
 			),
 			'public'       => true,
 			'show_in_rest' => true,
 			'hierarchical' => false,
-			'rewrite'      => array( 'slug' => 'document-year' ),
+			'rewrite'      => array('slug' => 'document-year'),
+		)
+	);
+
+	// Таксономія "Тип документа" — для категоризації документів.
+	register_taxonomy(
+		'document_type',
+		'document',
+		array(
+			'labels' => array(
+				'name'          => __('Типи документів', 'uuwg'),
+				'singular_name' => __('Тип документа', 'uuwg'),
+				'add_new_item'  => __('Додати тип документа', 'uuwg'),
+				'edit_item'     => __('Редагувати тип документа', 'uuwg'),
+			),
+			'public'       => true,
+			'show_in_rest' => true,
+			'hierarchical' => false,
+			'rewrite'      => array('slug' => 'document-type'),
 		)
 	);
 }
-add_action( 'init', 'uuwg_register_cpt_documents' );
+add_action('init', 'uuwg_register_cpt_documents');
