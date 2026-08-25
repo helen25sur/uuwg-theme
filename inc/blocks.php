@@ -146,3 +146,20 @@ function uuwg_ajax_get_projects()
 
 add_action('wp_ajax_uuwg_get_projects', 'uuwg_ajax_get_projects');
 add_action('wp_ajax_nopriv_uuwg_get_projects', 'uuwg_ajax_get_projects');
+
+// For icon url into socials-share block
+wp_enqueue_script(
+	'uuwg-socials-share-editor',
+	get_theme_file_uri('assets/js/blocks/socials-share/index.js'),
+	['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
+	null,
+	true
+);
+
+wp_localize_script(
+	'uuwg-socials-share-editor',
+	'uuwgTheme',
+	[
+		'socialIconsUrl' => get_theme_file_uri('assets/images/social-icons'),
+	]
+);

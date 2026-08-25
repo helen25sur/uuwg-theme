@@ -8,36 +8,12 @@
   "description": "Кнопки 'Поділитися' для публікацій",
   "textdomain": "uuwg",
   "attributes": {
-    "button1Label": { "type": "string", "default": "Instagram" },
-    "button1Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/instagram.svg"
-    },
-    "button2Label": { "type": "string", "default": "Facebook" },
-    "button2Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/facebook.svg"
-    },
-    "button3Label": { "type": "string", "default": "Youtube" },
-    "button3Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/youtube.svg"
-    },
-    "button4Label": { "type": "string", "default": "Linkedin" },
-    "button4Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/linkedin.svg"
-    },
-    "button5Label": { "type": "string", "default": "Telegram" },
-    "button5Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/telegram.svg"
-    },
-    "button6Label": { "type": "string", "default": "Copy Link" },
-    "button6Icon": {
-      "type": "string",
-      "default": "/wp-content/themes/uuwg-theme/assets/images/social-icons/copy.svg"
-    }
+    "instagramLabel": { "type": "string", "default": "Instagram" },
+    "facebookLabel": { "type": "string", "default": "Facebook" },
+    "youtubeLabel": { "type": "string", "default": "Youtube" },
+    "linkedinLabel": { "type": "string", "default": "Linkedin" },
+    "telegramLabel": { "type": "string", "default": "Telegram" },
+    "copyLabel": { "type": "string", "default": "Copy Link" }
   },
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js",
