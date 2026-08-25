@@ -11,7 +11,7 @@ $args = array(
 $query = new WP_Query($args);
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-documents-grid']); ?>>
+<section <?php echo get_block_wrapper_attributes(['class' => 'uuwg-documents-grid alignfull']); ?>>
   <div class="uuwg-documents-grid__content">
 
     <div class="uuwg-documents-grid__header">
@@ -30,9 +30,16 @@ $query = new WP_Query($args);
             : null;
           $file_url = $file['url'] ?? '';
           $terms = get_the_terms(get_the_ID(), 'document_type');
+
+          $folder_icon_url = ! empty($attributes['folderIconUrl'])
+            ? $attributes['folderIconUrl']
+            : get_template_directory_uri() . '/assets/images/folder.svg';
           ?>
 
           <div class="uuwg-documents-grid__card">
+            <div class="uuwg-documents-grid__card__img">
+              <img src="<?php echo esc_url($folder_icon_url); ?>" alt="Folder image">
+            </div>
             <div class="uuwg-documents-grid__card__content">
               <h3 class="uuwg-documents-grid__card__title">
                 <?php echo esc_html(get_the_title()); ?>

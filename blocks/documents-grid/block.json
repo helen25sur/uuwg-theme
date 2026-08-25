@@ -5,7 +5,11 @@
   "title": "UUWG: Documents",
   "category": "uuwg-blocks",
   "attributes": {
-    "heading": { "type": "string", "default": "Documents" }
+    "heading": { "type": "string", "default": "Documents" },
+    "folderIconUrl": {
+      "type": "string",
+      "default": ""
+    }
   },
   "supports": {
     "html": false,

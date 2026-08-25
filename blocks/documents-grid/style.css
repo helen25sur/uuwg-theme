@@ -1,0 +1,106 @@
+.uuwg-documents-grid.alignfull {
+  width: 100%;
+  margin-block-start: 0;
+}
+
+.uuwg-documents-grid__content {
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.uuwg-documents-grid__header {
+  position: relative;
+  margin-bottom: 88.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.uuwg-documents-grid__heading {
+  font-family: var(--wp--preset--font-family--heading);
+  font-size: var(--wp--preset--font-size--heading-xl);
+  margin: 0;
+}
+
+.uuwg-documents-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.uuwg-documents-grid__card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: var(--wp--preset--color--white);
+  border-radius: 12px;
+}
+
+.uuwg-documents-grid__card__img {
+  padding-top: 55.86px;
+  padding-right: 89.57px;
+  padding-bottom: 56.55px;
+  padding-left: 89.93px;
+}
+
+.uuwg-documents-grid__card__img img {
+  width: 125.5px;
+  height: auto;
+}
+
+.uuwg-documents-grid__card__content {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  grid-template-areas:
+    "title title"
+    "type button";
+}
+
+.uuwg-documents-grid__card__title {
+  margin-bottom: 20px;
+  grid-area: title;
+  font-size: var(--wp--preset--font-size--body-lg);
+  font-weight: 700;
+  line-height: 115%;
+}
+
+.uuwg-documents-grid__card__type {
+  grid-area: type;
+}
+
+.uuwg-documents-grid__card__type-name {
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  line-height: 115%;
+  color: var(--wp--preset--color--blue-200);
+}
+
+.uuwg-documents-grid__card__button {
+  grid-area: button;
+  padding: 8px 40px 8px 16px;
+  position: relative;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--background);
+  border-radius: var(--wp--custom--border-radius--button);
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+.uuwg-documents-grid__card__button::after {
+  content: url('../../assets/images/download.svg');
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+
+}

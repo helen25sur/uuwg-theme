@@ -1,7 +1,13 @@
 (function (blocks, element, blockEditor, components, i18n, data) {
   const { registerBlockType } = blocks;
-  const { useBlockProps, InspectorControls, RichText } = blockEditor;
-  const { PanelBody, TextControl, Spinner } = components;
+  const {
+    useBlockProps,
+    InspectorControls,
+    RichText,
+    MediaUpload,
+    MediaUploadCheck
+  } = blockEditor;
+  const { PanelBody, TextControl, Spinner, Button } = components;
   const { __ } = i18n;
   const { useSelect } = data;
   const el = element.createElement;
@@ -9,10 +15,10 @@
   registerBlockType('uuwg/documents-grid', {
     edit: function (props) {
       const { attributes, setAttributes } = props;
-      const { heading } = attributes;
+      const { heading, folderIconUrl } = attributes;
 
       const blockProps = useBlockProps({
-        className: 'uuwg-documents-grid'
+        className: 'uuwg-documents-grid alignfull'
       });
 
       const { documents, documentTypes } = useSelect(
@@ -51,11 +57,13 @@
         );
       } else {
         documentsGrid = documents.map(function (doc) {
-          const types = (doc.document_type || []).map(function (typeId) {
-            return documentTypes.find(function (type) {
-              return type.id === typeId;
-            });
-          }).filter(Boolean);
+          const types = (doc.document_type || [])
+            .map(function (typeId) {
+              return documentTypes.find(function (type) {
+                return type.id === typeId;
+              });
+            })
+            .filter(Boolean);
 
           return el(
             'div',
@@ -63,6 +71,16 @@
               className: 'uuwg-documents-grid__card',
               key: doc.id
             },
+
+            el(
+              'div',
+              { className: 'uuwg-documents-grid__card__img' },
+              el('img', {
+                src: folderIconUrl || '/wp-content/themes/uuwg-theme/assets/images/folder.svg',
+                alt: ''
+              })
+            ),
+
             el(
               'div',
               { className: 'uuwg-documents-grid__card__content' },
@@ -93,8 +111,7 @@
               el(
                 'span',
                 {
-                  className:
-                    'uuwg-documents-grid__card__button'
+                  className: 'uuwg-documents-grid__card__button'
                 },
                 __('Download', 'uuwg')
               )
@@ -116,34 +133,88 @@
               title: __('Documents settings', 'uuwg'),
               initialOpen: true
             },
+
             el(TextControl, {
               label: __('Heading', 'uuwg'),
               value: heading || '',
               onChange: function (value) {
                 setAttributes({ heading: value });
               }
-            })
+            }),
+
+            el(
+              MediaUploadCheck,
+              {},
+              el(MediaUpload, {
+                allowedTypes: ['image'],
+                value: folderIconUrl,
+                onSelect: function (media) {
+                  setAttributes({
+                    folderIconUrl: media.url
+                  });
+                },
+                render: function ({ open }) {
+                  return el(
+                    'div',
+                    { className: 'uuwg-documents-grid__icon-control' },
+
+                    el(
+                      'p',
+                      { className: 'components-base-control__label' },
+                      __('Folder icon', 'uuwg')
+                    ),
+
+                    folderIconUrl &&
+                    el('img', {
+                      src: folderIconUrl,
+                      alt: '',
+                      style: {
+                        display: 'block',
+                        maxWidth: '100px',
+                        marginBottom: '10px'
+                      }
+                    }),
+
+                    el(
+                      Button,
+                      {
+                        onClick: open,
+                        variant: 'secondary'
+                      },
+                      folderIconUrl
+                        ? __('Change icon', 'uuwg')
+                        : __('Upload icon', 'uuwg')
+                    )
+                  );
+                }
+              })
+            )
           )
         ),
 
         el(
           'div',
-          { className: 'uuwg-documents-grid__header' },
-          el(RichText, {
-            tagName: 'h2',
-            className: 'uuwg-documents-grid__heading',
-            value: heading,
-            onChange: function (value) {
-              setAttributes({ heading: value });
-            },
-            allowedFormats: []
-          })
-        ),
+          { className: 'uuwg-documents-grid__content' },
 
-        el(
-          'div',
-          { className: 'uuwg-documents-grid__grid' },
-          documentsGrid
+          el(
+            'div',
+            { className: 'uuwg-documents-grid__header' },
+            el(RichText, {
+              tagName: 'h2',
+              className: 'uuwg-documents-grid__heading',
+              value: heading,
+              onChange: function (value) {
+                setAttributes({ heading: value });
+              },
+              allowedFormats: []
+            })
+          ),
+
+          el(
+            'div',
+            { className: 'uuwg-documents-grid__grid' },
+            documentsGrid
+          )
         )
       );
     },
