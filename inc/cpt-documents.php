@@ -68,3 +68,54 @@ function uuwg_register_cpt_documents()
 	);
 }
 add_action('init', 'uuwg_register_cpt_documents');
+
+/**
+ * ACF-поле "Document file" для завантаження документів.
+ */
+function uuwg_register_documents_acf_fields()
+{
+	if (! function_exists('acf_add_local_field_group')) {
+		return;
+	}
+
+	acf_add_local_field_group(array(
+		'key'    => 'group_document_file',
+		'title'  => __('Document file', 'uuwg'),
+		'style'  => 'default',
+		'position' => 'normal',
+		'fields' => array(
+			array(
+				'key'          => 'field_document_file',
+				'label'        => __('File of Document', 'uuwg'),
+				'name'         => 'document_file',
+				'type'         => 'file',
+				'return_format' => 'array',
+				'mime_types'   => 'pdf',
+				'instructions' => __('Завантажте файл pdf', 'uuwg'),
+				'required'     => 1
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'document',
+				),
+			),
+		),
+	));
+}
+add_action('acf/init', 'uuwg_register_documents_acf_fields');
+
+add_action('rest_api_init', function () {
+	register_rest_field('document', 'document_file', array(
+		'get_callback' => function ($post) {
+			if (function_exists('get_field')) {
+				return get_field('document_file', $post['id']);
+			}
+			return '';
+		},
+		'schema' => null,
+	));
+});
