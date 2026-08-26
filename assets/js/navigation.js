@@ -43,3 +43,11 @@ document.addEventListener('click', (e) => {
     projectFilter.removeAttribute('open');
   }
 });
+
+// Закриває фільтр документів при кліку за його межами
+document.addEventListener('click', (e) => {
+  const documentsFilter = document.querySelector('.uuwg-documents-grid__filters');
+  if (documentsFilter && !documentsFilter.contains(e.target)) {
+    documentsFilter.removeAttribute('open');
+  }
+});
