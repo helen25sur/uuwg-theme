@@ -76,7 +76,7 @@
               'div',
               { className: 'uuwg-documents-grid__card__img' },
               el('img', {
-                src: folderIconUrl || '/wp-content/themes/uuwg-theme/assets/images/folder.svg',
+                src: folderIconUrl || '/wp-content/themes/uuwg-theme/assets/images/folder.png',
                 alt: ''
               })
             ),
