@@ -46,6 +46,10 @@
   padding-right: 89.57px;
   padding-bottom: 56.55px;
   padding-left: 89.93px;
+  background-image: url('../../assets/images/decorative/pattern.svg'), url('../../assets/images/decorative/pattern.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 108.29px, 108.29px;
+  background-position: 12.63px 103.22px, 185.21px -23.08px;
 }
 
 .uuwg-documents-grid__card__img img {
