@@ -121,46 +121,9 @@ function uuwg_get_news_events(WP_REST_Request $request)
           $ID
         );
       }
-?>
-      <!-- TODO: add function here from template-parts.php, not markup -->
-      <div class="uuwg-news-events__card uuwg-carousel__item">
 
-        <a class="uuwg-news-events__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+      echo uuwg_render_news_card($ID, 'Read more');
 
-          <?php if (has_post_thumbnail()) : ?>
-
-            <?php the_post_thumbnail('medium'); ?>
-
-          <?php endif; ?>
-
-
-          <div class="uuwg-news-events__card__content">
-
-            <h3 class="uuwg-news-events__card__title">
-              <?php echo esc_html(get_the_title()); ?>
-            </h3>
-
-
-            <?php if ($short_description) : ?>
-
-              <p class="uuwg-news-events__card__short-description">
-                <?php echo esc_html($short_description); ?>
-              </p>
-
-            <?php endif; ?>
-
-
-            <span class="uuwg-news-events__card__button">
-              <?php echo esc_html('Read more'); ?>
-            </span>
-
-          </div>
-
-        </a>
-
-      </div>
-
-<?php
     endwhile;
 
   endif;
