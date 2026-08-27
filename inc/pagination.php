@@ -25,12 +25,37 @@ function uuwg_get_projects(WP_REST_Request $request)
   );
   $offset = max(0, (int) $request->get_param('offset'));
 
-  $query = new WP_Query([
+  $filter = sanitize_key($request->get_param('project_category'));
+
+  $args = [
     'post_type'      => 'project',
     'post_status'    => 'publish',
     'posts_per_page' => $per_page,
     'offset'         => $offset,
-  ]);
+  ];
+
+  $allowed_filters = [
+    'featured-projects',
+    'past-projects',
+  ];
+
+  if (in_array($filter, $allowed_filters, true)) {
+    $args['tax_query'] = [
+      [
+        'taxonomy' => 'project_category',
+        'field'    => 'slug',
+        'terms'    => $filter,
+      ],
+    ];
+  }
+
+  error_log('FILTER: ' . $filter);
+
+  $term = get_term_by('slug', $filter, 'project_category');
+
+  error_log(print_r($term, true));
+
+  $query = new WP_Query($args);
 
 
   ob_start();
@@ -42,16 +67,6 @@ function uuwg_get_projects(WP_REST_Request $request)
       $query->the_post();
 
       $ID = get_the_ID();
-
-      $short_description = '';
-
-      if (function_exists('get_field')) {
-        $short_description = get_field(
-          'project_short_description',
-          $ID
-        );
-      }
-
 
       echo uuwg_render_project_card($ID, 'Read more');
 

@@ -82,6 +82,15 @@ function uuwg_enqueue_assets()
 		file_exists($script_filter_docs_path) ? filemtime($script_filter_docs_path) : UUWG_THEME_VERSION,
 		true
 	);
+
+	$script_filter_projects_path = UUWG_THEME_DIR . '/assets/js/filter-projects.js';
+	wp_enqueue_script(
+		'uuwg-filter_projects-js',
+		UUWG_THEME_URI . '/assets/js/filter-projects.js',
+		array(),
+		file_exists($script_filter_projects_path) ? filemtime($script_filter_projects_path) : UUWG_THEME_VERSION,
+		true
+	);
 }
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
 
