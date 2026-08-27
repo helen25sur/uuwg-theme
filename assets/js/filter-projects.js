@@ -10,14 +10,14 @@
         evt.preventDefault();
 
         const urlItem = new URL(f.href);
-        const type = urlItem.searchParams.get('project_filter');
+        const type = urlItem.searchParams.get('project_category');
 
         const urlSite = new URL(window.location.href);
 
         if (type === null) {
-          urlSite.searchParams.delete('project_filter');
+          urlSite.searchParams.delete('project_category');
         } else {
-          urlSite.searchParams.set('project_filter', type);
+          urlSite.searchParams.set('project_category', type);
         }
 
         window.history.pushState({}, '', urlSite);
