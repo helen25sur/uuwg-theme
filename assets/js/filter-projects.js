@@ -30,6 +30,28 @@
 
         loadDocuments(type, f.text.trim());
       })
+    });
+
+    window.addEventListener('popstate', () => {
+      const url = new URL(window.location.href);
+      const type = url.searchParams.get('project_category');
+
+      let name = '';
+
+      filterItems.forEach(i => {
+        i.parentElement.classList.remove('is-active');
+        const itemUrl = new URL(i.href);
+        const itemType = itemUrl.searchParams.get('project_category');
+
+        if (itemType === type) {
+          i.parentElement.classList.add('is-active');
+          name = i.text.trim();
+        }
+      });
+
+      loadDocuments(type, name);
+
+      filterProjects.removeAttribute('open');
     })
   }
 })();
