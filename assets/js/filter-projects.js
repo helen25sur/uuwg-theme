@@ -28,7 +28,7 @@
 
         f.parentElement.classList.add('is-active');
 
-        loadDocuments(type, f.text.trim());
+        loadProjects(type, f.text.trim());
       })
     });
 
@@ -49,14 +49,14 @@
         }
       });
 
-      loadDocuments(type, name);
+      loadProjects(type, name);
 
       filterProjects.removeAttribute('open');
     })
   }
 })();
 
-async function loadDocuments(type, name) {
+async function loadProjects(type, name) {
   const pageProjects = document.querySelector('.post-type-archive-project');
   const filterProjects = document.getElementById('uuwg-project-filter');
   const projectGrid = pageProjects.querySelector('.uuwg-our-projects__grids');
