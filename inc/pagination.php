@@ -49,11 +49,7 @@ function uuwg_get_projects(WP_REST_Request $request)
     ];
   }
 
-  error_log('FILTER: ' . $filter);
-
   $term = get_term_by('slug', $filter, 'project_category');
-
-  error_log(print_r($term, true));
 
   $query = new WP_Query($args);
 

@@ -1,12 +1,13 @@
 (async () => {
   const pageDocs = document.querySelector('.post-type-archive-document');
 
-  document.body.querySelectorAll('.uuwg-documents-grid__card').forEach((card, index) => {
-    card.classList.add('is-visible');
-    card.style.setProperty('--delay', `${index * 70}ms`);
-  });
 
   if (pageDocs) {
+    document.body.querySelectorAll('.uuwg-documents-grid__card').forEach((card, index) => {
+      card.classList.add('is-visible');
+      card.style.setProperty('--delay', `${index * 70}ms`);
+    });
+
     const filterDocs = document.getElementById('uuwg-document-filter');
     const filterItems = filterDocs.querySelectorAll('.uuwg-documents-filter__item a');
 

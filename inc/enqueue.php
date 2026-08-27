@@ -10,15 +10,32 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+/**
+ * Enqueue Google Fonts.
+ */
 function uuwg_enqueue()
 {
-	wp_register_style('rg_style_fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-	wp_enqueue_style('rg_style_fonts');
+	wp_enqueue_style(
+		'uuwg-fonts',
+		'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap',
+		array(),
+		null
+	);
 }
 
+add_action('wp_enqueue_scripts', 'uuwg_enqueue');
+
+
+/**
+ * Enqueue frontend styles and scripts.
+ */
 function uuwg_enqueue_assets()
 {
+	/*
+	 * Main styles.
+	 */
 	$style_path = UUWG_THEME_DIR . '/style.css';
+
 	wp_enqueue_style(
 		'uuwg-style',
 		UUWG_THEME_URI . '/style.css',
@@ -26,108 +43,144 @@ function uuwg_enqueue_assets()
 		file_exists($style_path) ? filemtime($style_path) : UUWG_THEME_VERSION
 	);
 
-	$style_main_path = UUWG_THEME_DIR . '/assets/css/main.css';
+	$main_style_path = UUWG_THEME_DIR . '/assets/css/main.css';
+
 	wp_enqueue_style(
 		'uuwg-main-style',
 		UUWG_THEME_URI . '/assets/css/main.css',
 		array(),
-		file_exists($style_main_path) ? filemtime($style_main_path) : UUWG_THEME_VERSION
+		file_exists($main_style_path) ? filemtime($main_style_path) : UUWG_THEME_VERSION
 	);
 
-	// Приклад підключення JS для інтерактивних блоків (слайдер, AJAX-фільтри).
-	// Розкоментувати, коли з'явиться assets/js/frontend.js
 
-	$script_path = UUWG_THEME_DIR . '/assets/js/message-popup.js';
+	/*
+	 * Message popup.
+	 */
+	$message_popup_path = UUWG_THEME_DIR . '/assets/js/message-popup.js';
+
 	wp_enqueue_script(
 		'uuwg-message-popup',
 		UUWG_THEME_URI . '/assets/js/message-popup.js',
 		array(),
-		file_exists($script_path) ? filemtime($script_path) : UUWG_THEME_VERSION,
+		file_exists($message_popup_path) ? filemtime($message_popup_path) : UUWG_THEME_VERSION,
 		true
 	);
 
-	$script_nav_path = UUWG_THEME_DIR . '/assets/js/navigation.js';
+
+	/*
+	 * Navigation.
+	 */
+	$navigation_path = UUWG_THEME_DIR . '/assets/js/navigation.js';
+
 	wp_enqueue_script(
 		'uuwg-navigation',
 		UUWG_THEME_URI . '/assets/js/navigation.js',
 		array(),
-		file_exists($script_nav_path) ? filemtime($script_nav_path) : UUWG_THEME_VERSION,
+		file_exists($navigation_path) ? filemtime($navigation_path) : UUWG_THEME_VERSION,
 		true
 	);
 
-	$script_scroll_path = UUWG_THEME_DIR . '/assets/js/scroll.js';
+
+	/*
+	 * Scroll animations.
+	 */
+	$scroll_path = UUWG_THEME_DIR . '/assets/js/scroll.js';
+
 	wp_enqueue_script(
 		'uuwg-scroll-js',
 		UUWG_THEME_URI . '/assets/js/scroll.js',
 		array(),
-		file_exists($script_scroll_path) ? filemtime($script_scroll_path) : UUWG_THEME_VERSION,
+		file_exists($scroll_path) ? filemtime($scroll_path) : UUWG_THEME_VERSION,
 		true
 	);
 
-	$script_pagination_path = UUWG_THEME_DIR . '/assets/js/pagination.js';
-	wp_enqueue_script(
-		'uuwg-pagination-js',
-		UUWG_THEME_URI . '/assets/js/pagination.js',
-		array(),
-		file_exists($script_pagination_path) ? filemtime($script_pagination_path) : UUWG_THEME_VERSION,
-		true
-	);
 
-	// Filters documents & projects
-	$script_filter_docs_path = UUWG_THEME_DIR . '/assets/js/filter-documents.js';
+	/*
+	 * Pagination is currently used only on the front page.
+	 */
+	if (is_front_page()) {
+		$pagination_path = UUWG_THEME_DIR . '/assets/js/pagination.js';
+
+		wp_enqueue_script(
+			'uuwg-pagination-js',
+			UUWG_THEME_URI . '/assets/js/pagination.js',
+			array(),
+			file_exists($pagination_path) ? filemtime($pagination_path) : UUWG_THEME_VERSION,
+			true
+		);
+	}
+
+
+	/*
+	 * Document filters.
+	 */
+	$filter_documents_path = UUWG_THEME_DIR . '/assets/js/filter-documents.js';
+
 	wp_enqueue_script(
-		'uuwg-filter_docs-js',
+		'uuwg-filter-documents',
 		UUWG_THEME_URI . '/assets/js/filter-documents.js',
 		array(),
-		file_exists($script_filter_docs_path) ? filemtime($script_filter_docs_path) : UUWG_THEME_VERSION,
+		file_exists($filter_documents_path) ? filemtime($filter_documents_path) : UUWG_THEME_VERSION,
 		true
 	);
 
-	$script_filter_projects_path = UUWG_THEME_DIR . '/assets/js/filter-projects.js';
+
+	/*
+	 * Project filters.
+	 */
+	$filter_projects_path = UUWG_THEME_DIR . '/assets/js/filter-projects.js';
+
 	wp_enqueue_script(
-		'uuwg-filter_projects-js',
+		'uuwg-filter-projects',
 		UUWG_THEME_URI . '/assets/js/filter-projects.js',
 		array(),
-		file_exists($script_filter_projects_path) ? filemtime($script_filter_projects_path) : UUWG_THEME_VERSION,
+		file_exists($filter_projects_path) ? filemtime($filter_projects_path) : UUWG_THEME_VERSION,
 		true
 	);
 }
+
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
 
-function uuwg_enqueue_editor_assets()
-{
-	$style_path = UUWG_THEME_DIR . '/assets/css/style.css';
-	add_editor_style('style.css');
-}
-add_action('admin_init', 'uuwg_enqueue_editor_assets');
 
+/**
+ * Enable editor styles.
+ */
 function uuwg_add_editor_styles()
 {
-	// 1. Вмикаємо підтримку кастомних стилів редактора
 	add_theme_support('editor-styles');
-
-	// 2. Вказуємо шлях відносно КОРЕНЯ теми (без get_template_directory_uri())
-	// Наприклад, якщо файл у: wp-content/themes/uuwg-theme/assets/css/editor.css
 	add_editor_style('assets/css/editor.css');
 }
+
 add_action('after_setup_theme', 'uuwg_add_editor_styles');
 
-// Дані для JS кастомних блоків (наприклад дефолтні логотипи для превʼю в редакторі)
+
+/**
+ * Pass theme data to block editor JavaScript.
+ */
 function uuwg_localize_block_editor_assets()
 {
 	wp_add_inline_script(
-		'wp-blocks', // будь-який core-скрипт, який точно вже підключений в редакторі
-		'window.uuwgThemeData = ' . wp_json_encode(array(
-			'themeUri' => get_template_directory_uri(),
-		)) . ';',
+		'wp-blocks',
+		'window.uuwgThemeData = ' . wp_json_encode(
+			array(
+				'themeUri' => get_template_directory_uri(),
+			)
+		) . ';',
 		'before'
 	);
 }
-add_action('enqueue_block_editor_assets', 'uuwg_localize_block_editor_assets');
 
+add_action(
+	'enqueue_block_editor_assets',
+	'uuwg_localize_block_editor_assets'
+);
+
+
+/**
+ * Enqueue GSAP animation for the About page.
+ */
 function uuwg_enqueue_values_animation()
 {
-
 	if (! is_page('about')) {
 		return;
 	}
@@ -148,11 +201,17 @@ function uuwg_enqueue_values_animation()
 		true
 	);
 
+	$animation_path = UUWG_THEME_DIR . '/assets/js/values-animation.js';
+
+	if (! file_exists($animation_path)) {
+		return;
+	}
+
 	wp_enqueue_script(
 		'uuwg-values-animation',
-		get_template_directory_uri() . '/assets/js/values-animation.js',
-		['gsap', 'gsap-scrolltrigger'],
-		filemtime(get_theme_file_path('/assets/js/values-animation.js')),
+		UUWG_THEME_URI . '/assets/js/values-animation.js',
+		array('gsap', 'gsap-scrolltrigger'),
+		filemtime($animation_path),
 		true
 	);
 }

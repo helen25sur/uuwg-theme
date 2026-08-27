@@ -2,6 +2,12 @@
   const pageProjects = document.querySelector('.post-type-archive-project');
 
   if (pageProjects) {
+
+    document.body.querySelectorAll('.uuwg-our-projects__card').forEach((card, index) => {
+      card.classList.add('is-visible');
+      card.style.setProperty('--delay', `${index * 70}ms`);
+    });
+
     const filterProjects = document.getElementById('uuwg-project-filter');
     const filterItems = filterProjects.querySelectorAll('.uuwg-projects-filter__item a');
 
@@ -77,6 +83,18 @@ async function loadProjects(type, name) {
     const data = await response.json();
     console.log(data);
     projectGrid.innerHTML = data.html;
+    const cards = projectGrid.querySelectorAll('.uuwg-our-projects__card');
+    cards.forEach((card, index) => {
+      card.style.setProperty('--delay', `${index * 70}ms`);
+    });
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        cards.forEach(card => {
+          card.classList.add('is-visible');
+        });
+      });
+    });
 
   } catch (error) {
     console.error(error)

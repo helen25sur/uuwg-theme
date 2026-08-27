@@ -3,49 +3,12 @@
 /**
  * Реєстрація кастомних блоків теми.
  *
- * Структура: кожен блок живе у власній папці /blocks/{block-name}/
- * з block.json + render.php (+ style.css, index.js за потреби).
- * Список блоків з ТЗ (≈10 шт.):
- *   hero, mission, what-we-do, focus-areas, impact-glance,
- *   donate-cta, projects-slider, partners-logos, get-involved,
- *   card (project/news/document — уніфікований з варіаціями),
- *   team-card, values-circles, filter-dropdown.
- *
  * @package UUWG
  */
 
 if (! defined('ABSPATH')) {
 	exit;
 }
-
-// function uuwg_register_blocks()
-// {
-// 	$blocks_dir = UUWG_THEME_DIR . '/blocks';
-
-// 	if (! is_dir($blocks_dir)) {
-// 		return;
-// 	}
-
-
-// 	foreach (glob($blocks_dir . '/*', GLOB_ONLYDIR) as $block_path) {
-// 		if (file_exists($block_path . '/block.json')) {
-// 			$result = register_block_type($block_path);
-
-// 			echo '<!-- BLOCK REGISTERED: ' . basename($block_path) . ' -->';
-
-// 			if ($result) {
-// 				error_log('UUWG BLOCK REGISTERED: ' . $result->name);
-// 			}
-// 		}
-// 	}
-// }
-// add_action('init', 'uuwg_register_blocks');
-
-// function uuwg_register_logo_block()
-// {
-// 	register_block_type(get_template_directory() . '../blocks/uuwg-logo');
-// }
-// add_action('init', 'uuwg_register_logo_block');
 
 add_action('init', 'uuwg_register_blocks');
 function uuwg_register_blocks()
@@ -110,18 +73,18 @@ function uuwg_ajax_get_projects()
 			$ID = get_the_ID();
 			$short_description = function_exists('get_field') ? get_field('project_short_description', $ID) : '';
 ?>
-<div class="uuwg-our-projects__card">
-  <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
-    <?php if (has_post_thumbnail()) {
+			<div class="uuwg-our-projects__card">
+				<a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+					<?php if (has_post_thumbnail()) {
 						the_post_thumbnail();
 					} ?>
-    <div class="uuwg-our-projects__card__content">
-      <h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
-      <p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
-      <span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
-    </div>
-  </a>
-</div>
+					<div class="uuwg-our-projects__card__content">
+						<h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
+						<p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
+						<span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
+					</div>
+				</a>
+			</div>
 <?php
 		endwhile;
 		wp_reset_postdata();
@@ -149,18 +112,21 @@ add_action('wp_ajax_uuwg_get_projects', 'uuwg_ajax_get_projects');
 add_action('wp_ajax_nopriv_uuwg_get_projects', 'uuwg_ajax_get_projects');
 
 // For icon url into socials-share block
-wp_enqueue_script(
-    'uuwg-socials-share-editor',
-    get_theme_file_uri('blocks/socials-share/index.js'),
-    ['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
-    null,
-    true
-);
+add_action('enqueue_block_editor_assets', function () {
 
-wp_localize_script(
-	'uuwg-socials-share-editor',
-	'uuwgTheme',
-	[
-		'socialIconsUrl' => get_theme_file_uri('assets/images/social-icons'),
-	]
-);
+	wp_enqueue_script(
+		'uuwg-socials-share-editor',
+		get_theme_file_uri('blocks/socials-share/index.js'),
+		['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
+		null,
+		true
+	);
+
+	wp_localize_script(
+		'uuwg-socials-share-editor',
+		'uuwgTheme',
+		[
+			'socialIconsUrl' => get_theme_file_uri('assets/images/social-icons'),
+		]
+	);
+});

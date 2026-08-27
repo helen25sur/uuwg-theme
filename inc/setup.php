@@ -18,13 +18,10 @@ function uuwg_theme_setup()
 	add_theme_support('post-thumbnails');
 	add_theme_support('align-wide');
 
-	// Мовна підтримка (Polylang перекладає рядки через __() / _e(), text domain нижче).
-	load_theme_textdomain('uuwg', UUWG_THEME_DIR . '/languages');
-
 	register_nav_menus(
 		array(
-			'primary' => __('Головне меню', 'uuwg'),
-			'footer'  => __('Меню футера', 'uuwg'),
+			'primary' => 'Головне меню',
+			'footer'  => 'Меню футера',
 		)
 	);
 }

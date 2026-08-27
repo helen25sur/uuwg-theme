@@ -34,7 +34,13 @@ function uuwg_register_cpt_team()
 add_action('init', 'uuwg_register_cpt_team');
 
 
-if (function_exists('acf_add_local_field_group')) {
+function uuwg_register_team_fields()
+{
+
+	if (!function_exists('acf_add_local_field_group')) {
+		return;
+	}
+
 	acf_add_local_field_group(array(
 		'key'                   => 'group_team_member_details',
 		'title'                 => __('Information about team member', 'uuwg'),
@@ -98,3 +104,5 @@ if (function_exists('acf_add_local_field_group')) {
 		'instruction_placement' => 'label',
 	));
 }
+
+add_action('acf/init', 'uuwg_register_team_fields');
