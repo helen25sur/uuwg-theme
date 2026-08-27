@@ -84,3 +84,47 @@ function uuwg_render_news_card(int $post_id, $button_text = '')
   // Повертаємо збережений вміст буфера у вигляді рядка
   return ob_get_clean();
 }
+
+
+function uuwg_render_document_card(WP_Post $document)
+{
+  $terms = get_the_terms($document->ID, 'document_type');
+  $file = function_exists('get_field')
+    ? get_field('document_file', $document->ID)
+    : null;
+
+  $file_url = $file['url'] ?? '';
+  $folder_icon_url = get_template_directory_uri() . '/assets/images/folder.png';
+
+  ob_start();
+?>
+  <div class="uuwg-documents-grid__card">
+    <div class="uuwg-documents-grid__card__img">
+      <img src="<?php echo esc_url($folder_icon_url); ?>" alt="Folder image">
+    </div>
+    <div class="uuwg-documents-grid__card__content">
+      <h3 class="uuwg-documents-grid__card__title">
+        <?php echo esc_html(get_the_title($document->ID)); ?>
+      </h3>
+      <?php if (!is_wp_error($terms) && !empty($terms)) : ?>
+        <div class="uuwg-documents-grid__card__type">
+          <?php foreach ($terms as $term) : ?>
+            <span class="uuwg-documents-grid__card__type-name">
+              <?php echo esc_html($term->name); ?>
+            </span>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+      <?php if ($file_url) : ?>
+        <a class="uuwg-documents-grid__card__button" href="<?php echo esc_url($file_url); ?>" download>
+          <span class="uuwg-documents-grid__card__button__text">
+            <?php echo esc_html__('Download', 'uuwg'); ?>
+          </span>
+          <img src="<?php echo get_template_directory_uri() . '/assets/images/download.svg' ?>" alt="icon of downloading">
+        </a>
+      <?php endif; ?>
+    </div>
+  </div>
+<?php
+  return ob_get_clean();
+}

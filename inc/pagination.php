@@ -122,7 +122,7 @@ function uuwg_get_news_events(WP_REST_Request $request)
         );
       }
 ?>
-
+      <!-- TODO: add function here from template-parts.php, not markup -->
       <div class="uuwg-news-events__card uuwg-carousel__item">
 
         <a class="uuwg-news-events__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
