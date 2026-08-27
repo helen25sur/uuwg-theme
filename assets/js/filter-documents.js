@@ -1,6 +1,11 @@
 (async () => {
   const pageDocs = document.querySelector('.post-type-archive-document');
 
+  document.body.querySelectorAll('.uuwg-documents-grid__card').forEach((card, index) => {
+    card.classList.add('is-visible');
+    card.style.setProperty('--delay', `${index * 70}ms`);
+  });
+
   if (pageDocs) {
     const filterDocs = document.getElementById('uuwg-document-filter');
     const filterItems = filterDocs.querySelectorAll('.uuwg-documents-filter__item a');
@@ -77,6 +82,19 @@ async function loadDocuments(year, name) {
     }
     const data = await response.json();
     documentGrid.innerHTML = data.html;
+    const cards = documentGrid.querySelectorAll('.uuwg-documents-grid__card');
+
+    cards.forEach((card, index) => {
+      card.style.setProperty('--delay', `${index * 70}ms`);
+    });
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        cards.forEach(card => {
+          card.classList.add('is-visible');
+        });
+      });
+    });
 
   } catch (error) {
     console.error(error);
