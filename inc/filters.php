@@ -1,8 +1,8 @@
 <?php
 
 require_once get_template_directory() . '/inc/template-parts.php';
-add_action('rest_api_init', function () {
 
+add_action('rest_api_init', function () {
   register_rest_route('uuwg/v1', '/document', [
     'methods'             => 'GET',
     'callback'            => 'uuwg_get_documents',
@@ -12,49 +12,50 @@ add_action('rest_api_init', function () {
 
 function uuwg_get_documents(WP_REST_Request $request)
 {
-  $page = max(
-    1,
-    (int) $request->get_param('page')
-  );
+  $filter = sanitize_key($request->get_param('document_year') ?? 'all');
 
-  $per_page = max(
-    1,
-    (int) $request->get_param('per_page')
-  );
-  $offset = max(0, (int) $request->get_param('offset'));
+  $term = ($filter !== 'all')
+    ? get_term_by('slug', $filter, 'document_year')
+    : null;
 
-  $query = new WP_Query([
+  if ($filter !== 'all' && (!$term || is_wp_error($term))) {
+    $filter = 'all';
+    $term = null;
+  }
+
+  $args = [
     'post_type'      => 'document',
     'post_status'    => 'publish',
-    'posts_per_page' => $per_page,
-    'offset'         => $offset,
-  ]);
+    'posts_per_page' => -1,
+  ];
 
+  if ($filter !== 'all') {
+    $args['tax_query'] = [
+      [
+        'taxonomy' => 'document_year',
+        'field'    => 'slug',
+        'terms'    => $filter,
+      ],
+    ];
+  }
+
+  $query = new WP_Query($args);
 
   ob_start();
 
-
   if ($query->have_posts()) :
-
     while ($query->have_posts()) :
       $query->the_post();
 
       $document = get_post();
 
       echo uuwg_render_document_card($document);
-
     endwhile;
-
   endif;
-
 
   wp_reset_postdata();
 
-
   return new WP_REST_Response([
-    'html'       => ob_get_clean(),
-    'offset'     => $offset,
-    'totalPages' => (int) $query->max_num_pages,
-    'totalItems' => (int) $query->found_posts,
+    'html' => ob_get_clean(),
   ]);
 }
