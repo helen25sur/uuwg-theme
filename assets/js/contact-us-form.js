@@ -69,4 +69,43 @@ if (fluentform1) {
     }
   });
 
+  // Validate textarea
+  textareaMessage.addEventListener('blur', (evt) => {
+    let errorMsg = '';
+    const existErr = fluentform1.querySelector('.ff-el-group:has(#ff_1_message) .error-message');
+
+    if (!evt.target.value.trim()) {
+      errorMsg = 'Enter your message';
+    } else if (evt.target.value.trim().length < 10) {
+      errorMsg = 'Message is too short';
+    } else if (evt.target.value.trim().length > 1000) {
+      errorMsg = 'Message is too long';
+    }
+
+    if (errorMsg) {
+      if (existErr) {
+        existErr.innerText = errorMsg;
+      } else {
+        const elementErrMsg = document.createElement('span');
+        elementErrMsg.innerText = errorMsg;
+        elementErrMsg.classList.add('error-message');
+
+        fluentform1
+          .querySelector('.ff-el-group:has(#ff_1_message)')
+          .append(elementErrMsg);
+      }
+    }
+
+  });
+
+  textareaMessage.addEventListener('input', (evt) => {
+    const existErr = fluentform1.querySelector('.ff-el-group:has(#ff_1_message) .error-message');
+
+    if (existErr) {
+      if (evt.target.value.trim().length >= 10 && evt.target.value.trim().length <= 1000) {
+        existErr.remove();
+      }
+    }
+  });
+
 }
