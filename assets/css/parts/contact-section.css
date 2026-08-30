@@ -81,7 +81,7 @@
 #fluentform_1 input,
 #fluentform_1 textarea {
   font-size: var(--wp--preset--font-size--text-medium);
-  color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--dark-blue);
   padding: 16px;
   border-radius: 8px;
   border: none;
@@ -94,6 +94,29 @@
   font-weight: 600;
   line-height: 115%;
   color: #899EAC;
+}
+
+#fluentform_1 input:active,
+#fluentform_1 textarea:active,
+#fluentform_1 input:focus,
+#fluentform_1 textarea:focus {
+  outline: 3px solid rgba(52, 79, 177, 0.502);
+}
+
+#fluentform_1 input:focus:invalid,
+#fluentform_1 textarea:focus:invalid {
+  outline: 3px solid rgba(220, 38, 38, 0.4);
+}
+
+#fluentform_1 .ff-el-group:has(input:disabled),
+#fluentform_1 .ff-el-group:has(textarea:disabled) {
+  opacity: 0.5;
+}
+
+#fluentform_1 .error-message {
+  font-size: var(--wp--preset--font-size--small-xs);
+  font-weight: 500;
+  color: #E7000B;
 }
 
 #fluentform_1 p {

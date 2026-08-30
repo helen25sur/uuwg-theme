@@ -137,6 +137,19 @@ function uuwg_enqueue_assets()
 		file_exists($filter_projects_path) ? filemtime($filter_projects_path) : UUWG_THEME_VERSION,
 		true
 	);
+
+	/*
+	 * Validation contact form.
+	 */
+	$contact_us_path = UUWG_THEME_DIR . '/assets/js/contact-us-form.js';
+
+	wp_enqueue_script(
+		'uuwg-contact-us-form',
+		UUWG_THEME_URI . '/assets/js/contact-us-form.js',
+		array(),
+		file_exists($contact_us_path) ? filemtime($contact_us_path) : UUWG_THEME_VERSION,
+		true
+	);
 }
 
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
