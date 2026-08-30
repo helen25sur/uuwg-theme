@@ -28,6 +28,7 @@
 .uuwg-our-projects__header {
   position: relative;
   margin-bottom: 80px;
+  z-index: 20;
 }
 
 .uuwg-our-projects__header .uuwg-our-projects__header-top {

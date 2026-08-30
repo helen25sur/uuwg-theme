@@ -129,6 +129,7 @@
 }
 
 .uuwg-documents-grid__card__img {
+  display: flex;
   padding-top: 55.86px;
   padding-right: 89.57px;
   padding-bottom: 56.55px;
@@ -142,6 +143,7 @@
 .uuwg-documents-grid__card__img img {
   width: 125.5px;
   height: auto;
+  margin: 0 auto;
 }
 
 .uuwg-documents-grid__card__content {
@@ -211,6 +213,8 @@
     padding-right: 18px;
     padding-bottom: 41px;
     padding-left: 20px;
+    background-size: 81.22px, 81.22px;
+    background-position: -20px 95px, 70px -12px;
   }
 
   .uuwg-documents-grid__card__img img {
