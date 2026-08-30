@@ -113,7 +113,8 @@
   opacity: 0.5;
 }
 
-#fluentform_1 .error-message {
+#fluentform_1 .error-message,
+#fluentform_1 .error {
   font-size: var(--wp--preset--font-size--small-xs);
   font-weight: 500;
   color: #E7000B;

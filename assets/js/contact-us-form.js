@@ -108,4 +108,11 @@ if (fluentform1) {
     }
   });
 
+
+  fluentform1.addEventListener('submit', (evt) => {
+    if (textareaMessage.value.trim().length < 10) {
+      evt.preventDefault();
+    }
+  })
+
 }
