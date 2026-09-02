@@ -4,11 +4,13 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
+$attributes = isset($attributes) && is_array($attributes) ? $attributes : array();
+
 $title = $attributes['title'] ?? '';
 $subtitle = $attributes['subtitle'] ?? '';
 
 $yellow_button_text = $attributes['yellowButtonText'] ?? '';
-$yellow_button_url = $attributes['yellowButtonUrl'] ?? '#';
+$yellow_button_url = $attributes['yellowButtonUrl'] ?? '';
 
 $secondary_button_text = $attributes['secondaryButtonText'] ?? '';
 $secondary_button_url = $attributes['secondaryButtonUrl'] ?? '#';
@@ -24,6 +26,17 @@ $wrapper_attributes = get_block_wrapper_attributes(
     'class' => 'uuwg-hero-about-us alignfull'
   )
 );
+
+// If the yellow button URL is not provided, we will try to get it from the site settings page (ACF Fields).
+$site_settings = get_page_by_path('site-settings');
+$donate_url = '';
+
+if (function_exists('get_field') && $site_settings) {
+  $donate_url = call_user_func('get_field', 'donate_url', $site_settings->ID);
+}
+
+$yellow_button_url = $yellow_button_url ?: $donate_url;
+
 ?>
 <section <?php echo $wrapper_attributes; ?>>
   <div class="uuwg-hero-about-us__container">
