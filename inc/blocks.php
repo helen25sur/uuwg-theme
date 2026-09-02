@@ -74,18 +74,18 @@ function uuwg_ajax_get_projects()
 			$ID = get_the_ID();
 			$short_description = function_exists('get_field') ? get_field('project_short_description', $ID) : '';
 ?>
-			<div class="uuwg-our-projects__card">
-				<a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
-					<?php if (has_post_thumbnail()) {
+<div class="uuwg-our-projects__card">
+  <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+    <?php if (has_post_thumbnail()) {
 						the_post_thumbnail();
 					} ?>
-					<div class="uuwg-our-projects__card__content">
-						<h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
-						<p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
-						<span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
-					</div>
-				</a>
-			</div>
+    <div class="uuwg-our-projects__card__content">
+      <h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
+      <p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
+      <span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
+    </div>
+  </a>
+</div>
 <?php
 		endwhile;
 		wp_reset_postdata();
@@ -128,6 +128,35 @@ add_action('enqueue_block_editor_assets', function () {
 		'uuwgTheme',
 		[
 			'socialIconsUrl' => get_theme_file_uri('assets/images/social-icons'),
+		]
+	);
+	// For impact-glance block
+	wp_enqueue_script(
+		'uuwg-impact-glance-editor',
+		get_theme_file_uri('blocks/impact-glance/index.js'),
+		['wp-blocks', 'wp-element', 'wp-block-editor'],
+		null,
+		true
+	);
+
+	$settings_page = get_page_by_path('site-settings');
+
+	$impact_items = [];
+
+	if ($settings_page && function_exists('get_field')) {
+		for ($i = 1; $i <= 4; $i++) {
+			$impact_items[] = [
+				'number' => get_field("impact_number_{$i}", $settings_page->ID),
+				'label'  => get_field("impact_label_{$i}", $settings_page->ID),
+			];
+		}
+	}
+
+	wp_localize_script(
+		'uuwg-impact-glance-editor',
+		'uuwgImpact',
+		[
+			'items' => $impact_items,
 		]
 	);
 });

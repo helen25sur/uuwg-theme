@@ -13,6 +13,8 @@
 
       const blockProps = useBlockProps({ className: 'uuwg-impact-glance alignfull' });
 
+      const items = window.uuwgImpact?.items ?? [];
+
       return el(
         'div',
         blockProps,
@@ -53,31 +55,37 @@
 
         el(
           'div',
+          { className: 'uuwg-impact-glance__editor-note' },
+          'Impact values can be edited in Site Setting.'
+        ),
+
+        el(
+          'div',
           { className: 'uuwg-impact-glance__grids' },
-          [1, 2, 3, 4].map(function (n) {
-            const isActive = n === 1;
+
+          items.map(function (item, index) {
             return el(
               'div',
               {
                 className: 'uuwg-impact-glance__card',
-                key: n,
+                key: index,
               },
-              el(RichText, {
-                tagName: 'h3',
-                className: 'uuwg-impact-glance__card__title',
-                value: attributes[`item${n}Title`],
-                onChange: (v) => setAttributes({ [`item${n}Title`]: v }),
-                placeholder: `Заголовок ${n}...`,
-                allowedFormats: [],
-              }),
-              el(RichText, {
-                tagName: 'p',
-                className: 'uuwg-impact-glance__card__text',
-                value: attributes[`item${n}Text`],
-                onChange: (v) => setAttributes({ [`item${n}Text`]: v }),
-                placeholder: `Опис картки ${n}...`,
-                allowedFormats: [],
-              })
+
+              el(
+                'h3',
+                {
+                  className: 'uuwg-impact-glance__card__title',
+                },
+                `${item.number}+`
+              ),
+
+              el(
+                'p',
+                {
+                  className: 'uuwg-impact-glance__card__text',
+                },
+                item.label
+              )
             );
           })
         )
