@@ -15,7 +15,7 @@
     "item1Title": { "type": "string", "default": "Humanitarian Aid" },
     "item1Text": {
       "type": "string",
-      "default": "We provide essential humanitarian assistance to Ukrainian families in Greece and to communities in Ukraine. Through our Humanitarian Aid Center, we collect, organize, and distribute food, clothing, hygiene products, medical supplies, and emergency tems.\nOur aid efforts are needs based, coordinated with partners, and carried out with transparency and care."
+      "default": "We provide essential humanitarian assistance to Ukrainian families in Greece and to communities in Ukraine. Through our Humanitarian Aid Center, we collect, organize, and distribute food, clothing, hygiene products, medical supplies, and emergency items.\nOur aid efforts are needs-based, coordinated with partners, and carried out with transparency and care."
     },
 
     "item2Title": { "type": "string", "default": "Housing & Basic Support" },
@@ -27,7 +27,7 @@
     "item3Title": { "type": "string", "default": "Education & Development" },
     "item3Text": {
       "type": "string",
-      "default": "<p>Education is key to empowerment.</p><p>We organize:</p><ul><li>Greek and English language courses</li><li>Digital and creative skills workshops</li><li>Professional development and employability training</li></ul><p>These programs help women build independent and access new opportunities.</p>"
+      "default": "<p>Education is key to empowerment.</p><p>We organize:</p><ul><li>Greek and English language courses</li><li>Digital and creative skills workshops</li><li>Professional development and employability training</li></ul><p>These programs help women build independence and access new opportunities.</p>"
     },
 
     "item4Title": {
@@ -36,7 +36,7 @@
     },
     "item4Text": {
       "type": "string",
-      "default": "Displacement and war leave deep emotional impact. We offer individual and group psychological support, peer support circles, and well being workshops in safe and trusted environments."
+      "default": "Displacement and war leave a deep emotional impact. We offer individual and group psychological support, peer support circles, and well-being workshops in safe and trusted environments."
     },
 
     "item5Title": { "type": "string", "default": "Culture & Community" },
