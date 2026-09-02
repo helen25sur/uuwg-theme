@@ -29,7 +29,8 @@ function uuwg_register_blocks()
 		'values-circles',
 		'team-grid',
 		'socials-share',
-		'documents-grid'
+		'documents-grid',
+		'social-links',
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();

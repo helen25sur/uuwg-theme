@@ -95,20 +95,20 @@ add_shortcode('uuwg_setting', 'uuwg_setting_shortcode');
 
 function uuwg_donate_shortcode()
 {
-    $settings_page = get_page_by_path('site-settings');
+  $settings_page = get_page_by_path('site-settings');
 
-    if (!$settings_page || !function_exists('get_field')) {
-        return '';
-    }
+  if (!$settings_page || !function_exists('get_field')) {
+    return '';
+  }
 
-    $donate_url = get_field('donate_url', $settings_page->ID);
+  $donate_url = get_field('donate_url', $settings_page->ID);
 
-    if (!$donate_url) {
-        return '';
-    }
+  if (!$donate_url) {
+    return '';
+  }
 
-    return sprintf(
-        '<div class="wp-block-buttons">
+  return sprintf(
+    '<div class="wp-block-buttons">
             <div class="wp-block-button">
                 <a class="wp-block-button__link wp-element-button"
                    href="%1$s"
@@ -116,8 +116,8 @@ function uuwg_donate_shortcode()
                    rel="noreferrer noopener">Donate</a>
             </div>
         </div>',
-        esc_url($donate_url)
-    );
+    esc_url($donate_url)
+  );
 }
 
 add_shortcode('uuwg_donate', 'uuwg_donate_shortcode');

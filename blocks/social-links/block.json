@@ -1,0 +1,9 @@
+{
+  "apiVersion": 3,
+  "name": "uuwg/social-links",
+  "title": "Social Links",
+  "category": "widgets",
+  "icon": "share",
+  "description": "Displays UUWG social media links.",
+  "render": "file:./render.php"
+}
