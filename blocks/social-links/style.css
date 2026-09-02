@@ -1,0 +1,69 @@
+.uuwg-social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uuwg-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--white);
+  transition: all 200ms ease-in;
+  border-radius: var(--wp--custom--border-radius--button, 999px);
+}
+
+.uuwg-social-link__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.uuwg-social-link--instagram .uuwg-social-link__icon {
+  mask-image: url("../../assets/images/social-icons/instagram.svg");
+  -webkit-mask-image: url("../../assets/images/social-icons/instagram.svg");
+}
+
+.uuwg-social-link--facebook .uuwg-social-link__icon {
+  mask-image: url("../../assets/images/social-icons/facebook.svg");
+  -webkit-mask-image: url("../../assets/images/social-icons/facebook.svg");
+}
+
+.uuwg-social-link--youtube .uuwg-social-link__icon {
+  mask-image: url("../../assets/images/social-icons/youtube.svg");
+  -webkit-mask-image: url("../../assets/images/social-icons/youtube.svg");
+}
+
+.uuwg-social-link--linkedin .uuwg-social-link__icon {
+  mask-image: url("../../assets/images/social-icons/linkedin.svg");
+  -webkit-mask-image: url("../../assets/images/social-icons/linkedin.svg");
+}
+
+.uuwg-social-link--telegram .uuwg-social-link__icon {
+  mask-image: url("../../assets/images/social-icons/telegram.svg");
+  -webkit-mask-image: url("../../assets/images/social-icons/telegram.svg");
+}
+
+.uuwg-social-links .uuwg-social-link:hover {
+  background-color: var(--wp--preset--color--blue-500);
+}
+
+.uuwg-social-links .uuwg-social-link:active {
+  background-color: var(--wp--preset--color--dark-blue);
+}
+
+.uuwg-social-links .uuwg-social-link:disabled {
+  background-color: var(--wp--preset--color--grey);
+  color: var(--wp--preset--color--light-grey);
+  cursor: not-allowed;
+}
