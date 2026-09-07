@@ -34,6 +34,7 @@
 .uuwg-donate-fundraise__header__text {
   color: var(--wp--preset--color--light-blue);
   font-size: var(--wp--preset--font-size--text-body);
+  font-weight: 600;
   text-align: center;
   line-height: 120%;
 }
@@ -49,6 +50,8 @@
 }
 
 .uuwg-donate-fundraise__grids {
+  max-width: 960px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
