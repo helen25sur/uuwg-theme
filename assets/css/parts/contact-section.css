@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+#contact-us {
+  scroll-margin-top: 100px;
+}
+
 .uuwg-contact-section__header {
   display: flex;
   flex-direction: column;
@@ -42,8 +46,16 @@
 .uuwg-contact-section__form_header h3.wp-block-heading {
   max-width: 203px;
   font-size: var(--wp--preset--font-size--heading-sm);
+  color: var(--wp--preset--color--blue-500);
   font-weight: 700;
   line-height: 115%;
+}
+
+.uuwg-contact-section__header .wp-block-paragraph {
+  max-width: 432px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--wp--preset--color--blue-200);
 }
 
 .uuwg-contact-section__form_header p {
@@ -53,6 +65,19 @@
   font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
+}
+
+.uuwg-contact-section__form p {
+  margin-block-start: 0;
+}
+
+.fluentform:has(#fluentform_1) {
+  margin-block-start: 0;
+  margin-top: 56px;
+}
+
+.fluentform .ff-el-input--label {
+  margin-bottom: 8px;
 }
 
 #fluentform_1 {
@@ -71,6 +96,8 @@
 #fluentform_1 textarea {
   font-size: var(--wp--preset--font-size--text-medium);
   color: var(--wp--preset--color--dark-blue);
+  font-weight: 500;
+  line-height: 115%;
   padding: 16px;
   border-radius: 8px;
   border: none;
@@ -80,9 +107,13 @@
 #fluentform_1 input::placeholder,
 #fluentform_1 textarea::placeholder {
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
   color: #899EAC;
+}
+
+#fluentform_1 textarea::placeholder {
+  line-height: 130%;
 }
 
 #fluentform_1 input:active,
@@ -112,6 +143,7 @@
 #fluentform_1 p {
   margin: 0;
   padding: 0;
+  margin-block-start: 0;
 }
 
 #fluentform_1 fieldset {
@@ -377,6 +409,12 @@
 
   .uuwg-contact-section ul.wp-block-social-links {
     display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #contact-us {
+    scroll-margin-top: 80px;
   }
 }
 
