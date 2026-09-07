@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 3rem;
+  margin-bottom: 80px;
 }
 
 .uuwg-what-we-do__heading {
   font-family: var(--wp--preset--font-family--heading);
-  color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--blue-500);
   font-size: var(--wp--preset--font-size--heading-xl);
   margin: 0;
 }
@@ -46,13 +46,14 @@
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--heading-sm);
   margin: 0;
+  max-width: 183px;
 }
 
 .uuwg-what-we-do__card-text {
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: bold;
-  line-height: 1.5;
+  font-weight: 700;
+  line-height: 115%;
   margin-top: 1.5rem;
 
   /* Ключове місце для акордеону: текст неактивних карток
@@ -78,8 +79,8 @@
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 8.8px;
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
