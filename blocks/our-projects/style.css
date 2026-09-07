@@ -40,6 +40,7 @@
 .uuwg-our-projects__heading {
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--heading-xl);
+  color: var(--wp--preset--color--blue-500);
   margin: 0;
 }
 
@@ -146,7 +147,7 @@
 
 .uuwg-our-projects__card.uuwg-carousel__item {
   flex: 0 0 413.33px;
-  max-width: 413.33px;
+  max-width: calc(33% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -154,7 +155,6 @@
   line-height: 115%;
   border-radius: var(--wp--custom--border-radius--card);
   background-color: var(--wp--preset--color--white);
-  /* overflow: hidden; */
   transition: all 200ms ease-in;
 }
 
@@ -184,8 +184,11 @@
 
 .uuwg-our-projects__card .uuwg-our-projects__card__title {
   font-size: var(--wp--preset--font-size--body-lg);
+  font-weight: 700;
+  line-height: 115%;
   padding: 0;
   margin: 0;
+  margin-bottom: 20px;
 }
 
 .uuwg-our-projects__card__short-description {
@@ -266,6 +269,7 @@
 
   .uuwg-our-projects__card.uuwg-carousel__item {
     flex: 0 0 365px;
+    max-width: calc(50% - 3px);
   }
 
   .uuwg-our-projects__pagination {
@@ -316,6 +320,10 @@
   .post-type-archive-project .uuwg-our-projects__grids {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .uuwg-our-projects__card.uuwg-carousel__item {
+    max-width: 100%;
   }
 }
 
