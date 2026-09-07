@@ -150,6 +150,19 @@ function uuwg_enqueue_assets()
 		file_exists($contact_us_path) ? filemtime($contact_us_path) : UUWG_THEME_VERSION,
 		true
 	);
+
+	/*
+	 * Add header active class script.
+	 */
+	$header_active_class_path = UUWG_THEME_DIR . '/assets/js/header-active-class.js';
+
+	wp_enqueue_script(
+		'uuwg-header-active-class',
+		UUWG_THEME_URI . '/assets/js/header-active-class.js',
+		array(),
+		file_exists($header_active_class_path) ? filemtime($header_active_class_path) : UUWG_THEME_VERSION,
+		true
+	);
 }
 
 add_action('wp_enqueue_scripts', 'uuwg_enqueue_assets');
