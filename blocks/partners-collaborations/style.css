@@ -30,8 +30,15 @@
 .uuwg-partners-collaborations__heading {
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--heading-xl);
+  color: var(--wp--preset--color--blue-500);
   margin: 0;
   margin-bottom: 24px;
+}
+
+.uuwg-partners-collaborations__header-text {
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--wp--preset--color--blue-200);
 }
 
 .uuwg-partners-collaborations__cta {
@@ -49,9 +56,9 @@
 }
 
 /* Зупинка анімації при наведенні курсора (для зручності кліку) */
-.uuwg-partners-collaborations__row:hover {
+/* .uuwg-partners-collaborations__row:hover {
   animation-play-state: paused;
-}
+} */
 
 .uuwg-partners-collaborations__card {
   display: flex;
