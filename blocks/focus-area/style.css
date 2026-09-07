@@ -90,8 +90,7 @@
   opacity: 0;
 
   /* 3. Плавна анімація в ОБОХ напрямках замість @keyframes */
-  transition: transform 550ms cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 500ms ease-in-out;
+  transition: transform 550ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* 4. ГОЛОВНЕ: Відслідковуємо :hover на БАТЬКІВСЬКОМУ обгортці */
@@ -102,12 +101,17 @@
 
 .uuwg-focus-area__card .uuwg-focus-area__card__title {
   font-size: var(--wp--preset--font-size--heading-md);
+  line-height: 115%;
+  font-weight: 700;
   padding: 0;
   margin: 0;
+  max-width: 236px;
 }
 
 .uuwg-focus-area__card__number {
   font-size: var(--wp--preset--font-size--heading-md);
+  font-weight: 700;
+  color: var(--wp--preset--color--blue-200);
 }
 
 .uuwg-focus-area .uuwg-carousel__dot.is-active {
