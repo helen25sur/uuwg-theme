@@ -62,7 +62,7 @@ function uuwg_register_news_acf_fields()
 				'type'         => 'textarea',
 				'instructions' => __('Використовується на картках новин (Home, архів news). Рекомендовано 1-2 речення.', 'uuwg'),
 				'required'     => 1,
-				'maxlength'    => 120,
+				'maxlength'    => 40,
 				'rows'         => 3,
 			),
 		),
