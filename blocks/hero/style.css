@@ -34,30 +34,33 @@
 .uuwg-hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 1060px;
+  max-width: 1280px;
 }
 
 .uuwg-hero__title {
+  width: 100%;
   font-family: var(--wp--preset--font-family--heading);
   font-size: var(--wp--preset--font-size--hero);
   color: var(--wp--preset--color--white);
   line-height: 1.1;
-  margin: 0 0 1rem;
+  margin: 0 0 40px;
 }
 
 .uuwg-hero__subtitle {
   font-family: var(--wp--preset--font-family--body);
   font-size: var(--wp--preset--font-size--text-body);
   color: var(--wp--preset--color--white);
-  opacity: 0.9;
-  margin: 0 0 2rem;
-  max-width: 520px;
+  font-weight: 600;
+  line-height: 120%;
+  margin: 0;
+  max-width: 487px;
 }
 
 .uuwg-hero__buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 60px;
 }
 
 .uuwg-hero__button {
@@ -66,15 +69,22 @@
   border-radius: var(--wp--custom--border-radius--button, 999px);
   font-family: var(--wp--preset--font-family--body);
   font-size: var(--wp--preset--font-size--body-lg);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
 }
 
-.uuwg-hero__button--secondary {
-  background-color: transparent;
-  color: var(--wp--preset--color--white);
-  border: 1px solid var(--wp--preset--color--white);
+.has-hero .uuwg-hero__button--secondary {
+  background-color: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+}
+
+.has-hero .uuwg-hero__button--secondary:hover {
+  background-color: var(--wp--preset--color--light-blue);
+}
+
+.has-hero .uuwg-hero__button--secondary:active {
+  background-color: var(--wp--preset--color--blue-100);
 }
 
 .uuwg-hero.alignfull {
