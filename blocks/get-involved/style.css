@@ -71,6 +71,7 @@
 
 .uuwg-get-involved__card__text {
   font-size: var(--wp--preset--font-size--text-sm);
+  color: var(--wp--preset--color--blue-200);
   padding: 0;
   margin: 0;
   line-height: 115%;
