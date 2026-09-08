@@ -111,6 +111,14 @@ main.wp-block-group {
   line-height: 120%;
 }
 
+/* =============== Single Project ================= */
+
+.single-project .wp-block-paragraph {
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--text-medium);
+  line-height: 125%;
+}
+
 @media screen and (max-width: 780px) {
   .uuwg-our-story__col .uuwg-our-story__header {
     flex-direction: row;

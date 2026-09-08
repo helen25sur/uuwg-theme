@@ -112,6 +112,12 @@
 .uuwg-projects-filter__item {
   margin-bottom: 12px;
   cursor: pointer;
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-200);
+}
+
+.uuwg-projects-filter__item a {
+  color: inherit;
 }
 
 .uuwg-projects-filter__item:last-of-type {
@@ -121,6 +127,7 @@
 .uuwg-projects-filter__item.is-active {
   font-weight: 700;
   pointer-events: none;
+  color: var(--wp--preset--color--blue-500);
 }
 
 .uuwg-projects-filter__item a {
@@ -248,8 +255,6 @@
 .uuwg-carousel__dot.is-active {
   background-color: var(--wp--preset--color--primary);
 }
-
-
 
 @media screen and (max-width: 1225px) {
   .uuwg-our-projects.alignfull {
