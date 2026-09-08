@@ -44,6 +44,26 @@
   color: var(--wp--preset--color--blue-500);
   font-size: var(--wp--preset--font-size--text-medium);
   line-height: 115%;
+  transition: all 200ms ease-in;
+}
+
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link:hover,
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link:active {
+  color: var(--wp--preset--color--secondary);
+}
+
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-item:hover::after,
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-item:active::after,
+.is-active.wp-block-navigation-item::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: var(--wp--preset--color--secondary);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .uuwg-site-footer__content .wp-block-buttons:first-of-type {

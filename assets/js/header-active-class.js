@@ -8,7 +8,7 @@ const activePages = {
   'single-document': '/documents/',
 };
 
-const navLinks = document.querySelectorAll('.wp-block-navigation-item a');
+const navLinks = document.querySelectorAll('.uuwg-header .wp-block-navigation .wp-block-navigation-item a');
 
 const bodyClasses = document.body.className;
 
