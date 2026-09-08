@@ -44,8 +44,8 @@
 .uuwg-values-circles__card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 44px;
+  justify-content: start;
+  padding: 83.61px 44px;
   flex-shrink: 0;
   width: 288px;
   height: 288px;
@@ -93,6 +93,8 @@
 .uuwg-values-circles__card__text {
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  line-height: 115%;
 }
 
 .uuwg-values-circles__card:nth-of-type(odd) {
