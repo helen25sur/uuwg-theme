@@ -19,10 +19,10 @@ function uuwg_register_cpt_documents()
 		'document',
 		array(
 			'labels'       => array(
-				'name'          => __('Документи', 'uuwg'),
-				'singular_name' => __('Документ', 'uuwg'),
-				'add_new_item'  => __('Додати документ', 'uuwg'),
-				'edit_item'     => __('Редагувати документ', 'uuwg'),
+				'name'          => __('Documents', 'uuwg'),
+				'singular_name' => __('Document', 'uuwg'),
+				'add_new_item'  => __('Add Document', 'uuwg'),
+				'edit_item'     => __('Edit Document', 'uuwg'),
 			),
 			'public'       => true,
 			'show_in_rest' => true,
@@ -39,8 +39,8 @@ function uuwg_register_cpt_documents()
 		'document',
 		array(
 			'labels'       => array(
-				'name'          => __('Рік', 'uuwg'),
-				'singular_name' => __('Рік', 'uuwg'),
+				'name'          => __('Year', 'uuwg'),
+				'singular_name' => __('Year', 'uuwg'),
 			),
 			'public'       => true,
 			'show_in_rest' => true,
@@ -55,10 +55,10 @@ function uuwg_register_cpt_documents()
 		'document',
 		array(
 			'labels' => array(
-				'name'          => __('Типи документів', 'uuwg'),
-				'singular_name' => __('Тип документа', 'uuwg'),
-				'add_new_item'  => __('Додати тип документа', 'uuwg'),
-				'edit_item'     => __('Редагувати тип документа', 'uuwg'),
+				'name'          => __('Type of the documents', 'uuwg'),
+				'singular_name' => __('Type of the document', 'uuwg'),
+				'add_new_item'  => __('Add document type', 'uuwg'),
+				'edit_item'     => __('Edit document type', 'uuwg'),
 			),
 			'public'       => true,
 			'show_in_rest' => true,
@@ -91,7 +91,7 @@ function uuwg_register_documents_acf_fields()
 				'type'         => 'file',
 				'return_format' => 'array',
 				'mime_types'   => 'pdf',
-				'instructions' => __('Завантажте файл pdf', 'uuwg'),
+				'instructions' => __('Upload the pdf-file', 'uuwg'),
 				'required'     => 1
 			),
 		),

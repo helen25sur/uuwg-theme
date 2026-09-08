@@ -88,6 +88,12 @@
 .uuwg-documents-filter__item {
   margin-bottom: 12px;
   cursor: pointer;
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-200);
+}
+
+.uuwg-documents-filter__item a {
+  color: inherit;
 }
 
 .uuwg-documents-filter__item:last-of-type {
@@ -97,6 +103,7 @@
 .uuwg-documents-filter__item.is-active {
   font-weight: 700;
   pointer-events: none;
+  color: var(--wp--preset--color--blue-500);
 }
 
 .uuwg-documents-filter__item a {
@@ -189,6 +196,10 @@
   font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 600;
   line-height: 115%;
+}
+
+.wp-block-breadcrumbs {
+  padding-left: 12px;
 }
 
 @media screen and (max-width: 1400px) {
