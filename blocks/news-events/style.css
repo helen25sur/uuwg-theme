@@ -1,6 +1,7 @@
 .uuwg-news-events {
   width: 100%;
   color: var(--wp--preset--color--primary);
+  margin-block-start: 0 !important;
 }
 
 .uuwg-news-events__content {

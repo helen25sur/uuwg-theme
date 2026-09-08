@@ -1,7 +1,7 @@
 .uuwg-our-projects.alignfull {
   width: 100%;
   color: var(--wp--preset--color--primary);
-  margin-block-start: 0;
+  margin-block-start: 0 !important;
 }
 
 .post-type-archive-project .uuwg-our-projects.alignfull {
@@ -12,7 +12,7 @@
   max-width: var(--wp--style--global--wide-size);
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
-  margin: 0 auto;
+  margin: inherit auto;
 }
 
 .uuwg-our-projects__content {
