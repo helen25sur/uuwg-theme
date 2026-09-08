@@ -110,7 +110,8 @@
 
 .uuwg-team-grid__card .uuwg-team-grid__card__title {
   font-size: var(--wp--preset--font-size--text-body);
-  font-weight: 800;
+  font-weight: 700;
+  /* temporary */
   line-height: 117%;
   padding: 0;
   margin: 0;
@@ -122,6 +123,7 @@
   font-weight: 700;
   line-height: 115%;
   margin-bottom: 14px;
+  color: var(--wp--preset--color--blue-200);
 }
 
 .uuwg-team-grid__card__footer {
@@ -136,12 +138,14 @@
   font-weight: 700;
   line-height: 115%;
   background-color: var(--wp--preset--color--blue-100);
+  color: var(--wp--preset--color--blue-200);
   border-radius: 31px;
   white-space: nowrap;
 }
 
 .uuwg-team-grid__card__socials {
   display: flex;
+  gap: 4px;
 }
 
 .uuwg-team-grid__card__socials a {
