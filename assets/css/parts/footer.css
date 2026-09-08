@@ -12,7 +12,7 @@
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
   padding-top: 80px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
@@ -36,6 +36,14 @@
   flex-wrap: nowrap;
   margin-block-start: 0;
   padding: 18.5px 0;
+  column-gap: 32px;
+}
+
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link {
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-500);
+  font-size: var(--wp--preset--font-size--text-medium);
+  line-height: 115%;
 }
 
 .uuwg-site-footer__content .wp-block-buttons:first-of-type {
@@ -59,6 +67,9 @@
 
 .uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) h4 {
   font-size: var(--wp--preset--font-size--text-body);
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--wp--preset--color--blue-500);
   margin-right: auto;
 }
 
@@ -66,6 +77,8 @@
   margin-block-start: 0;
   margin-bottom: 8px;
   font-size: var(--wp--preset--font-size--text-sm);
+  color: var(--wp--preset--color--blue-200);
+  font-weight: 600;
 }
 
 .uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) p {
@@ -75,6 +88,21 @@
 .uuwg-site-footer__content .contacts {
   grid-area: contacts;
   font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 600;
+  color: var(--wp--preset--color--blue-200);
+}
+
+.uuwg-site-footer__content .contacts .uuwg-setting-link {
+  color: inherit;
+}
+
+.uuwg-site-footer__content .contacts .wp-block-heading {
+  margin-bottom: 24px;
+}
+
+.uuwg-site-footer__content .contacts p {
+  margin-block-start: 0;
+  margin-top: 12px;
 }
 
 .uuwg-site-footer__content .legal {
@@ -91,15 +119,35 @@
   align-items: self-start;
 }
 
+.uuwg-site-footer__content .legal a {
+  color: inherit;
+}
+
+.uuwg-site-footer__content .legal .wp-block-navigation {
+  row-gap: 12px;
+}
+
 .uuwg-site-footer__content .location {
   grid-area: location;
   font-size: var(--wp--preset--font-size--text-sm);
+  color: var(--wp--preset--color--blue-200);
+  font-weight: 600;
+  line-height: 115%;
+}
+
+.uuwg-site-footer__content .location a {
+  color: inherit;
 }
 
 .uuwg-site-footer__content .copyright {
   grid-area: copyright;
   justify-self: self-start;
+  align-self: center;
   margin-block-start: 0;
+  color: var(--wp--preset--color--blue-200);
+  font-size: var(--wp--preset--font-size--text-sm) !important;
+  font-weight: 700;
+  line-height: 115%;
 }
 
 .uuwg-site-footer__content h4 {
@@ -132,7 +180,7 @@
   border-color: var(--wp--preset--color--background);
   position: absolute;
   width: 100%;
-  bottom: 132px;
+  bottom: 186px;
   margin-block-start: 0;
 }
 
@@ -161,6 +209,8 @@
   background-color: var(--wp--preset--color--background);
   font-size: var(--wp--preset--font-size--text-medium);
   color: var(--wp--preset--color--primary);
+  font-weight: 600;
+  line-height: 115%;
 }
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
@@ -203,11 +253,12 @@
 #mc4wp-form-1 .uuwg_subscribe button[type="submit"]::before {
   content: url('../../images/glyphs_arrow-bold.svg');
   position: absolute;
-  width: 17.6px;
-  height: 17.6px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: var(--wp--preset--color--primary);
 }
 
 .uuwg-site-footer__content .uuwg-social-links {
