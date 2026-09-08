@@ -48,7 +48,6 @@
 
 .uuwg-news-events__card.uuwg-carousel__item {
   flex: 0 0 413.33px;
-  max-width: calc(33% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -56,6 +55,10 @@
   border-radius: var(--wp--custom--border-radius--card);
   background-color: var(--wp--preset--color--white);
   transition: all 200ms ease-in;
+}
+
+.has-hero .uuwg-news-events__card.uuwg-carousel__item {
+  max-width: calc(33% - 10px);
 }
 
 .uuwg-news-events__card:hover {
@@ -170,6 +173,9 @@
 
   .uuwg-news-events__card.uuwg-carousel__item {
     flex: 0 0 365px;
+  }
+
+  .has-hero .uuwg-news-events__card.uuwg-carousel__item {
     max-width: calc(50% - 3px);
   }
 
