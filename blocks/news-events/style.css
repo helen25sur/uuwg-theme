@@ -146,6 +146,10 @@
   line-height: 115%;
 }
 
+.wp-block-breadcrumbs {
+  padding-left: 12px;
+}
+
 @media (min-width: 1224px) {
   .uuwg-news-events .uuwg-carousel__pagination {
     display: none;
