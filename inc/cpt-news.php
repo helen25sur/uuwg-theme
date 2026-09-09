@@ -37,6 +37,29 @@ function uuwg_register_cpt_news()
 			'supports'     => array('title', 'editor', 'thumbnail'),
 		)
 	);
+
+	register_taxonomy(
+		'event_type',
+		'news_event',
+		array(
+			'labels' => array(
+				'name'          => __('Event Types', 'uuwg'),
+				'singular_name' => __('Event Type', 'uuwg'),
+				'search_items'  => __('Search Event Type', 'uuwg'),
+				'all_items'     => __('All Event Types', 'uuwg'),
+				'edit_item'     => __('Edit Event Type', 'uuwg'),
+				'add_new_item'  => __('Add New Event Type', 'uuwg'),
+			),
+
+			'public'             => true,
+			'show_in_rest'       => true,
+			'hierarchical'       => true,
+
+			'rewrite'            => array(
+				'slug' => 'event-type',
+			),
+		)
+	);
 }
 add_action('init', 'uuwg_register_cpt_news');
 

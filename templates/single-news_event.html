@@ -8,9 +8,11 @@
 		<!-- wp:group {"className":"post-container__content"} -->
 		<div class="wp-block-group post-container__content">
 			<!-- wp:post-title /-->
-			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"flex-start"}} -->
 			<div class="wp-block-group">
-				<!-- wp:post-date /-->
+				<!-- wp:post-date {"metadata":{"bindings":{"datetime":{"source":"core/post-data","args":{"field":"date"}}}}} /-->
+
+				<!-- wp:post-terms {"term":"event_type"} /-->
 
 				<!-- wp:uuwg/socials-share /-->
 			</div>
