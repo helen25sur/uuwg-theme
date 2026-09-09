@@ -20,7 +20,7 @@ $socials = [
       $button_label = $attributes[$label_key] ?? '';
       $icon_url = get_template_directory_uri() . "/assets/images/social-icons/{$social}.svg";
       ?>
-    <li class="uuwg-socials-share__item">
+    <li class="uuwg-socials-share__item uuwg-socials-share__item--<?php echo esc_attr($social); ?>">
       <button class="uuwg-socials-share__button" data-social="<?php echo esc_attr($social); ?>"
         aria-label="<?php echo esc_attr($button_label); ?>">
         <span class="uuwg-socials-share__button__icon" style="--icon-url: url('<?php echo esc_url($icon_url); ?>');">
@@ -29,5 +29,9 @@ $socials = [
     </li>
     <?php endforeach; ?>
   </ul>
+
+  <div class="uuwg-copy-notification" aria-live="polite">
+    Link copied
+  </div>
 
 </div>

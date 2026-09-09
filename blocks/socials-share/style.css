@@ -53,3 +53,32 @@
 .uuwg-socials-share__button:disabled .uuwg-socials-share__button__icon {
   background-color: var(--wp--preset--color--blue-100);
 }
+
+.uuwg-copy-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  background: var(--wp--preset--color--blue-500);
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.uuwg-copy-notification.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  z-index: 9999;
+}
+
+@media (min-width: 701px) {
+
+  .uuwg-socials-share__item--instagram,
+  .uuwg-socials-share__item--youtube {
+    display: none;
+  }
+}
