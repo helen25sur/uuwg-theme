@@ -1,0 +1,10 @@
+{
+  "apiVersion": 3,
+  "name": "uuwg/join-us-btn",
+  "title": "Join Us",
+  "category": "widgets",
+  "icon": "networking",
+  "description": "Displays UUWG Join Us button.",
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

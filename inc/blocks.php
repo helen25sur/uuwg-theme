@@ -31,6 +31,7 @@ function uuwg_register_blocks()
 		'socials-share',
 		'documents-grid',
 		'social-links',
+		'join-us-btn',
 	);
 
 	$registry = WP_Block_Type_Registry::get_instance();
@@ -74,18 +75,18 @@ function uuwg_ajax_get_projects()
 			$ID = get_the_ID();
 			$short_description = function_exists('get_field') ? get_field('project_short_description', $ID) : '';
 ?>
-<div class="uuwg-our-projects__card">
-  <a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
-    <?php if (has_post_thumbnail()) {
+			<div class="uuwg-our-projects__card">
+				<a class="uuwg-our-project__permalink" href="<?php echo esc_url(get_permalink($ID)); ?>">
+					<?php if (has_post_thumbnail()) {
 						the_post_thumbnail();
 					} ?>
-    <div class="uuwg-our-projects__card__content">
-      <h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
-      <p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
-      <span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
-    </div>
-  </a>
-</div>
+					<div class="uuwg-our-projects__card__content">
+						<h3 class="uuwg-our-projects__card__title"><?php echo esc_html(get_the_title()); ?></h3>
+						<p class="uuwg-our-projects__card__short-description"><?php echo esc_html($short_description); ?></p>
+						<span class="uwg-our-projects__card__button"><?php esc_html_e('Read more', 'uuwg'); ?></span>
+					</div>
+				</a>
+			</div>
 <?php
 		endwhile;
 		wp_reset_postdata();
