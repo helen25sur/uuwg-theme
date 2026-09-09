@@ -46,6 +46,22 @@ if (socialsList) {
           // Clipboard API
           copyLink();
           break;
+
+        case 'instagram':
+        case 'youtube':
+          if (navigator.share) {
+            navigator.share({
+              title: document.title,
+              url: window.location.href,
+            }).catch((error) => {
+              if (error.name !== 'AbortError') {
+                console.error('Failed to share:', error);
+              }
+            });
+          } else {
+            copyLink();
+          }
+          break;
       }
 
     })
