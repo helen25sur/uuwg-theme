@@ -11,22 +11,22 @@
     "item1Title": { "type": "string", "default": "Migration & Integration" },
     "item1Text": {
       "type": "string",
-      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+      "default": "Legal guidance, education, and community support that help women navigate life in Greece."
     },
     "item2Title": { "type": "string", "default": "Gender Violence Prevention" },
     "item2Text": {
       "type": "string",
-      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+      "default": "Psychological support, safe spaces, and advocacy for women facing violence, exploitation, or discrimination."
     },
     "item3Title": { "type": "string", "default": "Economic Justice" },
     "item3Text": {
       "type": "string",
-      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+      "default": "Language courses, professional training, employment support, and entrepreneurship programs."
     },
     "item4Title": { "type": "string", "default": "Culture & Community" },
     "item4Text": {
       "type": "string",
-      "default": "Legal guidance, education, community support that help women navigate life in Greece"
+      "default": "Preserving Ukrainian heritage while fostering cross-cultural connection and belonging."
     },
     "showPagination": {
       "type": "boolean",
