@@ -347,7 +347,7 @@
   margin-bottom: 50px;
 }
 
-.uuwg-popup__btn {
+.uuwg-popup-overlay .chat_button__container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -358,7 +358,7 @@
   text-decoration: none;
 }
 
-.uuwg-popup__btn .wp-block-button__link {
+.uuwg-popup-overlay .chat_button__link {
   padding: 17px 60px 17px 32px;
   position: relative;
   background-color: var(--wp--preset--color--background);
@@ -371,11 +371,11 @@
   transition: background-color 0.2s;
 }
 
-.uuwg-popup__btn .wp-block-button__link:hover {
+.uuwg-popup-overlay .chat_button__link:hover {
   background-color: #eee9da;
 }
 
-.uuwg-popup__btn .wp-block-button__link::after {
+.uuwg-popup-overlay .chat_button__link::after {
   content: '';
   background-color: currentColor;
   mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
