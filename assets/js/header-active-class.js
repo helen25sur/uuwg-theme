@@ -4,6 +4,7 @@ const activePages = {
   'single-project': '/projects/',
   'post-type-archive-news_event': '/news/',
   'single-news_event': '/news/',
+  'event_type': '/news/',
   'post-type-archive-document': '/documents',
   'single-document': '/documents/',
 };
