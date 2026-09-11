@@ -39,13 +39,24 @@ $posts_per_page = $is_all_news ? -1 : $count;
 
 
 // Основний запит.
-
-$query = new WP_Query([
+$query_args = [
   'post_type'      => 'news_event',
   'post_status'    => 'publish',
   'posts_per_page' => $posts_per_page,
   'paged'          => 1,
-]);
+];
+
+if (is_tax('event_type')) {
+  $query_args['tax_query'] = [
+    [
+      'taxonomy' => 'event_type',
+      'field'    => 'term_id',
+      'terms'    => get_queried_object_id(),
+    ],
+  ];
+}
+
+$query = new WP_Query($query_args);
 
 $total_items = (int) $query->found_posts;
 
@@ -74,13 +85,11 @@ $render_news_items = function () use ($query, $small_button_text) {
 
 ?>
 
-<section
-  <?php
-  echo get_block_wrapper_attributes([
-    'class' => 'uuwg-news-events alignfull',
-  ]);
-  ?>
-  data-count="<?php echo esc_attr($count); ?>"
+<section <?php
+          echo get_block_wrapper_attributes([
+            'class' => 'uuwg-news-events alignfull',
+          ]);
+          ?> data-count="<?php echo esc_attr($count); ?>"
   data-ajax-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>">
   <div class="uuwg-news-events__content">
 
@@ -88,20 +97,22 @@ $render_news_items = function () use ($query, $small_button_text) {
 
     <div class="uuwg-news-events__header">
 
-      <?php if (! empty($heading)) : ?>
+      <?php
+      if (is_tax('event_type')) {
+        $heading = single_term_title('', false);
+      }
+      ?>
 
+      <?php if (! empty($heading)) : ?>
         <h2 class="uuwg-news-events__heading">
           <?php echo esc_html($heading); ?>
         </h2>
-
       <?php endif; ?>
 
 
       <?php if ($show_header_button && ! empty($button_text)) : ?>
 
-        <a
-          href="<?php echo esc_url($button_url ?: '#'); ?>"
-          class="uuwg-news-events__cta uuwg-btn wp-element-button">
+        <a href="<?php echo esc_url($button_url ?: '#'); ?>" class="uuwg-news-events__cta uuwg-btn wp-element-button">
           <?php echo esc_html($button_text); ?>
         </a>
 
@@ -120,16 +131,10 @@ $render_news_items = function () use ($query, $small_button_text) {
 
     <?php else : ?>
 
-      <div
-        class="uuwg-news-events__grids js-news-grid uuwg-carousel"
-        data-uuwg-carousel
-        data-carousel-desktop="3"
-        data-carousel-tablet="2"
-        data-carousel-mobile="1"
-        data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>"
-        data-uuwg-pagination
-        data-post-type="news_event"
-        data-per-page="<?php echo esc_attr($count); ?>"
+      <div class="uuwg-news-events__grids js-news-grid uuwg-carousel" data-uuwg-carousel data-carousel-desktop="3"
+        data-carousel-tablet="2" data-carousel-mobile="1"
+        data-show-pagination="<?php echo $show_pagination ? 'true' : 'false'; ?>" data-uuwg-pagination
+        data-post-type="news_event" data-per-page="<?php echo esc_attr($count); ?>"
         data-total-items="<?php echo esc_attr($total_items); ?>">
 
         <div class="uuwg-carousel__track">
