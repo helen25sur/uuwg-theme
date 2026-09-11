@@ -1,10 +1,13 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "uuwg/join-us-btn",
-  "title": "Join Us",
-  "category": "widgets",
+  "title": "UUWG: Join Us",
+  "category": "uuwg-blocks",
   "icon": "networking",
   "description": "Displays UUWG Join Us button.",
   "render": "file:./render.php",
-  "style": "file:./style.css"
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editorStyle.css"
 }
