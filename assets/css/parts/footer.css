@@ -507,7 +507,8 @@
   margin-bottom: 50px;
 }
 
-.uuwg-subscribe-popup .wp-image-234 {
+.uuwg-subscribe-popup .wp-image-234,
+.uuwg-subscribe-popup .wp-image-235 {
   margin-bottom: 40px;
 }
 
@@ -567,6 +568,24 @@
   position: absolute;
   right: 30px;
   top: 16px;
+}
+
+.uuwg-subscribe-popup__button {
+  padding: 16px 32px 16px 32px;
+  margin-block-start: 0;
+  position: relative;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--text-sm);
+  border-radius: var(--wp--custom--border-radius--button);
+  font-weight: 700;
+  line-height: 115%;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.uuwg-subscribe-popup__button:hover {
+  background-color: #eee9da;
 }
 
 @media screen and (max-width: 768px) {

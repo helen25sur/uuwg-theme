@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!popup || !form) return;
 
+  const popupTitle = popup.querySelector('.uuwg-subscribe-popup__title');
+  const popupText = popup.querySelector('.uuwg-subscribe-popup__text');
+
+  const imageSuccess = popup.querySelector('.wp-image-234');
+  const imageError = popup.querySelector('.wp-image-235');
+
+
   function openPopup() {
     popup.classList.add('is-open');
     popup.setAttribute('aria-hidden', 'false');
@@ -32,10 +39,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const successMsg = form.querySelector('.mc4wp-success');
+  const errorMsg = form.querySelector('.mc4wp-error');
 
   if (successMsg) {
+    successMsg.style.display = 'none';
+    successMsg.remove();
     console.log('Here should open popup');
     openPopup();
-    successMsg.style.display = 'none';
+  } else if (errorMsg) {
+    errorMsg.remove();
+    imageSuccess.hidden = true;
+    imageError.hidden = false;
+    popupTitle.textContent = 'Something went wrong';
+    popupText.textContent = 'We couldn’t complete your request.\nPlease try again in a moment.';
+    if (!popup.querySelector('.uuwg-subscribe-popup__button')) {
+      const btn = document.createElement('a');
+      btn.classList.add('uuwg-subscribe-popup__button');
+      btn.innerText = 'Try again';
+      btn.href = window.location.pathname + '#mc4wp-form-1';
+      btn.addEventListener('click', closePopup);
+      popup.querySelector('.uuwg-subscribe-popup').appendChild(btn);
+      form.reset();
+    }
+    openPopup();
   }
 });
