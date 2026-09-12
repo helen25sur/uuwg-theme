@@ -54,6 +54,7 @@ main.wp-block-group {
   margin-bottom: 140px;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: var(--wp--custom--spacing--block-gap, 140px);
 }
 
