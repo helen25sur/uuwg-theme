@@ -422,6 +422,153 @@
   }
 }
 
+/* ============================ Subscribe Form Popup ======================== */
+
+.uuwg-subscribe-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 11, 22, .8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 99999;
+}
+
+.uuwg-subscribe-popup-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.uuwg-subscribe-popup {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px 20px 40px 20px;
+  max-width: 597px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.uuwg-subscribe-popup-overlay.is-open .uuwg-subscribe-popup {
+  transform: scale(1);
+}
+
+.uuwg-subscribe-popup__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+#uuwg-subscribe-popup-close {
+  width: 45px;
+}
+
+#uuwg-subscribe-popup-close .wp-block-button__link {
+  position: relative;
+  font-size: 0;
+}
+
+#uuwg-subscribe-popup-close .wp-block-button__link::before {
+  content: '';
+  background-color: currentColor;
+  mask: url('../../images/close.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/close.svg') no-repeat center / contain;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -12px;
+  right: 6px;
+}
+
+.uuwg-subscribe-popup__close:hover {
+  background-color: #f1f5f9;
+}
+
+.wp-block-buttons:has(#uuwg-subscribe-popup-close) {
+  margin-bottom: 50px;
+}
+
+.uuwg-subscribe-popup .wp-image-234 {
+  margin-bottom: 40px;
+}
+
+.uuwg-subscribe-popup__title {
+  color: var(--wp--preset--color--blue-500);
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.uuwg-subscribe-popup__text {
+  max-width: 65%;
+  margin-block-start: 0;
+  padding: 0;
+  color: var(--wp--preset--color--blue-200);
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.uuwg-subscribe-popup-overlay .chat_button__container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.uuwg-subscribe-popup-overlay .chat_button__link {
+  padding: 17px 60px 17px 32px;
+  position: relative;
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--primary);
+  font-size: var(--wp--preset--font-size--text-sm);
+  font-weight: 700;
+  line-height: 115%;
+  background: var(--wp--preset--color--background);
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.uuwg-subscribe-popup-overlay .chat_button__link:hover {
+  background-color: #eee9da;
+}
+
+.uuwg-subscribe-popup-overlay .chat_button__link::after {
+  content: '';
+  background-color: currentColor;
+  mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  -webkit-mask: url('../../images/telegram-fill.svg') no-repeat center / contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  top: 16px;
+}
+
 @media screen and (max-width: 768px) {
   .uuwg-site-footer__content {
     padding: 32px 20px;
@@ -480,6 +627,11 @@
 @media screen and (max-width: 500px) {
   .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
     column-gap: 35vw;
+  }
+
+  .uuwg-subscribe-popup {
+    max-width: 90%;
+    width: 100%;
   }
 }
 

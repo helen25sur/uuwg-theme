@@ -452,4 +452,9 @@
   }
 }
 
-@media screen and (max-width: 500px) {}
+@media screen and (max-width: 500px) {
+  .uuwg-popup-overlay {
+    max-width: 90%;
+    width: 100%;
+  }
+}

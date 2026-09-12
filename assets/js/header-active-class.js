@@ -25,7 +25,7 @@ navLinks.forEach((link) => {
   if (found) {
     activePath = found[1];
   }
-  console.log('activePath:', activePath, 'link.pathname:', link.pathname, 'link.hash:', link.hash, 'window.location.hash:', window.location.hash);
+
   if (activePath && link.pathname === activePath) {
     link.parentElement.classList.add('is-active');
   }

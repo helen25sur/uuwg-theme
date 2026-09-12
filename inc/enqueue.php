@@ -66,6 +66,19 @@ function uuwg_enqueue_assets()
 		true
 	);
 
+	/*
+	 * Subscribe form popup.
+	 */
+	$subscribe_form_popup_path = UUWG_THEME_DIR . '/assets/js/subscribe-popup.js';
+
+	wp_enqueue_script(
+		'uuwg-subscribe-popup',
+		UUWG_THEME_URI . '/assets/js/subscribe-popup.js',
+		array(),
+		file_exists($subscribe_form_popup_path) ? filemtime($subscribe_form_popup_path) : UUWG_THEME_VERSION,
+		true
+	);
+
 
 	/*
 	 * Navigation.
