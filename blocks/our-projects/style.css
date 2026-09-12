@@ -336,6 +336,10 @@
   .uuwg-our-projects__card.uuwg-carousel__item {
     max-width: 100%;
   }
+
+  .has-hero .uuwg-our-projects__card.uuwg-carousel__item {
+    max-width: 100%;
+  }
 }
 
 

@@ -231,6 +231,10 @@
   .uuwg-news-events__card.uuwg-carousel__item {
     max-width: 100%;
   }
+
+  .has-hero .uuwg-news-events__card.uuwg-carousel__item {
+    max-width: 100%;
+  }
 }
 
 
