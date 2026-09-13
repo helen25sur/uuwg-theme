@@ -41,11 +41,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const successMsg = form.querySelector('.mc4wp-success');
   const errorMsg = form.querySelector('.mc4wp-error');
 
-  if (successMsg) {
-    successMsg.style.display = 'none';
-    successMsg.remove();
-    console.log('Here should open popup');
+  const params = new URLSearchParams(window.location.search);
+  const subscriptionStatus = params.get('subscription');
+
+  if (subscriptionStatus === 'success') {
+
+    if (successMsg) {
+      successMsg.remove();
+    }
+
+    console.log('Here should open success popup');
     openPopup();
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete('subscription');
+    window.history.replaceState({}, '', url);
+
   } else if (errorMsg) {
     errorMsg.remove();
     imageSuccess.hidden = true;
