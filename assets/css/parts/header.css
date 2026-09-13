@@ -2,6 +2,10 @@
   font-size: var(--wp--preset--font-size--text-medium);
 }
 
+header.uuwg-header {
+  gap: 0;
+}
+
 .wp-block-template-part:has(header) .container,
 header.block-editor-block-list__block .container {
   padding-top: 32px;
@@ -377,6 +381,12 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
     margin-right: 40px;
   }
 
+}
+
+@media screen and (max-width: 1280px) {
+  .wp-block-breadcrumbs {
+    padding-left: 64px;
+  }
 }
 
 @media screen and (max-width: 1252px) {
