@@ -521,7 +521,7 @@
 }
 
 .uuwg-subscribe-popup__text {
-  max-width: 65%;
+  max-width: 75%;
   margin-block-start: 0;
   padding: 0;
   color: var(--wp--preset--color--blue-200);
@@ -549,8 +549,8 @@
   font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 700;
   line-height: 115%;
-  background: var(--wp--preset--color--background);
   border: none;
+  border-radius: var(--wp--custom--border-radius--button);
   transition: background-color 0.2s;
 }
 

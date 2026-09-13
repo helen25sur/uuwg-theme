@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     imageSuccess.hidden = true;
     imageError.hidden = false;
     popupTitle.textContent = 'Something went wrong';
-    popupText.textContent = 'We couldn’t complete your request.\nPlease try again in a moment.';
+    popupText.innerHTML = `We couldn’t complete your request. <br/>Please try again in a moment.`;
     if (!popup.querySelector('.uuwg-subscribe-popup__button')) {
       const btn = document.createElement('a');
       btn.classList.add('uuwg-subscribe-popup__button');
@@ -78,5 +78,26 @@ document.addEventListener('DOMContentLoaded', function () {
       form.reset();
     }
     openPopup();
+  } else if (subscriptionStatus === 'confirmed') {
+    imageSuccess.hidden = true;
+    imageError.hidden = true;
+    popupTitle.textContent = 'You\'re subscribed!';
+    popupText.innerHTML = `Thank you for joining our newsletter. <br/> We\'ll keep you updated on our work, events, and impact.`;
+    if (!popup.querySelector('.chat_button__link')) {
+      const btn = document.createElement('a');
+      const chatLink = document.querySelector('footer a.uuwg-social-link--telegram');
+      btn.classList.add('chat_button__link');
+      btn.innerText = 'Join our chat';
+      btn.href = chatLink ? chatLink.href : '/';
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+
+      popup.querySelector('.uuwg-subscribe-popup').appendChild(btn);
+    }
+    openPopup();
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete('subscription');
+    window.history.replaceState({}, '', url);
   }
 });
