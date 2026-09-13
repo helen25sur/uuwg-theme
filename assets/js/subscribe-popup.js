@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const imageSuccess = popup.querySelector('.wp-image-234');
   const imageError = popup.querySelector('.wp-image-235');
 
+  const returnUrlInput = document.getElementById('uuwg-return-url');
+
+  if (returnUrlInput) {
+    returnUrlInput.value = window.location.href;
+  }
 
   function openPopup() {
     popup.classList.add('is-open');
