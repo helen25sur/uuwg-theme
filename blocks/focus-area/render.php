@@ -14,7 +14,7 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
     </div>
 
     <div class="uuwg-focus-area__grids uuwg-carousel" data-uuwg-carousel data-carousel-desktop="4"
-      data-carousel-tablet="2" data-carousel-mobile="1"
+      data-carousel-tablet="2" data-carousel-mobile="1" data-uuwg-pagination data-total-items="4"
       data-show-pagination="<?php echo !empty($attributes['showPagination']) ? 'true' : 'false'; ?>">
       <div class="uuwg-carousel__track">
         <?php for ($i = 1; $i <= 4; $i++) : ?>
@@ -30,7 +30,9 @@ $attributes = isset($attributes) && is_array($attributes) ? $attributes : (array
           </div>
         <?php endfor; ?>
       </div>
-      <div class="uuwg-carousel__pagination"></div>
+      <?php if ($attributes['showPagination']) : ?>
+        <div class="uuwg-carousel__pagination"></div>
+      <?php endif; ?>
     </div>
   </div>
 
