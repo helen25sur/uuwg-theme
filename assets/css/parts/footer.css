@@ -236,11 +236,32 @@
   line-height: 115%;
 }
 
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]:-webkit-autofill {
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-family: var(--wp--preset--font-family--body);
+  -webkit-text-fill-color: var(--wp--preset--color--primary) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--wp--preset--color--background) inset !important;
+  box-shadow: 0 0 0px 1000px var(--wp--preset--color--background) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]:autofill {
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-family: var(--wp--preset--font-family--body);
+  color: var(--wp--preset--color--primary) !important;
+  background-color: var(--wp--preset--color--background) !important;
+}
+
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
   color: #899EAC;
   font-size: var(--wp--preset--font-size--text-sm);
   font-weight: 500;
   line-height: 115%;
+}
+
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]:active,
+#mc4wp-form-1 .uuwg_subscribe input[type="email"]:focus {
+  outline: 3px solid rgba(52, 79, 177, 0.502);
 }
 
 #mc4wp-form-1 .uuwg_subscribe button[type="submit"] {

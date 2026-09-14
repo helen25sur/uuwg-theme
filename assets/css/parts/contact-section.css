@@ -104,6 +104,26 @@
   background-color: var(--wp--preset--color--background);
 }
 
+/* Для WebKit-браузерів (Chrome, Safari, Edge) */
+#fluentform_1 input:-webkit-autofill,
+#fluentform_1 textarea:-webkit-autofill {
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-family: var(--wp--preset--font-family--body);
+  -webkit-text-fill-color: var(--wp--preset--color--dark-blue) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--wp--preset--color--background) inset !important;
+  box-shadow: 0 0 0px 1000px var(--wp--preset--color--background) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Стандартний селектор для інших браузерів */
+#fluentform_1 input:autofill,
+#fluentform_1 textarea:autofill {
+  font-size: var(--wp--preset--font-size--text-medium);
+  font-family: var(--wp--preset--font-family--body);
+  color: var(--wp--preset--color--dark-blue) !important;
+  background-color: var(--wp--preset--color--background) !important;
+}
+
 #fluentform_1 input::placeholder,
 #fluentform_1 textarea::placeholder {
   font-size: var(--wp--preset--font-size--text-sm);
