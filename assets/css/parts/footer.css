@@ -7,7 +7,6 @@
 }
 
 .uuwg-site-footer__content {
-  max-width: var(--wp--style--global--wide-size);
   margin: 0 auto;
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
@@ -36,7 +35,7 @@
   flex-wrap: nowrap;
   margin-block-start: 0;
   padding: 18.5px 0;
-  column-gap: 32px;
+  column-gap: 29px;
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link {
@@ -282,6 +281,7 @@
 }
 
 .uuwg-site-footer__content .uuwg-social-links {
+  margin-block-start: 0;
   grid-area: socials;
   justify-self: self-end;
 }
@@ -419,6 +419,12 @@
     background-color: var(--wp--preset--color--background);
     position: absolute;
     bottom: 104px;
+  }
+
+  .uuwg-site-footer__content .uuwg-social-links {
+
+    justify-self: self-start;
+    align-self: center;
   }
 }
 
@@ -640,6 +646,10 @@
 
   .uuwg-site-footer__content .copyright {
     justify-self: self-start;
+  }
+
+  .site-footer::after {
+    bottom: 528px;
   }
 }
 
