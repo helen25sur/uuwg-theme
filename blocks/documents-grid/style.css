@@ -198,9 +198,9 @@
   line-height: 115%;
 }
 
-.wp-block-breadcrumbs {
+/* .wp-block-breadcrumbs {
   padding-left: 12px;
-}
+} */
 
 @media screen and (max-width: 1400px) {
   .uuwg-documents-grid__grid {
