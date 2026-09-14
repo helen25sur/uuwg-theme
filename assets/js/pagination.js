@@ -26,7 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * Number of items loaded by one AJAX request.
      */
     const perPage =
-      Number(carousel.dataset.perPage) || 6;
+      Number(carousel.dataset.perPage) || 3;
+
+
+    /*
+     * Total items available in DB (used to stop observer when all loaded).
+     */
+    const totalItems =
+      Number(carousel.dataset.totalItems) || 0;
 
 
     /*
@@ -41,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let isLoading = false;
+    let observer = null;
 
 
     /*
@@ -80,6 +88,53 @@ document.addEventListener('DOMContentLoaded', () => {
           carousel.dataset.carouselDesktop
         ) || 3
       );
+    }
+
+
+    /*
+     * IntersectionObserver for loading next items automatically on swipe/scroll.
+     */
+    function observeLastCard() {
+      if (observer) {
+        observer.disconnect();
+      }
+
+      const items = carousel.querySelectorAll('.uuwg-carousel__item');
+      if (!items.length) return;
+
+      // Якщо завантажено абсолютно всі елементи — зупиняємо спостереження
+      if (totalItems > 0 && items.length >= totalItems) {
+        return;
+      }
+
+      const lastItem = items[items.length - 1];
+
+      observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !isLoading) {
+
+          const currentLoaded = carousel.querySelectorAll(
+            '.uuwg-carousel__item'
+          ).length;
+
+          if (totalItems > 0 && currentLoaded >= totalItems) {
+            observer.disconnect();
+            return;
+          }
+
+          const itemsPerPage = getItemsPerPage();
+          const nextPage = Math.floor(currentLoaded / itemsPerPage);
+
+          // loadNextDataPage з прапором shouldScroll = false, 
+          // щоб не збивати анімацію свайпу користувача
+          loadNextDataPage(nextPage, false);
+        }
+      }, {
+        root: track,
+        rootMargin: '0px 200px 0px 0px', // Починає завантажувати за 200px до краю
+        threshold: 0.1
+      });
+
+      observer.observe(lastItem);
     }
 
 
@@ -143,14 +198,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         await loadNextDataPage(
-          carouselPage
+          carouselPage,
+          true
         );
 
       }
     );
 
 
-    async function loadNextDataPage(carouselPage) {
+    async function loadNextDataPage(carouselPage, shouldScroll = true) {
 
       isLoading = true;
 
@@ -174,8 +230,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = await response.json();
 
-        if (data.html) {
+        if (data.html && data.html.trim() !== '') {
           track.insertAdjacentHTML('beforeend', data.html);
+        } else {
+          // Якщо сервер повернув порожні дані — відключаємо обзервер
+          if (observer) observer.disconnect();
         }
 
         loadedItems = carousel.querySelectorAll(
@@ -186,7 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
           new CustomEvent('uuwg:carousel-items-loaded')
         );
 
-        requestScroll(carouselPage);
+        // При кліку на крапку виконуємо скрол, при свайпі — залишаємо вільний рух
+        if (shouldScroll) {
+          requestScroll(carouselPage);
+        }
+
+        // Перепідключаємо обзервер до нової останньої картки
+        observeLastCard();
 
       } catch (error) {
         console.error('Failed to load posts:', error);
@@ -212,6 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
       );
 
     }
+
+
+    /*
+     * Initial observer setup.
+     */
+    observeLastCard();
 
   }
 

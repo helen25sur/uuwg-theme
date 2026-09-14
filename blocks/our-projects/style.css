@@ -186,7 +186,7 @@
 }
 
 .uuwg-our-projects__card .uuwg-our-project__permalink {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   text-decoration: none;
