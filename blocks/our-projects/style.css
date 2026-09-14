@@ -288,7 +288,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .uuwg-our-projects__header {
     margin-bottom: 90px;
   }

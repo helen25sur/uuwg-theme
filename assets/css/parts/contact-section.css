@@ -434,6 +434,14 @@
   .uuwg-contact-section ul.wp-block-social-links {
     display: none;
   }
+
+  .uuwg-contact-section__header .wp-block-paragraph {
+    max-width: 100%;
+  }
+
+  .uuwg-contact-section .uuwg-social-links {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 900px) {

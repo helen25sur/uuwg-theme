@@ -30,6 +30,12 @@
   grid-area: logo;
   align-self: center;
   justify-self: self-start;
+  margin-right: 0;
+  width: 100%;
+}
+
+.uuwg-site-footer__content .uuwg-site-logo img {
+  width: 100%;
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] {
@@ -37,7 +43,10 @@
   flex-wrap: nowrap;
   margin-block-start: 0;
   padding: 18.5px 0;
-  column-gap: 29px;
+}
+
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation {
+  column-gap: 23px;
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link {
