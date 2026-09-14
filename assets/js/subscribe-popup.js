@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const popupTitle = popup.querySelector('.uuwg-subscribe-popup__title');
   const popupText = popup.querySelector('.uuwg-subscribe-popup__text');
 
-  const imageSuccess = popup.querySelector('.wp-image-234');
-  const imageError = popup.querySelector('.wp-image-235');
+  const imageSuccess = popup.querySelector('.wp-image-252');
+  const imageError = popup.querySelector('.wp-image-253');
 
   const returnUrlInput = document.getElementById('uuwg-return-url');
 
