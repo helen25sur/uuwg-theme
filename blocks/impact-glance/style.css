@@ -95,6 +95,10 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
   }
+
+  .uuwg-impact-glance__card {
+    border-radius: 8px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -113,7 +117,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .uuwg-impact-glance__grids {
     grid-template-columns: repeat(2, 1fr);
   }
