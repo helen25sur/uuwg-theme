@@ -226,6 +226,10 @@
   cursor: not-allowed;
 }
 
+#fluentform_1_success {
+  display: none;
+}
+
 .uuwg-contact-section .wp-block-social-links .wp-block-social-link-anchor {
   transition: all 200ms ease-in;
 }
