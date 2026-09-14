@@ -26,7 +26,7 @@
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
   line-height: 115%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .project-template-default .wp-block-post-featured-image img {

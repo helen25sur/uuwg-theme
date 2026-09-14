@@ -47,13 +47,13 @@
   max-width: 203px;
   font-size: var(--wp--preset--font-size--heading-sm);
   color: var(--wp--preset--color--blue-500);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
 }
 
 .uuwg-contact-section__header .wp-block-paragraph {
   max-width: 432px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 120%;
   color: var(--wp--preset--color--blue-200);
 }
@@ -63,7 +63,7 @@
   margin: 0;
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
@@ -89,14 +89,14 @@
   font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-500);
   line-height: 115%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #fluentform_1 input,
 #fluentform_1 textarea {
   font-size: var(--wp--preset--font-size--text-medium);
   color: var(--wp--preset--color--dark-blue);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 115%;
   padding: 16px;
   border-radius: 8px;
@@ -107,7 +107,7 @@
 #fluentform_1 input::placeholder,
 #fluentform_1 textarea::placeholder {
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 115%;
   color: #899EAC;
 }
@@ -204,7 +204,7 @@
   border: none;
   border-radius: var(--wp--custom--border-radius--button, 999px);
   font-family: var(--wp--preset--font-family--body-lg);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   align-self: stretch;
@@ -332,7 +332,7 @@
 .uuwg-popup__title {
   color: var(--wp--preset--color--blue-500);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 32px;
 }
@@ -352,7 +352,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
@@ -364,7 +364,7 @@
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   background: var(--wp--preset--color--background);
   border: none;

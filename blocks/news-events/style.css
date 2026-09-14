@@ -85,7 +85,7 @@
 .uuwg-news-events__card__short-description {
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
@@ -114,7 +114,7 @@
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
   padding: var(--wp--custom--pill--padding-y) var(--wp--custom--pill--padding-x);
   border-radius: var(--wp--custom--border-radius--button);
@@ -144,7 +144,7 @@
 .uuwg-news-events__card__date {
   font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-200);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 

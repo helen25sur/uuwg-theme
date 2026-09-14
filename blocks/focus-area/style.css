@@ -77,7 +77,7 @@
   background-color: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--primary);
   line-height: 120%;
-  font-weight: 600;
+  font-weight: 500;
 
   position: absolute;
   top: 0;
@@ -102,7 +102,7 @@
 .uuwg-focus-area__card .uuwg-focus-area__card__title {
   font-size: var(--wp--preset--font-size--heading-md);
   line-height: 115%;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0;
   margin: 0;
   max-width: 236px;
@@ -110,7 +110,7 @@
 
 .uuwg-focus-area__card__number {
   font-size: var(--wp--preset--font-size--heading-md);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--wp--preset--color--blue-200);
 }
 

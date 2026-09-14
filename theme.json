@@ -162,7 +162,7 @@
       "heading": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading)",
-          "fontWeight": "700"
+          "fontWeight": "600"
         },
         "spacing": {
           "margin": {
@@ -181,7 +181,7 @@
         "border": { "radius": "var(--wp--custom--border-radius--button)" },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--body-lg)",
-          "fontWeight": "700"
+          "fontWeight": "600"
         },
         "spacing": {
           "padding": {
@@ -227,6 +227,11 @@
       "name": "contact-message-popup",
       "title": "Contact Message Popup",
       "area": "uncategorized"
+    },
+    {
+      "name": "subscribe-form-popup",
+      "title": "Subscribe Form Popup",
+      "area": "footer"
     }
   ],
   "customTemplates": [

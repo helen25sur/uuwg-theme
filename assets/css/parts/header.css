@@ -43,7 +43,7 @@ header.block-editor-block-list__block .container {
   line-height: 125%;
   position: relative;
   font-size: var(--wp--preset--font-size--text-medium);
-  font-weight: 600;
+  font-weight: 500;
   transition: all 200ms ease-in;
 }
 
@@ -109,7 +109,7 @@ header.block-editor-block-list__block .container {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--primary);
   user-select: none;
 }
@@ -160,7 +160,7 @@ header.block-editor-block-list__block .container {
   color: var(--wp--preset--color--primary);
   text-decoration: none;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   transition: all 200ms ease-in;
 }
 
@@ -169,7 +169,7 @@ header.block-editor-block-list__block .container {
 }
 
 .uuwg-language-switcher__link.is-active {
-  font-weight: 700;
+  font-weight: 600;
   opacity: 0.6;
   pointer-events: none;
 }
@@ -347,7 +347,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--white);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   position: relative;
 }

@@ -47,7 +47,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--blue-500);
   user-select: none;
 }
@@ -88,7 +88,7 @@
 .uuwg-documents-filter__item {
   margin-bottom: 12px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--blue-200);
 }
 
@@ -101,7 +101,7 @@
 }
 
 .uuwg-documents-filter__item.is-active {
-  font-weight: 700;
+  font-weight: 600;
   pointer-events: none;
   color: var(--wp--preset--color--blue-500);
 }
@@ -167,7 +167,7 @@
   margin-bottom: 20px;
   grid-area: title;
   font-size: var(--wp--preset--font-size--body-lg);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
 }
 
@@ -177,7 +177,7 @@
 
 .uuwg-documents-grid__card__type-name {
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
   color: var(--wp--preset--color--blue-200);
 }
@@ -194,7 +194,7 @@
   color: var(--wp--preset--color--background);
   border-radius: var(--wp--custom--border-radius--button);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 

@@ -110,7 +110,7 @@
 
 .uuwg-team-grid__card .uuwg-team-grid__card__title {
   font-size: var(--wp--preset--font-size--text-body);
-  font-weight: 700;
+  font-weight: 600;
   /* temporary */
   line-height: 117%;
   padding: 0;
@@ -120,7 +120,7 @@
 
 .uuwg-team-grid__card__position {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   margin-bottom: 14px;
   color: var(--wp--preset--color--blue-200);
@@ -135,7 +135,7 @@
 .uuwg-team-grid__card__period {
   padding: 5px 12px;
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   background-color: var(--wp--preset--color--blue-100);
   color: var(--wp--preset--color--blue-200);

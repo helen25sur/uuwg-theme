@@ -40,7 +40,7 @@
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--blue-500);
   font-size: var(--wp--preset--font-size--text-medium);
   line-height: 115%;
@@ -87,7 +87,7 @@
 
 .uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) h4 {
   font-size: var(--wp--preset--font-size--text-body);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 120%;
   color: var(--wp--preset--color--blue-500);
   margin-right: auto;
@@ -98,7 +98,7 @@
   margin-bottom: 8px;
   font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-200);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .uuwg-site-footer__content .wp-block-group:has(#mc4wp-form-1) p {
@@ -108,7 +108,7 @@
 .uuwg-site-footer__content .contacts {
   grid-area: contacts;
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--blue-200);
 }
 
@@ -129,7 +129,7 @@
   grid-area: legal;
   font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-200);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
@@ -151,7 +151,7 @@
   grid-area: location;
   font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--blue-200);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
@@ -166,12 +166,12 @@
   margin-block-start: 0;
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-sm) !important;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
 }
 
 .uuwg-site-footer__content h4 {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--wp--preset--color--blue-500);
   font-size: var(--wp--preset--font-size--text-sm);
 }
@@ -192,7 +192,7 @@
 
 .uuwg-contact-link {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--wp--preset--color--blue-200);
 }
 
@@ -229,14 +229,14 @@
   background-color: var(--wp--preset--color--background);
   font-size: var(--wp--preset--font-size--text-medium);
   color: var(--wp--preset--color--primary);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]::placeholder {
   color: #899EAC;
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
@@ -331,7 +331,7 @@
     row-gap: 12px;
     align-items: start;
     justify-content: flex-end;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--wp--preset--color--blue-200);
     font-size: var(--wp--preset--font-size--text-sm);
   }
@@ -341,7 +341,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--wp--preset--color--blue-500);
     font-size: var(--wp--preset--font-size--text-sm);
     margin-bottom: 16px;
@@ -515,7 +515,7 @@
 .uuwg-subscribe-popup__title {
   color: var(--wp--preset--color--blue-500);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 24px;
 }
@@ -535,7 +535,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
@@ -547,7 +547,7 @@
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   border: none;
   border-radius: var(--wp--custom--border-radius--button);
@@ -578,7 +578,7 @@
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
   border-radius: var(--wp--custom--border-radius--button);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 115%;
   border: none;
   transition: background-color 0.2s;

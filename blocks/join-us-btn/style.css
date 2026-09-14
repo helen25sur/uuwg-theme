@@ -11,7 +11,7 @@
    background-color: var(--wp--preset--color--primary);
    color: var(--wp--preset--color--background);
    font-size: var(--wp--preset--font-size--text-sm);
-   font-weight: 700;
+   font-weight: 600;
    line-height: 115%;
    border-radius: var(--wp--custom--border-radius--button);
    transition: all 200ms ease-in;

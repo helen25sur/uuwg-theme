@@ -108,7 +108,7 @@ main.wp-block-group {
 
 .uuwg-our-story__text {
   color: var(--wp--preset--color--blue-200);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 120%;
 }
 
@@ -151,7 +151,7 @@ header.wp-block-template-part {
 
 .wp-block-breadcrumbs li {
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 115%;
 }
 
