@@ -117,7 +117,7 @@ main.wp-block-group {
 .single-project .wp-block-paragraph {
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-medium);
-  line-height: 125%;
+  line-height: 135%;
 }
 
 .single-project .wp-block-buttons {
@@ -129,7 +129,7 @@ main.wp-block-group {
 .single-news_event .wp-block-paragraph {
   color: var(--wp--preset--color--blue-200);
   font-size: var(--wp--preset--font-size--text-medium);
-  line-height: 125%;
+  line-height: 135%;
 }
 
 .single-news_event .wp-block-buttons {

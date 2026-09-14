@@ -30,6 +30,7 @@
 
 .single-news_event .wp-block-post-featured-image img {
   border-radius: 8px;
+  max-height: 66vh;
 }
 
 .single-news_event .post-container__content {

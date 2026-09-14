@@ -31,6 +31,7 @@
 
 .project-template-default .wp-block-post-featured-image img {
   border-radius: 8px;
+  max-height: 66vh;
 }
 
 .project-template-default .post-container__content .wp-block-post-content {
