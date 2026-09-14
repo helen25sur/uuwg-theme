@@ -7,6 +7,7 @@
 }
 
 .uuwg-site-footer__content {
+  max-width: var(--wp--style--global--wide-size);
   margin: 0 auto;
   padding-right: var(--wp--custom--spacing--container-gutter);
   padding-left: var(--wp--custom--spacing--container-gutter);
@@ -28,6 +29,7 @@
 .uuwg-site-footer__content .uuwg-site-logo {
   grid-area: logo;
   align-self: center;
+  justify-self: self-start;
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] {
@@ -69,6 +71,7 @@
   grid-area: donate;
   margin-block-start: 0;
   align-self: center;
+  justify-self: flex-end;
 }
 
 .uuwg-site-footer__content .wp-block-buttons:first-of-type .wp-block-button__link {
@@ -80,7 +83,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 413px;
+  max-width: 440px;
+  width: 100%;
   margin-block-start: 0;
 }
 
@@ -244,7 +248,7 @@
   width: 44px;
   height: 44px;
   position: absolute;
-  right: 6px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 8.8px;

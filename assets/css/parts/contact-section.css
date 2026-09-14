@@ -1,6 +1,5 @@
 /* ========================= Contact Us ============================== */
 .wp-block-template-part:has(.uuwg-contact-section) {
-  max-width: var(--wp--style--global--wide-size);
   width: 100%;
 }
 
@@ -9,6 +8,7 @@
 }
 
 .uuwg-contact-section__header {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
