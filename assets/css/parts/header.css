@@ -35,8 +35,13 @@ header.block-editor-block-list__block .container {
   margin: 0;
 }
 
+.uuwg-header .wp-block-navigation {
+  width: 100%;
+}
+
 .uuwg-header .wp-block-navigation__container {
   column-gap: 30px;
+  justify-content: center;
 }
 
 .uuwg-header .wp-block-navigation .wp-block-navigation-item {
@@ -48,10 +53,18 @@ header.block-editor-block-list__block .container {
 }
 
 .uuwg-header .wp-block-navigation .wp-block-navigation-item:hover {
-  color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--yellow-200);
 }
 
 .uuwg-header .wp-block-navigation .wp-block-navigation-item:active {
+  color: var(--wp--preset--color--yellow-200);
+}
+
+.has-hero .uuwg-header .wp-block-navigation .wp-block-navigation-item:hover {
+  color: var(--wp--preset--color--secondary);
+}
+
+.has-hero .uuwg-header .wp-block-navigation .wp-block-navigation-item:active {
   color: var(--wp--preset--color--secondary);
 }
 
@@ -61,7 +74,7 @@ header.block-editor-block-list__block .container {
   content: '';
   width: 5px;
   height: 5px;
-  background-color: var(--wp--preset--color--secondary);
+  background-color: var(--wp--preset--color--yellow-200);
   border-radius: 50%;
   position: absolute;
   bottom: -8px;
@@ -69,11 +82,21 @@ header.block-editor-block-list__block .container {
   transform: translateX(-50%);
 }
 
+.has-hero .uuwg-header .wp-block-navigation .wp-block-navigation-item:hover::after,
+.has-hero .uuwg-header .wp-block-navigation .wp-block-navigation-item:active::after,
+.has-hero .is-active.wp-block-navigation-item::after {
+  background-color: var(--wp--preset--color--secondary);
+}
+
 .uuwg-header .wp-block-navigation .wp-block-navigation-item:disabled {
   color: var(--wp--preset--color--light-grey);
 }
 
 .is-active.wp-block-navigation-item {
+  color: var(--wp--preset--color--yellow-200);
+}
+
+.has-hero .is-active.wp-block-navigation-item {
   color: var(--wp--preset--color--secondary);
 }
 
@@ -213,7 +236,7 @@ header.block-editor-block-list__block .container {
 }
 
 .uuwg-site-logo {
-  margin-right: 84.2px;
+  /* margin-right: 84.2px; */
 }
 
 .uuwg-desktop-menu {

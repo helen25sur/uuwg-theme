@@ -49,16 +49,16 @@
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link:hover,
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-link:active {
-  color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--yellow-200);
 }
 
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-item:hover::after,
 .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation-item:active::after,
-.is-active.wp-block-navigation-item::after {
+.uuwg-site-footer__content nav[aria-label^="Main Nav"] .is-active.wp-block-navigation-item::after {
   content: '';
   width: 5px;
   height: 5px;
-  background-color: var(--wp--preset--color--secondary);
+  background-color: var(--wp--preset--color--yellow-200);
   border-radius: 50%;
   position: absolute;
   bottom: -8px;

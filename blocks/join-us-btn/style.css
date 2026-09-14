@@ -5,6 +5,8 @@
  }
 
  .chat_button__container .chat_button__link {
+   display: inline-block;
+   white-space: nowrap;
    padding: var(--wp--custom--button--padding-y) var(--wp--custom--button--padding-x);
    padding-right: 60px;
    position: relative;
