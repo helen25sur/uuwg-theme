@@ -52,8 +52,8 @@
 .uuwg-what-we-do__card-text {
   color: var(--wp--preset--color--primary);
   font-size: var(--wp--preset--font-size--text-sm);
-  font-weight: 600;
-  line-height: 115%;
+  font-weight: 500;
+  line-height: 130%;
   margin-top: 1.5rem;
 
   /* Ключове місце для акордеону: текст неактивних карток

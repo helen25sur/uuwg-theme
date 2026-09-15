@@ -3,6 +3,13 @@
   margin-block-start: 0;
 }
 
+.post-type-archive-document .wp-block-breadcrumbs {
+  max-width: var(--wp--style--global--wide-size);
+  padding-right: var(--wp--custom--spacing--container-gutter);
+  padding-left: var(--wp--custom--spacing--container-gutter);
+  margin: inherit auto;
+}
+
 .uuwg-documents-grid__content {
   max-width: var(--wp--style--global--wide-size);
   padding-right: var(--wp--custom--spacing--container-gutter);

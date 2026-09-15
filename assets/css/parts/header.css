@@ -401,7 +401,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   }
 
   .uuwg-site-logo {
-    margin-right: 40px;
+    /* margin-right: 40px; */
   }
 
 }
