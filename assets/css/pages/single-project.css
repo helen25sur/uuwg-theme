@@ -42,6 +42,19 @@
   margin-top: 0;
 }
 
+.btn__project-portfolio .wp-block-button__link {
+  padding: 16px 32px;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--background);
+  border: none;
+  transition: background-color 300ms ease-in;
+}
+
+.btn__project-portfolio .wp-block-button__link:hover {
+  background-color: var(--wp--preset--color--blue-500);
+
+}
+
 @media screen and (max-width: 530px) {
   .wp-block-post-title+.wp-block-group {
     flex-direction: column;

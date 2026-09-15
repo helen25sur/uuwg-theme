@@ -171,6 +171,15 @@ function uuwg_register_project_acf_fields()
 				'maxlength'    => 200,
 				'rows'         => 3,
 			),
+			array(
+				'key'          => 'field_project_portfolio_url',
+				'label'        => __('Project portfolio URL', 'uuwg'),
+				'name'         => 'project_portfolio_url',
+				'type'         => 'url',
+				'instructions' => __('Посилання на сторінку портфоліо проєкту.', 'uuwg'),
+				'required'     => 0,
+				'placeholder'  => 'https://example.com/project/',
+			),
 		),
 		'location' => array(
 			array(
@@ -183,6 +192,7 @@ function uuwg_register_project_acf_fields()
 		),
 	));
 }
+
 add_action('acf/init', 'uuwg_register_project_acf_fields');
 
 add_action('rest_api_init', function () {
