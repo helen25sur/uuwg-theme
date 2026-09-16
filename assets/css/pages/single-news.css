@@ -1,7 +1,3 @@
-.single-news_event .wp-block-breadcrumbs {
-  margin-bottom: 60px;
-}
-
 .single-news_event .post-container {
   width: 100%;
   max-width: var(--wp--style--global--wide-size);

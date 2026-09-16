@@ -13,8 +13,6 @@ add_filter('render_block', function ($block_content, $block) {
     ? get_field('project_portfolio_url')
     : '';
 
-  echo $portfolio_url;
-
   if (! $portfolio_url) {
     return '';
   }

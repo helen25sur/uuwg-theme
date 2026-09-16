@@ -235,10 +235,6 @@ header.block-editor-block-list__block .container {
   justify-content: space-between;
 }
 
-.uuwg-site-logo {
-  /* margin-right: 84.2px; */
-}
-
 .uuwg-desktop-menu {
   display: flex;
   align-items: center;
@@ -400,17 +396,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
     flex-wrap: nowrap;
   }
 
-  .uuwg-site-logo {
-    /* margin-right: 40px; */
-  }
-
 }
-
-/* @media screen and (max-width: 1280px) {
-  .wp-block-breadcrumbs {
-    padding-left: 64px;
-  }
-} */
 
 @media screen and (max-width: 1252px) {
   .has-hero main {

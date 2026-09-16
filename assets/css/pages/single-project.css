@@ -1,7 +1,3 @@
-.project-template-default .wp-block-breadcrumbs {
-  margin-bottom: 60px;
-}
-
 .project-template-default .wp-block-breadcrumbs li:nth-of-type(3) {
   display: none;
 }
