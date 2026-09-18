@@ -52,14 +52,14 @@
 
 .uuwg-mission__photo {
   position: relative;
-  border-radius: var(--wp--custom--border-radius--card, 12px);
+  border-radius: var(--wp--custom--border-radius--card);
 }
 
 .uuwg-mission__photo-frame {
   width: 100%;
   height: 100%;
-  border-radius: var(--wp--custom--border-radius--card, 12px);
-  overflow: hidden;
+  border-radius: var(--wp--custom--border-radius--card);
+  /* overflow: hidden; */
   /* округлення кутів і обрізка фото залишаються тут */
 }
 
@@ -68,6 +68,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--wp--custom--border-radius--card);
 }
 
 .uuwg-mission__photo--1 img {
@@ -198,6 +199,10 @@
     padding-bottom: 82.52px;
     padding-left: 64.29px;
   }
+
+  .uuwg-mission__badge--floating {
+    left: -1.75rem;
+  }
 }
 
 
@@ -241,6 +246,11 @@
   .uuwg-mission__badge--top-right {
     right: -4.75rem;
   }
+
+  .uuwg-mission__badge--floating {
+    left: 2.25rem;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -251,6 +261,20 @@
     padding-left: 0;
   }
 
+  .uuwg-mission__photo img {
+    width: 90%;
+    height: 90%;
+  }
+
+  .uuwg-mission__photo--1 img,
+  .uuwg-mission__photo--2 img {
+    margin-left: auto;
+  }
+
+  .uuwg-mission__photo--3 img {
+    margin-right: auto;
+  }
+
   .uuwg-mission__button.wp-element-button {
     display: flex;
     align-items: center;
@@ -259,7 +283,7 @@
   }
 
   .uuwg-mission__badge--floating {
-    left: -1.75rem;
+    left: -0.75rem;
   }
 }
 
