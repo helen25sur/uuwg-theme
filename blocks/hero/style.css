@@ -112,6 +112,14 @@
     background-position-x: left;
   }
 
+  .uuwg-hero.alignfull {
+    height: 100vh;
+  }
+
+  .has-hero .uuwg-hero__container {
+    padding-top: 210px;
+  }
+
   .wp-block-template-part:has(header) .container,
   header.block-editor-block-list__block .container {
     padding: 21px 16px !important;
