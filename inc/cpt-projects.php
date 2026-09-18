@@ -168,7 +168,7 @@ function uuwg_register_project_acf_fields()
 				'type'         => 'textarea',
 				'instructions' => __('Використовується на картках проєкту (Home, архів Projects). Рекомендовано 1-2 речення.', 'uuwg'),
 				'required'     => 1,
-				'maxlength'    => 200,
+				'maxlength'    => 120,
 				'rows'         => 3,
 			),
 			array(

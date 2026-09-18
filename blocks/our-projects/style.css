@@ -283,7 +283,7 @@
 
 @media screen and (max-width: 767px) {
   .uuwg-our-projects__header {
-    margin-bottom: 90px;
+    margin-bottom: 40px;
   }
 
   .uuwg-our-projects__filters {
@@ -316,6 +316,19 @@
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .uuwg-our-projects__card.uuwg-carousel__item {
+    min-height: min-content;
+  }
+
+  .uuwg-our-projects__card img {
+    max-height: 225px;
+  }
+
+  .uuwg-our-projects__card__content {
+    max-height: 199px;
+    overflow: hidden;
   }
 
 }
