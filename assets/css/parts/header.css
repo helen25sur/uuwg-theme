@@ -37,6 +37,7 @@ header.block-editor-block-list__block .container {
 
 .uuwg-header .wp-block-navigation {
   width: 100%;
+  margin-block-start: 0;
 }
 
 .uuwg-header .wp-block-navigation__container {
@@ -48,8 +49,8 @@ header.block-editor-block-list__block .container {
   line-height: 125%;
   position: relative;
   font-size: var(--wp--preset--font-size--text-medium);
-  font-weight: 500;
-  transition: all 200ms ease-in;
+  font-weight: 600;
+  transition: all 50ms ease-in;
 }
 
 .uuwg-header .wp-block-navigation .wp-block-navigation-item:hover {
@@ -132,7 +133,7 @@ header.block-editor-block-list__block .container {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--wp--preset--color--primary);
   user-select: none;
 }
@@ -310,6 +311,11 @@ header.block-editor-block-list__block .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 20px;
+}
+
+.wp-container-core-group-is-layout-f36ac205 {
+  margin-block-start: 0;
 }
 
 .uuwg-overlay .uuwg-site-logo .uuwg-site-logo__dark {
@@ -339,7 +345,7 @@ header.block-editor-block-list__block .container {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 18%;
+  top: 21%;
   right: 5%;
 }
 
@@ -383,10 +389,6 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   top: 15px;
 }
 
-.uuwg-overlay .wp-block-navigation-item__label {
-  font-size: var(--wp--preset--font-size--heading-md);
-}
-
 @media screen and (max-width: 1482px) and (min-width: 1253px) {
   .has-hero main {
     --header-height: 142.4px;
@@ -421,6 +423,7 @@ header.overlay-menu-header:has(.uuwg-overlay.is-active) {
   .uuwg-site-logo {
     width: 104px;
     height: 38px;
+    margin-block-start: 0;
   }
 
   .uuwg-site-logo img {
