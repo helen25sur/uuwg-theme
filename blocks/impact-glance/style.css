@@ -106,6 +106,10 @@
     padding: 0;
   }
 
+  .uuwg-impact-glance__header {
+    max-width: 100%;
+  }
+
   .uuwg-impact-glance__header-text {
     margin-bottom: 24px;
     font-size: var(--wp--preset--font-size--text-sm);
