@@ -116,17 +116,18 @@
   }
 
   .uuwg-what-we-do__cards {
-    padding: 0 16px;
+    padding: 0;
     grid-template-columns: 1fr;
   }
 
   .uuwg-what-we-do__card {
     min-height: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 26px;
   }
 
   .uuwg-what-we-do__card.is-active {
     width: 100%;
+    min-height: 387px;
   }
 }
 
