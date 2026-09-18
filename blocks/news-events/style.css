@@ -215,6 +215,14 @@
     transform: translateY(-50%);
   }
 
+  .uuwg-news-events__card img {
+    max-height: 225px;
+  }
+
+  .uuwg-news-events__card__content {
+    padding: 24px 16px 16px 16px;
+  }
+
 }
 
 @media screen and (max-width: 750px) {
