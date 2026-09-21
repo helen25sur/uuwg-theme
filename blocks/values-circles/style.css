@@ -119,8 +119,8 @@
 
 @media screen and (max-width: 1215px) {
   .uuwg-values-circles__card {
-    width: 236px;
-    height: 236px;
+    width: 282px;
+    height: 282px;
     padding: 28px;
   }
 }
@@ -148,9 +148,17 @@
     margin-top: -35px;
     /* Вертикальний overlap */
   }
+
+  .uuwg-values-circles__card {
+    justify-content: center;
+  }
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .uuwg-our-story__header {
+    align-items: center !important;
+  }
+}
 
 @media screen and (max-width: 768px) {}
 

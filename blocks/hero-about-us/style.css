@@ -196,6 +196,7 @@
 
   .uuwg-hero-about-us__title {
     margin-bottom: 16px;
+    font-weight: 700;
   }
 
   .uuwg-hero-about-us__subtitle {
@@ -203,6 +204,10 @@
   }
 
   .uuwg-hero-about-us__button {
+    padding: 16px 55.25px;
+  }
+
+  .uuwg-hero-about-us__button.uuwg-hero-about-us__button--yellow {
     padding: 16px 55.25px;
   }
 

@@ -218,41 +218,41 @@ add_action(
 /**
  * Enqueue GSAP animation for the About page.
  */
-function uuwg_enqueue_values_animation()
-{
-	if (! is_page('about')) {
-		return;
-	}
+// function uuwg_enqueue_values_animation()
+// {
+// 	if (! is_page('about')) {
+// 		return;
+// 	}
 
-	wp_enqueue_script(
-		'gsap',
-		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js',
-		array(),
-		'3.15.0',
-		true
-	);
+// 	wp_enqueue_script(
+// 		'gsap',
+// 		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js',
+// 		array(),
+// 		'3.15.0',
+// 		true
+// 	);
 
-	wp_enqueue_script(
-		'gsap-scrolltrigger',
-		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js',
-		array('gsap'),
-		'3.15.0',
-		true
-	);
+// 	wp_enqueue_script(
+// 		'gsap-scrolltrigger',
+// 		'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js',
+// 		array('gsap'),
+// 		'3.15.0',
+// 		true
+// 	);
 
-	$animation_path = UUWG_THEME_DIR . '/assets/js/values-animation.js';
+// 	$animation_path = UUWG_THEME_DIR . '/assets/js/values-animation.js';
 
-	if (! file_exists($animation_path)) {
-		return;
-	}
+// 	if (! file_exists($animation_path)) {
+// 		return;
+// 	}
 
-	wp_enqueue_script(
-		'uuwg-values-animation',
-		UUWG_THEME_URI . '/assets/js/values-animation.js',
-		array('gsap', 'gsap-scrolltrigger'),
-		filemtime($animation_path),
-		true
-	);
-}
+// 	wp_enqueue_script(
+// 		'uuwg-values-animation',
+// 		UUWG_THEME_URI . '/assets/js/values-animation.js',
+// 		array('gsap', 'gsap-scrolltrigger'),
+// 		filemtime($animation_path),
+// 		true
+// 	);
+// }
 
-add_action('wp_enqueue_scripts', 'uuwg_enqueue_values_animation');
+// add_action('wp_enqueue_scripts', 'uuwg_enqueue_values_animation');

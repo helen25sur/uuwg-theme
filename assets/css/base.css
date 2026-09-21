@@ -200,9 +200,13 @@ header.wp-block-template-part {
     --wp--preset--font-size--text-body: 16px;
     --wp--preset--font-size--text-sm: 14.4px;
   }
+
+  header.wp-block-template-part {
+    margin-bottom: 0;
+  }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
   body {
     --wp--preset--font-size--hero: 32px;
     --wp--preset--font-size--heading-xl: 28px;

@@ -227,6 +227,7 @@
 }
 
 #mc4wp-form-1 .uuwg_subscribe {
+  width: 96%;
   padding: 0;
   margin: 0;
   display: flex;
@@ -242,14 +243,14 @@
   border-radius: 8px;
   border: none;
   background-color: var(--wp--preset--color--background);
-  font-size: var(--wp--preset--font-size--text-medium);
+  font-size: var(--wp--preset--font-size--text-sm);
   color: var(--wp--preset--color--primary);
   font-weight: 500;
   line-height: 115%;
 }
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]:-webkit-autofill {
-  font-size: var(--wp--preset--font-size--text-medium);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-family: var(--wp--preset--font-family--body);
   -webkit-text-fill-color: var(--wp--preset--color--primary) !important;
   -webkit-box-shadow: 0 0 0px 1000px var(--wp--preset--color--background) inset !important;
@@ -258,7 +259,7 @@
 }
 
 #mc4wp-form-1 .uuwg_subscribe input[type="email"]:autofill {
-  font-size: var(--wp--preset--font-size--text-medium);
+  font-size: var(--wp--preset--font-size--text-sm);
   font-family: var(--wp--preset--font-family--body);
   color: var(--wp--preset--color--primary) !important;
   background-color: var(--wp--preset--color--background) !important;
@@ -281,7 +282,7 @@
   width: 44px;
   height: 44px;
   position: absolute;
-  right: 12px;
+  right: 4px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 8.8px;
@@ -315,6 +316,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--wp--preset--color--primary);
+}
+
+.mc4wp-response {
+  margin-top: 1rem;
 }
 
 .uuwg-site-footer__content .uuwg-social-links {
@@ -640,6 +645,10 @@
 
   .uuwg-site-footer__content nav[aria-label^="Main Nav"] .wp-block-navigation__container {
     height: 100px;
+  }
+
+  .uuwg-site-footer__content .uuwg-social-links {
+    margin-top: 2rem;
   }
 }
 

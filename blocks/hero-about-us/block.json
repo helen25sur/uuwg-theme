@@ -26,7 +26,7 @@
     },
     "secondaryButtonText": {
       "type": "string",
-      "default": "Get Help"
+      "default": "Join us"
     },
     "secondaryButtonUrl": {
       "type": "string",
