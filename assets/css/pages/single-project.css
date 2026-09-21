@@ -39,7 +39,7 @@
 }
 
 .btn__project-portfolio .wp-block-button__link {
-  padding: 16px 32px;
+  padding: 16px 19.75px;
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--background);
   border: none;
@@ -48,7 +48,10 @@
 
 .btn__project-portfolio .wp-block-button__link:hover {
   background-color: var(--wp--preset--color--blue-500);
+}
 
+.project-template-default .wp-block-button:first-child .wp-block-button__link {
+  padding: 16px 55.75px;
 }
 
 @media screen and (max-width: 530px) {
@@ -57,5 +60,10 @@
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 32px;
+  }
+
+  .single-project .wp-block-buttons {
+    margin-left: 0;
+    gap: 8px;
   }
 }

@@ -356,7 +356,7 @@
 .uuwg-popup__title {
   color: var(--wp--preset--color--blue-500);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 32px;
 }
@@ -367,6 +367,7 @@
   padding: 0;
   color: var(--wp--preset--color--blue-200);
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 50px;
 }
@@ -486,7 +487,15 @@
 
 @media screen and (max-width: 500px) {
   .uuwg-popup-overlay {
-    max-width: 90%;
+    max-width: 100%;
     width: 100%;
+  }
+
+  .uuwg-popup__title {
+    max-width: 70%;
+  }
+
+  .uuwg-popup__text {
+    max-width: 100%;
   }
 }

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerBtn = document.querySelector('.uuwg-burger-menu-btn');
   const closeBtn = document.querySelector('.uuwg-overlay-close');
   const overlay = document.querySelector('.uuwg-overlay');
+  const menu = document.querySelector('.overlay-menu-header nav[aria-label^="Main Nav"]');
 
   if (!burgerBtn || !overlay) return;
 
@@ -26,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   burgerBtn.addEventListener('click', openMenu);
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  menu?.addEventListener('click', (evt) => {
+    closeMenu();
+  });
 });
 
 // Закриває перемикач мов при кліку за його межами

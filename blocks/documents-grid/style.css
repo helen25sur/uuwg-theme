@@ -254,4 +254,8 @@
   .uuwg-documents-grid__grid {
     grid-template-columns: 1fr;
   }
+
+  .uuwg-documents-grid__header {
+    margin-bottom: 24px;
+  }
 }

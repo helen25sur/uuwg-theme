@@ -31,7 +31,7 @@
   align-self: center;
   justify-self: self-start;
   margin-right: 0;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .uuwg-site-footer__content .uuwg-site-logo img {
@@ -476,7 +476,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 101%;
   height: 100%;
   background-color: rgba(1, 11, 22, .8);
   backdrop-filter: blur(4px);
@@ -563,7 +563,7 @@
 .uuwg-subscribe-popup__title {
   color: var(--wp--preset--color--blue-500);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 24px;
 }
@@ -574,6 +574,7 @@
   padding: 0;
   color: var(--wp--preset--color--blue-200);
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 50px;
 }
@@ -716,6 +717,10 @@
   .uuwg-subscribe-popup {
     max-width: 90%;
     width: 100%;
+  }
+
+  .uuwg-subscribe-popup__text {
+    max-width: 90%;
   }
 }
 
