@@ -145,7 +145,7 @@
 
   .uuwg-values-circles__card+.uuwg-values-circles__card {
     margin-left: 0;
-    margin-top: -35px;
+    margin-top: -75px;
     /* Вертикальний overlap */
   }
 
@@ -158,8 +158,29 @@
   .uuwg-our-story__header {
     align-items: center !important;
   }
-}
 
-@media screen and (max-width: 768px) {}
+  .uuwg-values-circles__card__text {
+    font-weight: 600;
+  }
+
+  .uuwg-our-story.container {
+    position: relative;
+    padding-bottom: 84px;
+  }
+
+  .uuwg-our-story__cta .wp-block-button__link.wp-element-button {
+    display: flex;
+    align-items: center;
+    margin: 32px auto 0 auto;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    max-width: 89%;
+    height: auto;
+    width: stretch;
+    text-align: center;
+  }
+}
 
 @media screen and (max-width: 375px) {}

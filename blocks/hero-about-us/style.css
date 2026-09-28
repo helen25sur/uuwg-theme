@@ -205,6 +205,7 @@
 
   .uuwg-hero-about-us__button {
     padding: 16px 55.25px;
+    white-space: nowrap;
   }
 
   .uuwg-hero-about-us__button.uuwg-hero-about-us__button--yellow {

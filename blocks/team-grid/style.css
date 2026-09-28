@@ -180,21 +180,24 @@
   }
 
   .uuwg-team-grid__card {
-    max-width: 243px;
-    min-height: 288px;
+    max-width: 170px;
+    max-height: 234px;
+    min-height: min-content;
   }
 
   .uuwg-team-grid__card__image {
-    min-height: 288px;
+    max-height: 234px;
+    min-height: min-content;
   }
 
   .uuwg-team-grid__card img {
-    max-width: 243px;
-    min-height: 288px;
+    max-width: 170px;
+    max-height: 234px;
+    min-height: min-content;
   }
 
   .uuwg-team-grid__card__content {
-    padding: 12px 6px 6px;
+    padding: 6px;
   }
 
   .uuwg-team-grid__card .uuwg-team-grid__card__title {
@@ -203,6 +206,7 @@
 
   .uuwg-team-grid__card__position {
     font-size: 12px;
+    margin-bottom: 6px;
   }
 
   .uuwg-team-grid__card__period {
