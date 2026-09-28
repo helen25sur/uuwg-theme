@@ -311,7 +311,8 @@ header.block-editor-block-list__block .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .wp-container-core-group-is-layout-f36ac205 {
@@ -345,7 +346,7 @@ header.block-editor-block-list__block .container {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 21%;
+  top: 20%;
   right: 5%;
 }
 
