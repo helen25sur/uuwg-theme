@@ -127,7 +127,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .uuwg-impact-glance__header {
     max-width: 100%;
   }
@@ -137,8 +137,17 @@
     position: relative;
   }
 
+  .uuwg-impact-glance__card .uuwg-impact-glance__card__title {
+    font-weight: var(--wp--preset--font-size--heading-md);
+  }
+
   .uuwg-impact-glance__header-text {
     margin-bottom: 0;
+    font-size: var(--wp--preset--font-size--text-body);
+  }
+
+  .uuwg-impact-glance__card__text {
+    font-size: var(--wp--preset--font-size--text-sm);
   }
 
   .uuwg-impact-glance__cta {
@@ -149,6 +158,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
 }
