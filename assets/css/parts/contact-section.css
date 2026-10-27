@@ -492,10 +492,15 @@
   }
 
   .uuwg-popup__title {
-    max-width: 70%;
+    margin-bottom: 16px;
   }
 
   .uuwg-popup__text {
-    max-width: 100%;
+    max-width: 98%;
+    margin-bottom: 40px;
+  }
+
+  .wp-block-buttons:has(#uuwg-popup-close) {
+    margin-bottom: 40px;
   }
 }

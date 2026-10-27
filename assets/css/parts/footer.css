@@ -722,6 +722,18 @@
   .uuwg-subscribe-popup__text {
     max-width: 90%;
   }
+
+  .wp-block-buttons:has(#uuwg-subscribe-popup-close) {
+    margin-bottom: 40px;
+  }
+
+  .wp-block-image.size-full {
+    margin-block-start: 0;
+  }
+
+  .uuwg-subscribe-popup__title {
+    margin-bottom: 16px;
+  }
 }
 
 @media screen and (max-width: 400px) {
